@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+  <!-- Razorpay Checkout Script -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 
 <body>
@@ -981,16 +983,129 @@
       }
     }
 
-    // Payment handler function
-    function handlePayment(subjectCode, subjectName, amount) {
-      // Show payment modal or redirect to payment page
-      showToast('Redirecting to payment...', 'info');
+    // Razorpay Configuration
+    // IMPORTANT: Replace with your actual Razorpay Key ID
+    const RAZORPAY_KEY_ID = 'rzp_test_YOUR_KEY_HERE'; // Replace with your Razorpay Key
 
-      // You can integrate with Razorpay, PayU, or any payment gateway here
-      // For now, redirect to pricing page with subject info
-      setTimeout(() => {
-        window.location.href = `pricing.html?subject=${subjectCode}&amount=${amount}`;
-      }, 1000);
+    // Payment handler function with Razorpay
+    function handlePayment(subjectCode, subjectName, amount) {
+      // Convert amount to paise (Razorpay uses paise)
+      const amountInPaise = amount * 100;
+
+      // Razorpay options
+      const options = {
+        key: RAZORPAY_KEY_ID,
+        amount: amountInPaise,
+        currency: 'INR',
+        name: 'Braintube',
+        description: `Fix Questions - ${subjectCode} (${subjectName})`,
+        image: 'https://braintube.site/assets/logo.png',
+        handler: function (response) {
+          // Payment successful
+          handlePaymentSuccess(response, subjectCode, subjectName, amount);
+        },
+        prefill: {
+          name: '',
+          email: '',
+          contact: ''
+        },
+        notes: {
+          subject_code: subjectCode,
+          subject_name: subjectName,
+          product: 'Fix Questions'
+        },
+        theme: {
+          color: '#764ba2'
+        },
+        modal: {
+          ondismiss: function () {
+            showToast('Payment cancelled', 'error');
+          }
+        }
+      };
+
+      try {
+        const rzp = new Razorpay(options);
+        rzp.on('payment.failed', function (response) {
+          handlePaymentFailure(response);
+        });
+        rzp.open();
+      } catch (error) {
+        console.error('Razorpay error:', error);
+        showToast('Payment gateway error. Please try again.', 'error');
+      }
+    }
+
+    // Handle successful payment
+    function handlePaymentSuccess(response, subjectCode, subjectName, amount) {
+      console.log('Payment successful:', response);
+
+      // Show success message
+      showToast('🎉 Payment successful! Check your email for the PDF.', 'success');
+
+      // Store payment info in localStorage (for demo purposes)
+      const purchasedItems = JSON.parse(localStorage.getItem('braintube_purchases') || '[]');
+      purchasedItems.push({
+        subjectCode,
+        subjectName,
+        amount,
+        paymentId: response.razorpay_payment_id,
+        purchasedAt: new Date().toISOString()
+      });
+      localStorage.setItem('braintube_purchases', JSON.stringify(purchasedItems));
+
+      // Show success modal
+      showSuccessModal(subjectCode, subjectName, response.razorpay_payment_id);
+    }
+
+    // Handle payment failure
+    function handlePaymentFailure(response) {
+      console.error('Payment failed:', response);
+      showToast('Payment failed: ' + response.error.description, 'error');
+    }
+
+    // Show success modal after payment
+    function showSuccessModal(subjectCode, subjectName, paymentId) {
+      const modal = document.createElement('div');
+      modal.id = 'payment-success-modal';
+      modal.innerHTML = `
+        <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: var(--space-4);">
+          <div style="background: var(--bg-primary); border-radius: var(--radius-xl); padding: var(--space-8); max-width: 500px; width: 100%; text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: var(--space-4);">🎉</div>
+            <h2 style="margin-bottom: var(--space-3); color: var(--success-600);">Payment Successful!</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+              Thank you for purchasing Fix Questions for<br>
+              <strong>${subjectCode} - ${subjectName}</strong>
+            </p>
+            <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: var(--space-4); margin-bottom: var(--space-4);">
+              <div style="font-size: var(--text-sm); color: var(--text-muted);">Payment ID</div>
+              <div style="font-family: monospace; color: var(--text-primary);">${paymentId}</div>
+            </div>
+            <p style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-6);">
+              📧 The PDF will be sent to your email within 5 minutes.<br>
+              Check your inbox (and spam folder).
+            </p>
+            <button onclick="closeSuccessModal()" class="btn btn-primary" style="width: 100%;">
+              ✓ Got it!
+            </button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    // Close success modal
+    function closeSuccessModal() {
+      const modal = document.getElementById('payment-success-modal');
+      if (modal) {
+        modal.remove();
+      }
+    }
+
+    // Check if user has purchased this subject
+    function hasPurchased(subjectCode) {
+      const purchases = JSON.parse(localStorage.getItem('braintube_purchases') || '[]');
+      return purchases.some(p => p.subjectCode === subjectCode);
     }
   </script>
 </body>
