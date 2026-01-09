@@ -648,6 +648,16 @@
         renderSyllabus(subject);
         renderPapers(subject);
         renderFixQuestions(subject);
+
+        // Auto-navigate to Fix Questions tab if premium subject
+        const subjectData = syllabusData[subject.code];
+        if (subjectData && subjectData.isPremium) {
+          // Switch to Fix Questions tab
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+          document.querySelector('.tab[data-tab="fix"]').classList.add('active');
+          document.getElementById('fix-panel').style.display = 'block';
+        }
       }
 
       // Tab switching
@@ -886,7 +896,7 @@
               <div style="font-size: var(--text-3xl); font-weight: 800; color: white;">₹79</div>
             </div>
             
-            <button class="btn" style="background: white; color: #764ba2; font-weight: 700; padding: var(--space-4) var(--space-10); font-size: var(--text-lg); border-radius: var(--radius-lg);" onclick="showPaymentForm('${subject.code}', '${subject.name}', 79)">
+            <button class="btn" id="buy-now-btn" style="background: white; color: #764ba2; font-weight: 700; padding: var(--space-4) var(--space-10); font-size: var(--text-lg); border-radius: var(--radius-lg);">
               💳 Buy Now - ₹79
             </button>
             
@@ -897,6 +907,14 @@
             </div>
           </div>
         `;
+
+        // Add click event for buy button - store data in variables to avoid escaping issues
+        const buyBtn = document.getElementById('buy-now-btn');
+        const subCode = subject.code;
+        const subName = subject.name;
+        buyBtn.addEventListener('click', function () {
+          showPaymentForm(subCode, subName, 79);
+        });
       } else if (hasFixQuestions) {
         // Free fix questions display
         const modules = data.modules || [];
