@@ -96,6 +96,7 @@ const VTUData = {
     ],
     'cse-7': [
       { code: 'BCS701', name: 'Internet of Things', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS702', name: 'Parallel Computing', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS711A', name: 'Deep Learning', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS711B', name: 'Natural Language Processing', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: false },
       { code: 'BCS712A', name: 'Blockchain Technology', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: false },
@@ -225,8 +226,8 @@ const VTUData = {
       { code: 'BECL605', name: 'Embedded Systems Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: false, isLab: true }
     ],
     'ece-7': [
-      { code: 'BEC701', name: 'Optical Communication', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC702', name: '5G & Beyond', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: false },
+      { code: 'BEC701', name: 'Microwave Engineering and Antenna Theory', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC702', name: 'Computer Networks and Protocols', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BECP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: false }
     ],
     'ece-8': [
@@ -266,8 +267,8 @@ const VTUData = {
       { code: 'BEEL605', name: 'Control Systems Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: false, isLab: true }
     ],
     'eee-7': [
-      { code: 'BEE701', name: 'Smart Grid', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE702', name: 'Renewable Energy Systems', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: false },
+      { code: 'BEE701', name: 'Switchgear and Protection', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE702', name: 'Industrial Drives and Applications', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BEEP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: false }
     ],
     'eee-8': [
@@ -307,8 +308,8 @@ const VTUData = {
       { code: 'BMEL605', name: 'Heat Transfer Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: false, isLab: true }
     ],
     'me-7': [
-      { code: 'BME701', name: 'CAD/CAM', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BME702', name: 'Robotics', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: false },
+      { code: 'BME701', name: 'Finite Element Methods', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME702', name: 'Hydraulics and Pneumatics', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BMEP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: false }
     ],
     'me-8': [
