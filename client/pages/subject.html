@@ -649,9 +649,8 @@
         renderPapers(subject);
         renderFixQuestions(subject);
 
-        // Auto-navigate to Fix Questions tab if premium subject
-        const subjectData = syllabusData[subject.code];
-        if (subjectData && subjectData.isPremium) {
+        // Auto-navigate to Fix Questions tab if subject has fix questions
+        if (subject.hasFix) {
           // Switch to Fix Questions tab
           document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
           document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
@@ -864,14 +863,15 @@
     function renderFixQuestions(subject) {
       const panel = document.getElementById('fix-panel');
       const data = syllabusData[subject.code];
-      const hasFixQuestions = data?.fixQuestions;
-      const isPremium = data?.isPremium || false;
 
-      if (hasFixQuestions && isPremium) {
+      // Show premium payment for ALL subjects with hasFix: true
+      if (subject.hasFix) {
         // Premium fix questions - locked with payment form
-        const modules = data.modules || [];
-        const fixQ = data.fixQuestions;
-        const totalQuestions = Object.values(fixQ).flat().length;
+        const modules = data?.modules || [
+          { num: 1, title: 'Module 1' }, { num: 2, title: 'Module 2' },
+          { num: 3, title: 'Module 3' }, { num: 4, title: 'Module 4' }, { num: 5, title: 'Module 5' }
+        ];
+        const totalQuestions = data?.fixQuestions ? Object.values(data.fixQuestions).flat().length : 20;
 
         panel.innerHTML = `
           <!-- Premium Banner -->
@@ -915,79 +915,18 @@
         buyBtn.addEventListener('click', function () {
           showPaymentForm(subCode, subName, 79);
         });
-      } else if (hasFixQuestions) {
-        // Free fix questions display
-        const modules = data.modules || [];
-        const fixQ = data.fixQuestions;
-
-        panel.innerHTML = `
-          <div class="card card-gradient" style="margin-bottom: var(--space-6); text-align: center;">
-            <div style="font-size: 2rem; margin-bottom: var(--space-3);">✅</div>
-            <h4>Fix Questions - ${subject.code}</h4>
-            <p style="color: var(--text-secondary); margin: var(--space-3) 0;">Curated important questions with 80%+ exam accuracy rate. Total ${Object.values(fixQ).flat().length}+ questions across all modules.</p>
-          </div>
-          
-          ${modules.map(m => {
-          const moduleKey = 'module' + m.num;
-          const questions = fixQ[moduleKey] || [];
-          return `
-              <div class="card" style="margin-bottom: var(--space-4);">
-                <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
-                  <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: var(--text-sm);">Module ${m.num}</span>
-                  ${m.title}
-                </h4>
-                <div class="resource-list" style="gap: var(--space-2);">
-                  ${questions.map((q, i) => `
-                    <div class="resource-item" style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--space-3);">
-                      <div class="resource-icon" style="background: var(--success-100); color: var(--success-600);">Q${i + 1}</div>
-                      <div class="resource-info">
-                        <p style="margin: 0; color: var(--text-primary); font-size: var(--text-sm);">${q}</p>
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-              </div>
-            `;
-        }).join('')}
-          
-          <div class="card card-gradient" style="text-align: center; margin-top: var(--space-6);">
-            <h4 style="margin-bottom: var(--space-3);">📥 Download All Fix Questions</h4>
-            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Get PDF with all ${Object.values(fixQ).flat().length}+ important questions for ${subject.code}</p>
-            <button class="btn btn-primary" onclick="showToast('Downloading Fix Questions PDF...', 'success')">Download PDF</button>
-          </div>
-        `;
       } else {
-        // Default display for subjects without fix questions data
+        // Fix Questions not available for this subject
         panel.innerHTML = `
-          <div class="card card-gradient" style="margin-bottom: var(--space-6); text-align: center;">
-            <div style="font-size: 2rem; margin-bottom: var(--space-3);">✨</div>
-            <h4>Premium Fix Questions</h4>
-            <p style="color: var(--text-secondary); margin: var(--space-3) 0;">Curated important questions with 80%+ exam accuracy rate.</p>
-            <a href="pricing.html" class="btn btn-primary">Unlock Premium</a>
-          </div>
-          <div class="resource-list">
-            ${(data?.modules || [{ num: 1 }, { num: 2 }]).slice(0, 2).map(m => `
-              <div class="resource-item">
-                <div class="resource-icon">✅</div>
-                <div class="resource-info">
-                  <h4 class="resource-title">Module ${m.num} - Important Questions (Free)</h4>
-                  <div class="resource-meta"><span>PDF • 500 KB</span><span>10 Questions</span></div>
-                </div>
-                <div class="resource-actions">
-                  <button class="btn btn-primary btn-sm" onclick="showToast('Downloading...', 'success')">Download</button>
-                </div>
-              </div>
-            `).join('')}
-            <div class="resource-item" style="opacity: 0.6;">
-              <div class="resource-icon">🔒</div>
-              <div class="resource-info">
-                <h4 class="resource-title">Complete Fix Questions Package <span class="premium-badge" style="margin-left: var(--space-2);">PREMIUM</span></h4>
-                <div class="resource-meta"><span>50+ Questions</span><span>All Modules</span></div>
-              </div>
-              <div class="resource-actions">
-                <a href="pricing.html" class="btn btn-outline btn-sm">Unlock</a>
-              </div>
-            </div>
+          <div class="card card-gradient" style="text-align: center; padding: var(--space-10);">
+            <div style="font-size: 4rem; margin-bottom: var(--space-4);">📚</div>
+            <h3 style="margin-bottom: var(--space-3);">Fix Questions Coming Soon</h3>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+              Fix Questions for ${subject.code} - ${subject.name} are currently being prepared.
+            </p>
+            <p style="color: var(--text-muted); font-size: var(--text-sm);">
+              Check back soon or explore other resources.
+            </p>
           </div>
         `;
       }
