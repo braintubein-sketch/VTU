@@ -232,6 +232,94 @@
           { num: 5, title: 'Neural Networks', hours: 8, topics: 'Perceptron, MLP, Backpropagation, Deep Learning Intro' }
         ],
         objectives: ['Apply ML algorithms', 'Evaluate models', 'Solve classification & regression problems']
+      },
+      'BCS701': {
+        name: 'Cryptography & Network Security',
+        code: 'BCS701',
+        credits: 4,
+        description: 'This course covers the fundamental concepts of cryptography and network security, including encryption algorithms, authentication protocols, and security in network communications.',
+        modules: [
+          { num: 1, title: 'Introduction to Cryptography', hours: 10, topics: 'Security Concepts, Classical Encryption Techniques, Caesar Cipher, Monoalphabetic Cipher, Polyalphabetic Ciphers, Playfair Cipher, Hill Cipher, Transposition Techniques' },
+          { num: 2, title: 'Symmetric Key Cryptography', hours: 10, topics: 'Block Cipher Principles, DES (Data Encryption Standard), DES Modes of Operation, Triple DES, AES (Advanced Encryption Standard), Block Cipher Modes, Stream Ciphers, RC4' },
+          { num: 3, title: 'Public Key Cryptography', hours: 10, topics: 'Principles of Public Key Cryptosystems, RSA Algorithm, Diffie-Hellman Key Exchange, ElGamal Cryptosystem, Elliptic Curve Cryptography' },
+          { num: 4, title: 'Authentication & Hash Functions', hours: 8, topics: 'Message Authentication, Hash Functions, MD5, SHA-1, SHA-256, HMAC, Digital Signatures, DSS (Digital Signature Standard)' },
+          { num: 5, title: 'Network Security', hours: 10, topics: 'IP Security (IPSec), Transport Layer Security (TLS/SSL), Email Security (PGP, S/MIME), Firewalls, Intrusion Detection Systems, Web Security' }
+        ],
+        objectives: [
+          'Understand the fundamentals of cryptography and its applications',
+          'Apply symmetric and asymmetric encryption algorithms',
+          'Implement authentication and hash functions',
+          'Design secure network communication protocols',
+          'Analyze security threats and apply countermeasures'
+        ],
+        outcomes: [
+          'CO1: Apply classical and modern cryptographic techniques for data security',
+          'CO2: Implement symmetric key algorithms like DES and AES',
+          'CO3: Implement public key algorithms like RSA and Diffie-Hellman',
+          'CO4: Analyze message authentication and digital signature schemes',
+          'CO5: Design secure network protocols using IPSec and SSL/TLS'
+        ],
+        textbooks: [
+          'Cryptography and Network Security: Principles and Practice by William Stallings, 7th Edition, Pearson',
+          'Network Security Essentials: Applications and Standards by William Stallings, 6th Edition'
+        ],
+        references: [
+          'Applied Cryptography by Bruce Schneier',
+          'Handbook of Applied Cryptography by Menezes, vanOorschot, Vanstone',
+          'Understanding Cryptography by Christof Paar and Jan Pelzl'
+        ],
+        fixQuestions: {
+          module1: [
+            'Explain the security services and mechanisms in network security.',
+            'With a neat diagram, explain the model for network security.',
+            'Explain the Caesar cipher with an example. Encrypt "HELLO" with key=3.',
+            'What is Playfair cipher? Encrypt "CRYPTOGRAPHY" using key "MONARCHY".',
+            'Explain the Hill cipher algorithm with a 2x2 matrix example.',
+            'Differentiate between substitution and transposition techniques.',
+            'Explain the Rail Fence cipher with an example.',
+            'What are the different types of attacks on encrypted messages?'
+          ],
+          module2: [
+            'Explain the DES algorithm with a neat block diagram.',
+            'Describe the key generation process in DES.',
+            'What is Feistel cipher structure? Explain with a diagram.',
+            'Compare DES and Triple DES.',
+            'Explain the AES algorithm architecture and its key features.',
+            'Describe different modes of operation: ECB, CBC, CFB, OFB, CTR.',
+            'Compare AES with DES in terms of security and efficiency.',
+            'Explain the concept of stream ciphers. How does RC4 work?'
+          ],
+          module3: [
+            'Explain the principles of public key cryptography.',
+            'Describe the RSA algorithm with an example (p=3, q=11).',
+            'Prove the correctness of RSA algorithm.',
+            'Explain the Diffie-Hellman key exchange protocol with an example.',
+            'What is the Man-in-the-Middle attack on Diffie-Hellman?',
+            'Explain the ElGamal cryptosystem.',
+            'What is Elliptic Curve Cryptography? Explain its advantages.',
+            'Compare RSA and Diffie-Hellman key exchange.'
+          ],
+          module4: [
+            'Explain the requirements for message authentication.',
+            'What is a hash function? List the properties of a secure hash function.',
+            'Explain the MD5 algorithm with a block diagram.',
+            'Compare MD5 and SHA-1 hash functions.',
+            'Explain SHA-256 algorithm and its security features.',
+            'What is HMAC? Explain its working principle.',
+            'Explain Digital Signature with a neat diagram.',
+            'Describe the DSS (Digital Signature Standard) algorithm.'
+          ],
+          module5: [
+            'Explain the IPSec protocol architecture.',
+            'What are the two modes of IPSec: Transport and Tunnel mode?',
+            'Describe the SSL/TLS protocol handshake.',
+            'Explain the SSL record protocol.',
+            'What is PGP? Explain its key features for email security.',
+            'Compare PGP and S/MIME.',
+            'What is a firewall? Explain different types of firewalls.',
+            'Explain Intrusion Detection Systems (IDS) and their types.'
+          ]
+        }
       }
     };
 
@@ -469,39 +557,84 @@
     function renderFixQuestions(subject) {
       const panel = document.getElementById('fix-panel');
       const data = syllabusData[subject.code];
+      const hasFixQuestions = data?.fixQuestions;
 
-      panel.innerHTML = `
-        <div class="card card-gradient" style="margin-bottom: var(--space-6); text-align: center;">
-          <div style="font-size: 2rem; margin-bottom: var(--space-3);">✨</div>
-          <h4>Premium Fix Questions</h4>
-          <p style="color: var(--text-secondary); margin: var(--space-3) 0;">Curated important questions with 80%+ exam accuracy rate.</p>
-          <a href="pricing.html" class="btn btn-primary">Unlock Premium</a>
-        </div>
-        <div class="resource-list">
-          ${(data?.modules || [{ num: 1 }, { num: 2 }]).slice(0, 2).map(m => `
-            <div class="resource-item">
-              <div class="resource-icon">✅</div>
+      if (hasFixQuestions) {
+        // Display actual fix questions for subjects that have them (like BCS701)
+        const modules = data.modules || [];
+        const fixQ = data.fixQuestions;
+
+        panel.innerHTML = `
+          <div class="card card-gradient" style="margin-bottom: var(--space-6); text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: var(--space-3);">✅</div>
+            <h4>Fix Questions - ${subject.code}</h4>
+            <p style="color: var(--text-secondary); margin: var(--space-3) 0;">Curated important questions with 80%+ exam accuracy rate. Total ${Object.values(fixQ).flat().length}+ questions across all modules.</p>
+          </div>
+          
+          ${modules.map(m => {
+          const moduleKey = 'module' + m.num;
+          const questions = fixQ[moduleKey] || [];
+          return `
+              <div class="card" style="margin-bottom: var(--space-4);">
+                <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+                  <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: var(--text-sm);">Module ${m.num}</span>
+                  ${m.title}
+                </h4>
+                <div class="resource-list" style="gap: var(--space-2);">
+                  ${questions.map((q, i) => `
+                    <div class="resource-item" style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--space-3);">
+                      <div class="resource-icon" style="background: var(--success-100); color: var(--success-600);">Q${i + 1}</div>
+                      <div class="resource-info">
+                        <p style="margin: 0; color: var(--text-primary); font-size: var(--text-sm);">${q}</p>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            `;
+        }).join('')}
+          
+          <div class="card card-gradient" style="text-align: center; margin-top: var(--space-6);">
+            <h4 style="margin-bottom: var(--space-3);">📥 Download All Fix Questions</h4>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Get PDF with all ${Object.values(fixQ).flat().length}+ important questions for ${subject.code}</p>
+            <button class="btn btn-primary" onclick="showToast('Downloading Fix Questions PDF...', 'success')">Download PDF</button>
+          </div>
+        `;
+      } else {
+        // Default display for subjects without fix questions data
+        panel.innerHTML = `
+          <div class="card card-gradient" style="margin-bottom: var(--space-6); text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: var(--space-3);">✨</div>
+            <h4>Premium Fix Questions</h4>
+            <p style="color: var(--text-secondary); margin: var(--space-3) 0;">Curated important questions with 80%+ exam accuracy rate.</p>
+            <a href="pricing.html" class="btn btn-primary">Unlock Premium</a>
+          </div>
+          <div class="resource-list">
+            ${(data?.modules || [{ num: 1 }, { num: 2 }]).slice(0, 2).map(m => `
+              <div class="resource-item">
+                <div class="resource-icon">✅</div>
+                <div class="resource-info">
+                  <h4 class="resource-title">Module ${m.num} - Important Questions (Free)</h4>
+                  <div class="resource-meta"><span>PDF • 500 KB</span><span>10 Questions</span></div>
+                </div>
+                <div class="resource-actions">
+                  <button class="btn btn-primary btn-sm" onclick="showToast('Downloading...', 'success')">Download</button>
+                </div>
+              </div>
+            `).join('')}
+            <div class="resource-item" style="opacity: 0.6;">
+              <div class="resource-icon">🔒</div>
               <div class="resource-info">
-                <h4 class="resource-title">Module ${m.num} - Important Questions (Free)</h4>
-                <div class="resource-meta"><span>PDF • 500 KB</span><span>10 Questions</span></div>
+                <h4 class="resource-title">Complete Fix Questions Package <span class="premium-badge" style="margin-left: var(--space-2);">PREMIUM</span></h4>
+                <div class="resource-meta"><span>50+ Questions</span><span>All Modules</span></div>
               </div>
               <div class="resource-actions">
-                <button class="btn btn-primary btn-sm" onclick="showToast('Downloading...', 'success')">Download</button>
+                <a href="pricing.html" class="btn btn-outline btn-sm">Unlock</a>
               </div>
             </div>
-          `).join('')}
-          <div class="resource-item" style="opacity: 0.6;">
-            <div class="resource-icon">🔒</div>
-            <div class="resource-info">
-              <h4 class="resource-title">Complete Fix Questions Package <span class="premium-badge" style="margin-left: var(--space-2);">PREMIUM</span></h4>
-              <div class="resource-meta"><span>50+ Questions</span><span>All Modules</span></div>
-            </div>
-            <div class="resource-actions">
-              <a href="pricing.html" class="btn btn-outline btn-sm">Unlock</a>
-            </div>
           </div>
-        </div>
-      `;
+        `;
+      }
     }
   </script>
 </body>
