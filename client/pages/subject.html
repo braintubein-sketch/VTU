@@ -541,74 +541,54 @@
       const isPremium = data?.isPremium || false;
 
       if (hasFixQuestions && isPremium) {
-        // Premium fix questions - locked with payment button
+        // Premium fix questions - locked with payment button (no preview)
         const modules = data.modules || [];
         const fixQ = data.fixQuestions;
         const totalQuestions = Object.values(fixQ).flat().length;
 
         panel.innerHTML = `
           <!-- Premium Banner -->
-          <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: var(--space-6); text-align: center; padding: var(--space-8);">
-            <div style="font-size: 3rem; margin-bottom: var(--space-3);">🔒</div>
-            <h3 style="color: white; margin-bottom: var(--space-2);">Premium Fix Questions</h3>
-            <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-4);">${subject.code} - ${subject.name}</p>
-            <div style="display: flex; justify-content: center; gap: var(--space-6); margin-bottom: var(--space-4); flex-wrap: wrap;">
+          <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); text-align: center; padding: var(--space-10);">
+            <div style="font-size: 4rem; margin-bottom: var(--space-4);">🎯</div>
+            <h2 style="color: white; margin-bottom: var(--space-3);">Premium Fix Questions</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-6); font-size: var(--text-lg);">${subject.code} - ${subject.name}</p>
+            
+            <div style="display: flex; justify-content: center; gap: var(--space-8); margin-bottom: var(--space-6); flex-wrap: wrap;">
               <div style="text-align: center;">
-                <div style="font-size: 2rem; font-weight: 700; color: white;">${totalQuestions}</div>
+                <div style="font-size: 2.5rem; font-weight: 700; color: white;">${totalQuestions}</div>
                 <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Questions</div>
               </div>
               <div style="text-align: center;">
-                <div style="font-size: 2rem; font-weight: 700; color: white;">${modules.length}</div>
-                <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Modules</div>
+                <div style="font-size: 2.5rem; font-weight: 700; color: white;">80%+</div>
+                <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Exam Accuracy</div>
               </div>
               <div style="text-align: center;">
-                <div style="font-size: 2rem; font-weight: 700; color: white;">80%+</div>
-                <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Accuracy</div>
+                <div style="font-size: 2.5rem; font-weight: 700; color: white;">PDF</div>
+                <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Instant Download</div>
               </div>
             </div>
-            <div style="background: rgba(255,255,255,0.2); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-4);">
-              <div style="font-size: var(--text-2xl); font-weight: 700; color: white;">₹49 <span style="font-size: var(--text-sm); font-weight: 400;">only</span></div>
+            
+            <div style="background: rgba(255,255,255,0.15); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6); max-width: 300px; margin-left: auto; margin-right: auto;">
+              <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.7); text-decoration: line-through;">₹149</div>
+              <div style="font-size: var(--text-3xl); font-weight: 800; color: white;">₹79</div>
               <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">One-time payment • Lifetime access</div>
             </div>
-            <button class="btn" style="background: white; color: #764ba2; font-weight: 600; padding: var(--space-3) var(--space-8);" onclick="handlePayment('${subject.code}', '${subject.name}', 49)">
-              💳 Buy Now - ₹49
+            
+            <button class="btn" style="background: white; color: #764ba2; font-weight: 700; padding: var(--space-4) var(--space-10); font-size: var(--text-lg); border-radius: var(--radius-lg);" onclick="handlePayment('${subject.code}', '${subject.name}', 79)">
+              💳 Buy Now - ₹79
             </button>
-          </div>
-          
-          <!-- Preview of locked questions -->
-          ${modules.map((m, moduleIndex) => {
-          const moduleKey = 'module' + m.num;
-          const questions = fixQ[moduleKey] || [];
-          return `
-              <div class="card" style="margin-bottom: var(--space-4); position: relative; overflow: hidden;">
-                <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
-                  <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: var(--text-sm);">Module ${m.num}</span>
-                  ${m.title}
-                  <span style="margin-left: auto; background: #764ba2; color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); font-size: var(--text-xs);">🔒 PREMIUM</span>
-                </h4>
-                <div class="resource-list" style="gap: var(--space-2); filter: blur(4px); pointer-events: none; user-select: none;">
-                  ${questions.map((q, i) => `
-                    <div class="resource-item" style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--space-3);">
-                      <div class="resource-icon" style="background: var(--bg-tertiary); color: var(--text-muted);">Q${i + 1}</div>
-                      <div class="resource-info">
-                        <p style="margin: 0; color: var(--text-primary); font-size: var(--text-sm);">${q}</p>
-                      </div>
-                    </div>
-                  `).join('')}
-                </div>
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(transparent, var(--bg-primary));"></div>
+            
+            <div style="margin-top: var(--space-6); display: flex; justify-content: center; gap: var(--space-6); flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: var(--space-2); color: rgba(255,255,255,0.9); font-size: var(--text-sm);">
+                <span>✅</span> Instant Access
               </div>
-            `;
-        }).join('')}
-          
-          <!-- Bottom CTA -->
-          <div class="card card-gradient" style="text-align: center; padding: var(--space-8);">
-            <h4 style="margin-bottom: var(--space-3);">🎯 Get All ${totalQuestions} Fix Questions</h4>
-            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Unlock complete access to all module-wise important questions for ${subject.code}</p>
-            <button class="btn btn-primary btn-lg" onclick="handlePayment('${subject.code}', '${subject.name}', 49)">
-              💳 Pay ₹49 & Unlock Now
-            </button>
-            <p style="font-size: var(--text-sm); color: var(--text-muted); margin-top: var(--space-3);">✅ Instant access after payment • 📧 PDF sent to email</p>
+              <div style="display: flex; align-items: center; gap: var(--space-2); color: rgba(255,255,255,0.9); font-size: var(--text-sm);">
+                <span>📧</span> PDF to Email
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-2); color: rgba(255,255,255,0.9); font-size: var(--text-sm);">
+                <span>🔒</span> Secure Payment
+              </div>
+            </div>
           </div>
         `;
       } else if (hasFixQuestions) {
