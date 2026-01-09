@@ -234,90 +234,70 @@
         objectives: ['Apply ML algorithms', 'Evaluate models', 'Solve classification & regression problems']
       },
       'BCS701': {
-        name: 'Cryptography & Network Security',
+        name: 'Internet of Things',
         code: 'BCS701',
         credits: 4,
-        description: 'This course covers the fundamental concepts of cryptography and network security, including encryption algorithms, authentication protocols, and security in network communications.',
+        isPremium: true,
+        description: 'This course covers the fundamentals of Internet of Things including IoT architecture, enabling technologies, M2M communication, IoT platforms, and physical devices like Raspberry Pi.',
         modules: [
-          { num: 1, title: 'Introduction to Cryptography', hours: 10, topics: 'Security Concepts, Classical Encryption Techniques, Caesar Cipher, Monoalphabetic Cipher, Polyalphabetic Ciphers, Playfair Cipher, Hill Cipher, Transposition Techniques' },
-          { num: 2, title: 'Symmetric Key Cryptography', hours: 10, topics: 'Block Cipher Principles, DES (Data Encryption Standard), DES Modes of Operation, Triple DES, AES (Advanced Encryption Standard), Block Cipher Modes, Stream Ciphers, RC4' },
-          { num: 3, title: 'Public Key Cryptography', hours: 10, topics: 'Principles of Public Key Cryptosystems, RSA Algorithm, Diffie-Hellman Key Exchange, ElGamal Cryptosystem, Elliptic Curve Cryptography' },
-          { num: 4, title: 'Authentication & Hash Functions', hours: 8, topics: 'Message Authentication, Hash Functions, MD5, SHA-1, SHA-256, HMAC, Digital Signatures, DSS (Digital Signature Standard)' },
-          { num: 5, title: 'Network Security', hours: 10, topics: 'IP Security (IPSec), Transport Layer Security (TLS/SSL), Email Security (PGP, S/MIME), Firewalls, Intrusion Detection Systems, Web Security' }
+          { num: 1, title: 'Introduction to Internet of Things', hours: 8, topics: 'Introduction to IoT, Physical Design of IoT, Logical Design of IoT, IoT Enabling Technologies, IoT Levels and Deployment Templates' },
+          { num: 2, title: 'IoT and M2M', hours: 8, topics: 'M2M vs IoT, SDN and NFV for IoT, IoT Systems Management with NETCONF-YANG, SNMP, Network Operator Requirements' },
+          { num: 3, title: 'IoT Platforms Design Methodology', hours: 10, topics: 'IoT Design Methodology, Case Study: Weather Monitoring, Python for IoT, Data Types, Control Flow, Functions, Modules, Packages, File Handling, Classes' },
+          { num: 4, title: 'IoT Physical Devices', hours: 8, topics: 'Raspberry Pi Board, Linux on Raspberry Pi, Raspberry Pi Interfaces, Programming Raspberry Pi with Python, IoT Physical Servers' },
+          { num: 5, title: 'IoT Case Studies', hours: 8, topics: 'Home Automation, Smart Cities, Environment Monitoring, Agriculture IoT, Healthcare IoT Applications' }
         ],
         objectives: [
-          'Understand the fundamentals of cryptography and its applications',
-          'Apply symmetric and asymmetric encryption algorithms',
-          'Implement authentication and hash functions',
-          'Design secure network communication protocols',
-          'Analyze security threats and apply countermeasures'
+          'Understand the fundamentals of Internet of Things',
+          'Learn IoT enabling technologies and communication protocols',
+          'Design IoT systems using appropriate methodology',
+          'Program IoT devices using Python and Raspberry Pi',
+          'Apply IoT concepts to real-world case studies'
         ],
         outcomes: [
-          'CO1: Apply classical and modern cryptographic techniques for data security',
-          'CO2: Implement symmetric key algorithms like DES and AES',
-          'CO3: Implement public key algorithms like RSA and Diffie-Hellman',
-          'CO4: Analyze message authentication and digital signature schemes',
-          'CO5: Design secure network protocols using IPSec and SSL/TLS'
+          'CO1: Explain the concepts and architecture of IoT systems',
+          'CO2: Differentiate between IoT and M2M communication',
+          'CO3: Design IoT systems using appropriate methodology',
+          'CO4: Program Raspberry Pi for IoT applications using Python',
+          'CO5: Apply IoT concepts to develop real-world applications'
         ],
         textbooks: [
-          'Cryptography and Network Security: Principles and Practice by William Stallings, 7th Edition, Pearson',
-          'Network Security Essentials: Applications and Standards by William Stallings, 6th Edition'
+          'Internet of Things: A Hands-On Approach by Arshdeep Bahga and Vijay Madisetti, Universities Press',
+          'Getting Started with Raspberry Pi by Matt Richardson, O\'Reilly Media'
         ],
         references: [
-          'Applied Cryptography by Bruce Schneier',
-          'Handbook of Applied Cryptography by Menezes, vanOorschot, Vanstone',
-          'Understanding Cryptography by Christof Paar and Jan Pelzl'
+          'Designing the Internet of Things by Adrian McEwen and Hakim Cassimally, Wiley',
+          'Building the Internet of Things by Maciej Kranz, Wiley'
         ],
         fixQuestions: {
           module1: [
-            'Explain the security services and mechanisms in network security.',
-            'With a neat diagram, explain the model for network security.',
-            'Explain the Caesar cipher with an example. Encrypt "HELLO" with key=3.',
-            'What is Playfair cipher? Encrypt "CRYPTOGRAPHY" using key "MONARCHY".',
-            'Explain the Hill cipher algorithm with a 2x2 matrix example.',
-            'Differentiate between substitution and transposition techniques.',
-            'Explain the Rail Fence cipher with an example.',
-            'What are the different types of attacks on encrypted messages?'
+            'Explain the physical design of IoT with a neat diagram. Discuss IoT Protocols.',
+            'Describe the logical design of IoT. Explain functional blocks and communication models.',
+            'What are IoT enabling technologies? Explain Wireless Sensor Networks and Cloud Computing.',
+            'Explain IoT levels 1 to 6 with deployment templates and examples.'
           ],
           module2: [
-            'Explain the DES algorithm with a neat block diagram.',
-            'Describe the key generation process in DES.',
-            'What is Feistel cipher structure? Explain with a diagram.',
-            'Compare DES and Triple DES.',
-            'Explain the AES algorithm architecture and its key features.',
-            'Describe different modes of operation: ECB, CBC, CFB, OFB, CTR.',
-            'Compare AES with DES in terms of security and efficiency.',
-            'Explain the concept of stream ciphers. How does RC4 work?'
+            'Differentiate between IoT and M2M. Explain with suitable examples.',
+            'Explain SDN (Software Defined Networking) and NFV for IoT applications.',
+            'Describe NETCONF-YANG for IoT systems management with architecture.',
+            'What is SNMP? Explain its role in network management for IoT.'
           ],
           module3: [
-            'Explain the principles of public key cryptography.',
-            'Describe the RSA algorithm with an example (p=3, q=11).',
-            'Prove the correctness of RSA algorithm.',
-            'Explain the Diffie-Hellman key exchange protocol with an example.',
-            'What is the Man-in-the-Middle attack on Diffie-Hellman?',
-            'Explain the ElGamal cryptosystem.',
-            'What is Elliptic Curve Cryptography? Explain its advantages.',
-            'Compare RSA and Diffie-Hellman key exchange.'
+            'Explain the step-by-step IoT design methodology with a block diagram.',
+            'Design an IoT system for weather monitoring. Draw the block diagram.',
+            'Write a Python program to interface temperature sensor with Raspberry Pi.',
+            'Explain Python packages used for IoT: request, JSON, urllib, smtplib.'
           ],
           module4: [
-            'Explain the requirements for message authentication.',
-            'What is a hash function? List the properties of a secure hash function.',
-            'Explain the MD5 algorithm with a block diagram.',
-            'Compare MD5 and SHA-1 hash functions.',
-            'Explain SHA-256 algorithm and its security features.',
-            'What is HMAC? Explain its working principle.',
-            'Explain Digital Signature with a neat diagram.',
-            'Describe the DSS (Digital Signature Standard) algorithm.'
+            'Explain the Raspberry Pi board architecture with a neat diagram.',
+            'How to set up Linux on Raspberry Pi? Explain the boot process.',
+            'Describe GPIO programming on Raspberry Pi using Python with example.',
+            'Write a Python program to control LED blinking using Raspberry Pi GPIO.'
           ],
           module5: [
-            'Explain the IPSec protocol architecture.',
-            'What are the two modes of IPSec: Transport and Tunnel mode?',
-            'Describe the SSL/TLS protocol handshake.',
-            'Explain the SSL record protocol.',
-            'What is PGP? Explain its key features for email security.',
-            'Compare PGP and S/MIME.',
-            'What is a firewall? Explain different types of firewalls.',
-            'Explain Intrusion Detection Systems (IDS) and their types.'
+            'Design an IoT-based Home Automation system with block diagram.',
+            'Explain Smart City applications of IoT with architecture diagram.',
+            'Design an IoT-based environment monitoring system for pollution detection.',
+            'Describe IoT applications in Agriculture. Draw the system architecture.'
           ]
         }
       }
@@ -558,9 +538,81 @@
       const panel = document.getElementById('fix-panel');
       const data = syllabusData[subject.code];
       const hasFixQuestions = data?.fixQuestions;
+      const isPremium = data?.isPremium || false;
 
-      if (hasFixQuestions) {
-        // Display actual fix questions for subjects that have them (like BCS701)
+      if (hasFixQuestions && isPremium) {
+        // Premium fix questions - locked with payment button
+        const modules = data.modules || [];
+        const fixQ = data.fixQuestions;
+        const totalQuestions = Object.values(fixQ).flat().length;
+
+        panel.innerHTML = `
+          <!-- Premium Banner -->
+          <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: var(--space-6); text-align: center; padding: var(--space-8);">
+            <div style="font-size: 3rem; margin-bottom: var(--space-3);">🔒</div>
+            <h3 style="color: white; margin-bottom: var(--space-2);">Premium Fix Questions</h3>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: var(--space-4);">${subject.code} - ${subject.name}</p>
+            <div style="display: flex; justify-content: center; gap: var(--space-6); margin-bottom: var(--space-4); flex-wrap: wrap;">
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: white;">${totalQuestions}</div>
+                <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Questions</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: white;">${modules.length}</div>
+                <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Modules</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 2rem; font-weight: 700; color: white;">80%+</div>
+                <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">Accuracy</div>
+              </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.2); border-radius: var(--radius-lg); padding: var(--space-4); margin-bottom: var(--space-4);">
+              <div style="font-size: var(--text-2xl); font-weight: 700; color: white;">₹49 <span style="font-size: var(--text-sm); font-weight: 400;">only</span></div>
+              <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.8);">One-time payment • Lifetime access</div>
+            </div>
+            <button class="btn" style="background: white; color: #764ba2; font-weight: 600; padding: var(--space-3) var(--space-8);" onclick="handlePayment('${subject.code}', '${subject.name}', 49)">
+              💳 Buy Now - ₹49
+            </button>
+          </div>
+          
+          <!-- Preview of locked questions -->
+          ${modules.map((m, moduleIndex) => {
+          const moduleKey = 'module' + m.num;
+          const questions = fixQ[moduleKey] || [];
+          return `
+              <div class="card" style="margin-bottom: var(--space-4); position: relative; overflow: hidden;">
+                <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+                  <span style="background: var(--primary); color: white; padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: var(--text-sm);">Module ${m.num}</span>
+                  ${m.title}
+                  <span style="margin-left: auto; background: #764ba2; color: white; padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); font-size: var(--text-xs);">🔒 PREMIUM</span>
+                </h4>
+                <div class="resource-list" style="gap: var(--space-2); filter: blur(4px); pointer-events: none; user-select: none;">
+                  ${questions.map((q, i) => `
+                    <div class="resource-item" style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: var(--space-3);">
+                      <div class="resource-icon" style="background: var(--bg-tertiary); color: var(--text-muted);">Q${i + 1}</div>
+                      <div class="resource-info">
+                        <p style="margin: 0; color: var(--text-primary); font-size: var(--text-sm);">${q}</p>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(transparent, var(--bg-primary));"></div>
+              </div>
+            `;
+        }).join('')}
+          
+          <!-- Bottom CTA -->
+          <div class="card card-gradient" style="text-align: center; padding: var(--space-8);">
+            <h4 style="margin-bottom: var(--space-3);">🎯 Get All ${totalQuestions} Fix Questions</h4>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Unlock complete access to all module-wise important questions for ${subject.code}</p>
+            <button class="btn btn-primary btn-lg" onclick="handlePayment('${subject.code}', '${subject.name}', 49)">
+              💳 Pay ₹49 & Unlock Now
+            </button>
+            <p style="font-size: var(--text-sm); color: var(--text-muted); margin-top: var(--space-3);">✅ Instant access after payment • 📧 PDF sent to email</p>
+          </div>
+        `;
+      } else if (hasFixQuestions) {
+        // Free fix questions display
         const modules = data.modules || [];
         const fixQ = data.fixQuestions;
 
@@ -635,6 +687,18 @@
           </div>
         `;
       }
+    }
+
+    // Payment handler function
+    function handlePayment(subjectCode, subjectName, amount) {
+      // Show payment modal or redirect to payment page
+      showToast('Redirecting to payment...', 'info');
+
+      // You can integrate with Razorpay, PayU, or any payment gateway here
+      // For now, redirect to pricing page with subject info
+      setTimeout(() => {
+        window.location.href = `pricing.html?subject=${subjectCode}&amount=${amount}`;
+      }, 1000);
     }
   </script>
 </body>

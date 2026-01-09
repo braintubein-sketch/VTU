@@ -95,7 +95,7 @@ const VTUData = {
       { code: 'BCSP607', name: 'Mini Project', credits: 2, type: 'Project', hasNotes: false, hasQP: false, hasFix: false }
     ],
     'cse-7': [
-      { code: 'BCS701', name: 'Cryptography & Network Security', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS701', name: 'Internet of Things', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS711A', name: 'Deep Learning', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS711B', name: 'Natural Language Processing', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: false },
       { code: 'BCS712A', name: 'Blockchain Technology', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: false },
