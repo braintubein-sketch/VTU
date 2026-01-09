@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact VTU Nexus for queries, support, or feedback. We're here to help VTU students succeed.">
+    <title>Contact Us - Braintube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">🎓</div>
+                <span>Brain<span class="text-gradient">tube</span></span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="branches.html" class="nav-link">Branches</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="pricing.html" class="nav-link">Premium</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-secondary hide-mobile">Login</a>
+                <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="branches.html" class="mobile-nav-link">Branches</a>
+        <a href="pricing.html" class="mobile-nav-link">Premium</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Contact</span>
+                </nav>
+                <h1>Get in <span class="text-gradient">Touch</span></h1>
+                <p style="max-width: 600px; margin-top: var(--space-4);">Have questions, feedback, or need support?
+                    We're here to help you succeed in your VTU journey.</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: var(--space-8);">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-text">
+                                <h4>Email Us</h4>
+                                <p>support@vtunexus.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">💬</div>
+                            <div class="contact-text">
+                                <h4>Telegram</h4>
+                                <p>@vtunexus</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">⏰</div>
+                            <div class="contact-text">
+                                <h4>Response Time</h4>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+
+                        <div class="card card-gradient" style="margin-top: var(--space-6);">
+                            <h4 style="margin-bottom: var(--space-3);">💡 Quick Help</h4>
+                            <ul style="color: var(--text-secondary); font-size: var(--text-sm);">
+                                <li style="margin-bottom: var(--space-2);">• Check our <a href="faq.html"
+                                        style="color: var(--primary-400);">FAQ page</a> for common questions</li>
+                                <li style="margin-bottom: var(--space-2);">• Premium users get priority support</li>
+                                <li>• Join our Telegram for instant updates</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-bottom: var(--space-6);">Send us a Message</h3>
+                        <form class="form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Full Name *</label>
+                                    <input type="text" id="name" class="form-input" placeholder="Your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Email Address *</label>
+                                    <input type="email" id="email" class="form-input" placeholder="your@email.com"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" class="form-input" placeholder="+91 XXXXX XXXXX">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="subject">Subject *</label>
+                                    <select id="subject" class="form-select" required>
+                                        <option value="">Select a topic</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="content">Content Request</option>
+                                        <option value="payment">Payment Issue</option>
+                                        <option value="technical">Technical Support</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="message">Message *</label>
+                                <textarea id="message" class="form-textarea" placeholder="Tell us how we can help..."
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Preview -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Frequently Asked <span class="text-gradient">Questions</span></h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="card" style="margin-bottom: var(--space-4);">
+                        <h4 style="margin-bottom: var(--space-2);">How do I access premium content?</h4>
+                        <p style="color: var(--text-secondary); font-size: var(--text-sm);">Purchase a premium plan from
+                            our pricing page. Once payment is confirmed, you'll have instant access to all premium
+                            resources.</p>
+                    </div>
+                    <div class="card" style="margin-bottom: var(--space-4);">
+                        <h4 style="margin-bottom: var(--space-2);">Are the fix questions accurate?</h4>
+                        <p style="color: var(--text-secondary); font-size: var(--text-sm);">Our fix questions are
+                            curated by experienced students and faculty based on exam patterns. While we can't guarantee
+                            questions, they have a high success rate.</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--space-2);">Can I get a refund?</h4>
+                        <p style="color: var(--text-secondary); font-size: var(--text-sm);">We offer refunds within 7
+                            days of purchase if you're not satisfied. Contact support with your order details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p class="footer-copyright">© 2026 Braintube. Made with ❤️ for VTU Students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
+            e.target.reset();
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore all VTU engineering branches - CSE, ECE, EEE, ME, CV, AI/ML and more. Access study materials for your department.">
+    <title>All Branches - Braintube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">🎓</div>
+                <span>Brain<span class="text-gradient">tube</span></span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="branches.html" class="nav-link active">Branches</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="pricing.html" class="nav-link">Premium</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-secondary hide-mobile">Login</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="branches.html" class="mobile-nav-link">Branches</a>
+        <a href="resources.html" class="mobile-nav-link">Resources</a>
+        <a href="pricing.html" class="mobile-nav-link">Premium</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Branches</span>
+                </nav>
+                <h1>Choose Your <span class="text-gradient">Branch</span></h1>
+                <p style="max-width: 600px; margin-top: var(--space-4);">Select your engineering department to access
+                    comprehensive study materials, notes, and resources.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="search-container">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                    <input type="text" class="search-input" id="branchSearch" placeholder="Search branches...">
+                </div>
+
+                <div class="branches-grid" id="branchesGrid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p class="footer-copyright">© 2026 Braintube. Made with ❤️ for VTU Students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBranches(VTUData.branches);
+
+            document.getElementById('branchSearch').addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                const filtered = VTUData.branches.filter(b =>
+                    b.name.toLowerCase().includes(query) || b.fullName.toLowerCase().includes(query)
+                );
+                renderBranches(filtered);
+            });
+        });
+
+        function renderBranches(branches) {
+            document.getElementById('branchesGrid').innerHTML = branches.map(b => `
+        <a href="branch.html?branch=${b.id}" class="branch-card">
+          <div class="branch-icon">${b.icon}</div>
+          <h3 class="branch-name">${b.name}</h3>
+          <p class="branch-fullname">${b.fullName}</p>
+          <div class="branch-meta">
+            <span class="branch-meta-item">📚 ${b.subjects} Subjects</span>
+            <span class="branch-meta-item">📄 ${b.documents}+ Docs</span>
+          </div>
+        </a>
+      `).join('');
+        }
+    </script>
+</body>
+
+</html>

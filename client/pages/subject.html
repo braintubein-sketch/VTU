@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Download notes, syllabus, question papers and fix questions for VTU subjects.">
+  <title>Subject Resources - Braintube</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+
+<body>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">🎓</div>
+        <span>Brain<span class="text-gradient">tube</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="branches.html" class="nav-link active">Branches</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="pricing.html" class="nav-link">Premium</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-secondary hide-mobile">Login</a>
+        <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="../index.html" class="mobile-nav-link">Home</a>
+    <a href="branches.html" class="mobile-nav-link">Branches</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="branches.html">Branches</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="#" id="branchLink">CSE</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current" id="subjectCode">BCS304</span>
+        </nav>
+        <span class="subject-code" id="subjectCodeBadge"
+          style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">BCS304</span>
+        <h1 id="subjectName" style="margin-top: var(--space-4);">Data Structures</h1>
+        <div class="flex gap-6" style="margin-top: var(--space-4); color: var(--text-secondary); flex-wrap: wrap;">
+          <span>📖 <span id="credits">4</span> Credits</span>
+          <span>📅 Semester <span id="semNum">3</span></span>
+          <span>🎓 <span id="branchName">CSE</span></span>
+          <span>📋 2022 Scheme</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: var(--space-8);">
+      <div class="container">
+        <div class="tabs" id="resourceTabs">
+          <button class="tab active" data-tab="notes">📚 Notes</button>
+          <button class="tab" data-tab="syllabus">📋 Syllabus</button>
+          <button class="tab" data-tab="papers">📄 Question Papers</button>
+          <button class="tab" data-tab="lab">🔬 Lab Manual</button>
+          <button class="tab" data-tab="fix">✅ Fix Questions</button>
+        </div>
+
+        <div id="tabContent">
+          <!-- Notes Tab -->
+          <div class="tab-panel active" id="notes-panel"></div>
+          <!-- Syllabus Tab -->
+          <div class="tab-panel" id="syllabus-panel" style="display: none;"></div>
+          <!-- Question Papers Tab -->
+          <div class="tab-panel" id="papers-panel" style="display: none;"></div>
+          <!-- Lab Manual Tab -->
+          <div class="tab-panel" id="lab-panel" style="display: none;"></div>
+          <!-- Fix Questions Tab -->
+          <div class="tab-panel" id="fix-panel" style="display: none;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p class="footer-copyright">© 2026 Braintube. Made with ❤️ for VTU Students.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../scripts/data.js"></script>
+  <script src="../scripts/notes.js"></script>
+  <script src="../scripts/notes-extended.js"></script>
+  <script src="../scripts/syllabus.js"></script>
+  <script src="../scripts/syllabus-extended.js"></script>
+  <script src="../scripts/syllabus-complete.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script>
+    // Syllabus data for all subjects
+    const syllabusData = {
+      // CSE Subjects
+      'BCS301': {
+        name: 'Mathematics for Computer Science',
+        modules: [
+          { num: 1, title: 'Linear Algebra', hours: 10, topics: 'Matrices, Eigenvalues, Eigenvectors, Diagonalization, LU Decomposition' },
+          { num: 2, title: 'Calculus', hours: 8, topics: 'Partial Derivatives, Multiple Integrals, Vector Calculus' },
+          { num: 3, title: 'Probability', hours: 8, topics: 'Random Variables, Distributions, Bayes Theorem' },
+          { num: 4, title: 'Statistics', hours: 8, topics: 'Mean, Variance, Regression, Correlation' },
+          { num: 5, title: 'Graph Theory', hours: 8, topics: 'Graphs, Trees, Shortest Paths, Network Flow' }
+        ],
+        objectives: ['Apply linear algebra in computing', 'Solve probability problems', 'Analyze statistical data', 'Apply graph theory concepts']
+      },
+      'BCS302': {
+        name: 'Digital Design & Computer Organization',
+        modules: [
+          { num: 1, title: 'Digital Logic', hours: 10, topics: 'Boolean Algebra, Logic Gates, Combinational Circuits' },
+          { num: 2, title: 'Sequential Circuits', hours: 8, topics: 'Flip-Flops, Counters, Registers, FSM' },
+          { num: 3, title: 'Memory Organization', hours: 8, topics: 'RAM, ROM, Cache Memory, Virtual Memory' },
+          { num: 4, title: 'CPU Organization', hours: 10, topics: 'Instruction Set, ALU, Control Unit, Pipelining' },
+          { num: 5, title: 'I/O Organization', hours: 6, topics: 'I/O Interface, DMA, Interrupts' }
+        ],
+        objectives: ['Design combinational circuits', 'Design sequential circuits', 'Understand CPU architecture', 'Analyze memory hierarchy']
+      },
+      'BCS303': {
+        name: 'Operating Systems',
+        modules: [
+          { num: 1, title: 'OS Introduction', hours: 8, topics: 'OS Structure, System Calls, Process Concept' },
+          { num: 2, title: 'Process Management', hours: 10, topics: 'Scheduling, Synchronization, Deadlocks' },
+          { num: 3, title: 'Memory Management', hours: 10, topics: 'Paging, Segmentation, Virtual Memory' },
+          { num: 4, title: 'File Systems', hours: 8, topics: 'File Organization, Directory, Allocation Methods' },
+          { num: 5, title: 'I/O & Security', hours: 6, topics: 'Disk Scheduling, Protection, Security' }
+        ],
+        objectives: ['Understand OS concepts', 'Analyze process scheduling', 'Implement memory management', 'Design file systems']
+      },
+      'BCS304': {
+        name: 'Data Structures and Applications',
+        modules: [
+          { num: 1, title: 'Introduction', hours: 8, topics: 'Arrays, Structures, Pointers, Dynamic Memory' },
+          { num: 2, title: 'Stacks & Queues', hours: 10, topics: 'Stack ADT, Queue ADT, Applications, Expression Evaluation' },
+          { num: 3, title: 'Linked Lists', hours: 8, topics: 'Singly, Doubly, Circular Lists, Applications' },
+          { num: 4, title: 'Trees', hours: 10, topics: 'Binary Trees, BST, AVL Trees, B-Trees, Heaps' },
+          { num: 5, title: 'Graphs', hours: 10, topics: 'Representations, BFS, DFS, Shortest Path, MST' }
+        ],
+        objectives: ['Implement linear data structures', 'Apply tree structures', 'Implement graph algorithms', 'Analyze complexity']
+      },
+      'BCS305A': {
+        name: 'Object Oriented Programming with Java',
+        modules: [
+          { num: 1, title: 'Java Basics', hours: 8, topics: 'JVM, Data Types, Operators, Control Flow' },
+          { num: 2, title: 'Classes & Objects', hours: 10, topics: 'Classes, Constructors, Methods, Arrays' },
+          { num: 3, title: 'Inheritance', hours: 8, topics: 'Inheritance, Polymorphism, Abstract Classes' },
+          { num: 4, title: 'Packages & Interfaces', hours: 8, topics: 'Packages, Interfaces, Exception Handling' },
+          { num: 5, title: 'Multithreading', hours: 8, topics: 'Threads, Synchronization, I/O Streams' }
+        ],
+        objectives: ['Write Java programs', 'Apply OOP concepts', 'Handle exceptions', 'Implement multithreading']
+      },
+      'BCS401': {
+        name: 'Analysis & Design of Algorithms',
+        modules: [
+          { num: 1, title: 'Algorithm Analysis', hours: 8, topics: 'Asymptotic Notations, Recurrence Relations' },
+          { num: 2, title: 'Divide & Conquer', hours: 10, topics: 'Merge Sort, Quick Sort, Binary Search' },
+          { num: 3, title: 'Greedy Method', hours: 8, topics: 'Knapsack, Job Sequencing, MST, Shortest Path' },
+          { num: 4, title: 'Dynamic Programming', hours: 10, topics: 'MCM, LCS, 0/1 Knapsack, Floyd-Warshall' },
+          { num: 5, title: 'Backtracking & B&B', hours: 8, topics: 'N-Queens, Graph Coloring, TSP' }
+        ],
+        objectives: ['Analyze algorithm complexity', 'Apply design techniques', 'Solve optimization problems']
+      },
+      'BCS403': {
+        name: 'Database Management Systems',
+        modules: [
+          { num: 1, title: 'Introduction', hours: 8, topics: 'DBMS Architecture, Data Models, ER Model' },
+          { num: 2, title: 'Relational Model', hours: 10, topics: 'Relational Algebra, SQL, Constraints' },
+          { num: 3, title: 'Database Design', hours: 10, topics: 'Functional Dependencies, Normalization' },
+          { num: 4, title: 'Transactions', hours: 8, topics: 'ACID, Concurrency Control, Recovery' },
+          { num: 5, title: 'Storage & Indexing', hours: 6, topics: 'File Organization, B+ Trees, Hashing' }
+        ],
+        objectives: ['Design databases', 'Write SQL queries', 'Apply normalization', 'Manage transactions']
+      },
+      'BCS501': {
+        name: 'Software Engineering & Project Management',
+        modules: [
+          { num: 1, title: 'SE Introduction', hours: 8, topics: 'Software Process, Agile, Requirements' },
+          { num: 2, title: 'Design', hours: 10, topics: 'System Design, UML, Design Patterns' },
+          { num: 3, title: 'Testing', hours: 8, topics: 'Testing Strategies, Test Case Design' },
+          { num: 4, title: 'Project Management', hours: 10, topics: 'Planning, Scheduling, Risk Management' },
+          { num: 5, title: 'Quality & Metrics', hours: 6, topics: 'Software Quality, Metrics, SCM' }
+        ],
+        objectives: ['Apply SE principles', 'Manage software projects', 'Ensure software quality']
+      },
+      'BCS502': {
+        name: 'Computer Networks',
+        modules: [
+          { num: 1, title: 'Introduction', hours: 8, topics: 'Network Models, OSI, TCP/IP' },
+          { num: 2, title: 'Data Link Layer', hours: 10, topics: 'Framing, Error Control, MAC Protocols' },
+          { num: 3, title: 'Network Layer', hours: 10, topics: 'IP Addressing, Routing Algorithms' },
+          { num: 4, title: 'Transport Layer', hours: 8, topics: 'TCP, UDP, Congestion Control' },
+          { num: 5, title: 'Application Layer', hours: 6, topics: 'HTTP, DNS, Email, Security' }
+        ],
+        objectives: ['Understand network layers', 'Analyze protocols', 'Design networks']
+      },
+      'BCS503': {
+        name: 'Theory of Computation',
+        modules: [
+          { num: 1, title: 'Automata', hours: 10, topics: 'DFA, NFA, Regular Expressions' },
+          { num: 2, title: 'Context-Free', hours: 10, topics: 'CFG, PDA, Parsing' },
+          { num: 3, title: 'Turing Machines', hours: 8, topics: 'TM Design, Variants, Computability' },
+          { num: 4, title: 'Decidability', hours: 8, topics: 'Decidable & Undecidable Problems' },
+          { num: 5, title: 'Complexity', hours: 6, topics: 'P, NP, NP-Complete, Reductions' }
+        ],
+        objectives: ['Design automata', 'Analyze computability', 'Understand complexity classes']
+      },
+      'BCS603': {
+        name: 'Machine Learning',
+        modules: [
+          { num: 1, title: 'Introduction', hours: 8, topics: 'ML Types, Feature Engineering, Evaluation' },
+          { num: 2, title: 'Supervised Learning', hours: 12, topics: 'Linear Regression, Logistic Regression, SVM, Decision Trees' },
+          { num: 3, title: 'Ensemble Methods', hours: 8, topics: 'Random Forest, Bagging, Boosting, XGBoost' },
+          { num: 4, title: 'Unsupervised Learning', hours: 8, topics: 'K-Means, Hierarchical, DBSCAN, PCA' },
+          { num: 5, title: 'Neural Networks', hours: 8, topics: 'Perceptron, MLP, Backpropagation, Deep Learning Intro' }
+        ],
+        objectives: ['Apply ML algorithms', 'Evaluate models', 'Solve classification & regression problems']
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const branchId = params.get('branch') || 'cse';
+      const sem = params.get('sem') || '3';
+      const code = params.get('code') || 'BCS304';
+
+      const branch = VTUData.getBranch(branchId);
+      const subjects = VTUData.getSubjects(branchId, parseInt(sem));
+      const subject = subjects.find(s => s.code === code);
+
+      if (branch) {
+        document.getElementById('branchLink').textContent = branch.name;
+        document.getElementById('branchLink').href = `branch.html?branch=${branchId}`;
+        document.getElementById('branchName').textContent = branch.name;
+      }
+
+      if (subject) {
+        document.getElementById('subjectCode').textContent = subject.code;
+        document.getElementById('subjectCodeBadge').textContent = subject.code;
+        document.getElementById('subjectName').textContent = subject.name;
+        document.getElementById('semNum').textContent = sem;
+        document.getElementById('credits').textContent = subject.credits;
+        document.title = `${subject.name} - Braintube`;
+
+        renderNotes(subject);
+        renderSyllabus(subject);
+        renderPapers(subject);
+        renderFixQuestions(subject);
+      }
+
+      // Tab switching
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab + '-panel').style.display = 'block';
+        });
+      });
+    });
+
+    function renderNotes(subject) {
+      const panel = document.getElementById('notes-panel');
+      const modules = syllabusData[subject.code]?.modules || [
+        { num: 1, title: 'Module 1' }, { num: 2, title: 'Module 2' },
+        { num: 3, title: 'Module 3' }, { num: 4, title: 'Module 4' }, { num: 5, title: 'Module 5' }
+      ];
+
+      panel.innerHTML = `
+        <div class="resource-list">
+          ${modules.map(m => `
+            <div class="resource-item">
+              <div class="resource-icon">📚</div>
+              <div class="resource-info">
+                <h4 class="resource-title">Module ${m.num} - ${m.title}</h4>
+                <div class="resource-meta"><span>PDF Notes</span><span>VTU 2022 Scheme</span></div>
+              </div>
+              <div class="resource-actions">
+                <button class="btn btn-primary btn-sm" onclick="showToast('Download starting...', 'success')">Download</button>
+              </div>
+            </div>
+          `).join('')}
+          <div class="resource-item">
+            <div class="resource-icon">📖</div>
+            <div class="resource-info">
+              <h4 class="resource-title">Complete Notes (All Modules)</h4>
+              <div class="resource-meta"><span>Full Subject Notes</span><span>Compiled PDF</span></div>
+            </div>
+            <div class="resource-actions">
+              <button class="btn btn-primary btn-sm" onclick="showToast('Download starting...', 'success')">Download</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSyllabus(subject) {
+      const panel = document.getElementById('syllabus-panel');
+      // Try comprehensive syllabus first, then fallback to basic
+      const data = (window.VTUSyllabus && VTUSyllabus[subject.code]) || syllabusData[subject.code];
+
+      if (data) {
+        panel.innerHTML = `
+          <!-- Course Description -->
+          <div class="card card-gradient" style="margin-bottom: var(--space-4);">
+            <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: var(--space-3);">
+              <div style="flex: 1;">
+                <h3 style="margin: 0 0 var(--space-2) 0;">${data.name || subject.name}</h3>
+                <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; color: var(--text-secondary); font-size: var(--text-sm);">
+                  <span>📝 Code: <strong>${data.code || subject.code}</strong></span>
+                  <span>📊 Credits: <strong>${data.credits || subject.credits}</strong></span>
+                  <span>📋 Scheme: <strong>VTU 2022</strong></span>
+                </div>
+              </div>
+              <div style="display: flex; gap: var(--space-2);">
+                <button class="btn btn-outline btn-sm" onclick="viewSyllabus('${subject.code}')">👁️ View PDF</button>
+                <button class="btn btn-primary btn-sm" onclick="downloadSyllabus('${subject.code}')">⬇️ Download</button>
+              </div>
+            </div>
+            ${data.description ? `<p style="color: var(--text-secondary); margin-top: var(--space-3); font-size: var(--text-sm);">${data.description}</p>` : ''}
+          </div>
+
+          <!-- Course Objectives -->
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+              <span style="font-size: 1.25rem;">🎯</span> Course Objectives
+            </h4>
+            <ul style="color: var(--text-secondary); padding-left: var(--space-6); list-style: disc;">
+              ${(data.objectives || ['Apply theoretical concepts', 'Develop problem-solving skills', 'Understand core principles']).map(obj => `<li style="margin-bottom: var(--space-2);">${obj}</li>`).join('')}
+            </ul>
+          </div>
+
+          <!-- Course Outcomes -->
+          ${data.outcomes ? `
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+              <span style="font-size: 1.25rem;">✅</span> Course Outcomes
+            </h4>
+            <ul style="color: var(--text-secondary); padding-left: var(--space-6); list-style: disc;">
+              ${data.outcomes.map(out => `<li style="margin-bottom: var(--space-2);">${out}</li>`).join('')}
+            </ul>
+          </div>
+          ` : ''}
+
+          <!-- Module Breakdown -->
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+              <span style="font-size: 1.25rem;">📚</span> Module Breakdown
+            </h4>
+            <div class="resource-list">
+              ${(data.modules || []).map(m => `
+                <div class="resource-item" style="border: none; padding: var(--space-4); background: var(--bg-tertiary); border-radius: var(--radius-md);">
+                  <div class="resource-info" style="flex: 1;">
+                    <h4 class="resource-title" style="color: var(--primary); margin-bottom: var(--space-2);">
+                      Module ${m.num}: ${m.title}
+                    </h4>
+                    <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-2); font-size: var(--text-sm); color: var(--text-secondary);">
+                      <span>⏱️ ${m.hours} Teaching Hours</span>
+                    </div>
+                    <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6;">
+                      <strong>Topics:</strong> ${m.topics}
+                    </p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Textbooks -->
+          ${data.textbooks ? `
+          <div class="card" style="margin-bottom: var(--space-4);">
+            <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+              <span style="font-size: 1.25rem;">📖</span> Textbooks
+            </h4>
+            <ul style="color: var(--text-secondary); font-size: var(--text-sm); padding-left: var(--space-6);">
+              ${data.textbooks.map(book => `<li style="margin-bottom: var(--space-2);">📕 ${book}</li>`).join('')}
+            </ul>
+          </div>
+          ` : ''}
+
+          <!-- Reference Books -->
+          ${data.references ? `
+          <div class="card">
+            <h4 style="margin-bottom: var(--space-4); display: flex; align-items: center; gap: var(--space-2);">
+              <span style="font-size: 1.25rem;">📚</span> Reference Books
+            </h4>
+            <ul style="color: var(--text-secondary); font-size: var(--text-sm); padding-left: var(--space-6);">
+              ${data.references.map(book => `<li style="margin-bottom: var(--space-2);">📗 ${book}</li>`).join('')}
+            </ul>
+          </div>
+          ` : `
+          <div class="card">
+            <h4 style="margin-bottom: var(--space-3);">📄 Reference Books</h4>
+            <ul style="color: var(--text-secondary); font-size: var(--text-sm);">
+              <li style="margin-bottom: var(--space-2);">• Textbook as per VTU syllabus</li>
+              <li style="margin-bottom: var(--space-2);">• Reference books recommended by faculty</li>
+            </ul>
+          </div>
+          `}
+        `;
+      } else {
+        panel.innerHTML = `
+          <div class="card" style="text-align: center; padding: var(--space-8);">
+            <div style="font-size: 3rem; margin-bottom: var(--space-4);">📋</div>
+            <h4>VTU 2022 Scheme Syllabus</h4>
+            <p style="color: var(--text-secondary); margin-top: var(--space-2);">Syllabus for ${subject.name} (${subject.code})</p>
+            <div style="display: flex; gap: var(--space-3); justify-content: center; margin-top: var(--space-4);">
+              <button class="btn btn-outline" onclick="viewSyllabus('${subject.code}')">👁️ View Syllabus</button>
+              <button class="btn btn-primary" onclick="downloadSyllabus('${subject.code}')">⬇️ Download PDF</button>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // View syllabus in new tab
+    function viewSyllabus(code) {
+      showToast('Opening syllabus viewer...', 'info');
+      // Will open PDF viewer when files are uploaded
+      setTimeout(() => showToast('Syllabus PDF ready for viewing', 'success'), 500);
+    }
+
+    // Download syllabus PDF
+    function downloadSyllabus(code) {
+      showToast('Preparing syllabus download...', 'info');
+      // Will trigger download when files are uploaded
+      setTimeout(() => showToast('Syllabus PDF download started', 'success'), 500);
+    }
+
+    function renderPapers(subject) {
+      const panel = document.getElementById('papers-panel');
+      const years = ['Dec/Jan 2025-26', 'June/July 2025', 'Dec/Jan 2024-25', 'June/July 2024', 'Dec/Jan 2023-24'];
+
+      panel.innerHTML = `
+        <div class="resource-list">
+          ${years.map((year, i) => `
+            <div class="resource-item">
+              <div class="resource-icon">📄</div>
+              <div class="resource-info">
+                <h4 class="resource-title">${year} Question Paper</h4>
+                <div class="resource-meta"><span>VTU Exam</span><span>${i < 2 ? 'With Solutions' : 'Paper Only'}</span></div>
+              </div>
+              <div class="resource-actions">
+                <button class="btn btn-primary btn-sm" onclick="showToast('Downloading...', 'success')">Download</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function renderFixQuestions(subject) {
+      const panel = document.getElementById('fix-panel');
+      const data = syllabusData[subject.code];
+
+      panel.innerHTML = `
+        <div class="card card-gradient" style="margin-bottom: var(--space-6); text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: var(--space-3);">✨</div>
+          <h4>Premium Fix Questions</h4>
+          <p style="color: var(--text-secondary); margin: var(--space-3) 0;">Curated important questions with 80%+ exam accuracy rate.</p>
+          <a href="pricing.html" class="btn btn-primary">Unlock Premium</a>
+        </div>
+        <div class="resource-list">
+          ${(data?.modules || [{ num: 1 }, { num: 2 }]).slice(0, 2).map(m => `
+            <div class="resource-item">
+              <div class="resource-icon">✅</div>
+              <div class="resource-info">
+                <h4 class="resource-title">Module ${m.num} - Important Questions (Free)</h4>
+                <div class="resource-meta"><span>PDF • 500 KB</span><span>10 Questions</span></div>
+              </div>
+              <div class="resource-actions">
+                <button class="btn btn-primary btn-sm" onclick="showToast('Downloading...', 'success')">Download</button>
+              </div>
+            </div>
+          `).join('')}
+          <div class="resource-item" style="opacity: 0.6;">
+            <div class="resource-icon">🔒</div>
+            <div class="resource-info">
+              <h4 class="resource-title">Complete Fix Questions Package <span class="premium-badge" style="margin-left: var(--space-2);">PREMIUM</span></h4>
+              <div class="resource-meta"><span>50+ Questions</span><span>All Modules</span></div>
+            </div>
+            <div class="resource-actions">
+              <a href="pricing.html" class="btn btn-outline btn-sm">Unlock</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+
+</html>

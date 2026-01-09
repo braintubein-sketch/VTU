@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse all VTU study resources - notes, question papers, syllabus, and fix questions.">
+    <title>Resources - Braintube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">🎓</div>
+                <span>Brain<span class="text-gradient">tube</span></span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="branches.html" class="nav-link">Branches</a>
+                <a href="resources.html" class="nav-link active">Resources</a>
+                <a href="pricing.html" class="nav-link">Premium</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-secondary hide-mobile">Login</a>
+                <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="branches.html" class="mobile-nav-link">Branches</a>
+        <a href="resources.html" class="mobile-nav-link">Resources</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Resources</span>
+                </nav>
+                <h1>Study <span class="text-gradient">Resources</span></h1>
+                <p style="max-width: 600px; margin-top: var(--space-4);">Everything you need for VTU exam success -
+                    notes, question papers, syllabus, and curated fix questions.</p>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: var(--space-8);">
+            <div class="container">
+                <!-- Resource Categories -->
+                <div class="branches-grid" style="margin-bottom: var(--space-12);">
+                    <a href="branches.html" class="branch-card">
+                        <div class="branch-icon">📚</div>
+                        <h3 class="branch-name">Notes</h3>
+                        <p class="branch-fullname">Comprehensive study notes for all modules</p>
+                        <div class="branch-meta">
+                            <span class="branch-meta-item">📄 1000+ Documents</span>
+                        </div>
+                    </a>
+
+                    <a href="branches.html" class="branch-card">
+                        <div class="branch-icon">📋</div>
+                        <h3 class="branch-name">Syllabus</h3>
+                        <p class="branch-fullname">Updated VTU syllabus with course outcomes</p>
+                        <div class="branch-meta">
+                            <span class="branch-meta-item">✓ 2022 Scheme</span>
+                        </div>
+                    </a>
+
+                    <a href="branches.html" class="branch-card">
+                        <div class="branch-icon">📄</div>
+                        <h3 class="branch-name">Question Papers</h3>
+                        <p class="branch-fullname">Previous year papers with solutions</p>
+                        <div class="branch-meta">
+                            <span class="branch-meta-item">📅 2020-2026</span>
+                        </div>
+                    </a>
+
+                    <a href="pricing.html" class="branch-card">
+                        <div class="branch-icon">✅</div>
+                        <h3 class="branch-name">Fix Questions</h3>
+                        <p class="branch-fullname">Curated important questions for exams</p>
+                        <div class="branch-meta">
+                            <span class="branch-meta-item">⭐ 80%+ Accuracy</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Quick Access -->
+                <div class="section-header">
+                    <h2>Quick <span class="text-gradient">Access</span></h2>
+                    <p>Jump directly to popular subjects and resources</p>
+                </div>
+
+                <div class="subjects-grid">
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <span class="subject-code">BCS304</span>
+                            <span class="subject-credits">CSE • Sem 3</span>
+                        </div>
+                        <h4 class="subject-name">Data Structures</h4>
+                        <div class="subject-resources">
+                            <span class="resource-tag available">📚 Notes</span>
+                            <span class="resource-tag available">📄 Papers</span>
+                            <span class="resource-tag available">✅ Fix Q</span>
+                        </div>
+                        <div class="subject-actions">
+                            <a href="subject.html?branch=cse&sem=3&code=BCS304" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <span class="subject-code">BCS403</span>
+                            <span class="subject-credits">CSE • Sem 4</span>
+                        </div>
+                        <h4 class="subject-name">Database Management</h4>
+                        <div class="subject-resources">
+                            <span class="resource-tag available">📚 Notes</span>
+                            <span class="resource-tag available">📄 Papers</span>
+                            <span class="resource-tag available">✅ Fix Q</span>
+                        </div>
+                        <div class="subject-actions">
+                            <a href="subject.html?branch=cse&sem=4&code=BCS403" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <span class="subject-code">BCS502</span>
+                            <span class="subject-credits">CSE • Sem 5</span>
+                        </div>
+                        <h4 class="subject-name">Computer Networks</h4>
+                        <div class="subject-resources">
+                            <span class="resource-tag available">📚 Notes</span>
+                            <span class="resource-tag available">📄 Papers</span>
+                            <span class="resource-tag available">✅ Fix Q</span>
+                        </div>
+                        <div class="subject-actions">
+                            <a href="subject.html?branch=cse&sem=5&code=BCS502" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+
+                    <div class="subject-card">
+                        <div class="subject-header">
+                            <span class="subject-code">BCS603</span>
+                            <span class="subject-credits">CSE • Sem 6</span>
+                        </div>
+                        <h4 class="subject-name">Machine Learning</h4>
+                        <div class="subject-resources">
+                            <span class="resource-tag available">📚 Notes</span>
+                            <span class="resource-tag available">📄 Papers</span>
+                            <span class="resource-tag available">✅ Fix Q</span>
+                        </div>
+                        <div class="subject-actions">
+                            <a href="subject.html?branch=cse&sem=6&code=BCS603" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="card card-gradient"
+                    style="text-align: center; padding: var(--space-10); margin-top: var(--space-12);">
+                    <h3 style="margin-bottom: var(--space-3);">Can't find what you're looking for?</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">Browse all branches or
+                        contact us for specific resource requests.</p>
+                    <div class="flex gap-4 justify-center" style="flex-wrap: wrap;">
+                        <a href="branches.html" class="btn btn-primary">Browse All Branches</a>
+                        <a href="contact.html" class="btn btn-secondary">Request Resources</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p class="footer-copyright">© 2026 Braintube. Made with ❤️ for VTU Students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/main.js"></script>
+</body>
+
+</html>

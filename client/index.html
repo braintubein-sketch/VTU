@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VTU Nexus - Your Gateway to VTU Excellence. Access notes, question papers, syllabus, and curated study materials for all VTU branches and semesters.">
+    <meta name="keywords" content="VTU, notes, question papers, syllabus, CSE, ECE, EEE, study materials, engineering">
+    <meta name="author" content="VTU Nexus">
+    <meta name="theme-color" content="#8b5cf6">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Braintube - Your Gateway to VTU Excellence">
+    <meta property="og:description"
+        content="Access comprehensive study materials, notes, and question papers for all VTU engineering branches.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://braintube.site">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://braintube.site">
+
+    <title>Braintube - Your Gateway to VTU Excellence</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/index.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🎓</div>
+                <span>Brain<span class="text-gradient">tube</span></span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/branches.html" class="nav-link">Branches</a>
+                <a href="pages/resources.html" class="nav-link">Resources</a>
+                <a href="pages/pricing.html" class="nav-link">Premium</a>
+                <a href="pages/about.html" class="nav-link">About</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-ghost btn-icon hide-mobile" id="themeToggle" aria-label="Toggle theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2" />
+                        <path d="M12 20v2" />
+                        <path d="m4.93 4.93 1.41 1.41" />
+                        <path d="m17.66 17.66 1.41 1.41" />
+                        <path d="M2 12h2" />
+                        <path d="M20 12h2" />
+                        <path d="m6.34 17.66-1.41 1.41" />
+                        <path d="m19.07 4.93-1.41 1.41" />
+                    </svg>
+                </button>
+                <a href="pages/login.html" class="btn btn-secondary hide-mobile">Login</a>
+                <a href="pages/branches.html" class="btn btn-primary">Get Started</a>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="pages/branches.html" class="mobile-nav-link">Branches</a>
+        <a href="pages/resources.html" class="mobile-nav-link">Resources</a>
+        <a href="pages/pricing.html" class="mobile-nav-link">Premium</a>
+        <a href="pages/about.html" class="mobile-nav-link">About</a>
+        <a href="pages/contact.html" class="mobile-nav-link">Contact</a>
+        <a href="pages/login.html" class="mobile-nav-link">Login</a>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        <span>Trusted by 50,000+ VTU Students</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Your Gateway to<br>
+                        <span class="text-gradient">VTU Excellence</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        Access comprehensive study materials, curated notes, previous year question papers,
+                        and expert-verified fix questions for all VTU engineering branches and semesters.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="pages/branches.html" class="btn btn-primary btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                            Explore Branches
+                        </a>
+                        <a href="#features" class="btn btn-secondary btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polygon points="10 8 16 12 10 16 10 8" />
+                            </svg>
+                            Watch Demo
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">10+</div>
+                            <div class="hero-stat-label">Branches</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">1000+</div>
+                            <div class="hero-stat-label">Study Materials</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">50K+</div>
+                            <div class="hero-stat-label">Students</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Everything You Need to <span class="text-gradient">Excel</span></h2>
+                    <p>Comprehensive resources designed specifically for VTU students, organized for maximum learning
+                        efficiency.</p>
+                </div>
+
+                <div class="branches-grid stagger-children">
+                    <div class="card card-gradient">
+                        <div class="branch-icon">📚</div>
+                        <h4 class="card-title">Comprehensive Notes</h4>
+                        <p class="card-description">Well-organized, easy-to-understand notes for every subject, curated
+                            by toppers and faculty.</p>
+                    </div>
+
+                    <div class="card card-gradient">
+                        <div class="branch-icon">📋</div>
+                        <h4 class="card-title">Updated Syllabus</h4>
+                        <p class="card-description">Always up-to-date VTU syllabus with course outcomes and module-wise
+                            breakdown.</p>
+                    </div>
+
+                    <div class="card card-gradient">
+                        <div class="branch-icon">📄</div>
+                        <h4 class="card-title">Question Papers</h4>
+                        <p class="card-description">Previous year question papers with solutions to help you understand
+                            exam patterns.</p>
+                    </div>
+
+                    <div class="card card-gradient">
+                        <div class="branch-icon">✅</div>
+                        <h4 class="card-title">Fix Questions</h4>
+                        <p class="card-description">Curated important questions with high probability of appearing in
+                            exams.</p>
+                    </div>
+
+                    <div class="card card-gradient">
+                        <div class="branch-icon">🎯</div>
+                        <h4 class="card-title">Smart Navigation</h4>
+                        <p class="card-description">Intuitive branch and semester-wise organization for quick access to
+                            resources.</p>
+                    </div>
+
+                    <div class="card card-gradient">
+                        <div class="branch-icon">📱</div>
+                        <h4 class="card-title">Mobile Friendly</h4>
+                        <p class="card-description">Study anywhere, anytime with our responsive design optimized for all
+                            devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Branches Section -->
+        <section class="section" id="branches" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Choose Your <span class="text-gradient">Branch</span></h2>
+                    <p>Select your engineering department to access tailored study materials and resources.</p>
+                </div>
+
+                <div class="branches-grid stagger-children" id="branchesGrid">
+                    <!-- Branches will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="section" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How <span class="text-gradient">Braintube</span> Works</h2>
+                    <p>Get started in three simple steps and access everything you need for VTU success.</p>
+                </div>
+
+                <div class="branches-grid stagger-children">
+                    <div class="card card-gradient" style="text-align: center;">
+                        <div class="branch-icon" style="margin: 0 auto var(--space-5);">1️⃣</div>
+                        <h4 class="card-title">Select Your Branch</h4>
+                        <p class="card-description">Choose from CSE, ECE, EEE, ME, CV, AI, AIML, and more engineering
+                            branches.</p>
+                    </div>
+
+                    <div class="card card-gradient" style="text-align: center;">
+                        <div class="branch-icon" style="margin: 0 auto var(--space-5);">2️⃣</div>
+                        <h4 class="card-title">Choose Semester</h4>
+                        <p class="card-description">Navigate to your current semester (1-8) to find relevant subjects
+                            and materials.</p>
+                    </div>
+
+                    <div class="card card-gradient" style="text-align: center;">
+                        <div class="branch-icon" style="margin: 0 auto var(--space-5);">3️⃣</div>
+                        <h4 class="card-title">Access Resources</h4>
+                        <p class="card-description">Download notes, question papers, syllabus, and fix questions for
+                            your subjects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Loved by <span class="text-gradient">Students</span></h2>
+                    <p>See what VTU students across Karnataka are saying about VTU Nexus.</p>
+                </div>
+
+                <div class="branches-grid stagger-children">
+                    <div class="card">
+                        <div class="flex gap-4 items-center" style="margin-bottom: var(--space-4);">
+                            <div class="branch-icon" style="width: 48px; height: 48px; font-size: var(--text-xl);">👨‍🎓
+                            </div>
+                            <div>
+                                <h5 style="font-size: var(--text-base);">Rahul Sharma</h5>
+                                <p style="font-size: var(--text-sm); color: var(--text-muted);">CSE, 6th Semester</p>
+                            </div>
+                        </div>
+                        <p class="card-description">"Braintube has been a game-changer for my exam preparation. The fix
+                            questions are incredibly accurate!"</p>
+                        <div style="margin-top: var(--space-3); color: var(--warning-500);">★★★★★</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex gap-4 items-center" style="margin-bottom: var(--space-4);">
+                            <div class="branch-icon" style="width: 48px; height: 48px; font-size: var(--text-xl);">👩‍🎓
+                            </div>
+                            <div>
+                                <h5 style="font-size: var(--text-base);">Priya Patel</h5>
+                                <p style="font-size: var(--text-sm); color: var(--text-muted);">ECE, 4th Semester</p>
+                            </div>
+                        </div>
+                        <p class="card-description">"The organized notes and previous papers helped me score distinction
+                            in my exams. Highly recommended!"</p>
+                        <div style="margin-top: var(--space-3); color: var(--warning-500);">★★★★★</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="flex gap-4 items-center" style="margin-bottom: var(--space-4);">
+                            <div class="branch-icon" style="width: 48px; height: 48px; font-size: var(--text-xl);">👨‍💻
+                            </div>
+                            <div>
+                                <h5 style="font-size: var(--text-base);">Arjun Kumar</h5>
+                                <p style="font-size: var(--text-sm); color: var(--text-muted);">AI & ML, 5th Semester
+                                </p>
+                            </div>
+                        </div>
+                        <p class="card-description">"Clean interface, fast downloads, and up-to-date content. Braintube
+                            is the best VTU resource platform!"</p>
+                        <div style="margin-top: var(--space-3); color: var(--warning-500);">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="card card-gradient"
+                    style="text-align: center; padding: var(--space-12); max-width: 800px; margin: 0 auto;">
+                    <h2 style="margin-bottom: var(--space-4);">Ready to <span class="text-gradient">Excel</span> in VTU?
+                    </h2>
+                    <p style="margin: 0 auto var(--space-8); max-width: 500px;">Join thousands of VTU students who are
+                        already using VTU Nexus to ace their exams.</p>
+                    <div class="flex gap-4 justify-center" style="flex-wrap: wrap;">
+                        <a href="pages/branches.html" class="btn btn-primary btn-lg">
+                            Start Exploring Free
+                        </a>
+                        <a href="pages/pricing.html" class="btn btn-secondary btn-lg">
+                            View Premium Plans
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: var(--space-4);">
+                        <div class="logo-icon">🎓</div>
+                        <span>Brain<span class="text-gradient">tube</span></span>
+                    </a>
+                    <p>Your trusted companion for VTU exam success. Access comprehensive study materials, notes, and
+                        resources for all engineering branches.</p>
+                    <div class="footer-social" style="margin-top: var(--space-4);">
+                        <a href="#" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                <path d="m10 15 5-3-5-3z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Telegram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="m22 2-7 20-4-9-9-4Z" />
+                                <path d="M22 2 11 13" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="pages/branches.html" class="footer-link">All Branches</a>
+                        <a href="pages/resources.html" class="footer-link">Resources</a>
+                        <a href="pages/pricing.html" class="footer-link">Premium Plans</a>
+                        <a href="pages/about.html" class="footer-link">About Us</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Branches</h4>
+                    <div class="footer-links">
+                        <a href="pages/branch.html?branch=cse" class="footer-link">Computer Science</a>
+                        <a href="pages/branch.html?branch=ece" class="footer-link">Electronics & Comm.</a>
+                        <a href="pages/branch.html?branch=eee" class="footer-link">Electrical & Electronics</a>
+                        <a href="pages/branch.html?branch=me" class="footer-link">Mechanical</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Support</h4>
+                    <div class="footer-links">
+                        <a href="pages/contact.html" class="footer-link">Contact Us</a>
+                        <a href="pages/faq.html" class="footer-link">FAQs</a>
+                        <a href="pages/privacy.html" class="footer-link">Privacy Policy</a>
+                        <a href="pages/terms.html" class="footer-link">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2026 Braintube. All rights reserved. Made with ❤️ for VTU Students.</p>
+                <p class="footer-copyright">Not affiliated with Visvesvaraya Technological University.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts/data.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

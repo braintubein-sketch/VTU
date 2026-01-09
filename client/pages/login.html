@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to VTU Nexus to access your premium resources and track your progress.">
+    <title>Login - Braintube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-6);
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 420px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            backdrop-filter: blur(20px);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .auth-tabs {
+            display: flex;
+            margin-bottom: var(--space-6);
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-1);
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: var(--space-3);
+            background: none;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .auth-tab.active {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+            color: var(--text-muted);
+            font-size: var(--text-sm);
+        }
+
+        .auth-divider::before,
+        .auth-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="../index.html" class="logo" style="justify-content: center; margin-bottom: var(--space-6);">
+                    <div class="logo-icon">🎓</div>
+                    <span>Brain<span class="text-gradient">tube</span></span>
+                </a>
+                <h2>Welcome Back</h2>
+                <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-top: var(--space-2);">Access
+                    your premium study materials</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="showTab('login')">Login</button>
+                <button class="auth-tab" onclick="showTab('register')">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="form">
+                <div class="form-group">
+                    <label class="form-label" for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+                </div>
+                <div class="flex justify-between items-center" style="margin-bottom: var(--space-4);">
+                    <label
+                        style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--text-secondary);">
+                        <input type="checkbox" style="accent-color: var(--primary-500);"> Remember me
+                    </label>
+                    <a href="#" style="font-size: var(--text-sm);">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Login</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="form" style="display: none;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="regName">Full Name</label>
+                        <input type="text" id="regName" class="form-input" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="regPhone">Phone</label>
+                        <input type="tel" id="regPhone" class="form-input" placeholder="+91 XXXXX">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="regPassword">Password</label>
+                    <input type="password" id="regPassword" class="form-input" placeholder="Min 6 characters" required
+                        minlength="6">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="regBranch">Branch</label>
+                        <select id="regBranch" class="form-select" required>
+                            <option value="cse">CSE</option>
+                            <option value="ece">ECE</option>
+                            <option value="eee">EEE</option>
+                            <option value="me">ME</option>
+                            <option value="cv">CV</option>
+                            <option value="ise">ISE</option>
+                            <option value="aiml">AI & ML</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="regSemester">Semester</label>
+                        <select id="regSemester" class="form-select" required>
+                            <option value="3">3rd</option>
+                            <option value="4">4th</option>
+                            <option value="5">5th</option>
+                            <option value="6">6th</option>
+                            <option value="7">7th</option>
+                            <option value="8">8th</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Create Account</button>
+            </form>
+
+            <div class="auth-divider">or continue with</div>
+
+            <button class="btn btn-secondary" style="width: 100%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" />
+                </svg>
+                Continue with Google
+            </button>
+
+            <p
+                style="text-align: center; margin-top: var(--space-6); font-size: var(--text-sm); color: var(--text-muted);">
+                By continuing, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy
+                    Policy</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="../scripts/main.js"></script>
+    <script>
+        function showTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`.auth-tab:${tab === 'login' ? 'first-child' : 'last-child'}`).classList.add('active');
+            document.getElementById('loginForm').style.display = tab === 'login' ? 'flex' : 'none';
+            document.getElementById('registerForm').style.display = tab === 'register' ? 'flex' : 'none';
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Logging in...';
+
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            showToast('Login successful! Redirecting...', 'success');
+
+            setTimeout(() => {
+                window.location.href = '../index.html';
+            }, 1500);
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Creating account...';
+
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            showToast('Account created! Please login.', 'success');
+
+            btn.disabled = false;
+            btn.textContent = 'Create Account';
+            showTab('login');
+        });
+    </script>
+</body>
+
+</html>
