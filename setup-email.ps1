@@ -22,8 +22,9 @@ JWT_SECRET=your-super-secret-jwt-key-change-in-production
 JWT_EXPIRE=7d
 
 # Razorpay Payment Gateway
-RAZORPAY_KEY_ID=rzp_live_S0Kmp76N5YOycD
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+RAZORPAY_KEY_ID=rzp_live_S25ts3CzL7SySi
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret_here
+RAZORPAY_WEBHOOK_SECRET=your_webhook_secret_here
 
 # Email Configuration (SMTP) - CONFIGURED FOR braintube.in@gmail.com
 SMTP_HOST=smtp.gmail.com
@@ -36,7 +37,7 @@ EMAIL_FROM=Braintube <braintube.in@gmail.com>
 ADMIN_EMAIL=braintube.in@gmail.com
 
 # Frontend URL (for CORS)
-CLIENT_URL=http://localhost:3000
+CLIENT_URL=https://braintube.site
 
 # Admin Credentials
 ADMIN_PASSWORD=secure-admin-password
