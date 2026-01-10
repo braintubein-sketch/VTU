@@ -26,13 +26,14 @@ const orders = new Map();
 // Pricing plans
 const plans = {
     premium: { amount: 19900, currency: 'INR', name: 'Premium Plan', duration: 'semester' },
-    ultimate: { amount: 49900, currency: 'INR', name: 'Ultimate Plan', duration: 'year' }
+    ultimate: { amount: 49900, currency: 'INR', name: 'Ultimate Plan', duration: 'year' },
+    fix_questions: { amount: 7900, currency: 'INR', name: 'Fix Questions', duration: 'subject' }
 };
 
 // Create order
 router.post('/create-order', async (req, res) => {
     try {
-        const { planId, email, phone, branch, semester } = req.body;
+        const { planId, email, phone, branch, semester, subjectCode, subjectName } = req.body;
 
         // Validate plan
         const plan = plans[planId];
@@ -41,8 +42,8 @@ router.post('/create-order', async (req, res) => {
         }
 
         // Validate required fields
-        if (!email || !phone) {
-            return res.status(400).json({ success: false, error: 'Email and phone are required' });
+        if (!email) {
+            return res.status(400).json({ success: false, error: 'Email is required' });
         }
 
         if (razorpay) {
@@ -55,8 +56,10 @@ router.post('/create-order', async (req, res) => {
                 notes: {
                     planId,
                     email,
-                    branch,
-                    semester
+                    branch: branch || 'N/A',
+                    semester: semester || 'N/A',
+                    subjectCode: subjectCode || 'N/A',
+                    subjectName: subjectName || 'N/A'
                 }
             };
 

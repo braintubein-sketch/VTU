@@ -1131,50 +1131,71 @@
     }
 
     // Payment handler function with Razorpay
-    function handlePayment(subjectCode, subjectName, amount, userName, userEmail) {
-      const amountInPaise = amount * 100;
-
-      const options = {
-        key: RAZORPAY_KEY_ID,
-        amount: amountInPaise,
-        currency: 'INR',
-        name: 'Braintube',
-        description: `Fix Questions - ${subjectCode}`,
-        image: 'https://braintube.site/assets/logo.png',
-        handler: function (response) {
-          handlePaymentSuccess(response, subjectCode, subjectName, amount, userName, userEmail);
-        },
-        prefill: {
-          name: userName || '',
-          email: userEmail || '',
-          contact: ''
-        },
-        notes: {
-          subject_code: subjectCode,
-          subject_name: subjectName,
-          customer_name: userName,
-          customer_email: userEmail,
-          product: 'Fix Questions'
-        },
-        theme: {
-          color: '#764ba2'
-        },
-        modal: {
-          ondismiss: function () {
-            showToast('Payment cancelled', 'error');
-          }
-        }
-      };
-
+    async function handlePayment(subjectCode, subjectName, amount, userName, userEmail) {
       try {
+        showToast('Initiating secure payment...', 'success');
+
+        // Step 1: Create Order on the Server
+        const orderResponse = await fetch('/api/payments/create-order', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            planId: 'fix_questions',
+            email: userEmail,
+            subjectCode: subjectCode,
+            subjectName: subjectName,
+            name: userName
+          })
+        });
+
+        const orderData = await orderResponse.json();
+
+        if (!orderData.success) {
+          throw new Error(orderData.error || 'Failed to create order');
+        }
+
+        const options = {
+          key: orderData.key || RAZORPAY_KEY_ID,
+          amount: orderData.order.amount,
+          currency: orderData.order.currency,
+          name: 'Braintube',
+          description: `Fix Questions - ${subjectCode}`,
+          order_id: orderData.order.id, // CRITICAL: Use Order ID for auto-capture
+          image: 'https://braintube.site/assets/logo.png',
+          handler: function (response) {
+            handlePaymentSuccess(response, subjectCode, subjectName, amount, userName, userEmail);
+          },
+          prefill: {
+            name: userName || '',
+            email: userEmail || '',
+            contact: ''
+          },
+          notes: {
+            subject_code: subjectCode,
+            subject_name: subjectName,
+            customer_name: userName,
+            customer_email: userEmail,
+            product: 'Fix Questions'
+          },
+          theme: {
+            color: '#764ba2'
+          },
+          modal: {
+            ondismiss: function () {
+              showToast('Payment cancelled', 'error');
+            }
+          }
+        };
+
         const rzp = new Razorpay(options);
         rzp.on('payment.failed', function (response) {
           handlePaymentFailure(response);
         });
         rzp.open();
+
       } catch (error) {
-        console.error('Razorpay error:', error);
-        showToast('Payment gateway error. Please try again.', 'error');
+        console.error('Razorpay process error:', error);
+        showToast('Payment initialization failed. Please try again.', 'error');
       }
     }
 
