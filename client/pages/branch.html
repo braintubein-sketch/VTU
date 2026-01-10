@@ -166,7 +166,9 @@
             if (subjects.length === 0) {
                 grid.innerHTML = `
           <div class="card" style="grid-column: 1 / -1; text-align: center; padding: var(--space-12);">
-            <div style="font-size: 3rem; margin-bottom: var(--space-4);">📚</div>
+            <div style="margin-bottom: var(--space-4); color: var(--primary-400);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto;"><path d="M4 19.5V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v15.5a2.5 2.5 0 0 0 2.5 2.5c.34 0 .68-.03 1-.1"/><path d="M6 2h10"/><path d="M12 2v20"/><path d="M6 14h12"/><path d="M18 11V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v15a2.5 2.5 0 0 1 2.5-2.5H18"/></svg>
+            </div>
             <h4>Coming Soon</h4>
             <p style="color: var(--text-secondary); margin-top: var(--space-2);">
               Resources for this semester are being prepared. Check back soon!
@@ -180,14 +182,32 @@
         <div class="subject-card">
           <div class="subject-header">
             <span class="subject-code">${subject.code}</span>
-            <span class="subject-credits">📖 ${subject.credits} Credits</span>
+            <span class="subject-credits" style="display: flex; align-items: center; gap: 4px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+              ${subject.credits} Credits
+            </span>
           </div>
           <h4 class="subject-name">${subject.name}</h4>
           <div class="subject-resources">
-            ${subject.hasNotes ? '<span class="resource-tag available">📚 Notes</span>' : ''}
-            <span class="resource-tag available">📋 Syllabus</span>
-            ${subject.hasQP ? '<span class="resource-tag available">📄 Papers</span>' : ''}
-            ${subject.hasFix ? '<span class="resource-tag available">✅ Fix Q</span>' : ''}
+            ${subject.hasNotes ? `
+              <span class="resource-tag available" style="display: flex; align-items: center; gap: 4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                Notes
+              </span>` : ''}
+            <span class="resource-tag available" style="display: flex; align-items: center; gap: 4px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/></svg>
+              Syllabus
+            </span>
+            ${subject.hasQP ? `
+              <span class="resource-tag available" style="display: flex; align-items: center; gap: 4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Papers
+              </span>` : ''}
+            ${subject.hasFix ? `
+              <span class="resource-tag available" style="display: flex; align-items: center; gap: 4px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Fix Q
+              </span>` : ''}
           </div>
           <div class="subject-actions">
             <a href="subject.html?branch=${currentBranch.id}&sem=${currentSemester}&code=${subject.code}" class="btn btn-primary">

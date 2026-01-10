@@ -6,14 +6,14 @@
 const VTUData = {
   // All VTU Branches (2022 Scheme)
   branches: [
-    { id: 'cse', name: 'CSE', fullName: 'Computer Science & Engineering', icon: '💻', subjects: 52, documents: 520 },
-    { id: 'aiml', name: 'AI & ML', fullName: 'Artificial Intelligence & Machine Learning', icon: '🤖', subjects: 48, documents: 480 },
-    { id: 'ise', name: 'ISE', fullName: 'Information Science & Engineering', icon: '🖥️', subjects: 50, documents: 500 },
-    { id: 'ece', name: 'ECE', fullName: 'Electronics & Communication Engineering', icon: '📡', subjects: 52, documents: 520 },
-    { id: 'eee', name: 'EEE', fullName: 'Electrical & Electronics Engineering', icon: '⚡', subjects: 50, documents: 500 },
-    { id: 'me', name: 'ME', fullName: 'Mechanical Engineering', icon: '⚙️', subjects: 52, documents: 520 },
-    { id: 'cv', name: 'CV', fullName: 'Civil Engineering', icon: '🏗️', subjects: 50, documents: 500 },
-    { id: 'ds', name: 'DS', fullName: 'Data Science', icon: '📊', subjects: 46, documents: 460 }
+    { id: 'cse', name: 'CSE', fullName: 'Computer Science & Engineering', icon: 'laptop', subjects: 52, documents: 520 },
+    { id: 'aiml', name: 'AI & ML', fullName: 'Artificial Intelligence & Machine Learning', icon: 'brain', subjects: 48, documents: 480 },
+    { id: 'ise', name: 'ISE', fullName: 'Information Science & Engineering', icon: 'database', subjects: 50, documents: 500 },
+    { id: 'ece', name: 'ECE', fullName: 'Electronics & Communication Engineering', icon: 'radio', subjects: 52, documents: 520 },
+    { id: 'eee', name: 'EEE', fullName: 'Electrical & Electronics Engineering', icon: 'zap', subjects: 50, documents: 500 },
+    { id: 'me', name: 'ME', fullName: 'Mechanical Engineering', icon: 'cog', subjects: 52, documents: 520 },
+    { id: 'cv', name: 'CV', fullName: 'Civil Engineering', icon: 'building', subjects: 50, documents: 500 },
+    { id: 'ds', name: 'DS', fullName: 'Data Science', icon: 'chart', subjects: 46, documents: 460 }
   ],
 
   semesters: [
