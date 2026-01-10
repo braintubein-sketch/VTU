@@ -1,5 +1,5 @@
 /**
- * VTU Nexus - Backend Server
+ * Braintube - Backend Server
  * Main entry point for the Express.js application
  */
 

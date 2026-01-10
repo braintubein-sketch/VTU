@@ -1,5 +1,5 @@
 /**
- * VTU Nexus - Branch Routes
+ * Braintube - Branch Routes
  */
 
 const express = require('express');

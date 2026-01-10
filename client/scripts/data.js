@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Braintube - Complete VTU 2022 Scheme Academic Content
  * All Branches | All Semesters | Full Syllabus & Notes
  */

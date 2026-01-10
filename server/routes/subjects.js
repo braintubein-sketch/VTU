@@ -1,5 +1,5 @@
 /**
- * VTU Nexus - Subject Routes
+ * Braintube - Subject Routes
  */
 
 const express = require('express');

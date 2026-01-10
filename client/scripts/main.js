@@ -1,5 +1,5 @@
 /**
- * VTU Nexus - Main JavaScript
+ * Braintube - Main JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', () => {

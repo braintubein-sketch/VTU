@@ -1,5 +1,5 @@
 /**
- * VTU Nexus - Contact Routes with Email Notifications
+ * Braintube - Contact Routes with Email Notifications
  */
 
 const express = require('express');
@@ -85,16 +85,16 @@ router.post('/', validateContact, async (req, res) => {
                 await transporter.sendMail({
                     from: process.env.EMAIL_FROM || 'noreply@vtunexus.com',
                     to: email,
-                    subject: 'We received your message - VTU Nexus',
+                    subject: 'We received your message - Braintube',
                     html: `
-            <h2>Thank you for contacting VTU Nexus!</h2>
+            <h2>Thank you for contacting Braintube!</h2>
             <p>Hi ${name},</p>
             <p>We have received your message and will get back to you within 24 hours.</p>
             <p><strong>Your inquiry:</strong></p>
             <blockquote style="border-left: 3px solid #8b5cf6; padding-left: 16px; margin-left: 0;">
               ${message}
             </blockquote>
-            <p>Best regards,<br>VTU Nexus Team</p>
+            <p>Best regards,<br>Braintube Team</p>
           `
                 });
 

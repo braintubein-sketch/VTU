@@ -1,5 +1,5 @@
 /**
- * VTU Nexus - Authentication Routes
+ * Braintube - Authentication Routes
  */
 
 const express = require('express');

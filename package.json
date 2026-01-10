@@ -17,7 +17,7 @@
         "question-papers",
         "syllabus"
     ],
-    "author": "VTU Nexus Team",
+    "author": "Braintube Team",
     "license": "MIT",
     "dependencies": {
         "bcryptjs": "^2.4.3",

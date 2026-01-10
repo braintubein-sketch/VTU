@@ -1,5 +1,5 @@
 /**
- * VTU Nexus - Payment Routes (Razorpay Integration)
+ * Braintube - Payment Routes (Razorpay Integration)
  */
 
 const express = require('express');
