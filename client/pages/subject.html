@@ -975,6 +975,56 @@
       const panel = document.getElementById('fix-panel');
       const data = syllabusData[subject.code];
 
+      // Check if user has already purchased this subject
+      if (hasPurchased(subject.code)) {
+        // Render the actual questions
+        const fixData = data?.fixQuestions;
+
+        if (!fixData) {
+          panel.innerHTML = `
+            <div class="card card-gradient" style="text-align: center; padding: var(--space-10);">
+              <h3 style="margin-bottom: var(--space-3);">Questions Processing</h3>
+              <p style="color: var(--text-secondary);">Thank you for your purchase! We are finalizing the Fix Questions for ${subject.code}. You will receive a PDF on your email shortly.</p>
+            </div>
+          `;
+          return;
+        }
+
+        panel.innerHTML = `
+          <div class="resource-list">
+            <div class="card card-gradient" style="margin-bottom: var(--space-6); padding: var(--space-4);">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4);">
+                <div>
+                  <h3 style="margin: 0; color: white;">Fix Questions Unlocked</h3>
+                  <p style="margin: 0; color: rgba(255,255,255,0.8); font-size: var(--text-sm);">Important questions for ${subject.code}</p>
+                </div>
+                <button class="btn" style="background: white; color: #764ba2;" onclick="showToast('Downloading Fix Questions PDF...', 'success')">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  Download PDF
+                </button>
+              </div>
+            </div>
+            
+            ${Object.entries(fixData).map(([moduleKey, questions]) => `
+              <div class="card" style="margin-bottom: var(--space-4);">
+                <h4 style="margin-bottom: var(--space-4); color: var(--primary-400); text-transform: capitalize;">${moduleKey.replace('module', 'Module ')}</h4>
+                <ul class="resource-list" style="border: none; padding: 0;">
+                  ${questions.map((q, idx) => `
+                    <li class="resource-item" style="border: none; padding: var(--space-2) 0; align-items: start;">
+                      <div class="resource-icon" style="width: 24px; height: 24px; font-size: 10px; flex-shrink: 0; margin-top: 4px;">${idx + 1}</div>
+                      <div class="resource-info">
+                        <p style="color: var(--text-primary); font-size: var(--text-base); margin: 0; line-height: 1.5;">${q}</p>
+                      </div>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        return;
+      }
+
       // Show premium payment for ALL subjects with hasFix: true
       if (subject.hasFix) {
         // Premium fix questions - locked with payment form
@@ -1335,8 +1385,8 @@
       const modal = document.getElementById('thank-you-modal');
       if (modal) modal.remove();
 
-      // Refresh the page to show content (or redirect)
-      showToast('Thank you for your purchase!', 'success');
+      // Refresh the page to show unlocked content
+      window.location.reload();
     }
 
     // Check if user has purchased this subject
