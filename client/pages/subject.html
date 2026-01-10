@@ -1200,27 +1200,54 @@
     }
 
     // Handle successful payment - Show Thank You page
-    function handlePaymentSuccess(response, subjectCode, subjectName, amount, userName, userEmail) {
+    async function handlePaymentSuccess(response, subjectCode, subjectName, amount, userName, userEmail) {
       console.log('Payment successful:', response);
 
-      // Store payment info
-      const purchasedItems = JSON.parse(localStorage.getItem('braintube_purchases') || '[]');
-      purchasedItems.push({
-        subjectCode,
-        subjectName,
-        amount,
-        userName,
-        userEmail,
-        paymentId: response.razorpay_payment_id,
-        purchasedAt: new Date().toISOString()
-      });
-      localStorage.setItem('braintube_purchases', JSON.stringify(purchasedItems));
+      try {
+        showToast('Verifying payment...', 'success');
 
-      // Submit to backend for email notifications
-      submitFixQuestionsForm(userName, userEmail, subjectCode, subjectName, response.razorpay_payment_id, amount);
+        // Step 1: Verify Payment on the Server
+        const verifyResponse = await fetch('/api/payments/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature
+          })
+        });
 
-      // Show Thank You page
-      showThankYouPage(subjectCode, subjectName, response.razorpay_payment_id, userName);
+        const verifyData = await verifyResponse.json();
+
+        if (!verifyData.success) {
+          throw new Error(verifyData.error || 'Payment verification failed');
+        }
+
+        // Store payment info
+        const purchasedItems = JSON.parse(localStorage.getItem('braintube_purchases') || '[]');
+        purchasedItems.push({
+          subjectCode,
+          subjectName,
+          amount,
+          userName,
+          userEmail,
+          paymentId: response.razorpay_payment_id,
+          orderId: response.razorpay_order_id,
+          purchasedAt: new Date().toISOString()
+        });
+        localStorage.setItem('braintube_purchases', JSON.stringify(purchasedItems));
+
+        // Submit to backend for fulfillment (already handled inside the verify route on server now)
+        // However, we still call the submissions API if we want a separate record
+        submitFixQuestionsForm(userName, userEmail, subjectCode, subjectName, response.razorpay_payment_id, amount);
+
+        // Show Thank You page
+        showThankYouPage(subjectCode, subjectName, response.razorpay_payment_id, userName);
+
+      } catch (error) {
+        console.error('Verification error:', error);
+        showToast(error.message || 'Verification failed. Please contact support.', 'error');
+      }
     }
 
     // Submit fix questions form to backend

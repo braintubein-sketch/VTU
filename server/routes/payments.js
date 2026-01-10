@@ -5,6 +5,25 @@
 const express = require('express');
 const router = express.Router();
 const crypto = require('crypto');
+const nodemailer = require('nodemailer');
+
+// Initialize Email Transporter
+let transporter = null;
+try {
+    if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+        transporter = nodemailer.createTransport({
+            host: process.env.SMTP_HOST || 'smtp.gmail.com',
+            port: parseInt(process.env.SMTP_PORT) || 587,
+            secure: false,
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS
+            }
+        });
+    }
+} catch (error) {
+    console.log('Email transporter error in payments route');
+}
 
 // Initialize Razorpay (configure in production)
 let razorpay = null;
@@ -51,9 +70,10 @@ router.post('/create-order', async (req, res) => {
             const options = {
                 amount: plan.amount,
                 currency: plan.currency,
-                receipt: `order_${Date.now()}`,
+                receipt: `REC_${Date.now().toString().slice(-8)}`,
                 payment_capture: 1,  // Auto-capture payment (1 = auto, 0 = manual)
                 notes: {
+                    name: req.body.name || 'Student',
                     planId,
                     email,
                     branch: branch || 'N/A',
@@ -144,13 +164,78 @@ router.post('/verify', async (req, res) => {
                 return res.status(400).json({ success: false, error: 'Invalid signature' });
             }
 
+            // Optional: Fetch payment details from Razorpay to confirm capture status
+            let paymentDetails = null;
+            try {
+                paymentDetails = await razorpay.payments.fetch(razorpay_payment_id);
+                console.log(`Payment ${razorpay_payment_id} status: ${paymentDetails.status}`);
+
+                // If it's authorized but not captured (rare with payment_capture: 1), capture it now
+                if (paymentDetails.status === 'authorized') {
+                    console.log(`Manually capturing payment ${razorpay_payment_id}`);
+                    await razorpay.payments.capture(razorpay_payment_id, paymentDetails.amount, paymentDetails.currency);
+                    paymentDetails.status = 'captured';
+                }
+            } catch (err) {
+                console.error('Error fetching/capturing payment from Razorpay:', err);
+                // Continue anyway if verification was successful, or handle error
+            }
+
             // Update order status
             order.status = 'paid';
             order.paymentId = razorpay_payment_id;
+            order.razorpayDetails = paymentDetails; // Store details
             orders.set(razorpay_order_id, order);
 
-            // TODO: Send confirmation email
-            // TODO: Update user premium status in database
+            // AUTOMATED FULFILLMENT (Real-time system)
+            if (transporter && order.notes) {
+                try {
+                    const isFixQ = order.notes.planId === 'fix_questions';
+                    const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER;
+
+                    // 1. Send Email to Admin
+                    await transporter.sendMail({
+                        from: `"Braintube Payments" <${process.env.SMTP_USER}>`,
+                        to: adminEmail,
+                        subject: `💰 New Payment Verified - ${order.notes.planId}`,
+                        html: `
+                            <h2>New Payment Received</h2>
+                            <p><strong>Customer:</strong> ${order.notes.name}</p>
+                            <p><strong>Email:</strong> ${order.notes.email}</p>
+                            <p><strong>Plan:</strong> ${order.notes.planId}</p>
+                            <p><strong>Amount:</strong> ₹${order.amount / 100}</p>
+                            ${isFixQ ? `<p><strong>Subject:</strong> ${order.notes.subjectCode} - ${order.notes.subjectName}</p>` : ''}
+                            <p><strong>Payment ID:</strong> ${razorpay_payment_id}</p>
+                        `
+                    });
+
+                    // 2. Send Email to Customer
+                    await transporter.sendMail({
+                        from: `"Braintube" <${process.env.SMTP_USER}>`,
+                        to: order.notes.email,
+                        subject: `Thank you for your purchase - Braintube`,
+                        html: `
+                            <div style="font-family: Arial, sans-serif; max-width: 600px; border: 1px solid #eee; padding: 20px;">
+                                <h2 style="color: #764ba2;">Payment Successful! 🎉</h2>
+                                <p>Dear ${order.notes.name},</p>
+                                <p>We've received your payment of <strong>₹${order.amount / 100}</strong> for the <strong>${order.notes.planId.replace('_', ' ')}</strong>.</p>
+                                ${isFixQ ? `
+                                <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                                    <h3 style="margin-top: 0;">Order Details:</h3>
+                                    <p>Subject: ${order.notes.subjectCode} - ${order.notes.subjectName}</p>
+                                    <p>We will send your Fix Questions PDF to this email within 24 hours.</p>
+                                </div>` : ''}
+                                <p><strong>Payment ID:</strong> ${razorpay_payment_id}</p>
+                                <p>If you have any questions, please contact us on WhatsApp: +91 8884624741</p>
+                                <br>
+                                <p>Happy Learning!<br>Team Braintube</p>
+                            </div>
+                        `
+                    });
+                } catch (emailError) {
+                    console.error('Fulfillment Email Error:', emailError);
+                }
+            }
 
             res.json({
                 success: true,

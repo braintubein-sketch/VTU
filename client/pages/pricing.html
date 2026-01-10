@@ -445,9 +445,32 @@
                     description: `${selectedPlan.toUpperCase()} Plan Subscription`,
                     order_id: data.order.id, // Auto-capture enabled via this ID
                     image: 'https://braintube.site/assets/logo.png',
-                    handler: function (response) {
-                        showToast('Payment successful! Redirecting...', 'success');
-                        window.location.href = `contact.html?status=success&payment_id=${response.razorpay_payment_id}`;
+                    handler: async function (response) {
+                        try {
+                            showToast('Verifying payment...', 'success');
+
+                            const verifyResponse = await fetch('/api/payments/verify', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    razorpay_order_id: response.razorpay_order_id,
+                                    razorpay_payment_id: response.razorpay_payment_id,
+                                    razorpay_signature: response.razorpay_signature
+                                })
+                            });
+
+                            const verifyData = await verifyResponse.json();
+
+                            if (verifyData.success) {
+                                showToast('Payment successful! Redirecting...', 'success');
+                                window.location.href = `contact.html?status=success&payment_id=${response.razorpay_payment_id}`;
+                            } else {
+                                throw new Error(verifyData.error || 'Verification failed');
+                            }
+                        } catch (err) {
+                            console.error('Verification error:', err);
+                            showToast('Verification failed. Please contact support.', 'error');
+                        }
                     },
                     prefill: {
                         email: email,
