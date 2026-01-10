@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
+    <!-- Razorpay Checkout Script -->
+    <link rel="preconnect" href="https://checkout.razorpay.com">
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 
@@ -418,6 +420,16 @@
             try {
                 showToast('Initiating secure payment...', 'success');
 
+                // Get and disable button
+                const modalFooter = document.querySelector('#paymentModal .modal-footer');
+                const submitBtn = modalFooter.querySelectorAll('button')[1];
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="loader-spinner"></span> Initializing...';
+
+                // Warm up backend
+                if (typeof pingBackend === 'function') pingBackend();
+
                 // Step 1: Create Order on the Server
                 const response = await fetch(getApiUrl('/api/payments/create-order'), {
                     method: 'POST',
@@ -484,11 +496,21 @@
 
                 const rzp = new Razorpay(options);
                 rzp.open();
+
+                // Restore button state and close modal
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
                 closeModal('paymentModal');
 
             } catch (error) {
                 console.error('Payment error:', error);
                 showToast(`Payment failed: ${error.message}`, 'error');
+
+                // Reset button state
+                const modalFooter = document.querySelector('#paymentModal .modal-footer');
+                const submitBtn = modalFooter.querySelectorAll('button')[1];
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Pay Now';
             }
         }
     </script>

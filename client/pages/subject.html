@@ -15,6 +15,7 @@
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
   <!-- Razorpay Checkout Script -->
+  <link rel="preconnect" href="https://checkout.razorpay.com">
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 
@@ -180,7 +181,6 @@
   <script src="../scripts/syllabus.js"></script>
   <script src="../scripts/syllabus-extended.js"></script>
   <script src="../scripts/syllabus-complete.js"></script>
-  <script src="../scripts/main.js"></script>
   <script>
     // Syllabus data for all subjects
     const syllabusData = {
@@ -1116,9 +1116,18 @@
         // Store user info
         paymentUserInfo = { name, email, subjectCode, subjectName };
 
-        // Close form and open Razorpay
-        closePaymentForm();
-        handlePayment(subjectCode, subjectName, amount, name, email);
+        // Disable button and show loading state
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loader-spinner"></span> Initializing...';
+
+        // Final backend wake-up check
+        if (typeof pingBackend === 'function') pingBackend();
+
+        handlePayment(subjectCode, subjectName, amount, name, email).finally(() => {
+          // Close form only if handlePayment is done (rzp.open() is synchronous but create-order isn't)
+          // We close it inside handlePayment usually, but it's safe here too
+        });
       });
     }
 
@@ -1189,6 +1198,10 @@
         rzp.on('payment.failed', function (response) {
           handlePaymentFailure(response);
         });
+
+        // Close the temporary form modal before opening the official Razorpay popup
+        closePaymentForm();
+
         rzp.open();
 
       } catch (error) {

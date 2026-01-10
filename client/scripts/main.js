@@ -8,7 +8,25 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initBranchesGrid();
     initScrollAnimations();
+
+    // Warm up the backend to prevent cold start delays during payment
+    const paymentPages = ['pricing.html', 'subject.html', 'branches.html'];
+    if (paymentPages.some(page => window.location.pathname.includes(page))) {
+        pingBackend();
+    }
 });
+
+// Simple fetch to wake up the backend if it's sleeping (Render free tier)
+async function pingBackend() {
+    try {
+        if (typeof getApiUrl === 'function') {
+            // Use a lightweight endpoint to wake the server
+            fetch(getApiUrl('/api/branches')).catch(() => { });
+        }
+    } catch (e) {
+        // Ignore errors, this is just a warm-up
+    }
+}
 
 // Header scroll effect
 function initHeader() {

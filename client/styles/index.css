@@ -456,6 +456,22 @@ ol {
     border-radius: var(--radius-lg);
 }
 
+.loader-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* ==========================================
    CARD COMPONENTS
    ========================================== */
@@ -1869,7 +1885,7 @@ ol {
         justify-content: space-between;
         align-items: flex-start;
     }
-    
+
     .footer-bottom-right {
         text-align: right;
     }
@@ -1881,124 +1897,126 @@ ol {
 
 /* Fix mobile menu and navigation glitches */
 @media (max-width: 767px) {
+
     /* Prevent horizontal scroll */
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
         width: 100%;
     }
-    
+
     /* Better hero spacing on mobile */
     .hero {
         min-height: auto;
         padding: calc(72px + var(--space-8)) 0 var(--space-12);
     }
-    
+
     .hero-title {
         font-size: clamp(1.75rem, 8vw, 2.5rem);
     }
-    
+
     .hero-subtitle {
         font-size: var(--text-base);
     }
-    
+
     .hero-stats {
         gap: var(--space-4);
     }
-    
+
     .hero-stat-value {
         font-size: var(--text-2xl);
     }
-    
+
     .hero-actions {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .hero-actions .btn {
         width: 100%;
         justify-content: center;
     }
-    
+
     /* Better card grid on mobile */
     .branches-grid {
         grid-template-columns: 1fr;
         gap: var(--space-4);
     }
-    
+
     .subjects-grid {
         grid-template-columns: 1fr;
         gap: var(--space-4);
     }
-    
+
     /* Better section padding on mobile */
     .section {
         padding: var(--space-10) 0;
     }
-    
+
     .section-header {
         margin-bottom: var(--space-8);
     }
-    
+
     .section-header h2 {
         font-size: clamp(1.5rem, 6vw, 2rem);
     }
-    
+
     /* Fix footer on mobile */
     .footer {
         padding: var(--space-10) 0 var(--space-6);
     }
-    
+
     .footer-grid {
         grid-template-columns: 1fr;
         gap: var(--space-6);
     }
-    
+
     .footer-brand p {
         max-width: 100%;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: var(--space-4);
         text-align: center;
     }
-    
+
     .footer-bottom-left,
     .footer-bottom-right {
         align-items: center;
         text-align: center;
     }
-    
+
     /* Better button sizing on mobile */
     .btn-lg {
         padding: var(--space-3) var(--space-6);
         font-size: var(--text-sm);
     }
-    
+
     /* Fix mobile navigation */
     .mobile-nav {
         padding: var(--space-4);
     }
-    
+
     .mobile-nav-link {
         padding: var(--space-3);
         font-size: var(--text-base);
     }
-    
+
     /* Better cards on mobile */
     .card {
         padding: var(--space-5);
     }
-    
+
     .branch-card {
         padding: var(--space-5);
     }
-    
+
     .branch-icon {
         width: 56px;
         height: 56px;
     }
-    
+
     /* Fix tabs on mobile */
     .tabs {
         flex-wrap: nowrap;
@@ -2006,27 +2024,27 @@ ol {
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
-    
+
     .tabs::-webkit-scrollbar {
         display: none;
     }
-    
+
     .tab {
         min-width: max-content;
         padding: var(--space-2) var(--space-3);
         font-size: var(--text-xs);
     }
-    
+
     /* Fix pricing grid on mobile */
     .pricing-grid {
         grid-template-columns: 1fr;
     }
-    
+
     /* Fix contact grid on mobile */
     .contact-grid {
         grid-template-columns: 1fr;
     }
-    
+
     /* Better form layout on mobile */
     .form-row {
         grid-template-columns: 1fr;
@@ -2038,21 +2056,21 @@ ol {
     .header-inner {
         padding: 0 var(--space-3);
     }
-    
+
     .logo {
         font-size: var(--text-lg);
     }
-    
+
     .logo-icon {
         width: 36px;
         height: 36px;
     }
-    
+
     .btn {
         padding: var(--space-2) var(--space-4);
         font-size: var(--text-xs);
     }
-    
+
     .hero-badge {
         font-size: var(--text-xs);
     }
@@ -2063,11 +2081,11 @@ ol {
     .branches-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .subjects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2081,7 +2099,13 @@ ol {
 }
 
 /* Smooth transitions for all interactive elements */
-button, a, .card, .btn, input, textarea, select {
+button,
+a,
+.card,
+.btn,
+input,
+textarea,
+select {
     -webkit-tap-highlight-color: transparent;
 }
 
