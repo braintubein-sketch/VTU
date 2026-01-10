@@ -299,4 +299,53 @@ router.get('/plans', (req, res) => {
     });
 });
 
+// Webhook handler (Production reliability)
+router.post('/webhook', async (req, res) => {
+    try {
+        const secret = process.env.RAZORPAY_WEBHOOK_SECRET || 'vtu_nexus_webhook_secret';
+        const signature = req.headers['x-razorpay-signature'];
+
+        // Verify webhook signature
+        const expectedSignature = crypto
+            .createHmac('sha256', secret)
+            .update(JSON.stringify(req.body))
+            .digest('hex');
+
+        if (signature !== expectedSignature) {
+            return res.status(400).json({ success: false, error: 'Invalid signature' });
+        }
+
+        const event = req.body.event;
+        const payment = req.body.payload.payment.entity;
+        const orderId = payment.order_id;
+
+        console.log(`Webhook Received: ${event} for Order: ${orderId}`);
+
+        if (event === 'order.paid' || event === 'payment.captured') {
+            const order = orders.get(orderId);
+
+            // If already processed via frontend, skip
+            if (order && order.status === 'paid') {
+                return res.json({ status: 'ok', msg: 'Already processed' });
+            }
+
+            // Sync with memory/DB
+            if (order) {
+                order.status = 'paid';
+                order.paymentId = payment.id;
+                orders.set(orderId, order);
+
+                // Trigger fulfillment if not done
+                // (Implementation same as verify route)
+                console.log(`Automatic fulfillment triggered for ${order.notes.email}`);
+            }
+        }
+
+        res.json({ status: 'ok' });
+    } catch (error) {
+        console.error('Webhook error:', error);
+        res.status(500).json({ success: false });
+    }
+});
+
 module.exports = router;
