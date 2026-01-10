@@ -22,7 +22,7 @@ try {
         });
     }
 } catch (error) {
-    console.log('Email transporter error in payments route');
+    console.log('Email transporter error:', error.message);
 }
 
 // Initialize Razorpay (configure in production)
@@ -36,7 +36,7 @@ try {
         });
     }
 } catch (error) {
-    console.log('Razorpay not configured - running in demo mode');
+    console.log('Razorpay configuration error:', error.message);
 }
 
 // Store orders (replace with database in production)
@@ -133,8 +133,11 @@ router.post('/create-order', async (req, res) => {
             });
         }
     } catch (error) {
-        console.error('Create order error:', error);
-        res.status(500).json({ success: false, error: 'Failed to create order' });
+        console.error('RAZORPAY CREATE ORDER ERROR:', error);
+        res.status(500).json({
+            success: false,
+            error: error.description || error.message || 'Failed to create order'
+        });
     }
 });
 

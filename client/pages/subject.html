@@ -174,7 +174,8 @@
   </footer>
 
   <script src="../scripts/data.js"></script>
-  <script src="../scripts/notes.js"></script>
+  <script src="../scripts/config.js"></script>
+  <script src="../scripts/main.js"></script>
   <script src="../scripts/notes-extended.js"></script>
   <script src="../scripts/syllabus.js"></script>
   <script src="../scripts/syllabus-extended.js"></script>
@@ -1133,7 +1134,7 @@
         showToast('Initiating secure payment...', 'success');
 
         // Step 1: Create Order on the Server
-        const orderResponse = await fetch('/api/payments/create-order', {
+        const orderResponse = await fetch(getApiUrl('/api/payments/create-order'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1192,7 +1193,7 @@
 
       } catch (error) {
         console.error('Razorpay process error:', error);
-        showToast('Payment initialization failed. Please try again.', 'error');
+        showToast(`Payment failed: ${error.message}`, 'error');
       }
     }
 
@@ -1204,7 +1205,7 @@
         showToast('Verifying payment...', 'success');
 
         // Step 1: Verify Payment on the Server
-        const verifyResponse = await fetch('/api/payments/verify', {
+        const verifyResponse = await fetch(getApiUrl('/api/payments/verify'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -1242,15 +1243,15 @@
         showThankYouPage(subjectCode, subjectName, response.razorpay_payment_id, userName);
 
       } catch (error) {
-        console.error('Verification error:', error);
-        showToast(error.message || 'Verification failed. Please contact support.', 'error');
+        console.error('Payment error:', error);
+        showToast(`Payment verification failed: ${error.message}`, 'error');
       }
     }
 
     // Submit fix questions form to backend
     async function submitFixQuestionsForm(name, email, subjectCode, subjectName, paymentId, amount) {
       try {
-        const response = await fetch('/api/fix-questions/submit', {
+        const response = await fetch(getApiUrl('/api/fix-questions/submit'), {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

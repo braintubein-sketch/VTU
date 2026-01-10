@@ -391,6 +391,7 @@
     </div>
 
     <script src="../scripts/data.js"></script>
+    <script src="../scripts/config.js"></script>
     <script src="../scripts/main.js"></script>
     <script>
         let selectedPlan = 'premium';
@@ -418,7 +419,7 @@
                 showToast('Initiating secure payment...', 'success');
 
                 // Step 1: Create Order on the Server
-                const response = await fetch('/api/payments/create-order', {
+                const response = await fetch(getApiUrl('/api/payments/create-order'), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -449,7 +450,7 @@
                         try {
                             showToast('Verifying payment...', 'success');
 
-                            const verifyResponse = await fetch('/api/payments/verify', {
+                            const verifyResponse = await fetch(getApiUrl('/api/payments/verify'), {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({
@@ -487,7 +488,7 @@
 
             } catch (error) {
                 console.error('Payment error:', error);
-                showToast(error.message || 'Payment initialization failed', 'error');
+                showToast(`Payment failed: ${error.message}`, 'error');
             }
         }
     </script>
