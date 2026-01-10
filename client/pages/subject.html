@@ -977,7 +977,6 @@
 
       // Show premium payment for ALL subjects with hasFix: true
       if (subject.hasFix) {
-        // Premium fix questions - locked with payment form
         const modules = data?.modules || [
           { num: 1, title: 'Module 1' }, { num: 2, title: 'Module 2' },
           { num: 3, title: 'Module 3' }, { num: 4, title: 'Module 4' }, { num: 5, title: 'Module 5' }
@@ -1214,10 +1213,12 @@
     async function handlePaymentSuccess(response, subjectCode, subjectName, amount, userName, userEmail) {
       console.log('Payment successful:', response);
 
-      try {
-        showToast('Verifying payment...', 'success');
+      // Show Thank You page IMMEDIATELY for better UX
+      // We don't wait for verification to show the confirmation
+      showThankYouPage(subjectCode, subjectName, response.razorpay_payment_id, userName);
 
-        // Step 1: Verify Payment on the Server
+      try {
+        // Run verification in background
         const verifyResponse = await fetch(getApiUrl('/api/payments/verify'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -1230,34 +1231,31 @@
 
         const verifyData = await verifyResponse.json();
 
-        if (!verifyData.success) {
-          throw new Error(verifyData.error || 'Payment verification failed');
+        if (verifyData.success) {
+          showToast('Payment verified successfully', 'success');
+
+          // Store payment info
+          const purchasedItems = JSON.parse(localStorage.getItem('braintube_purchases') || '[]');
+          purchasedItems.push({
+            subjectCode,
+            subjectName,
+            amount,
+            userName,
+            userEmail,
+            paymentId: response.razorpay_payment_id,
+            orderId: response.razorpay_order_id,
+            purchasedAt: new Date().toISOString()
+          });
+          localStorage.setItem('braintube_purchases', JSON.stringify(purchasedItems));
+
+          // Also submit the separate form
+          submitFixQuestionsForm(userName, userEmail, subjectCode, subjectName, response.razorpay_payment_id, amount);
+        } else {
+          console.error('Verification failed:', verifyData.error);
         }
 
-        // Store payment info
-        const purchasedItems = JSON.parse(localStorage.getItem('braintube_purchases') || '[]');
-        purchasedItems.push({
-          subjectCode,
-          subjectName,
-          amount,
-          userName,
-          userEmail,
-          paymentId: response.razorpay_payment_id,
-          orderId: response.razorpay_order_id,
-          purchasedAt: new Date().toISOString()
-        });
-        localStorage.setItem('braintube_purchases', JSON.stringify(purchasedItems));
-
-        // Submit to backend for fulfillment (already handled inside the verify route on server now)
-        // However, we still call the submissions API if we want a separate record
-        submitFixQuestionsForm(userName, userEmail, subjectCode, subjectName, response.razorpay_payment_id, amount);
-
-        // Show Thank You page
-        showThankYouPage(subjectCode, subjectName, response.razorpay_payment_id, userName);
-
       } catch (error) {
-        console.error('Payment error:', error);
-        showToast(`Payment verification failed: ${error.message}`, 'error');
+        console.error('Payment verification background error:', error);
       }
     }
 
@@ -1334,15 +1332,7 @@
     function goToFixQuestions(subjectCode) {
       const modal = document.getElementById('thank-you-modal');
       if (modal) modal.remove();
-
-      // Refresh the page to show content (or redirect)
-      showToast('Thank you for your purchase!', 'success');
-    }
-
-    // Check if user has purchased this subject
-    function hasPurchased(subjectCode) {
-      const purchases = JSON.parse(localStorage.getItem('braintube_purchases') || '[]');
-      return purchases.some(p => p.subjectCode === subjectCode);
+      showToast('Payment confirmed! We will contact you soon.', 'success');
     }
   </script>
 </body>

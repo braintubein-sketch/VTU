@@ -251,6 +251,36 @@
             btn.disabled = false;
             btn.textContent = 'Send Message';
         });
+
+        // Check for payment success status in URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('status') === 'success') {
+                showSuccessModal(params.get('payment_id'));
+            }
+        });
+
+        function showSuccessModal(paymentId) {
+            const modal = document.createElement('div');
+            modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: 20px;';
+            modal.innerHTML = `
+                <div style="background: white; border-radius: 20px; padding: 40px; max-width: 500px; width: 100%; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+                    <div style="font-size: 80px; margin-bottom: 20px;">🎉</div>
+                    <h2 style="color: #764ba2; margin-bottom: 10px; font-size: 28px;">Payment Successful!</h2>
+                    <p style="color: #666; margin-bottom: 25px; font-size: 18px;">Thank you for upgrading to Braintube Premium. Your account features are now being activated.</p>
+                    
+                    <div style="background: #f8f9fa; border-radius: 12px; padding: 15px; margin-bottom: 25px; text-align: left;">
+                        <div style="font-size: 12px; color: #999; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Transaction ID</div>
+                        <div style="font-family: monospace; color: #333; font-size: 14px; word-break: break-all;">${paymentId || 'DEMO_PAYMENT_SUCCESS'}</div>
+                    </div>
+                    
+                    <button onclick="this.closest('div').parentElement.remove(); window.location.href='pricing.html';" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 18px;">
+                        Get Started
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
     </script>
 </body>
 
