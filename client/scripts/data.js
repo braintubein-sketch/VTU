@@ -349,8 +349,9 @@ const VTUData = {
       { code: 'BCVL605', name: 'Environmental Engineering Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: false, isLab: true }
     ],
     'cv-7': [
-      { code: 'BCV701', name: 'Earthquake Engineering', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV702', name: 'Green Building', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: false },
+      { code: 'BCV701', name: 'Design of Steel Structures', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV702', name: 'Estimation and Contract Management', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV703', name: 'Prestressed Concrete', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCVP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: false }
     ],
     'cv-8': [

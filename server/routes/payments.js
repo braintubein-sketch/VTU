@@ -46,11 +46,12 @@ router.post('/create-order', async (req, res) => {
         }
 
         if (razorpay) {
-            // Create Razorpay order
+            // Create Razorpay order with automatic capture
             const options = {
                 amount: plan.amount,
                 currency: plan.currency,
                 receipt: `order_${Date.now()}`,
+                payment_capture: 1,  // Auto-capture payment (1 = auto, 0 = manual)
                 notes: {
                     planId,
                     email,

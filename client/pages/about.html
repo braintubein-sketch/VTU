@@ -14,14 +14,20 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
 </head>
 
 <body>
     <header class="header" id="header">
         <div class="header-inner">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🎓</div>
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                </div>
                 <span>Brain<span class="text-gradient">tube</span></span>
             </a>
             <nav class="nav">
@@ -109,25 +115,52 @@
                 </div>
                 <div class="branches-grid">
                     <div class="card">
-                        <div class="branch-icon" style="width: 56px; height: 56px;">🎯</div>
+                        <div class="branch-icon" style="width: 56px; height: 56px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <circle cx="12" cy="12" r="6" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg>
+                        </div>
                         <h4 style="margin: var(--space-4) 0 var(--space-2);">Curated Content</h4>
                         <p style="color: var(--text-secondary); font-size: var(--text-sm);">Every resource is carefully
                             reviewed and organized by subject experts and top students.</p>
                     </div>
                     <div class="card">
-                        <div class="branch-icon" style="width: 56px; height: 56px;">⚡</div>
+                        <div class="branch-icon" style="width: 56px; height: 56px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </div>
                         <h4 style="margin: var(--space-4) 0 var(--space-2);">Fast & Modern</h4>
                         <p style="color: var(--text-secondary); font-size: var(--text-sm);">Lightning-fast performance
                             with a modern, mobile-first design that works everywhere.</p>
                     </div>
                     <div class="card">
-                        <div class="branch-icon" style="width: 56px; height: 56px;">🔄</div>
+                        <div class="branch-icon" style="width: 56px; height: 56px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+                                <path d="M21 3v5h-5" />
+                            </svg>
+                        </div>
                         <h4 style="margin: var(--space-4) 0 var(--space-2);">Always Updated</h4>
                         <p style="color: var(--text-secondary); font-size: var(--text-sm);">Content is continuously
                             updated with the latest schemes and question papers.</p>
                     </div>
                     <div class="card">
-                        <div class="branch-icon" style="width: 56px; height: 56px;">💬</div>
+                        <div class="branch-icon" style="width: 56px; height: 56px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </div>
                         <h4 style="margin: var(--space-4) 0 var(--space-2);">Student Support</h4>
                         <p style="color: var(--text-secondary); font-size: var(--text-sm);">Dedicated support team ready
                             to help with your queries and resource requests.</p>
@@ -157,7 +190,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-                <p class="footer-copyright">© 2026 Braintube. Made with ❤️ for VTU Students.</p>
+                <p class="footer-copyright">© 2026 Braintube. Made with dedication for VTU Students across Karnataka.
+                </p>
             </div>
         </div>
     </footer>

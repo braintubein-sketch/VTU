@@ -14,14 +14,20 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
 </head>
 
 <body>
     <header class="header" id="header">
         <div class="header-inner">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🎓</div>
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                </div>
                 <span>Brain<span class="text-gradient">tube</span></span>
             </a>
             <nav class="nav">
@@ -64,28 +70,59 @@
                 <div class="contact-grid">
                     <div class="contact-info">
                         <div class="contact-item">
-                            <div class="contact-icon">📧</div>
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                            </div>
                             <div class="contact-text">
                                 <h4>Email Us</h4>
-                                <p>support@vtunexus.com</p>
+                                <p><a href="mailto:braintube.in@gmail.com"
+                                        style="color: var(--text-secondary);">braintube.in@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <div class="contact-icon">📱</div>
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
                             <div class="contact-text">
                                 <h4>WhatsApp</h4>
-                                <p>+91 98765 43210</p>
+                                <p><a href="https://wa.me/918884624741" target="_blank" rel="noopener"
+                                        style="color: var(--text-secondary);">+91 8884624741</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <div class="contact-icon">💬</div>
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m22 2-7 20-4-9-9-4Z" />
+                                    <path d="M22 2 11 13" />
+                                </svg>
+                            </div>
                             <div class="contact-text">
                                 <h4>Telegram</h4>
-                                <p>@vtunexus</p>
+                                <p><a href="https://t.me/braintubein" target="_blank" rel="noopener"
+                                        style="color: var(--text-secondary);">@braintubein</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
-                            <div class="contact-icon">⏰</div>
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
                             <div class="contact-text">
                                 <h4>Response Time</h4>
                                 <p>Within 24 hours</p>
@@ -93,12 +130,22 @@
                         </div>
 
                         <div class="card card-gradient" style="margin-top: var(--space-6);">
-                            <h4 style="margin-bottom: var(--space-3);">💡 Quick Help</h4>
+                            <h4
+                                style="margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-2);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="var(--primary-400)" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 16v-4" />
+                                    <path d="M12 8h.01" />
+                                </svg>
+                                Quick Help
+                            </h4>
                             <ul style="color: var(--text-secondary); font-size: var(--text-sm);">
-                                <li style="margin-bottom: var(--space-2);">• Check our <a href="faq.html"
+                                <li style="margin-bottom: var(--space-2);">Check our <a href="faq.html"
                                         style="color: var(--primary-400);">FAQ page</a> for common questions</li>
-                                <li style="margin-bottom: var(--space-2);">• Premium users get priority support</li>
-                                <li>• Join our Telegram for instant updates</li>
+                                <li style="margin-bottom: var(--space-2);">Premium users get priority support</li>
+                                <li>Join our Telegram for instant updates</li>
                             </ul>
                         </div>
                     </div>
@@ -181,7 +228,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-                <p class="footer-copyright">© 2026 Braintube. Made with ❤️ for VTU Students.</p>
+                <p class="footer-copyright">© 2026 Braintube. Made with dedication for VTU Students across Karnataka.
+                </p>
             </div>
         </div>
     </footer>

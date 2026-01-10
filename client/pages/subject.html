@@ -13,7 +13,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
   <!-- Razorpay Checkout Script -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
@@ -22,7 +22,13 @@
   <header class="header" id="header">
     <div class="header-inner">
       <a href="../index.html" class="logo">
-        <div class="logo-icon">🎓</div>
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+          </svg>
+        </div>
         <span>Brain<span class="text-gradient">tube</span></span>
       </a>
       <nav class="nav">
@@ -61,10 +67,39 @@
           style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">BCS304</span>
         <h1 id="subjectName" style="margin-top: var(--space-4);">Data Structures</h1>
         <div class="flex gap-6" style="margin-top: var(--space-4); color: var(--text-secondary); flex-wrap: wrap;">
-          <span>📖 <span id="credits">4</span> Credits</span>
-          <span>📅 Semester <span id="semNum">3</span></span>
-          <span>🎓 <span id="branchName">CSE</span></span>
-          <span>📋 2022 Scheme</span>
+          <span style="display: flex; align-items: center; gap: 4px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+            </svg>
+            <span id="credits">4</span> Credits
+          </span>
+          <span style="display: flex; align-items: center; gap: 4px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+              <line x1="16" x2="16" y1="2" y2="6" />
+              <line x1="8" x2="8" y1="2" y2="6" />
+              <line x1="3" x2="21" y1="10" y2="10" />
+            </svg>
+            Semester <span id="semNum">3</span>
+          </span>
+          <span style="display: flex; align-items: center; gap: 4px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+            <span id="branchName">CSE</span>
+          </span>
+          <span style="display: flex; align-items: center; gap: 4px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+              <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+            </svg>
+            2022 Scheme
+          </span>
         </div>
       </div>
     </section>
@@ -72,11 +107,46 @@
     <section class="section" style="padding-top: var(--space-8);">
       <div class="container">
         <div class="tabs" id="resourceTabs">
-          <button class="tab active" data-tab="notes">📚 Notes</button>
-          <button class="tab" data-tab="syllabus">📋 Syllabus</button>
-          <button class="tab" data-tab="papers">📄 Question Papers</button>
-          <button class="tab" data-tab="lab">🔬 Lab Manual</button>
-          <button class="tab" data-tab="fix">✅ Fix Questions</button>
+          <button class="tab active" data-tab="notes">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+            </svg>
+            Notes
+          </button>
+          <button class="tab" data-tab="syllabus">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+              <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+            </svg>
+            Syllabus
+          </button>
+          <button class="tab" data-tab="papers">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            Question Papers
+          </button>
+          <button class="tab" data-tab="lab">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v8.5L7.5 14h9l-2.5-3.5V2" />
+              <path d="M8.5 2h7" />
+              <path d="M14 22H8a2 2 0 0 1-2-2v-4h12v4a2 2 0 0 1-2 2Z" />
+            </svg>
+            Lab Manual
+          </button>
+          <button class="tab" data-tab="fix">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            Fix Questions
+          </button>
         </div>
 
         <div id="tabContent">
@@ -98,7 +168,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-        <p class="footer-copyright">© 2026 Braintube. Made with ❤️ for VTU Students.</p>
+        <p class="footer-copyright">© 2026 Braintube. Made with dedication for VTU Students across Karnataka.</p>
       </div>
     </div>
   </footer>
@@ -1079,8 +1149,40 @@
       });
       localStorage.setItem('braintube_purchases', JSON.stringify(purchasedItems));
 
+      // Submit to backend for email notifications
+      submitFixQuestionsForm(userName, userEmail, subjectCode, subjectName, response.razorpay_payment_id, amount);
+
       // Show Thank You page
       showThankYouPage(subjectCode, subjectName, response.razorpay_payment_id, userName);
+    }
+
+    // Submit fix questions form to backend
+    async function submitFixQuestionsForm(name, email, subjectCode, subjectName, paymentId, amount) {
+      try {
+        const response = await fetch('/api/fix-questions/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            subjectCode,
+            subjectName,
+            paymentId,
+            amount
+          })
+        });
+
+        const data = await response.json();
+        console.log('Form submission response:', data);
+
+        if (!data.success) {
+          console.error('Form submission failed:', data.error);
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+      }
     }
 
     // Handle payment failure

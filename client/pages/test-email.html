@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Fix Questions Email</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #764ba2;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🧪 Test Fix Questions Email</h1>
+        <p>Test the email notification system for fix questions purchases</p>
+
+        <form id="testForm">
+            <div class="form-group">
+                <label for="name">Student Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter student name" value="Test Student">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Student Email</label>
+                <input type="email" id="email" name="email" required placeholder="student@gmail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Select Subject</label>
+                <select id="subject" name="subject" required>
+                    <option value="">-- Select a subject --</option>
+                    <option value="BCV701|Design of Steel Structures">BCV701 - Design of Steel Structures</option>
+                    <option value="BCV702|Estimation and Contract Management">BCV702 - Estimation and Contract
+                        Management</option>
+                    <option value="BCV703|Prestressed Concrete">BCV703 - Prestressed Concrete</option>
+                    <option value="BCS701|Internet of Things">BCS701 - Internet of Things</option>
+                    <option value="BCS702|Parallel Computing">BCS702 - Parallel Computing</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="paymentId">Payment ID (Optional)</label>
+                <input type="text" id="paymentId" name="paymentId" placeholder="pay_xxxxxxxxxxxxx"
+                    value="pay_TEST123456789">
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount (₹)</label>
+                <input type="number" id="amount" name="amount" value="79" required>
+            </div>
+
+            <button type="submit">📧 Send Test Email</button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 10px; color: #666;">Sending emails...</p>
+        </div>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('testForm');
+        const loading = document.getElementById('loading');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subjectData = document.getElementById('subject').value.split('|');
+            const subjectCode = subjectData[0];
+            const subjectName = subjectData[1];
+            const paymentId = document.getElementById('paymentId').value || 'TEST_PAYMENT';
+            const amount = parseInt(document.getElementById('amount').value);
+
+            if (!subjectCode || !subjectName) {
+                showResult('Please select a subject', 'error');
+                return;
+            }
+
+            // Show loading
+            loading.style.display = 'block';
+            result.style.display = 'none';
+
+            try {
+                // Submit to API
+                const response = await fetch('/api/fix-questions/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        subjectCode,
+                        subjectName,
+                        paymentId,
+                        amount
+                    })
+                });
+
+                const data = await response.json();
+
+                // Hide loading
+                loading.style.display = 'none';
+
+                if (data.success) {
+                    showResult(
+                        `✅ Success! <br><br>
+                        <strong>Submission ID:</strong> ${data.submissionId}<br>
+                        <strong>Emails Sent:</strong> ${data.emailSent ? 'Yes' : 'No (check server logs)'}<br><br>
+                        Check your email inbox (${email}) for the auto-reply!`,
+                        'success'
+                    );
+                } else {
+                    showResult(`❌ Error: ${data.error || 'Unknown error'}`, 'error');
+                }
+            } catch (error) {
+                loading.style.display = 'none';
+                showResult(`❌ Network Error: ${error.message}`, 'error');
+            }
+        });
+
+        function showResult(message, type) {
+            result.innerHTML = message;
+            result.className = 'result ' + type;
+            result.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

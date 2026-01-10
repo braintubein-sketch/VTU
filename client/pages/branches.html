@@ -14,14 +14,20 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
 </head>
 
 <body>
     <header class="header" id="header">
         <div class="header-inner">
             <a href="../index.html" class="logo">
-                <div class="logo-icon">🎓</div>
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                </div>
                 <span>Brain<span class="text-gradient">tube</span></span>
             </a>
             <nav class="nav">
@@ -81,7 +87,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-                <p class="footer-copyright">© 2026 Braintube. Made with ❤️ for VTU Students.</p>
+                <p class="footer-copyright">© 2026 Braintube. Made with dedication for VTU Students across Karnataka.
+                </p>
             </div>
         </div>
     </footer>
@@ -104,12 +111,20 @@
         function renderBranches(branches) {
             document.getElementById('branchesGrid').innerHTML = branches.map(b => `
         <a href="branch.html?branch=${b.id}" class="branch-card">
-          <div class="branch-icon">${b.icon}</div>
+          <div class="branch-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
           <h3 class="branch-name">${b.name}</h3>
           <p class="branch-fullname">${b.fullName}</p>
           <div class="branch-meta">
-            <span class="branch-meta-item">📚 ${b.subjects} Subjects</span>
-            <span class="branch-meta-item">📄 ${b.documents}+ Docs</span>
+            <span class="branch-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+              ${b.subjects} Subjects
+            </span>
+            <span class="branch-meta-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+              ${b.documents}+ Docs
+            </span>
           </div>
         </a>
       `).join('');

@@ -17,6 +17,7 @@ const branchRoutes = require('./routes/branches');
 const subjectRoutes = require('./routes/subjects');
 const paymentRoutes = require('./routes/payments');
 const contactRoutes = require('./routes/contact');
+const fixQuestionsRoutes = require('./routes/fixQuestions');
 
 // Initialize Express app
 const app = express();
@@ -66,6 +67,7 @@ app.use('/api/branches', branchRoutes);
 app.use('/api/subjects', subjectRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/fix-questions', fixQuestionsRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
@@ -88,6 +90,7 @@ app.get('/api', (req, res) => {
             subjects: '/api/subjects',
             payments: '/api/payments',
             contact: '/api/contact',
+            fixQuestions: '/api/fix-questions',
             health: '/api/health'
         }
     });
