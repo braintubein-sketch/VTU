@@ -1046,9 +1046,6 @@
       }
     }
 
-    // Razorpay Configuration
-    const RAZORPAY_KEY_ID = 'rzp_live_S0Kmp76N5YOycD';
-
     // Store user info for payment
     let paymentUserInfo = {};
 
@@ -1155,7 +1152,7 @@
         }
 
         const options = {
-          key: orderData.key || RAZORPAY_KEY_ID,
+          key: orderData.key, // Use key from server (dynamic)
           amount: orderData.order.amount,
           currency: orderData.order.currency,
           name: 'Braintube',
