@@ -141,13 +141,13 @@ const NotesExtended = {
         complete: { file: 'BCS613A_Complete.pdf', size: '16.0 MB', pages: 270 }
     },
     'BCS701': {
-        name: 'Cryptography & Network Security',
+        name: 'Internet of Things',
         modules: [
-            { num: 1, title: 'Security Concepts & Classical Encryption', file: 'BCS701_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
-            { num: 2, title: 'Block Ciphers & DES', file: 'BCS701_M2.pdf', size: '3.8 MB', pages: 58, status: 'available' },
-            { num: 3, title: 'AES & Public Key Cryptography', file: 'BCS701_M3.pdf', size: '4.0 MB', pages: 62, status: 'available' },
-            { num: 4, title: 'Hash Functions & Digital Signatures', file: 'BCS701_M4.pdf', size: '3.5 MB', pages: 55, status: 'available' },
-            { num: 5, title: 'Network Security Protocols', file: 'BCS701_M5.pdf', size: '3.2 MB', pages: 48, status: 'available' }
+            { num: 1, title: 'Introduction to Internet of Things', file: 'IOT_BCS701_MOD1_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' },
+            { num: 2, title: 'IoT and M2M', file: 'IOT_BCS701_MOD2_NOTES.pdf', size: '4.8 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'IoT Platforms Design Methodology', file: 'IOT_BCS701_MOD3_NOTES.pdf', size: '1.0 MB', pages: 42, status: 'available' },
+            { num: 4, title: 'IoT Physical Devices', file: 'IOT_BCS701_MOD4_NOTES.pdf', size: '0.7 MB', pages: 38, status: 'available' },
+            { num: 5, title: 'IoT Case Studies', file: 'IOT_BCS701_MOD5_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' }
         ],
         complete: { file: 'BCS701_Complete.pdf', size: '16.0 MB', pages: 268 }
     },
