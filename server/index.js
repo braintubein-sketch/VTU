@@ -12,20 +12,33 @@ const rateLimit = require('express-rate-limit');
 const path = require('path');
 const mongoose = require('mongoose');
 
-// Connect to MongoDB
-const connectDB = async () => {
+// Connect to MongoDB with retries
+const connectDB = async (retries = 5) => {
     try {
-        const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/braintube', {
+        const conn = await mongoose.connect(process.env.MONGODB_URI, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
         });
         console.log(`MongoDB Connected: ${conn.connection.host}`);
     } catch (err) {
-        console.error(`Error: ${err.message}`);
-        // Exit process with failure in production, but let it run in dev if DB is not critical yet
-        if (process.env.NODE_ENV === 'production') process.exit(1);
+        console.error(`MongoDB Connection Error: ${err.message}`);
+        if (retries > 0) {
+            console.log(`Retrying connection... (${retries} attempts left)`);
+            setTimeout(() => connectDB(retries - 1), 5000);
+        } else {
+            console.error('All MongoDB connection retries failed.');
+            if (process.env.NODE_ENV === 'production') process.exit(1);
+        }
     }
 };
+
+if (!process.env.MONGODB_URI && process.env.NODE_ENV === 'production') {
+    console.error('FATAL: MONGODB_URI is not defined in production.');
+    process.exit(1);
+}
+
 connectDB();
 
 // Import routes
@@ -49,8 +62,23 @@ app.use(helmet({
 }));
 
 // CORS configuration
+const allowedOrigins = [
+    'https://braintube.site',
+    'https://www.braintube.site',
+    'http://localhost:3000',
+    'http://localhost:5000'
+];
+
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: function (origin, callback) {
+        // allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']

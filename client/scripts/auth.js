@@ -13,7 +13,7 @@ const Auth = {
     async init() {
         if (this.token) {
             try {
-                const response = await fetch(`${API_URL}/me`, {
+                const response = await fetch(getApiUrl(`${API_URL}/me`), {
                     headers: {
                         'Authorization': `Bearer ${this.token}`
                     }
@@ -36,7 +36,7 @@ const Auth = {
     // Register user
     async register(userData) {
         try {
-            const response = await fetch(`${API_URL}/register`, {
+            const response = await fetch(getApiUrl(`${API_URL}/register`), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userData)
@@ -55,7 +55,7 @@ const Auth = {
     // Login user
     async login(email, password) {
         try {
-            const response = await fetch(`${API_URL}/login`, {
+            const response = await fetch(getApiUrl(`${API_URL}/login`), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
