@@ -60,6 +60,8 @@ router.post('/register', validateRegistration, async (req, res) => {
             return res.status(400).json({ success: false, error: 'User already exists' });
         }
 
+        console.log(`Registration attempt for: ${email}`);
+
         // Create user
         user = await User.create({
             name,

@@ -65,6 +65,8 @@ router.post('/create-order', async (req, res) => {
             return res.status(400).json({ success: false, error: 'Email is required' });
         }
 
+        console.log(`Creating order for plan: ${planId}, email: ${email}`);
+
         if (razorpay) {
             // Create Razorpay order with automatic capture
             const options = {
@@ -106,7 +108,7 @@ router.post('/create-order', async (req, res) => {
                 key: process.env.RAZORPAY_KEY_ID
             });
         } else {
-            // Demo mode
+            console.log('Razorpay not initialized, using demo mode');
             const demoOrderId = `demo_order_${Date.now()}`;
             orders.set(demoOrderId, {
                 id: demoOrderId,
