@@ -144,8 +144,8 @@ const NotesExtended = {
         name: 'Internet of Things',
         modules: [
             { num: 1, title: 'Introduction to IoT & Enabling Technologies', file: 'IOT_BCS701_MOD1_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' },
-            { num: 2, title: 'IoT and M2M, SDK & NFV Architecture', file: 'IOT_BCS701_MOD2_NOTES.pdf', size: '4.8 MB', pages: 55, status: 'available' },
-            { num: 3, title: 'IoT Platforms Design & Python for IoT', file: 'IOT_BCS701_MOD3_NOTES.pdf', size: '1.0 MB', pages: 42, status: 'available' },
+            { num: 2, title: 'IoT and M2M, SDK & NFV Architecture', file: 'IOT_BCS701_MOD2_NOTES.pdf', size: '1.3 MB', pages: 40, status: 'available' },
+            { num: 3, title: 'IoT Platforms Design & Python for IoT', file: 'IOT_BCS701_MOD3_NOTES.pdf', size: '2.1 MB', pages: 55, status: 'available' },
             { num: 4, title: 'IoT Physical Devices & Raspberry Pi', file: 'IOT_BCS701_MOD4_NOTES.pdf', size: '0.7 MB', pages: 38, status: 'available' },
             { num: 5, title: 'IoT Case Studies & Real-world Apps', file: 'IOT_BCS701_MOD5_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' }
         ],
