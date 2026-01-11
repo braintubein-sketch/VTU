@@ -784,7 +784,7 @@
                     <span>${notesAvailable ? (m.pages + ' Pages') : 'VTU 2022 Scheme'}</span>
                 </div>
               </div>
-              <div class="resource-actions" style="display: flex; gap: 8px;">
+              <div class="resource-actions">
                 ${notesAvailable && m.file ? `
                     <a href="../assets/notes/${m.file}" class="btn btn-secondary btn-sm" target="_blank">View</a>
                     <a href="../assets/notes/${m.file}" class="btn btn-primary btn-sm" download target="_blank">Download</a>
@@ -805,7 +805,7 @@
               <p style="font-size: var(--text-sm); color: var(--text-secondary); margin-top: 2px;">All Modules Combined (Full PDF)</p>
               <div class="resource-meta"><span>${extendedData.complete.size}</span><span>${extendedData.complete.pages} Pages</span></div>
             </div>
-            <div class="resource-actions" style="display: flex; gap: 8px;">
+            <div class="resource-actions">
               <a href="../assets/notes/${extendedData.complete.file}" class="btn btn-secondary btn-sm" target="_blank">View</a>
               <a href="../assets/notes/${extendedData.complete.file}" class="btn btn-primary btn-sm" download target="_blank">Download</a>
             </div>

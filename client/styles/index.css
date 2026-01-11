@@ -1123,9 +1123,7 @@ ol {
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: var(--space-1);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.4;
 }
 
 .resource-meta {
@@ -1138,6 +1136,28 @@ ol {
 .resource-actions {
     display: flex;
     gap: var(--space-2);
+}
+
+@media (max-width: 640px) {
+    .resource-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+    }
+
+    .resource-actions {
+        width: 100%;
+        margin-top: var(--space-2);
+    }
+
+    .resource-actions .btn {
+        flex: 1;
+    }
+
+    .resource-meta {
+        flex-wrap: wrap;
+        gap: var(--space-2) var(--space-4);
+    }
 }
 
 /* Premium Badge */
