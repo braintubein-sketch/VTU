@@ -68,23 +68,39 @@ app.use(helmet({
 const allowedOrigins = [
     'https://braintube.site',
     'https://www.braintube.site',
+    'https://braintube-api.onrender.com',
     'http://localhost:3000',
-    'http://localhost:5000'
+    'http://localhost:5000',
+    'http://localhost:10000'
 ];
+
+// Add CLIENT_URL from env if available
+if (process.env.CLIENT_URL) {
+    const envOrigin = process.env.CLIENT_URL.replace(/\/$/, '');
+    if (!allowedOrigins.includes(envOrigin)) {
+        allowedOrigins.push(envOrigin);
+    }
+}
 
 app.use(cors({
     origin: function (origin, callback) {
         // allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) === -1) {
-            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-            return callback(new Error(msg), false);
+
+        const isAllowed = allowedOrigins.some(allowed =>
+            origin === allowed ||
+            origin.startsWith(allowed + '/')
+        );
+
+        if (!isAllowed) {
+            console.log('Blocked CORS Origin:', origin);
+            return callback(new Error('CORS policy violation'), false);
         }
         return callback(null, true);
     },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
 }));
 
 // Rate limiting
