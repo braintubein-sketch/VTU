@@ -143,13 +143,24 @@ const NotesExtended = {
     'BCS701': {
         name: 'Internet of Things',
         modules: [
-            { num: 1, title: 'Introduction to Internet of Things', file: 'IOT_BCS701_MOD1_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' },
-            { num: 2, title: 'IoT and M2M', file: 'IOT_BCS701_MOD2_NOTES.pdf', size: '4.8 MB', pages: 55, status: 'available' },
-            { num: 3, title: 'IoT Platforms Design Methodology', file: 'IOT_BCS701_MOD3_NOTES.pdf', size: '1.0 MB', pages: 42, status: 'available' },
-            { num: 4, title: 'IoT Physical Devices', file: 'IOT_BCS701_MOD4_NOTES.pdf', size: '0.7 MB', pages: 38, status: 'available' },
-            { num: 5, title: 'IoT Case Studies', file: 'IOT_BCS701_MOD5_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' }
+            { num: 1, title: 'Introduction to IoT & Enabling Technologies', file: 'IOT_BCS701_MOD1_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' },
+            { num: 2, title: 'IoT and M2M, SDK & NFV Architecture', file: 'IOT_BCS701_MOD2_NOTES.pdf', size: '4.8 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'IoT Platforms Design & Python for IoT', file: 'IOT_BCS701_MOD3_NOTES.pdf', size: '1.0 MB', pages: 42, status: 'available' },
+            { num: 4, title: 'IoT Physical Devices & Raspberry Pi', file: 'IOT_BCS701_MOD4_NOTES.pdf', size: '0.7 MB', pages: 38, status: 'available' },
+            { num: 5, title: 'IoT Case Studies & Real-world Apps', file: 'IOT_BCS701_MOD5_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' }
         ],
         complete: { file: 'BCS701_Complete.pdf', size: '16.0 MB', pages: 268 }
+    },
+    'BCS702': {
+        name: 'Parallel Computing',
+        modules: [
+            { num: 1, title: 'Introduction to Parallel Computing', file: 'BCS702_M1.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' },
+            { num: 2, title: 'Parallel Algorithm Design', file: 'BCS702_M2.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' },
+            { num: 3, title: 'Programming Shared Memory', file: 'BCS702_M3.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' },
+            { num: 4, title: 'Programming Distributed Memory', file: 'BCS702_M4.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' },
+            { num: 5, title: 'GPU Computing & CUDA', file: 'BCS702_M5.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' }
+        ],
+        complete: { file: 'BCS702_Complete.pdf', size: '0.0 MB', pages: 0 }
     },
     'BCS711A': {
         name: 'Deep Learning',
