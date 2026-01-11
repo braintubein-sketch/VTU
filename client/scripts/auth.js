@@ -48,6 +48,7 @@ const Auth = {
             }
             return { success: false, error: data.error || (data.errors ? data.errors[0].msg : 'Registration failed') };
         } catch (error) {
+            console.error('Registration Error:', error);
             return { success: false, error: 'Server error. Please try again.' };
         }
     },
