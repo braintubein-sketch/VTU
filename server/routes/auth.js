@@ -8,12 +8,25 @@ const jwt = require('jsonwebtoken');
 const { body, validationResult } = require('express-validator');
 const User = require('../models/User');
 
+const mongoose = require('mongoose');
+
 // Helper to generate JWT Token
 const generateToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET || 'default-secret-key', {
         expiresIn: process.env.JWT_EXPIRE || '30d'
     });
 };
+
+// Database connection check middleware
+router.use((req, res, next) => {
+    if (mongoose.connection.readyState !== 1) {
+        return res.status(503).json({
+            success: false,
+            error: 'Database connection is not established. Please check server logs and set MONGODB_URI.'
+        });
+    }
+    next();
+});
 
 // Validation middleware
 const validateRegistration = [

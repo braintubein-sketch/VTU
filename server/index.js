@@ -14,6 +14,15 @@ const mongoose = require('mongoose');
 
 // Connect to MongoDB with retries
 const connectDB = async (retries = 5) => {
+    if (!process.env.MONGODB_URI) {
+        console.error('================================================================');
+        console.error('⚠️  WARNING: MONGODB_URI is not defined!');
+        console.error('Authentication and payments will NOT work.');
+        console.error('Please set MONGODB_URI in your Render environment variables.');
+        console.error('================================================================');
+        return;
+    }
+
     try {
         const conn = await mongoose.connect(process.env.MONGODB_URI, {
             useNewUrlParser: true,
@@ -29,15 +38,9 @@ const connectDB = async (retries = 5) => {
             setTimeout(() => connectDB(retries - 1), 5000);
         } else {
             console.error('All MongoDB connection retries failed.');
-            if (process.env.NODE_ENV === 'production') process.exit(1);
         }
     }
 };
-
-if (!process.env.MONGODB_URI && process.env.NODE_ENV === 'production') {
-    console.error('FATAL: MONGODB_URI is not defined in production.');
-    process.exit(1);
-}
 
 connectDB();
 
