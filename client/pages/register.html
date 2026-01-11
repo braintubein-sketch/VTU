@@ -5,8 +5,8 @@
     <meta name="google-adsense-account" content="ca-pub-2703338145574896">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Login to Braintube to access your premium resources and track your progress.">
-    <title>Login - Braintube</title>
+    <meta name="description" content="Create a Braintube account to access premium resources and track your progress.">
+    <title>Register - Braintube</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -28,7 +28,7 @@
 
         .auth-card {
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-2xl);
@@ -93,35 +93,59 @@
                     </div>
                     <span>Brain<span class="text-gradient">tube</span></span>
                 </a>
-                <h2>Welcome Back</h2>
-                <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-top: var(--space-2);">Access
-                    your premium study materials</p>
+                <h2>Create Account</h2>
+                <p style="color: var(--text-secondary); font-size: var(--text-sm); margin-top: var(--space-2);">Join
+                    Braintube to excel in your academics</p>
             </div>
 
-            <!-- Login Form -->
-            <form id="loginForm" class="form" style="display: flex; flex-direction: column; gap: var(--space-4);">
+            <!-- Register Form -->
+            <form id="registerForm" class="form" style="display: flex; flex-direction: column; gap: var(--space-4);">
                 <div class="form-group">
-                    <label class="form-label" for="loginEmail">Email Address</label>
-                    <input type="email" id="loginEmail" class="form-input" placeholder="your@email.com" required>
-                    <div class="error-message" id="loginEmailError"></div>
+                    <label class="form-label" for="regName">Full Name</label>
+                    <input type="text" id="regName" class="form-input" placeholder="Your name" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
-                    <div class="error-message" id="loginPassError"></div>
+                    <label class="form-label" for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" class="form-input" placeholder="your@email.com" required>
+                    <div class="error-message" id="regEmailError"></div>
                 </div>
-                <div class="flex justify-between items-center"
-                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
-                    <label
-                        style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--text-sm); color: var(--text-secondary);">
-                        <input type="checkbox" style="accent-color: var(--primary-500);"> Remember me
-                    </label>
-                    <a href="#" style="font-size: var(--text-sm); color: var(--primary-400);">Forgot password?</a>
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                    <div class="form-group">
+                        <label class="form-label" for="regBranch">Branch</label>
+                        <select id="regBranch" class="form-select" required>
+                            <option value="cse">CSE</option>
+                            <option value="ece">ECE</option>
+                            <option value="eee">EEE</option>
+                            <option value="me">ME</option>
+                            <option value="cv">CV</option>
+                            <option value="ise">ISE</option>
+                            <option value="aiml">AI & ML</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="regSemester">Semester</label>
+                        <select id="regSemester" class="form-select" required>
+                            <option value="1">1st</option>
+                            <option value="2">2nd</option>
+                            <option value="3">3rd</option>
+                            <option value="4">4th</option>
+                            <option value="5">5th</option>
+                            <option value="6">6th</option>
+                            <option value="7">7th</option>
+                            <option value="8">8th</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="regPassword">Password</label>
+                    <input type="password" id="regPassword" class="form-input" placeholder="Min 6 characters" required
+                        minlength="6">
+                    <div class="error-message" id="regPassError"></div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg"
                     style="width: 100%; display: flex; align-items: center; justify-content: center;">
-                    <div class="loading-spinner" id="loginSpinner"></div>
-                    <span>Login</span>
+                    <div class="loading-spinner" id="regSpinner"></div>
+                    <span>Create Account</span>
                 </button>
             </form>
 
@@ -133,14 +157,14 @@
             </div>
 
             <p style="text-align: center; font-size: var(--text-sm); color: var(--text-secondary);">
-                Don't have an account? <a href="register.html"
-                    style="color: var(--primary-400); font-weight: 500;">Register here</a>
+                Already have an account? <a href="login.html" style="color: var(--primary-400); font-weight: 500;">Login
+                    here</a>
             </p>
 
             <p
                 style="text-align: center; margin-top: var(--space-6); font-size: var(--text-xs); color: var(--text-muted);">
-                By continuing, you agree to our <a href="terms.html">Terms</a> and <a
-                    href="privacy.html">PrivacyPolicy</a>
+                By continuing, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy
+                    Policy</a>
             </p>
         </div>
     </div>
@@ -161,34 +185,34 @@
             }
         }
 
-        // Login Submit
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        // Register Submit
+        document.getElementById('registerForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const pass = document.getElementById('loginPassword').value;
             const btn = e.target.querySelector('button[type="submit"]');
-            const spinner = document.getElementById('loginSpinner');
+            const spinner = document.getElementById('regSpinner');
 
-            showError('loginEmailError', '');
-            showError('loginPassError', '');
+            const userData = {
+                name: document.getElementById('regName').value,
+                email: document.getElementById('regEmail').value,
+                branch: document.getElementById('regBranch').value,
+                semester: document.getElementById('regSemester').value,
+                password: document.getElementById('regPassword').value
+            };
+
+            showError('regEmailError', '');
 
             btn.disabled = true;
             spinner.style.display = 'block';
 
-            const result = await Auth.login(email, pass);
+            const result = await Auth.register(userData);
 
             if (result.success) {
-                showToast('Login successful! Redirecting...', 'success');
-
-                // Check if there's a redirect query parameter
-                const params = new URLSearchParams(window.location.search);
-                const redirect = params.get('redirect') || '../index.html';
-
+                showToast('Registration successful! Redirecting...', 'success');
                 setTimeout(() => {
-                    window.location.href = redirect;
+                    window.location.href = '../index.html';
                 }, 1000);
             } else {
-                showError('loginPassError', result.error);
+                showError('regEmailError', result.error);
                 btn.disabled = false;
                 spinner.style.display = 'none';
             }

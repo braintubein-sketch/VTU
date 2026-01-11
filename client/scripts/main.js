@@ -43,14 +43,18 @@ function initHeader() {
 }
 
 // Mobile menu toggle
-function initMobileMenu() {
+window.initMobileMenu = function () {
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
 
     if (!menuToggle || !mobileNav) return;
 
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
+    // Remove existing listeners to avoid duplicates
+    const newToggle = menuToggle.cloneNode(true);
+    menuToggle.parentNode.replaceChild(newToggle, menuToggle);
+
+    newToggle.addEventListener('click', () => {
+        newToggle.classList.toggle('active');
         mobileNav.classList.toggle('active');
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
     });

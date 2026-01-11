@@ -10,6 +10,23 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const path = require('path');
+const mongoose = require('mongoose');
+
+// Connect to MongoDB
+const connectDB = async () => {
+    try {
+        const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/braintube', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (err) {
+        console.error(`Error: ${err.message}`);
+        // Exit process with failure in production, but let it run in dev if DB is not critical yet
+        if (process.env.NODE_ENV === 'production') process.exit(1);
+    }
+};
+connectDB();
 
 // Import routes
 const authRoutes = require('./routes/auth');
