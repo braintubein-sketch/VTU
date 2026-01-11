@@ -154,13 +154,13 @@ const NotesExtended = {
     'BCS702': {
         name: 'Parallel Computing',
         modules: [
-            { num: 1, title: 'Introduction to Parallel Computing', file: 'BCS702_M1.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' },
-            { num: 2, title: 'Parallel Algorithm Design', file: 'BCS702_M2.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' },
-            { num: 3, title: 'Programming Shared Memory', file: 'BCS702_M3.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' },
-            { num: 4, title: 'Programming Distributed Memory', file: 'BCS702_M4.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' },
-            { num: 5, title: 'GPU Computing & CUDA', file: 'BCS702_M5.pdf', size: '0.0 MB', pages: 0, status: 'coming_soon' }
+            { num: 1, title: 'Introduction to Parallel Computing', file: 'PC_BCS702_MOD1_NOTES.pdf', size: '4.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Parallel Algorithm Design', file: 'PC_BCS702_MOD2_NOTES.pdf', size: '0.3 MB', pages: 12, status: 'available' },
+            { num: 3, title: 'Programming Shared Memory', file: 'PC_BCS702_MOD3_NOTES.pdf', size: '1.8 MB', pages: 30, status: 'available' },
+            { num: 4, title: 'Programming Distributed Memory', file: 'PC_BCS702_MOD4_NOTES.pdf', size: '1.5 MB', pages: 28, status: 'available' },
+            { num: 5, title: 'GPU Computing & CUDA', file: 'PC_BCS702_MOD5_NOTES.pdf', size: '1.4 MB', pages: 25, status: 'available' }
         ],
-        complete: { file: 'BCS702_Complete.pdf', size: '0.0 MB', pages: 0 }
+        complete: { file: 'BCS702_Complete.pdf', size: '9.4 MB', pages: 140 }
     },
     'BCS711A': {
         name: 'Deep Learning',
