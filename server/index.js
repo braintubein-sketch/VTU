@@ -51,6 +51,7 @@ const subjectRoutes = require('./routes/subjects');
 const paymentRoutes = require('./routes/payments');
 const contactRoutes = require('./routes/contact');
 const fixQuestionsRoutes = require('./routes/fixQuestions');
+const contributionRoutes = require('./routes/contributions');
 
 // Initialize Express app
 const app = express();
@@ -132,6 +133,7 @@ app.use('/api/subjects', subjectRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/fix-questions', fixQuestionsRoutes);
+app.use('/api/contributions', contributionRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

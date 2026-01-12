@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-adsense-account" content="ca-pub-2703338145574896">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Share your academic notes with the Braintube community and help fellow students excel.">
+    <title>Contribute Notes - Braintube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/index.css?v=1.0.3">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
+    <style>
+        .contribution-container {
+            max-width: 900px;
+            margin: 120px auto var(--space-20);
+            padding: 0 var(--space-6);
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: var(--space-12);
+        }
+
+        .hero-section h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--space-4);
+        }
+
+        .upload-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            box-shadow: var(--shadow-2xl);
+            backdrop-filter: blur(20px);
+        }
+
+        .file-drop-zone {
+            border: 2px dashed var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: var(--space-12);
+            text-align: center;
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+            cursor: pointer;
+            margin-bottom: var(--space-8);
+            position: relative;
+        }
+
+        .file-drop-zone:hover,
+        .file-drop-zone.dragover {
+            border-color: var(--primary-500);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .file-drop-zone input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-4);
+            color: white;
+        }
+
+        .selected-file-info {
+            display: none;
+            margin-top: var(--space-4);
+            padding: var(--space-4);
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-lg);
+            align-items: center;
+            gap: var(--space-4);
+        }
+
+        .progress-bar {
+            height: 6px;
+            background: var(--border-color);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            display: none;
+            margin-top: var(--space-4);
+        }
+
+        .progress-inner {
+            height: 100%;
+            background: var(--gradient-primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 640px) {
+            .upload-card {
+                padding: var(--space-6);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                </div>
+                <span>Brain<span class="text-gradient">tube</span></span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="branches.html" class="nav-link">Branches</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-secondary hide-mobile" id="loginHeaderBtn">Login</a>
+                <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="contribution-container">
+        <section class="hero-section">
+            <h1 class="text-gradient">Become a Contributor</h1>
+            <p style="color: var(--text-secondary); font-size: var(--text-lg); max-width: 600px; margin: 0 auto;">
+                Share your well-written notes, previous year solved papers, or lab manuals. Help 100,000+ students excel
+                in their exams.
+            </p>
+        </section>
+
+        <div class="upload-card">
+            <form id="uploadForm">
+                <div class="form-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-8);">
+                    <div class="form-group">
+                        <label class="form-label">Note Title</label>
+                        <input type="text" id="noteTitle" class="form-input"
+                            placeholder="e.g. Computer Networks Mod 1 Notes" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subject Code</label>
+                        <input type="text" id="subjectCode" class="form-input" placeholder="e.g. BCS701" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Branch</label>
+                        <select id="branch" class="form-select" required>
+                            <option value="">Select Branch</option>
+                            <option value="cse">Computer Science</option>
+                            <option value="ece">Electronics & Comm</option>
+                            <option value="eee">Electrical & Electronics</option>
+                            <option value="me">Mechanical</option>
+                            <option value="cv">Civil</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Semester</label>
+                        <select id="semester" class="form-select" required>
+                            <option value="">Select Semester</option>
+                            <option value="1">1st Semester</option>
+                            <option value="2">2nd Semester</option>
+                            <option value="3">3rd Semester</option>
+                            <option value="4">4th Semester</option>
+                            <option value="5">5th Semester</option>
+                            <option value="6">6th Semester</option>
+                            <option value="7">7th Semester</option>
+                            <option value="8">8th Semester</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="file-drop-zone" id="dropZone">
+                    <div class="upload-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="17 8 12 3 7 8" />
+                            <line x1="12" y1="3" x2="12" y2="15" />
+                        </svg>
+                    </div>
+                    <h3 style="margin-bottom: var(--space-2);">Click or Drag files to upload</h3>
+                    <p style="color: var(--text-muted); font-size: var(--text-sm);">PDF, DOCX up to 20MB</p>
+                    <input type="file" id="fileInput" accept=".pdf,.doc,.docx" required>
+                </div>
+
+                <div class="selected-file-info" id="fileInfo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg>
+                    <div style="flex: 1;">
+                        <div id="fileName" style="font-weight: 600; font-size: var(--text-sm);">filename.pdf</div>
+                        <div id="fileSize" style="font-size: var(--text-xs); color: var(--text-muted);">1.2 MB</div>
+                    </div>
+                    <button type="button" id="removeFile"
+                        style="background: none; border: none; color: #ef4444; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="progress-bar" id="uploadProgress">
+                    <div class="progress-inner" id="progressInner"></div>
+                </div>
+
+                <div style="margin-top: var(--space-8);">
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="submitBtn">
+                        Publish My Notes
+                    </button>
+                    <p
+                        style="text-align: center; margin-top: var(--space-4); font-size: var(--text-xs); color: var(--text-muted);">
+                        By uploading, you agree that this content is original and does not violate any copyright laws.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const dropZone = document.getElementById('dropZone');
+        const fileInfo = document.getElementById('fileInfo');
+        const fileName = document.getElementById('fileName');
+        const fileSize = document.getElementById('fileSize');
+        const removeFile = document.getElementById('removeFile');
+        const uploadForm = document.getElementById('uploadForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const progressBar = document.getElementById('uploadProgress');
+        const progressInner = document.getElementById('progressInner');
+
+        // Handle file selection
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                if (file.size > 20 * 1024 * 1024) {
+                    showToast('File size exceeds 20MB limit', 'error');
+                    fileInput.value = '';
+                    return;
+                }
+                fileName.textContent = file.name;
+                fileSize.textContent = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
+                fileInfo.style.display = 'flex';
+                dropZone.style.display = 'none';
+            }
+        });
+
+        // Remove file
+        removeFile.addEventListener('click', () => {
+            fileInput.value = '';
+            fileInfo.style.display = 'none';
+            dropZone.style.display = 'block';
+        });
+
+        // Drag and Drop
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+            }, false);
+        });
+
+        // Form Submit
+        uploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!Auth.isAuthenticated()) {
+                showToast('Please login to contribute notes', 'error');
+                setTimeout(() => window.location.href = 'login.html?redirect=upload.html', 1500);
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            formData.append('title', document.getElementById('noteTitle').value);
+            formData.append('subjectCode', document.getElementById('subjectCode').value);
+            formData.append('branch', document.getElementById('branch').value);
+            formData.append('semester', document.getElementById('semester').value);
+            formData.append('userId', Auth.user.id);
+            formData.append('userName', Auth.user.name);
+
+            try {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Uploading...';
+                progressBar.style.display = 'block';
+
+                const response = await fetch(getApiUrl('/api/contributions/upload'), {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${Auth.token}`
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    showToast('Thank you! Your notes have been submitted for review.', 'success');
+                    uploadForm.reset();
+                    fileInfo.style.display = 'none';
+                    dropZone.style.display = 'block';
+                    progressBar.style.display = 'none';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Publish My Notes';
+                } else {
+                    showToast(data.error || 'Upload failed', 'error');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Publish My Notes';
+                }
+            } catch (error) {
+                console.error('Upload error:', error);
+                showToast('Server error. Please try again later.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Publish My Notes';
+            }
+        });
+    </script>
+</body>
+
+</html>
