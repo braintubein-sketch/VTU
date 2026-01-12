@@ -81,20 +81,36 @@
         .promo-card {
             background: var(--gradient-primary);
             border: none;
-            padding: var(--space-8) var(--space-6);
-            display: grid;
-            grid-template-columns: 1fr;
+            padding: var(--space-6) var(--space-4);
+            display: flex;
+            flex-direction: column;
             gap: var(--space-6);
             align-items: center;
             text-align: center;
+            border-radius: var(--radius-2xl);
+        }
+
+        .promo-card h2 {
+            font-size: clamp(1.25rem, 5vw, 1.75rem);
+            line-height: 1.2;
+        }
+
+        .promo-card p {
+            font-size: clamp(0.875rem, 3vw, 1rem);
+            margin-bottom: 0 !important;
         }
 
         @media (min-width: 1024px) {
             .promo-card {
-                grid-template-columns: 1fr auto;
+                flex-direction: row;
                 text-align: left;
-                gap: var(--space-8);
+                justify-content: space-between;
                 padding: var(--space-10) var(--space-12);
+                gap: var(--space-12);
+            }
+
+            .promo-card>div {
+                flex: 1;
             }
         }
     </style>
@@ -554,14 +570,13 @@
             <div class="container">
                 <div class="card card-gradient promo-card">
                     <div style="color: white;">
-                        <h2 style="color: white; margin-bottom: var(--space-2); font-size: var(--text-2xl);">Help Your
-                            Community! 🤝</h2>
-                        <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">Share your
-                            well-written notes or solved question papers and help thousands of VTU students excel. Build
-                            your reputation as a contributor.</p>
+                        <h2 style="color: white; margin-bottom: var(--space-2);">Help Your Community! 🤝</h2>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0 auto;">Share your well-written notes or solved
+                            question papers and help thousands of VTU students excel. Build your reputation as a
+                            contributor.</p>
                     </div>
                     <a href="pages/contribute.html" class="btn"
-                        style="background: white; color: var(--primary-600); font-weight: 700; padding: var(--space-4) var(--space-8); border-radius: var(--radius-lg); width: fit-content; margin: 0 auto;">
+                        style="background: white; color: var(--primary-600); font-weight: 700; padding: var(--space-4) var(--space-8); border-radius: var(--radius-lg);">
                         Upload My Notes
                     </a>
                 </div>
