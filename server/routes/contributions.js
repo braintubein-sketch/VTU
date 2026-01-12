@@ -58,12 +58,19 @@ if (process.env.SMTP_USER && process.env.SMTP_PASS) {
 // @access  Private (Needs to be logged in)
 router.post('/upload', upload.single('file'), async (req, res) => {
     try {
+        console.log('UPLOAD REQUEST RECEIVED:', {
+            file: req.file ? req.file.originalname : 'No file',
+            body: req.body
+        });
+
         if (!req.file) {
+            console.log('UPLOAD ERROR: No file attached');
             return res.status(400).json({ success: false, error: 'Please upload a file' });
         }
 
         const { title, subjectCode, branch, semester, userId, userName } = req.body;
 
+        console.log('Creating database record for contribution...');
         const contribution = await Contribution.create({
             userId,
             userName,
@@ -76,10 +83,12 @@ router.post('/upload', upload.single('file'), async (req, res) => {
             fileSize: req.file.size,
             fileType: req.file.mimetype
         });
+        console.log('Database record created successfully:', contribution._id);
 
         // Send Email to Admin
         if (transporter) {
             try {
+                console.log('Attempting to send admin notification email...');
                 const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER;
                 await transporter.sendMail({
                     from: `"Braintube Content" <${process.env.SMTP_USER}>`,
@@ -96,8 +105,9 @@ router.post('/upload', upload.single('file'), async (req, res) => {
                         <p>Login to the admin panel to review and approve.</p>
                     `
                 });
+                console.log('Admin notification email sent.');
             } catch (emailError) {
-                console.error('Contribution Email Error:', emailError);
+                console.error('Contribution Email Error (Non-blocking):', emailError);
             }
         }
 
@@ -108,7 +118,7 @@ router.post('/upload', upload.single('file'), async (req, res) => {
         });
 
     } catch (error) {
-        console.error('Contribution upload error:', error);
+        console.error('CONTRIBUTION UPLOAD FATAL ERROR:', error);
         res.status(500).json({ success: false, error: error.message || 'Submission failed' });
     }
 });
