@@ -153,8 +153,7 @@
 
         <div class="upload-card">
             <form id="uploadForm">
-                <div class="form-grid"
-                    style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-bottom: var(--space-8);">
+                <div class="form-grid">
                     <div class="form-group">
                         <label class="form-label">Note Title</label>
                         <input type="text" id="noteTitle" class="form-input"
@@ -190,6 +189,21 @@
                         </select>
                     </div>
                 </div>
+
+                <style>
+                    .form-grid {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: var(--space-6);
+                        margin-bottom: var(--space-8);
+                    }
+
+                    @media (min-width: 640px) {
+                        .form-grid {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+                </style>
 
                 <div class="file-drop-zone" id="dropZone">
                     <div class="upload-icon">
