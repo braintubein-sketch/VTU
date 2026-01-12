@@ -45,12 +45,59 @@
 
 <body>
     <!-- Announcement Bar -->
-    <div
-        style="background: var(--gradient-primary); color: white; padding: 10px; text-align: center; font-size: 14px; font-weight: 600; position: relative; z-index: 1001;">
-        ✨ Have your own notes? <a href="pages/contribute.html"
-            style="color: white; text-decoration: underline; margin-left: 5px;">Share with 50K+ students and become a
-            contributor!</a>
+    <div class="announcement-bar">
+        <span>✨ Have your own notes?</span>
+        <a href="pages/contribute.html">Share with 50K+ students and become a contributor!</a>
     </div>
+
+    <style>
+        .announcement-bar {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 10px var(--space-4);
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        @media (min-width: 640px) {
+            .announcement-bar {
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+            }
+        }
+
+        .announcement-bar a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .promo-card {
+            background: var(--gradient-primary);
+            border: none;
+            padding: var(--space-8) var(--space-6);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-6);
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 1024px) {
+            .promo-card {
+                grid-template-columns: 1fr auto;
+                text-align: left;
+                gap: var(--space-8);
+                padding: var(--space-10) var(--space-12);
+            }
+        }
+    </style>
 
     <!-- Header / Navigation -->
     <header class="header" id="header">
@@ -146,8 +193,8 @@
                             </svg>
                             Explore Branches
                         </a>
-                        <a href="pages/contribute.html" class="btn btn-outline btn-lg"
-                            style="border: 2px solid var(--primary-500); color: var(--text-primary);">
+                        <a href="pages/contribute.html" class="btn btn-secondary btn-lg"
+                            style="border: 2px solid var(--primary-500);">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" style="margin-right: 8px;">
@@ -505,17 +552,16 @@
         <!-- Contribution Promo Section -->
         <section class="section" id="contribute" style="padding-top: 0;">
             <div class="container">
-                <div class="card card-gradient"
-                    style="background: var(--gradient-primary); border: none; padding: var(--space-8) var(--space-6); display: grid; grid-template-columns: 1fr auto; gap: var(--space-8); align-items: center;">
-                    <div style="color: white; text-align: left;">
+                <div class="card card-gradient promo-card">
+                    <div style="color: white;">
                         <h2 style="color: white; margin-bottom: var(--space-2); font-size: var(--text-2xl);">Help Your
                             Community! 🤝</h2>
-                        <p style="color: rgba(255,255,255,0.9); max-width: 600px;">Share your well-written notes or
-                            solved question papers and help thousands of VTU students excel. Build your reputation as a
-                            contributor.</p>
+                        <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;">Share your
+                            well-written notes or solved question papers and help thousands of VTU students excel. Build
+                            your reputation as a contributor.</p>
                     </div>
                     <a href="pages/contribute.html" class="btn"
-                        style="background: white; color: var(--primary-600); font-weight: 700; padding: var(--space-4) var(--space-8); border-radius: var(--radius-lg);">
+                        style="background: white; color: var(--primary-600); font-weight: 700; padding: var(--space-4) var(--space-8); border-radius: var(--radius-lg); width: fit-content; margin: 0 auto;">
                         Upload My Notes
                     </a>
                 </div>
