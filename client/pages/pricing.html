@@ -78,7 +78,7 @@
                     <div class="pricing-card">
                         <div class="pricing-header">
                             <h3 class="pricing-name">Free</h3>
-                            <div class="pricing-price">Ã¢â€šÂ¹0 <span>/ forever</span></div>
+                            <div class="pricing-price">₹0 <span>/ forever</span></div>
                         </div>
                         <ul class="pricing-features">
                             <li class="pricing-feature">
@@ -124,7 +124,7 @@
                     <div class="pricing-card featured">
                         <div class="pricing-header">
                             <h3 class="pricing-name">Premium</h3>
-                            <div class="pricing-price">Ã¢â€šÂ¹199 <span>/ semester</span></div>
+                            <div class="pricing-price">₹199 <span>/ semester</span></div>
                         </div>
                         <ul class="pricing-features">
                             <li class="pricing-feature">
@@ -178,7 +178,7 @@
                     <div class="pricing-card">
                         <div class="pricing-header">
                             <h3 class="pricing-name">Ultimate</h3>
-                            <div class="pricing-price">Ã¢â€šÂ¹499 <span>/ year</span></div>
+                            <div class="pricing-price">₹499 <span>/ year</span></div>
                         </div>
                         <ul class="pricing-features">
                             <li class="pricing-feature">
@@ -331,7 +331,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-                <p class="footer-copyright">Ã‚Â© 2026 Braintube. Made with dedication for VTU Students across Karnataka.
+                <p class="footer-copyright">© 2026 Braintube. Made with dedication for VTU Students across Karnataka.
                 </p>
             </div>
         </div>
@@ -342,7 +342,7 @@
         <div class="modal">
             <div class="modal-header">
                 <h3 class="modal-title">Complete Payment</h3>
-                <button class="modal-close" onclick="closeModal('paymentModal')">Ã¢Å“â€¢</button>
+                <button class="modal-close" onclick="closeModal('paymentModal')">✕</button>
             </div>
             <div class="modal-body">
                 <div class="form">
@@ -384,7 +384,7 @@
                         </div>
                         <div class="flex justify-between" style="margin-top: var(--space-2);">
                             <span>Amount:</span>
-                            <span id="selectedAmount" style="font-weight: 600; color: var(--primary-400);">Ã¢â€šÂ¹199</span>
+                            <span id="selectedAmount" style="font-weight: 600; color: var(--primary-400);">₹199</span>
                         </div>
                     </div>
                 </div>
@@ -406,7 +406,7 @@
             selectedPlan = plan;
             const prices = { premium: 199, ultimate: 499 };
             document.getElementById('selectedPlan').textContent = plan.charAt(0).toUpperCase() + plan.slice(1);
-            document.getElementById('selectedAmount').textContent = `Ã¢â€šÂ¹${prices[plan]}`;
+            document.getElementById('selectedAmount').textContent = `₹${prices[plan]}`;
             openModal('paymentModal');
         }
 
@@ -518,7 +518,8 @@
             }
         }
     </script>
-    <script src="../scripts/auth.js?v=1.0.3"></script>    <script src="../scripts/whatsapp-modal.js"></script>
+    <script src="../scripts/auth.js?v=1.0.3"></script>
+    <script src="../scripts/whatsapp-modal.js"></script>
 
 </body>
 
