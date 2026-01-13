@@ -106,6 +106,26 @@
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
 
+.btn-skip {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: var(--space-3);
+    width: 100%;
+}
+
+.btn-skip:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--primary-500);
+}
+
 .whatsapp-skip-text {
     margin-top: var(--space-4);
     font-size: var(--text-xs);

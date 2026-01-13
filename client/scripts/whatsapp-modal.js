@@ -64,7 +64,8 @@ function showWhatsAppModal() {
                         </svg>
                         Join WhatsApp Channel
                     </a>
-                    <p class="whatsapp-skip-text">You must join to continue browsing</p>
+                    <button class="btn-skip" id="skipChannelBtn">Maybe Later</button>
+                    <p class="whatsapp-skip-text">Join our channel to stay updated with latest notes & alerts!</p>
                 </div>
             </div>
         </div>
@@ -83,6 +84,12 @@ function showWhatsAppModal() {
             localStorage.setItem(STORAGE_KEY, 'true');
             hideWhatsAppModal();
         }, 1000);
+    });
+
+    // Handle skip button click
+    document.getElementById('skipChannelBtn').addEventListener('click', () => {
+        localStorage.setItem(STORAGE_KEY, 'skipped');
+        hideWhatsAppModal();
     });
 }
 
