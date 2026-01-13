@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../styles/index.css?v=3.0.0">
+    <link rel="stylesheet" href="../styles/theme-v3.css">
     <link rel="stylesheet" href="../styles/whatsapp-modal.css?v=3.0.0">
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
@@ -78,7 +78,7 @@
                     <div class="pricing-card">
                         <div class="pricing-header">
                             <h3 class="pricing-name">Free</h3>
-                            <div class="pricing-price">â‚¹0 <span>/ forever</span></div>
+                            <div class="pricing-price">Ã¢â€šÂ¹0 <span>/ forever</span></div>
                         </div>
                         <ul class="pricing-features">
                             <li class="pricing-feature">
@@ -124,7 +124,7 @@
                     <div class="pricing-card featured">
                         <div class="pricing-header">
                             <h3 class="pricing-name">Premium</h3>
-                            <div class="pricing-price">â‚¹199 <span>/ semester</span></div>
+                            <div class="pricing-price">Ã¢â€šÂ¹199 <span>/ semester</span></div>
                         </div>
                         <ul class="pricing-features">
                             <li class="pricing-feature">
@@ -178,7 +178,7 @@
                     <div class="pricing-card">
                         <div class="pricing-header">
                             <h3 class="pricing-name">Ultimate</h3>
-                            <div class="pricing-price">â‚¹499 <span>/ year</span></div>
+                            <div class="pricing-price">Ã¢â€šÂ¹499 <span>/ year</span></div>
                         </div>
                         <ul class="pricing-features">
                             <li class="pricing-feature">
@@ -331,7 +331,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-                <p class="footer-copyright">Â© 2026 Braintube. Made with dedication for VTU Students across Karnataka.
+                <p class="footer-copyright">Ã‚Â© 2026 Braintube. Made with dedication for VTU Students across Karnataka.
                 </p>
             </div>
         </div>
@@ -342,7 +342,7 @@
         <div class="modal">
             <div class="modal-header">
                 <h3 class="modal-title">Complete Payment</h3>
-                <button class="modal-close" onclick="closeModal('paymentModal')">âœ•</button>
+                <button class="modal-close" onclick="closeModal('paymentModal')">Ã¢Å“â€¢</button>
             </div>
             <div class="modal-body">
                 <div class="form">
@@ -384,7 +384,7 @@
                         </div>
                         <div class="flex justify-between" style="margin-top: var(--space-2);">
                             <span>Amount:</span>
-                            <span id="selectedAmount" style="font-weight: 600; color: var(--primary-400);">â‚¹199</span>
+                            <span id="selectedAmount" style="font-weight: 600; color: var(--primary-400);">Ã¢â€šÂ¹199</span>
                         </div>
                     </div>
                 </div>
@@ -406,7 +406,7 @@
             selectedPlan = plan;
             const prices = { premium: 199, ultimate: 499 };
             document.getElementById('selectedPlan').textContent = plan.charAt(0).toUpperCase() + plan.slice(1);
-            document.getElementById('selectedAmount').textContent = `â‚¹${prices[plan]}`;
+            document.getElementById('selectedAmount').textContent = `Ã¢â€šÂ¹${prices[plan]}`;
             openModal('paymentModal');
         }
 

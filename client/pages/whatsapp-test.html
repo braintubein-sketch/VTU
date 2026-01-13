@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp Modal Debug - Braintube</title>
-    <link rel="stylesheet" href="../styles/index.css?v=3.0.0">
+    <link rel="stylesheet" href="../styles/theme-v3.css">
     <link rel="stylesheet" href="../styles/whatsapp-modal.css?v=3.0.0">
 </head>
 
@@ -58,9 +58,9 @@
             const statusDiv = document.getElementById('status');
 
             if (!value) {
-                statusDiv.innerHTML = '<h3 style="color: #10b981;">âœ… Modal will show</h3><p>No localStorage value found. Modal should appear on page load.</p>';
+                statusDiv.innerHTML = '<h3 style="color: #10b981;">Ã¢Å“â€¦ Modal will show</h3><p>No localStorage value found. Modal should appear on page load.</p>';
             } else {
-                statusDiv.innerHTML = `<h3 style="color: #f59e0b;">âš ï¸ Modal hidden</h3><p>localStorage value: <strong>${value}</strong></p><p>Modal will NOT appear. Click "Clear Storage" to reset.</p>`;
+                statusDiv.innerHTML = `<h3 style="color: #f59e0b;">Ã¢Å¡Â Ã¯Â¸Â Modal hidden</h3><p>localStorage value: <strong>${value}</strong></p><p>Modal will NOT appear. Click "Clear Storage" to reset.</p>`;
             }
         }
 
