@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Modal Debug - Braintube</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/whatsapp-modal.css">
+</head>
+
+<body style="padding: 50px; text-align: center;">
+    <h1>WhatsApp Modal Debug Page</h1>
+    <p>This page helps you test the WhatsApp channel modal</p>
+
+    <div style="margin: 30px 0;">
+        <button onclick="clearStorage()" class="btn btn-primary" style="margin: 10px;">
+            Clear Storage & Reload
+        </button>
+        <button onclick="showModalNow()" class="btn btn-secondary" style="margin: 10px;">
+            Force Show Modal
+        </button>
+        <button onclick="checkStatus()" class="btn btn-ghost" style="margin: 10px;">
+            Check Status
+        </button>
+    </div>
+
+    <div id="status"
+        style="margin-top: 20px; padding: 20px; background: var(--bg-card); border-radius: 10px; max-width: 600px; margin: 20px auto;">
+    </div>
+
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script>
+        // Don't auto-load the modal
+        const WHATSAPP_CHANNEL_URL = 'https://whatsapp.com/channel/0029VbBLfm7K5cDDwzRUOc00';
+        const STORAGE_KEY = 'bt_whatsapp_joined';
+
+        function clearStorage() {
+            localStorage.removeItem(STORAGE_KEY);
+            alert('Storage cleared! Reloading...');
+            location.reload();
+        }
+
+        function showModalNow() {
+            // Remove existing modal if any
+            const existing = document.getElementById('whatsappModal');
+            if (existing) existing.remove();
+
+            // Load the script
+            const script = document.createElement('script');
+            script.src = '../scripts/whatsapp-modal.js';
+            document.body.appendChild(script);
+        }
+
+        function checkStatus() {
+            const value = localStorage.getItem(STORAGE_KEY);
+            const statusDiv = document.getElementById('status');
+
+            if (!value) {
+                statusDiv.innerHTML = '<h3 style="color: #10b981;">✅ Modal will show</h3><p>No localStorage value found. Modal should appear on page load.</p>';
+            } else {
+                statusDiv.innerHTML = `<h3 style="color: #f59e0b;">⚠️ Modal hidden</h3><p>localStorage value: <strong>${value}</strong></p><p>Modal will NOT appear. Click "Clear Storage" to reset.</p>`;
+            }
+        }
+
+        // Check status on load
+        checkStatus();
+    </script>
+</body>
+
+</html>
