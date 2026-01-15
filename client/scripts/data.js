@@ -96,7 +96,8 @@ const VTUData = {
     ],
     'cse-7': [
       { code: 'BCS701', name: 'Internet of Things', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCS702', name: 'Parallel Computing', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS702', name: 'Parallel Computing', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS703', name: 'Cryptography and Network Security', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS711A', name: 'Deep Learning', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS711B', name: 'Natural Language Processing', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS712A', name: 'Blockchain Technology', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
@@ -186,7 +187,8 @@ const VTUData = {
     ],
     'ise-7': [
       { code: 'BIS701', name: 'Deep Learning', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BIS702', name: 'DevOps', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BIS702', name: 'DevOps', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BIS703', name: 'Information and Network Security', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BISP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'ise-8': [
@@ -227,7 +229,8 @@ const VTUData = {
     ],
     'ece-7': [
       { code: 'BEC701', name: 'Microwave Engineering and Antenna Theory', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC702', name: 'Computer Networks and Protocols', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC702', name: 'Computer Networks and Protocols', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC703', name: 'Wireless Communication Systems', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BECP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'ece-8': [
@@ -268,7 +271,8 @@ const VTUData = {
     ],
     'eee-7': [
       { code: 'BEE701', name: 'Switchgear and Protection', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE702', name: 'Industrial Drives and Applications', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE702', name: 'Industrial Drives and Applications', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE703', name: 'Power System Analysis II', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BEEP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'eee-8': [
@@ -309,7 +313,8 @@ const VTUData = {
     ],
     'me-7': [
       { code: 'BME701', name: 'Finite Element Methods', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BME702', name: 'Hydraulics and Pneumatics', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME702', name: 'Hydraulics and Pneumatics', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME703', name: 'Control Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BMEP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'me-8': [
@@ -351,7 +356,7 @@ const VTUData = {
     'cv-7': [
       { code: 'BCV701', name: 'Design of Steel Structures', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCV702', name: 'Estimation and Contract Management', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV703', name: 'Prestressed Concrete', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV703', name: 'Prestressed Concrete', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCVP705', name: 'Project Work Phase - 1', credits: 6, type: 'Project', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'cv-8': [
