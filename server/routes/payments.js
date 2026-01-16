@@ -304,52 +304,172 @@ router.get('/plans', (req, res) => {
     });
 });
 
-// Webhook handler (Production reliability)
+// Webhook handler (Production reliability - ALWAYS returns 200 OK)
 router.post('/webhook', async (req, res) => {
+    const startTime = Date.now();
+    const timestamp = new Date().toISOString();
+
+    console.log(`[WEBHOOK] ========================================`);
+    console.log(`[WEBHOOK] Received at ${timestamp}`);
+    console.log(`[WEBHOOK] Headers:`, JSON.stringify({
+        'x-razorpay-signature': req.headers['x-razorpay-signature'] ? 'present' : 'missing',
+        'content-type': req.headers['content-type']
+    }));
+
     try {
-        const secret = process.env.RAZORPAY_WEBHOOK_SECRET || 'vtu_nexus_webhook_secret';
+        const secret = process.env.RAZORPAY_WEBHOOK_SECRET;
+
+        // Check if secret is configured
+        if (!secret) {
+            console.error('[WEBHOOK] ❌ RAZORPAY_WEBHOOK_SECRET not configured!');
+            // Still return 200 to prevent webhook disabling
+            return res.status(200).json({
+                status: 'ok',
+                warning: 'Webhook secret not configured',
+                timestamp
+            });
+        }
+
         const signature = req.headers['x-razorpay-signature'];
+
+        if (!signature) {
+            console.warn('[WEBHOOK] ⚠️ No x-razorpay-signature header present');
+            return res.status(200).json({
+                status: 'ok',
+                warning: 'No signature header',
+                timestamp
+            });
+        }
+
+        // Get raw body for signature verification
+        const rawBody = typeof req.body === 'string'
+            ? req.body
+            : JSON.stringify(req.body);
 
         // Verify webhook signature
         const expectedSignature = crypto
             .createHmac('sha256', secret)
-            .update(JSON.stringify(req.body))
+            .update(rawBody)
             .digest('hex');
 
         if (signature !== expectedSignature) {
-            return res.status(400).json({ success: false, error: 'Invalid signature' });
+            console.error('[WEBHOOK] ❌ Signature mismatch!');
+            console.error(`[WEBHOOK] Expected: ${expectedSignature.substring(0, 20)}...`);
+            console.error(`[WEBHOOK] Received: ${signature.substring(0, 20)}...`);
+            // Return 200 to prevent webhook disabling (we log for investigation)
+            return res.status(200).json({
+                status: 'ok',
+                verified: false,
+                timestamp
+            });
         }
 
-        const event = req.body.event;
-        const payment = req.body.payload.payment.entity;
-        const orderId = payment.order_id;
+        console.log('[WEBHOOK] ✅ Signature verified successfully');
 
-        console.log(`Webhook Received: ${event} for Order: ${orderId}`);
+        // Parse payload
+        const payload = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+        const event = payload.event;
+        const payment = payload.payload?.payment?.entity;
+        const orderId = payment?.order_id;
+        const paymentId = payment?.id;
 
-        if (event === 'order.paid' || event === 'payment.captured') {
-            const order = orders.get(orderId);
+        console.log(`[WEBHOOK] Event: ${event}`);
+        console.log(`[WEBHOOK] Order ID: ${orderId}`);
+        console.log(`[WEBHOOK] Payment ID: ${paymentId}`);
+        console.log(`[WEBHOOK] Amount: ₹${payment?.amount / 100 || 'N/A'}`);
 
-            // If already processed via frontend, skip
-            if (order && order.status === 'paid') {
-                return res.json({ status: 'ok', msg: 'Already processed' });
+        // Respond immediately (within 5 seconds to prevent timeout)
+        const responseTime = Date.now() - startTime;
+        console.log(`[WEBHOOK] Responding in ${responseTime}ms`);
+
+        res.status(200).json({
+            status: 'ok',
+            event: event,
+            processed: true,
+            responseTime: `${responseTime}ms`,
+            timestamp
+        });
+
+        // Process asynchronously after quick response
+        setImmediate(async () => {
+            try {
+                console.log(`[WEBHOOK-ASYNC] Processing ${event} for order ${orderId}`);
+
+                if (event === 'order.paid' || event === 'payment.captured') {
+                    const order = orders.get(orderId);
+
+                    // If already processed via frontend, skip
+                    if (order && order.status === 'paid') {
+                        console.log(`[WEBHOOK-ASYNC] Order ${orderId} already processed, skipping`);
+                        return;
+                    }
+
+                    // Sync with memory/DB
+                    if (order) {
+                        order.status = 'paid';
+                        order.paymentId = paymentId;
+                        order.webhookProcessedAt = new Date().toISOString();
+                        orders.set(orderId, order);
+
+                        console.log(`[WEBHOOK-ASYNC] ✅ Order ${orderId} marked as paid`);
+
+                        // Trigger fulfillment (email notifications)
+                        if (transporter && order.notes) {
+                            try {
+                                const isFixQ = order.notes.planId === 'fix_questions';
+                                const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER;
+
+                                // Send email to admin
+                                await transporter.sendMail({
+                                    from: `"Braintube Payments" <${process.env.SMTP_USER}>`,
+                                    to: adminEmail,
+                                    subject: `💰 [WEBHOOK] Payment Confirmed - ${order.notes.planId}`,
+                                    html: `
+                                        <h2>Payment Confirmed via Webhook</h2>
+                                        <p><strong>Customer:</strong> ${order.notes.name}</p>
+                                        <p><strong>Email:</strong> ${order.notes.email}</p>
+                                        <p><strong>Plan:</strong> ${order.notes.planId}</p>
+                                        <p><strong>Amount:</strong> ₹${order.amount / 100}</p>
+                                        ${isFixQ ? `<p><strong>Subject:</strong> ${order.notes.subjectCode} - ${order.notes.subjectName}</p>` : ''}
+                                        <p><strong>Payment ID:</strong> ${paymentId}</p>
+                                        <p><strong>Processed via:</strong> Razorpay Webhook</p>
+                                    `
+                                });
+                                console.log(`[WEBHOOK-ASYNC] ✅ Admin notification sent`);
+                            } catch (emailError) {
+                                console.error('[WEBHOOK-ASYNC] Email error:', emailError.message);
+                            }
+                        }
+                    } else {
+                        console.warn(`[WEBHOOK-ASYNC] ⚠️ Order ${orderId} not found in memory`);
+                        // In production, you should query database here
+                    }
+                } else if (event === 'payment.failed') {
+                    console.log(`[WEBHOOK-ASYNC] Payment failed for order ${orderId}`);
+                    const order = orders.get(orderId);
+                    if (order) {
+                        order.status = 'failed';
+                        order.failedAt = new Date().toISOString();
+                        orders.set(orderId, order);
+                    }
+                }
+
+                console.log(`[WEBHOOK-ASYNC] ✅ Async processing complete`);
+            } catch (asyncError) {
+                console.error('[WEBHOOK-ASYNC] ❌ Error during async processing:', asyncError);
             }
+        });
 
-            // Sync with memory/DB
-            if (order) {
-                order.status = 'paid';
-                order.paymentId = payment.id;
-                orders.set(orderId, order);
-
-                // Trigger fulfillment if not done
-                // (Implementation same as verify route)
-                console.log(`Automatic fulfillment triggered for ${order.notes.email}`);
-            }
-        }
-
-        res.json({ status: 'ok' });
     } catch (error) {
-        console.error('Webhook error:', error);
-        res.status(500).json({ success: false });
+        console.error('[WEBHOOK] ❌ Error:', error.message);
+        console.error('[WEBHOOK] Stack:', error.stack);
+
+        // ALWAYS return 200 OK to prevent webhook auto-disable
+        return res.status(200).json({
+            status: 'ok',
+            error: 'internal_processing_error',
+            timestamp: new Date().toISOString()
+        });
     }
 });
 
