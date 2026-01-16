@@ -7,10 +7,22 @@ const router = express.Router();
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 
-// Initialize Email Transporter
+// Initialize Resend for email (works on Render free tier)
+let resend = null;
+try {
+    if (process.env.RESEND_API_KEY) {
+        const { Resend } = require('resend');
+        resend = new Resend(process.env.RESEND_API_KEY);
+        console.log('✅ Resend email service initialized');
+    }
+} catch (error) {
+    console.log('Resend initialization error:', error.message);
+}
+
+// Initialize SMTP Email Transporter (fallback for local development)
 let transporter = null;
 try {
-    if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+    if (!resend && process.env.SMTP_USER && process.env.SMTP_PASS) {
         transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST || 'smtp.gmail.com',
             port: parseInt(process.env.SMTP_PORT) || 587,
@@ -20,9 +32,40 @@ try {
                 pass: process.env.SMTP_PASS
             }
         });
+        console.log('✅ SMTP email transporter initialized');
     }
 } catch (error) {
-    console.log('Email transporter error:', error.message);
+    console.log('SMTP transporter error:', error.message);
+}
+
+// Unified email sending function
+async function sendEmail({ to, subject, html, from }) {
+    const fromEmail = from || process.env.SMTP_USER || 'noreply@braintube.site';
+
+    if (resend) {
+        // Use Resend API (works on Render free tier)
+        const result = await resend.emails.send({
+            from: `Braintube <${fromEmail}>`,
+            to: to,
+            subject: subject,
+            html: html
+        });
+        console.log(`[EMAIL] Sent via Resend to ${to}`);
+        return result;
+    } else if (transporter) {
+        // Use SMTP (for local development)
+        const result = await transporter.sendMail({
+            from: `"Braintube" <${fromEmail}>`,
+            to: to,
+            subject: subject,
+            html: html
+        });
+        console.log(`[EMAIL] Sent via SMTP to ${to}`);
+        return result;
+    } else {
+        console.warn(`[EMAIL] No email service configured. Would have sent to ${to}: ${subject}`);
+        return null;
+    }
 }
 
 // Initialize Razorpay (configure in production)
@@ -193,14 +236,13 @@ router.post('/verify', async (req, res) => {
             orders.set(razorpay_order_id, order);
 
             // AUTOMATED FULFILLMENT (Real-time system)
-            if (transporter && order.notes) {
+            if ((resend || transporter) && order.notes) {
                 try {
                     const isFixQ = order.notes.planId === 'fix_questions';
-                    const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER;
+                    const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER || 'admin@braintube.site';
 
                     // 1. Send Email to Admin
-                    await transporter.sendMail({
-                        from: `"Braintube Payments" <${process.env.SMTP_USER}>`,
+                    await sendEmail({
                         to: adminEmail,
                         subject: `💰 New Payment Verified - ${order.notes.planId}`,
                         html: `
@@ -215,8 +257,7 @@ router.post('/verify', async (req, res) => {
                     });
 
                     // 2. Send Email to Customer
-                    await transporter.sendMail({
-                        from: `"Braintube" <${process.env.SMTP_USER}>`,
+                    await sendEmail({
                         to: order.notes.email,
                         subject: `Thank you for your purchase - Braintube`,
                         html: `
@@ -414,14 +455,13 @@ router.post('/webhook', async (req, res) => {
                         console.log(`[WEBHOOK-ASYNC] ✅ Order ${orderId} marked as paid`);
 
                         // Trigger fulfillment (email notifications)
-                        if (transporter && order.notes) {
+                        if ((resend || transporter) && order.notes) {
                             try {
                                 const isFixQ = order.notes.planId === 'fix_questions';
-                                const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER;
+                                const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER || 'admin@braintube.site';
 
                                 // Send email to admin
-                                await transporter.sendMail({
-                                    from: `"Braintube Payments" <${process.env.SMTP_USER}>`,
+                                await sendEmail({
                                     to: adminEmail,
                                     subject: `💰 [WEBHOOK] Payment Confirmed - ${order.notes.planId}`,
                                     html: `
