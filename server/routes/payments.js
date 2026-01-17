@@ -281,31 +281,40 @@ router.post('/verify', async (req, res) => {
                             <p><strong>Payment ID:</strong> ${razorpay_payment_id}</p>
                         `
                     });
+                    console.log(`[VERIFY] ✅ Admin email sent to ${adminEmail}`);
 
                     // 2. Send Email to Customer
-                    await sendEmail({
-                        to: order.notes.email,
-                        subject: `Thank you for your purchase - Braintube`,
-                        html: `
-                            <div style="font-family: Arial, sans-serif; max-width: 600px; border: 1px solid #eee; padding: 20px;">
-                                <h2 style="color: #764ba2;">Payment Successful! 🎉</h2>
-                                <p>Dear ${order.notes.name},</p>
-                                <p>We've received your payment of <strong>₹${order.amount / 100}</strong> for the <strong>${order.notes.planId.replace('_', ' ')}</strong>.</p>
-                                ${isFixQ ? `
-                                <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
-                                    <h3 style="margin-top: 0;">Order Details:</h3>
-                                    <p>Subject: ${order.notes.subjectCode} - ${order.notes.subjectName}</p>
-                                    <p>We will send your Fix Questions PDF to this email within 24 hours.</p>
-                                </div>` : ''}
-                                <p><strong>Payment ID:</strong> ${razorpay_payment_id}</p>
-                                <p>If you have any questions, please contact us on WhatsApp: +91 8884624741</p>
-                                <br>
-                                <p>Happy Learning!<br>Team Braintube</p>
-                            </div>
-                        `
-                    });
+                    const customerEmail = order.notes.email;
+                    console.log(`[VERIFY] Attempting customer email to: ${customerEmail}`);
+
+                    if (customerEmail) {
+                        await sendEmail({
+                            to: customerEmail,
+                            subject: `Thank you for your purchase - Braintube`,
+                            html: `
+                                <div style="font-family: Arial, sans-serif; max-width: 600px; border: 1px solid #eee; padding: 20px;">
+                                    <h2 style="color: #764ba2;">Payment Successful! 🎉</h2>
+                                    <p>Dear ${order.notes.name},</p>
+                                    <p>We've received your payment of <strong>₹${order.amount / 100}</strong> for the <strong>${order.notes.planId.replace('_', ' ')}</strong>.</p>
+                                    ${isFixQ ? `
+                                    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 20px 0;">
+                                        <h3 style="margin-top: 0;">Order Details:</h3>
+                                        <p>Subject: ${order.notes.subjectCode} - ${order.notes.subjectName}</p>
+                                        <p>We will send your Fix Questions PDF to this email within 24 hours.</p>
+                                    </div>` : ''}
+                                    <p><strong>Payment ID:</strong> ${razorpay_payment_id}</p>
+                                    <p>If you have any questions, please contact us on WhatsApp: +91 8884624741</p>
+                                    <br>
+                                    <p>Happy Learning!<br>Team Braintube</p>
+                                </div>
+                            `
+                        });
+                        console.log(`[VERIFY] ✅ Customer email sent to ${customerEmail}`);
+                    } else {
+                        console.warn(`[VERIFY] ⚠️ No customer email found in order.notes`);
+                    }
                 } catch (emailError) {
-                    console.error('Fulfillment Email Error:', emailError);
+                    console.error('[VERIFY] ❌ Fulfillment Email Error:', emailError.message);
                 }
             }
 
