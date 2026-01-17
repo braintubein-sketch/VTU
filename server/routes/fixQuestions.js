@@ -41,8 +41,9 @@ try {
 
 // Unified email sending function
 async function sendEmail({ to, subject, html, from }) {
-    // Use verified domain for Resend (required after domain verification)
-    const fromEmail = from || 'noreply@braintube.site';
+    // Use Resend's shared domain (works immediately) or verified domain
+    // Change this to 'noreply@braintube.site' once domain is fully verified
+    const fromEmail = from || 'onboarding@resend.dev';
 
     if (resend) {
         try {
