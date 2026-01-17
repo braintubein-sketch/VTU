@@ -469,10 +469,8 @@ router.post('/webhook', async (req, res) => {
             });
         }
 
-        // Get raw body for signature verification
-        const rawBody = typeof req.body === 'string'
-            ? req.body
-            : JSON.stringify(req.body);
+        // Get raw body for signature verification (captured by middleware in index.js)
+        const rawBody = req.rawBody || JSON.stringify(req.body);
 
         // Verify webhook signature
         const expectedSignature = crypto
