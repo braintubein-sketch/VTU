@@ -862,6 +862,160 @@ const VTUSyllabus = {
             'Structural Analysis - Aslam Kassimali',
             'Mechanics of Materials - Beer and Johnston'
         ]
+    },
+
+    // ==================== EEE SEMESTER 3 ====================
+    'BEE301': {
+        name: 'Transform Calculus, Fourier Series & Numerical Techniques',
+        code: 'BEE301',
+        credits: 4,
+        type: 'Theory',
+        scheme: '2022',
+        description: 'Mathematical foundations for electrical engineering including Laplace transforms, Fourier series, and numerical techniques.',
+        objectives: ['Apply Laplace transforms', 'Understand Fourier series', 'Use numerical methods'],
+        modules: [
+            { num: 1, title: 'Laplace Transforms', hours: 10, topics: 'Definition, Transforms of elementary functions, Properties, Inverse Laplace transforms, Convolution theorem.' },
+            { num: 2, title: 'Fourier Series', hours: 10, topics: 'Periodic functions, Euler\'s formulae, Even and odd functions, Half range series, Harmonic analysis.' },
+            { num: 3, title: 'Fourier Transforms', hours: 10, topics: 'Infinite Fourier transforms, Fourier sine and cosine transforms, Inverse Fourier transforms.' },
+            { num: 4, title: 'Numerical Methods - I', hours: 8, topics: 'Solution of algebraic and transcendental equations, Newton-Raphson method, Regula-Falsi method.' },
+            { num: 5, title: 'Numerical Methods - II', hours: 10, topics: 'Finite differences, Interpolation, Numerical integration, Simpson\'s rules, Weddle\'s rule.' }
+        ],
+        textbooks: ['Higher Engineering Mathematics - B.S. Grewal', 'Advanced Engineering Mathematics - Erwin Kreyszig'],
+        references: ['Engineering Mathematics - N.P. Bali', 'Higher Engineering Mathematics - H.K. Dass']
+    },
+    'BEE303': {
+        name: 'Network Analysis',
+        code: 'BEE303',
+        credits: 4,
+        type: 'Theory',
+        scheme: '2022',
+        description: 'Analysis of electrical networks using various theorems and techniques including transient and steady-state analysis.',
+        objectives: ['Apply circuit theorems', 'Analyze AC circuits', 'Understand transient response'],
+        modules: [
+            { num: 1, title: 'Basic Concepts', hours: 8, topics: 'Practical sources, Source transformations, Mesh and nodal analysis, Star-delta transformation.' },
+            { num: 2, title: 'Network Theorems', hours: 10, topics: 'Superposition, Thevenin\'s, Norton\'s, Maximum Power Transfer, and Reciprocity theorems.' },
+            { num: 3, title: 'Sinusoidal Steady State Analysis', hours: 10, topics: 'Phasor representation, Analysis of RLC circuits, Power and power factor, Resonance in circuits.' },
+            { num: 4, title: 'Transient Analysis', hours: 10, topics: 'Initial conditions in elements, Step response of RL, RC, and RLC circuits, Differential equation approach.' },
+            { num: 5, title: 'Two Port Networks', hours: 10, topics: 'z, y, h, and ABCD parameters, Interconnection of two-port networks.' }
+        ],
+        textbooks: ['Network Analysis - M.E. Van Valkenburg', 'Engineering Circuit Analysis - Hayt, Kemmerly and Durbin'],
+        references: ['Networks and Systems - D. Roy Choudhury', 'Basic Circuit Analysis - John O\'Malley']
+    },
+
+    // ==================== MECHANICAL SEMESTER 3 ====================
+    'BME301': {
+        name: 'Transform Calculus, Fourier Series & Numerical Techniques',
+        code: 'BME301',
+        credits: 4,
+        type: 'Theory',
+        scheme: '2022',
+        modules: [
+            { num: 1, title: 'Laplace Transforms', hours: 10, topics: 'Properties, Inverse transforms, Applications to differential equations.' },
+            { num: 2, title: 'Fourier Series', hours: 10, topics: 'Periodic functions, Half range series, Harmonic analysis.' },
+            { num: 3, title: 'Fourier Transforms', hours: 10, topics: 'Fourier sine and cosine transforms, Inverse transforms.' },
+            { num: 4, title: 'Numerical Methods - I', hours: 8, topics: 'Roots of equations, Newton-Raphson, Interpolation.' },
+            { num: 5, title: 'Numerical Methods - II', hours: 10, topics: 'Numerical differentiation and integration, Solution of ODEs.' }
+        ],
+        textbooks: ['Higher Engineering Mathematics - B.S. Grewal'],
+        references: ['Advanced Engineering Mathematics - Erwin Kreyszig']
+    },
+    'BME303': {
+        name: 'Thermodynamics',
+        code: 'BME303',
+        credits: 4,
+        type: 'Theory',
+        scheme: '2022',
+        description: 'Fundamental principles of thermodynamics including laws, properties of pure substances, and thermodynamic cycles.',
+        objectives: ['Understand laws of thermodynamics', 'Analyze thermodynamic cycles', 'Study properties of pure substances'],
+        modules: [
+            { num: 1, title: 'Fundamental Concepts', hours: 8, topics: 'System, Boundary, Surrounding, Properties, Processes, Zeroth law of thermodynamics.' },
+            { num: 2, title: 'First Law of Thermodynamics', hours: 12, topics: 'Energy, Work, Heat, First law for non-flow and steady flow processes, PMM-I.' },
+            { num: 3, title: 'Second Law of Thermodynamics', hours: 10, topics: 'Heat engines, Refrigerators, Heat pumps, Kelvin-Planck and Clausius statements, Entropy.' },
+            { num: 4, title: 'Pure Substances & Gas Power Cycles', hours: 10, topics: 'P-V, T-S, H-S diagrams for pure substances, Carnot cycle, Otto cycle, Diesel cycle.' },
+            { num: 5, title: 'Vapor Power Cycles', hours: 8, topics: 'Rankine cycle, Performance improvement, Refrigeration cycles.' }
+        ],
+        textbooks: ['Engineering Thermodynamics - P.K. Nag', 'Thermodynamics: An Engineering Approach - Cengel and Boles'],
+        references: ['Fundamentals of Engineering Thermodynamics - Moran and Shapiro']
+    },
+
+    // ==================== SEMESTER 5 & 6 (CSE/ISE) ====================
+    'BCS501': {
+        name: 'Software Engineering & Project Management',
+        code: 'BCS501',
+        credits: 4,
+        type: 'Theory',
+        scheme: '2022',
+        description: 'Principles of software engineering, development models, requirement engineering, testing, and project management.',
+        modules: [
+            { num: 1, title: 'Introduction to Software Engineering', hours: 8, topics: 'Software process models, Waterfall, Agile development, Scrum, Sprint planning.' },
+            { num: 2, title: 'Requirements Engineering', hours: 10, topics: 'Functional and non-functional requirements, SRS, Requirement elicitation and analysis.' },
+            { num: 3, title: 'System Modeling & Design', hours: 10, topics: 'UML diagrams, Class diagrams, Sequence diagrams, Design patterns, Architecture styles.' },
+            { num: 4, title: 'Software Testing', hours: 10, topics: 'Verification and validation, Black-box and white-box testing, Unit testing, Integration testing.' },
+            { num: 5, title: 'Project Management', hours: 8, topics: 'Risk management, Project scheduling, Software quality assurance, Maintenance.' }
+        ],
+        textbooks: ['Software Engineering - Ian Sommerville', 'Software Engineering: A Practitioner\'s Approach - Roger Pressman']
+    },
+    'BCS502': {
+        name: 'Computer Networks',
+        code: 'BCS502',
+        credits: 4,
+        type: 'Theory',
+        scheme: '2022',
+        description: 'Study of networking layers, protocols, and architecture with a focus on TCP/IP and OSI models.',
+        modules: [
+            { num: 1, title: 'Introduction', hours: 8, topics: 'Network types, OSI model, TCP/IP suite, Physical layer fundamentals.' },
+            { num: 2, title: 'Data Link Layer', hours: 10, topics: 'Error detection and correction, MAC protocols, Ethernet, IEEE 802.11.' },
+            { num: 3, title: 'Network Layer', hours: 10, topics: 'IP addressing, IPv4 and IPv6, Routing algorithms (Distance Vector, Link State), OSPF, BGP.' },
+            { num: 4, title: 'Transport Layer', hours: 10, topics: 'UDP, TCP (Connection, Flow control, Congestion control), Socket programming.' },
+            { num: 5, title: 'Application Layer', hours: 8, topics: 'HTTP, DNS, SMTP, P2P networks, Network security basics.' }
+        ],
+        textbooks: ['Computer Networks - Andrew S. Tanenbaum', 'Computer Networking: A Top-Down Approach - Jim Kurose']
+    },
+    'BCS503': {
+        name: 'Theory of Computation',
+        code: 'BCS503',
+        credits: 4,
+        type: 'Theory',
+        scheme: '2022',
+        description: 'Mathematical foundations of computation including finite automata, context-free languages, and Turing machines.',
+        modules: [
+            { num: 1, title: 'Finite Automata', hours: 10, topics: 'Deterministic and Non-deterministic finite automata, Regular expressions, Pumping lemma.' },
+            { num: 2, title: 'Context-Free Languages', hours: 10, topics: 'CFG, PDA, Normal forms (Chomsky, Greibach), Closure properties.' },
+            { num: 3, title: 'Turing Machines', hours: 10, topics: 'Design of TMs, Variants, Recursive and recursively enumerable languages.' },
+            { num: 4, title: 'Decidability', hours: 8, topics: 'Halting problem, Post correspondence problem, Undecidability.' },
+            { num: 5, title: 'Complexity Theory', hours: 8, topics: 'Complexity classes P, NP, NP-Complete, Reductions.' }
+        ],
+        textbooks: ['Introduction to Automata Theory, Languages and Computation - Hopcroft and Ullman', 'Introduction to Theory of Computation - Michael Sipser']
+    },
+    'BCS601': {
+        name: 'System Software & Compilers',
+        code: 'BCS601',
+        credits: 4,
+        type: 'Theory',
+        scheme: '2022',
+        modules: [
+            { num: 1, title: 'Introduction to System Software', hours: 8, topics: 'Assemblers, Loaders, Linkers, Macro processors architecture.' },
+            { num: 2, title: 'Compiler Phases', hours: 8, topics: 'Lexical analysis, Syntax analysis (Top-down and bottom-up parsing).' },
+            { num: 3, title: 'Intermediate Code Generation', hours: 10, topics: 'Syntax-directed translation, Three-address code, Quadruples, Triples.' },
+            { num: 4, title: 'Code Optimization', hours: 10, topics: 'Principal sources of optimization, Data flow analysis, Loop optimization.' },
+            { num: 5, title: 'Code Generation', hours: 10, topics: 'Target machine architecture, Register allocation, Code generation algorithms.' }
+        ],
+        textbooks: ['Compilers: Principles, Techniques, and Tools - Aho, Lam, Sethi, Ullman']
+    },
+    'BCS603': {
+        name: 'Machine Learning',
+        code: 'BCS603',
+        credits: 3,
+        type: 'Theory',
+        scheme: '2022',
+        modules: [
+            { num: 1, title: 'Introduction', hours: 6, topics: 'Supervised vs Unsupervised learning, Bias-Variance tradeoff, Overfitting.' },
+            { num: 2, title: 'Linear Models', hours: 8, topics: 'Linear regression, Logistic regression, Gradient descent, Regularization.' },
+            { num: 3, title: 'Clustering & Decision Trees', hours: 10, topics: 'K-means, Hierarchical clustering, Decision trees, Random forests.' },
+            { num: 4, title: 'Support Vector Machines & Neural Networks', hours: 10, topics: 'SVM kernels, Multi-layer perceptron, Backpropagation.' },
+            { num: 5, title: 'Dimensionality Reduction', hours: 8, topics: 'PCA, LDA, Feature selection techniques.' }
+        ],
+        textbooks: ['Machine Learning - Tom Mitchell', 'Hands-On Machine Learning - Aurélien Géron']
     }
 };
 

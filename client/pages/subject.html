@@ -859,8 +859,16 @@
 
     function renderSyllabus(subject) {
       const panel = document.getElementById('syllabus-panel');
-      // Try comprehensive syllabus first, then fallback to basic
-      const data = (window.VTUSyllabus && VTUSyllabus[subject.code]) || syllabusData[subject.code];
+
+      // Merge all available syllabus sources
+      const allSyllabusData = {
+        ...(window.syllabusData || {}),
+        ...(window.SyllabusData || {}),
+        ...(window.SyllabusExtended || {}),
+        ...(window.VTUSyllabus || {})
+      };
+
+      const data = allSyllabusData[subject.code];
 
       if (data) {
         panel.innerHTML = `
@@ -942,7 +950,7 @@
                       </span>
                     </div>
                     <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.6;">
-                      <strong>Topics:</strong> ${m.topics}
+                      <strong>Topics:</strong> ${Array.isArray(m.topics) ? m.topics.join(', ') : m.topics}
                     </p>
                   </div>
                 </div>
