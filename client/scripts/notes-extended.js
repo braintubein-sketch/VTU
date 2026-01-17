@@ -184,6 +184,17 @@ const NotesExtended = {
         ],
         complete: null
     },
+    'BCS703': {
+        name: 'Cryptography and Network Security',
+        modules: [
+            { num: 1, title: 'Classical Encryption & Block Ciphers (DES)', file: 'BCS703/BCS703-module-1-pdf.pdf', size: '2.1 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Public Key Cryptography, RSA & Elliptic Curve', file: 'BCS703/BCS703-module-2-pdf.pdf', size: '1.1 MB', pages: 30, status: 'available' },
+            { num: 3, title: 'Hash Functions & Key Management (X.509, PKI)', file: 'BCS703/BCS703-module-3-pdf.pdf', size: '1.0 MB', pages: 28, status: 'available' },
+            { num: 4, title: 'User Authentication, Kerberos & IP Security', file: 'BCS703/BCS703-module-4-pdf.pdf', size: '1.9 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Transport Layer Security & Email Security (DKIM)', file: 'BCS703/BCS703-module-5-pdf.pdf', size: '1.2 MB', pages: 32, status: 'available' }
+        ],
+        complete: null
+    },
     'BCS711A': {
         name: 'Deep Learning',
         modules: [
