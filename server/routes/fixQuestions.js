@@ -44,7 +44,7 @@ try {
 async function sendEmail({ to, subject, html, from }) {
     // Use Resend's shared domain (works immediately) or verified domain
     // Change this to 'noreply@braintube.site' once domain is fully verified
-    const fromEmail = from || 'onboarding@resend.dev';
+    const fromEmail = from || 'Braintube <noreply@braintube.in>';
 
     if (resend) {
         try {
