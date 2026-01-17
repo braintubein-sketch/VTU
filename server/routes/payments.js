@@ -75,6 +75,23 @@ async function sendEmail({ to, subject, html, from }) {
     }
 }
 
+// TEST EMAIL ENDPOINT (for debugging - remove in production)
+router.get('/test-email', async (req, res) => {
+    console.log('[TEST-EMAIL] Testing Resend email...');
+    try {
+        const result = await sendEmail({
+            to: 'braintube.in@gmail.com',
+            subject: 'Test Email from Braintube',
+            html: '<h1>Test Email</h1><p>If you receive this, Resend is working correctly!</p><p>Time: ' + new Date().toISOString() + '</p>'
+        });
+        console.log('[TEST-EMAIL] ✅ Success:', result);
+        res.json({ success: true, message: 'Test email sent!', result });
+    } catch (error) {
+        console.error('[TEST-EMAIL] ❌ Error:', error);
+        res.status(500).json({ success: false, error: error.message, details: error });
+    }
+});
+
 
 // Initialize Razorpay (configure in production)
 let razorpay = null;
