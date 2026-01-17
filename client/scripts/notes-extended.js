@@ -143,31 +143,31 @@ const NotesExtended = {
     'BCS701': {
         name: 'Internet of Things',
         modules: [
-            { num: 1, title: 'Introduction to IoT & Enabling Technologies', file: 'BCS701/IOT_BCS701_MOD1_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' },
-            { num: 2, title: 'IoT and M2M, SDK & NFV Architecture', file: 'BCS701/IOT_BCS701_MOD2_NOTES.pdf', size: '1.3 MB', pages: 24, status: 'available' },
-            { num: 3, title: 'IoT Platforms Design & Python for IoT', file: 'BCS701/IOT_BCS701_MOD3_NOTES.pdf', size: '2.1 MB', pages: 59, status: 'available' },
-            { num: 4, title: 'IoT Physical Devices & Raspberry Pi', file: 'BCS701/IOT_BCS701_MOD4_NOTES.pdf', size: '0.7 MB', pages: 38, status: 'available' },
-            { num: 5, title: 'IoT Case Studies & Real-world Apps', file: 'BCS701/IOT_BCS701_MOD5_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' }
+            { num: 1, title: 'Introduction to Internet of Things', file: 'BCS701/IOT_BCS701_MOD1_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' },
+            { num: 2, title: 'IoT and M2M, SDN & NFV for IoT', file: 'BCS701/IOT_BCS701_MOD2_NOTES.pdf', size: '1.3 MB', pages: 24, status: 'available' },
+            { num: 3, title: 'IoT Platforms Design & Logical Design using Python', file: 'BCS701/IOT_BCS701_MOD3_NOTES.pdf', size: '2.1 MB', pages: 59, status: 'available' },
+            { num: 4, title: 'IoT Physical Devices & Endpoints (Raspberry Pi)', file: 'BCS701/IOT_BCS701_MOD4_NOTES.pdf', size: '0.7 MB', pages: 38, status: 'available' },
+            { num: 5, title: 'Data Analytics for IoT (Hadoop, Spark, Storm)', file: 'BCS701/IOT_BCS701_MOD5_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' }
         ],
         complete: null
     },
     'BCS702': {
         name: 'Parallel Computing',
         modules: [
-            { num: 1, title: 'Introduction to Parallel Computing', file: 'BCS702/PC_BCS702_MOD1_NOTES.pdf', size: '4.4 MB', pages: 45, status: 'available' },
-            { num: 2, title: 'Parallel Algorithm Design', file: 'BCS702/PC_BCS702_MOD2_NOTES.pdf', size: '0.3 MB', pages: 12, status: 'available' },
-            { num: 3, title: 'Programming Shared Memory', file: 'BCS702/PC_BCS702_MOD3_NOTES.pdf', size: '1.8 MB', pages: 30, status: 'available' },
-            { num: 4, title: 'Programming Distributed Memory', file: 'BCS702/PC_BCS702_MOD4_NOTES.pdf', size: '1.5 MB', pages: 28, status: 'available' },
-            { num: 5, title: 'GPU Computing & CUDA', file: 'BCS702/PC_BCS702_MOD5_NOTES.pdf', size: '1.4 MB', pages: 25, status: 'available' }
+            { num: 1, title: 'Introduction to Parallel Programming (SIMD, MIMD)', file: 'BCS702/PC_BCS702_MOD1_NOTES.pdf', size: '4.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'GPU Programming and Performance (Amdahl\'s Law)', file: 'BCS702/PC_BCS702_MOD2_NOTES.pdf', size: '0.3 MB', pages: 12, status: 'available' },
+            { num: 3, title: 'Distributed Memory Programming with MPI', file: 'BCS702/PC_BCS702_MOD3_NOTES.pdf', size: '1.8 MB', pages: 30, status: 'available' },
+            { num: 4, title: 'Shared-Memory Programming with OpenMP', file: 'BCS702/PC_BCS702_MOD4_NOTES.pdf', size: '1.5 MB', pages: 28, status: 'available' },
+            { num: 5, title: 'GPU Programming with CUDA', file: 'BCS702/PC_BCS702_MOD5_NOTES.pdf', size: '1.4 MB', pages: 25, status: 'available' }
         ],
         complete: null
     },
     'BEC703': {
         name: 'Wireless Communication',
         modules: [
-            { num: 1, title: 'Principles of Wireless Communication', file: 'BEC703/BEC703- Module 1 Principles of Wireless Communication.pdf', size: '1.4 MB', pages: 40, status: 'available' },
-            { num: 2, title: 'CDMA', file: 'BEC703/BEC703- Module 2 CDMA (1).pdf', size: '1.9 MB', pages: 45, status: 'available' },
-            { num: 3, title: 'Evolution of Cellular Technologies', file: 'BEC703/BEC703- Module 3 Evolution of Cellular Technologies.pdf', size: '1.2 MB', pages: 35, status: 'available' },
+            { num: 1, title: 'Principles of Wireless Communications & Wireless Channel', file: 'BEC703/BEC703- Module 1 Principles of Wireless Communication.pdf', size: '1.4 MB', pages: 40, status: 'available' },
+            { num: 2, title: 'CDMA & Orthogonal Frequency Division Multiplexing (OFDM)', file: 'BEC703/BEC703- Module 2 CDMA (1).pdf', size: '1.9 MB', pages: 45, status: 'available' },
+            { num: 3, title: 'Evolution of Cellular Technologies (GSM, GPRS, 3G)', file: 'BEC703/BEC703- Module 3 Evolution of Cellular Technologies.pdf', size: '1.2 MB', pages: 35, status: 'available' },
             { num: 4, title: 'MIMO Wireless Communications', file: 'BEC703/BEC703 _Module 4 MIMO Wireless Communications.pdf', size: '4.7 MB', pages: 80, status: 'available' },
             { num: 5, title: 'Overview and Channel Structure of LTE', file: 'BEC703/Module 5 Overview and Channel Structure of LTE.pdf', size: '1.1 MB', pages: 30, status: 'available' }
         ],
@@ -176,11 +176,11 @@ const NotesExtended = {
     'BEE703': {
         name: 'Power System Analysis',
         modules: [
-            { num: 1, title: 'Network Topology', file: 'BEE703/Lecture Notes_BEE703_Module-1_Network Topology.pdf', size: '3.0 MB', pages: 55, status: 'available' },
-            { num: 2, title: 'Load Flow Analysis', file: 'BEE703/Lecture Notes_BEE703_Module-2_Load Flow Analysis.pdf', size: '2.0 MB', pages: 40, status: 'available' },
-            { num: 3, title: 'Load Flow Analysis (Continued)', file: 'BEE703/Lecture Notes_BEE703_Module-3_Load Flow Analysis(continued)_Dr.R.Gunasekari.pdf', size: '1.9 MB', pages: 38, status: 'available' },
-            { num: 4, title: 'Economic Operation of Power System', file: 'BEE703/Lecture Notes_BEE703_Module-4_Economic Operation of Power System and Unit Commitment_Dr.R.Gunasekari.pdf', size: '1.6 MB', pages: 32, status: 'available' },
-            { num: 5, title: 'Symmetrical Fault Analysis & Stability', file: 'BEE703/Lecture Notes_BEE703_Module-5_Symmetrical Fault Analysis and Power System Stability_Dr.R.Gunasekari.pdf', size: '2.7 MB', pages: 50, status: 'available' }
+            { num: 1, title: 'Network Topology (Graph Theory, Incidence Matrices, Y Bus)', file: 'BEE703/Lecture Notes_BEE703_Module-1_Network Topology.pdf', size: '3.0 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Load Flow Studies (Gauss-Seidel Method)', file: 'BEE703/Lecture Notes_BEE703_Module-2_Load Flow Analysis.pdf', size: '2.0 MB', pages: 40, status: 'available' },
+            { num: 3, title: 'Load Flow Studies (Newton-Raphson & FDLF)', file: 'BEE703/Lecture Notes_BEE703_Module-3_Load Flow Analysis(continued)_Dr.R.Gunasekari.pdf', size: '1.9 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Economic Operation & Unit Commitment', file: 'BEE703/Lecture Notes_BEE703_Module-4_Economic Operation of Power System and Unit Commitment_Dr.R.Gunasekari.pdf', size: '1.6 MB', pages: 32, status: 'available' },
+            { num: 5, title: 'Symmetrical Fault Analysis & Power System Stability', file: 'BEE703/Lecture Notes_BEE703_Module-5_Symmetrical Fault Analysis and Power System Stability_Dr.R.Gunasekari.pdf', size: '2.7 MB', pages: 50, status: 'available' }
         ],
         complete: null
     },
