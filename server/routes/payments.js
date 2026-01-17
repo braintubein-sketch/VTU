@@ -41,7 +41,7 @@ try {
 // Unified email sending function
 async function sendEmail({ to, subject, html, from }) {
     // Use verified domain email
-    const fromEmail = from || 'noreply@braintube.in';
+    const fromEmail = from || 'noreply@braintube.site';
 
     if (resend) {
         try {
