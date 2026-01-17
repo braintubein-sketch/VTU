@@ -230,63 +230,70 @@ router.post('/submit', [
                 // Auto-reply to user
                 await sendEmail({
                     to: email,
-                    subject: `Thank you for your purchase - ${subjectCode} Fix Questions`,
+                    subject: `✅ Payment Confirmed - ${subjectCode} Fix Questions`,
                     html: `
                         <!DOCTYPE html>
                         <html>
                         <head>
                             <style>
-                                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-                                .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-                                .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center; border-radius: 10px 10px 0 0; }
-                                .content { background: #ffffff; padding: 30px; border: 1px solid #e0e0e0; }
-                                .footer { background: #f9f9f9; color: #666; padding: 20px; text-align: center; border-radius: 0 0 10px 10px; border: 1px solid #e0e0e0; border-top: none; }
-                                .button { display: inline-block; background: #764ba2; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; }
-                                .info-box { background: #f0fdf4; border: 1px solid #86efac; padding: 15px; border-radius: 5px; margin: 20px 0; }
-                                .success-icon { font-size: 60px; margin-bottom: 20px; }
+                                body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+                                .container { max-width: 600px; margin: 0 auto; }
+                                .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; text-align: center; border-radius: 10px 10px 0 0; }
+                                .content { background: #ffffff; padding: 30px; border: 1px solid #e0e0e0; border-top: none; }
+                                .success-badge { background: #10b981; color: white; padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: bold; margin-bottom: 20px; }
+                                .order-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 20px; margin: 20px 0; }
+                                .timeline { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+                                .footer { background: #f9f9f9; color: #666; padding: 20px 30px; text-align: center; border-radius: 0 0 10px 10px; border: 1px solid #e0e0e0; border-top: none; }
+                                .btn { display: inline-block; background: #764ba2; color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; margin: 10px 5px; }
                             </style>
                         </head>
                         <body>
                             <div class="container">
                                 <div class="header">
-                                    <div class="success-icon">🎉</div>
-                                    <h1 style="margin: 0;">Thank You for Your Purchase!</h1>
+                                    <h1 style="margin: 0; font-size: 28px;">🎉 Payment Successful!</h1>
+                                    <p style="margin: 10px 0 0 0; opacity: 0.9;">Your order has been confirmed</p>
                                 </div>
                                 <div class="content">
+                                    <div style="text-align: center;">
+                                        <span class="success-badge">✓ PAYMENT CONFIRMED</span>
+                                    </div>
+                                    
                                     <p>Dear <strong>${name}</strong>,</p>
                                     
-                                    <p>Thank you for purchasing Fix Questions from Braintube! We have received your payment and your order is being processed.</p>
+                                    <p>Thank you for your purchase! We have successfully received your payment of <strong>₹${amount || 79}</strong> and your order is now being processed.</p>
                                     
-                                    <div class="info-box">
-                                        <h3 style="margin-top: 0; color: #764ba2;">📚 Order Summary</h3>
+                                    <div class="order-box">
+                                        <h3 style="margin-top: 0; color: #764ba2;">📋 Order Details</h3>
                                         <p style="margin: 5px 0;"><strong>Subject:</strong> ${subjectCode} - ${subjectName}</p>
                                         <p style="margin: 5px 0;"><strong>Amount Paid:</strong> ₹${amount || 79}</p>
                                         <p style="margin: 5px 0;"><strong>Payment ID:</strong> ${paymentId || 'Processing'}</p>
                                         <p style="margin: 5px 0;"><strong>Order ID:</strong> ${submissionId}</p>
+                                        <p style="margin: 5px 0;"><strong>Order Date:</strong> ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
                                     </div>
                                     
-                                    <h3 style="color: #764ba2;">What happens next?</h3>
-                                    <ol>
-                                        <li>Our team will verify your payment</li>
-                                        <li>You will receive the Fix Questions PDF within 24 hours</li>
-                                        <li>The PDF will be sent to this email address: <strong>${email}</strong></li>
-                                    </ol>
-                                    
-                                    <p>If you don't receive the PDF within 24 hours, please contact us with your Order ID: <strong>${submissionId}</strong></p>
-                                    
-                                    <div style="text-align: center; margin: 30px 0;">
-                                        <a href="https://braintube.site" class="button">Visit Braintube</a>
+                                    <div class="timeline">
+                                        <h3 style="margin-top: 0; color: #b45309;">⏰ When Will You Receive Your Questions?</h3>
+                                        <p style="margin-bottom: 0;"><strong>Your Fix Questions PDF will be sent to this email (${email}) within 2-4 hours.</strong></p>
+                                        <p style="margin: 5px 0; font-size: 14px; color: #666;">Maximum delivery time: 24 hours (usually much faster!)</p>
                                     </div>
                                     
-                                    <p style="color: #666; font-size: 14px; margin-top: 30px;">
-                                        <strong>Note:</strong> Please keep this email for your records. You may need the Order ID for future reference.
-                                    </p>
+                                    <h3 style="color: #764ba2;">📱 Need Help?</h3>
+                                    <p>If you don't receive your PDF within 24 hours, or have any questions:</p>
+                                    <ul>
+                                        <li>WhatsApp: <strong>+91 8884624741</strong></li>
+                                        <li>Email: <strong>braintube.in@gmail.com</strong></li>
+                                    </ul>
+                                    <p style="font-size: 14px; color: #666;">Please include your Order ID (<strong>${submissionId}</strong>) when contacting us.</p>
+                                    
+                                    <div style="text-align: center; margin-top: 30px;">
+                                        <a href="https://wa.me/918884624741" class="btn" style="color: white;">Contact on WhatsApp</a>
+                                    </div>
                                 </div>
                                 <div class="footer">
                                     <p style="margin: 0; font-weight: bold;">🎓 Braintube</p>
                                     <p style="margin: 5px 0; font-size: 14px;">Your Complete VTU Academic Platform</p>
                                     <p style="margin: 15px 0 0 0; font-size: 12px; color: #999;">
-                                        Need help? Contact us on WhatsApp: +91 8884624741
+                                        This is an automated confirmation email. Please save it for your records.
                                     </p>
                                 </div>
                             </div>
