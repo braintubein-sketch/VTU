@@ -8,10 +8,22 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const { body, validationResult } = require('express-validator');
 
-// Configure email transporter
+// Initialize Resend for email (works on Render free tier)
+let resend = null;
+try {
+    if (process.env.RESEND_API_KEY) {
+        const { Resend } = require('resend');
+        resend = new Resend(process.env.RESEND_API_KEY);
+        console.log('✅ [FixQuestions] Resend email service initialized');
+    }
+} catch (error) {
+    console.log('[FixQuestions] Resend initialization error:', error.message);
+}
+
+// Initialize SMTP Email Transporter (fallback for local development)
 let transporter = null;
 try {
-    if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+    if (!resend && process.env.SMTP_USER && process.env.SMTP_PASS) {
         transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST || 'smtp.gmail.com',
             port: parseInt(process.env.SMTP_PORT) || 587,
@@ -21,9 +33,40 @@ try {
                 pass: process.env.SMTP_PASS
             }
         });
+        console.log('✅ [FixQuestions] SMTP email transporter initialized');
     }
 } catch (error) {
-    console.log('Email not configured - running in demo mode');
+    console.log('[FixQuestions] Email not configured - running in demo mode');
+}
+
+// Unified email sending function
+async function sendEmail({ to, subject, html, from }) {
+    const fromEmail = from || process.env.SMTP_USER || 'noreply@braintube.site';
+
+    if (resend) {
+        // Use Resend API (works on Render free tier)
+        const result = await resend.emails.send({
+            from: `Braintube <${fromEmail}>`,
+            to: to,
+            subject: subject,
+            html: html
+        });
+        console.log(`[FixQuestions] Email sent via Resend to ${to}`);
+        return result;
+    } else if (transporter) {
+        // Use SMTP (for local development)
+        const result = await transporter.sendMail({
+            from: `"Braintube" <${fromEmail}>`,
+            to: to,
+            subject: subject,
+            html: html
+        });
+        console.log(`[FixQuestions] Email sent via SMTP to ${to}`);
+        return result;
+    } else {
+        console.warn(`[FixQuestions] No email service configured. Would have sent to ${to}: ${subject}`);
+        return null;
+    }
 }
 
 // Store submissions (replace with database in production)
@@ -70,12 +113,11 @@ router.post('/submit', [
         submissions.set(submissionId, submission);
 
         // Send emails if configured
-        if (transporter) {
+        if (resend || transporter) {
             try {
                 // Email to admin
-                const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER;
-                await transporter.sendMail({
-                    from: `"Braintube" <${process.env.SMTP_USER}>`,
+                const adminEmail = process.env.ADMIN_EMAIL || process.env.SMTP_USER || 'admin@braintube.site';
+                await sendEmail({
                     to: adminEmail,
                     subject: `New Fix Questions Purchase - ${subjectCode}`,
                     html: `
@@ -158,8 +200,7 @@ router.post('/submit', [
                 });
 
                 // Auto-reply to user
-                await transporter.sendMail({
-                    from: `"Braintube" <${process.env.SMTP_USER}>`,
+                await sendEmail({
                     to: email,
                     subject: `Thank you for your purchase - ${subjectCode} Fix Questions`,
                     html: `
@@ -217,7 +258,7 @@ router.post('/submit', [
                                     <p style="margin: 0; font-weight: bold;">🎓 Braintube</p>
                                     <p style="margin: 5px 0; font-size: 14px;">Your Complete VTU Academic Platform</p>
                                     <p style="margin: 15px 0 0 0; font-size: 12px; color: #999;">
-                                        Need help? Contact us at ${process.env.SMTP_USER}
+                                        Need help? Contact us on WhatsApp: +91 8884624741
                                     </p>
                                 </div>
                             </div>
@@ -228,7 +269,7 @@ router.post('/submit', [
 
                 submission.emailSent = true;
             } catch (emailError) {
-                console.error('Email sending error:', emailError);
+                console.error('[FixQuestions] Email sending error:', emailError);
                 submission.emailError = emailError.message;
             }
         }
