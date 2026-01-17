@@ -41,18 +41,25 @@ try {
 
 // Unified email sending function
 async function sendEmail({ to, subject, html, from }) {
-    const fromEmail = from || process.env.SMTP_USER || 'noreply@braintube.site';
+    // Use verified domain for Resend (required after domain verification)
+    const fromEmail = from || 'noreply@braintube.site';
 
     if (resend) {
-        // Use Resend API (works on Render free tier)
-        const result = await resend.emails.send({
-            from: `Braintube <${fromEmail}>`,
-            to: to,
-            subject: subject,
-            html: html
-        });
-        console.log(`[FixQuestions] Email sent via Resend to ${to}`);
-        return result;
+        try {
+            // Use Resend API (works on Render free tier)
+            const result = await resend.emails.send({
+                from: `Braintube <${fromEmail}>`,
+                to: to,
+                subject: subject,
+                html: html
+            });
+            console.log(`[FixQuestions] ✅ Email sent via Resend to ${to}`, result);
+            return result;
+        } catch (error) {
+            console.error(`[FixQuestions] ❌ Resend error:`, error.message);
+            console.error(`[FixQuestions] Details:`, JSON.stringify(error, null, 2));
+            throw error;
+        }
     } else if (transporter) {
         // Use SMTP (for local development)
         const result = await transporter.sendMail({
@@ -61,7 +68,7 @@ async function sendEmail({ to, subject, html, from }) {
             subject: subject,
             html: html
         });
-        console.log(`[FixQuestions] Email sent via SMTP to ${to}`);
+        console.log(`[FixQuestions] ✅ Email sent via SMTP to ${to}`);
         return result;
     } else {
         console.warn(`[FixQuestions] No email service configured. Would have sent to ${to}: ${subject}`);
