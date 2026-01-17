@@ -858,6 +858,21 @@
       `;
     }
 
+    function findCrossBranchSyllabus(code, database) {
+      if (!code) return null;
+      // Mapping common 2022 scheme prefixes for shared subjects
+      const sharedPrefixes = ['BCS', 'BIS', 'BAD', 'BDS', 'BAI'];
+      const numPart = code.substring(3);
+
+      for (const prefix of sharedPrefixes) {
+        const alternativeCode = prefix + numPart;
+        if (database[alternativeCode]) {
+          return database[alternativeCode];
+        }
+      }
+      return null;
+    }
+
     function renderSyllabus(subject) {
       const panel = document.getElementById('syllabus-panel');
 
@@ -870,7 +885,7 @@
         ...(window.SyllabusV2 || {})
       };
 
-      const data = allSyllabusData[subject.code];
+      const data = allSyllabusData[subject.code] || findCrossBranchSyllabus(subject.code, allSyllabusData);
 
       if (data) {
         panel.innerHTML = `

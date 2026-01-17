@@ -304,6 +304,192 @@ const SyllabusV2 = {
             { num: 4, title: 'Information Extraction', hours: 8, topics: 'NER, Question answering, Text summarization.' },
             { num: 5, title: 'Applications', hours: 8, topics: 'Sentiment analysis, Chatbots, Machine translation.' }
         ]
+    },
+
+    // ==================== AIML CORE (BAD CODES) ====================
+    'BAD301': {
+        name: 'Mathematics for Machine Learning',
+        code: 'BAD301',
+        modules: [
+            { num: 1, title: 'Linear Algebra', hours: 10, topics: 'System of linear equations, Vector spaces, Echelon form, Basis.' },
+            { num: 2, title: 'Matrix Theory', hours: 10, topics: 'Eigenvalues, Eigenvectors, Diagonalization, SVD.' },
+            { num: 3, title: 'Calculus for ML', hours: 10, topics: 'Partial derivatives, Chain rule, Gradient, Hessian.' },
+            { num: 4, title: 'Optimization', hours: 10, topics: 'Local/Global minima, Constrained optimization, SGD.' },
+            { num: 5, title: 'Vector Calculus', hours: 8, topics: 'Gradients of vector-valued functions, Jacobian.' }
+        ]
+    },
+    'BAD305': {
+        name: 'Python Programming',
+        code: 'BAD305',
+        modules: [
+            { num: 1, title: 'Python Fundamentals', hours: 8, topics: 'Keywords, Operators, Control flow, Functions.' },
+            { num: 2, title: 'Data Structures', hours: 10, topics: 'Lists, Tuples, Dictionaries, Sets, Comprehensions.' },
+            { num: 3, title: 'Object Oriented Python', hours: 10, topics: 'Classes, Objects, Inheritance, Overloading.' },
+            { num: 4, title: 'Scientific Computing', hours: 10, topics: 'NumPy arrays, Broadcasting, Vectorization.' },
+            { num: 5, title: 'Data Analysis', hours: 8, topics: 'Pandas DataFrames, Series, Cleaning and Transforming data.' }
+        ]
+    },
+
+    // ==================== ISE CORE (BIS CODES) ====================
+    'BIS301': {
+        name: 'Mathematics for Computer Science',
+        code: 'BIS301',
+        modules: [
+            { num: 1, title: 'Probability', hours: 10, topics: 'Sample space, Bayes theorem, Random variables.' },
+            { num: 2, title: 'Distributions', hours: 10, topics: 'Binomial, Poisson, Normal, Exponential.' },
+            { num: 3, title: 'Logic', hours: 10, topics: 'Propositional logic, Predicates, Rules of inference.' },
+            { num: 4, title: 'Relations & Graphs', hours: 10, topics: 'Properties of relations, Digraphs, Graph isomorphism.' },
+            { num: 5, title: 'Counting', hours: 8, topics: 'Permutations, Combinations, Recurrence relations.' }
+        ]
+    },
+    'BIS405': {
+        name: 'Computer Networks',
+        code: 'BIS405',
+        modules: [
+            { num: 1, title: 'Application Layer', hours: 8, topics: 'HTTP, FTP, SMTP, DNS, Peer-to-Peer.' },
+            { num: 2, title: 'Transport Layer', hours: 10, topics: 'Multiplexing, UDP, TCP mechanisms, Congestion control.' },
+            { num: 3, title: 'Network Layer', hours: 10, topics: 'IP addressing, IPv4/v6, Routing (OSPF, RIP).' },
+            { num: 4, title: 'Link Layer', hours: 8, topics: 'Error detection, Multiple access protocols, Ethernet.' },
+            { num: 5, title: 'Wireless Networks', hours: 10, topics: 'Wi-Fi, Bluetooth, Mobile IP, Cellular networks.' }
+        ]
+    },
+    'BIS601': {
+        name: 'Cloud Computing',
+        code: 'BIS601',
+        modules: [
+            { num: 1, title: 'Introduction', hours: 8, topics: 'NIST model, SaaS, PaaS, IaaS, Cloud characteristics.' },
+            { num: 2, title: 'Virtualization', hours: 10, topics: 'Hypervisors, Containers (Docker), Resource management.' },
+            { num: 3, title: 'Cloud Platforms', hours: 10, topics: 'AWS services, Google App Engine, Microsoft Azure basics.' },
+            { num: 4, title: 'Cloud Security', hours: 10, topics: 'Data security, Identity management, Compliance.' },
+            { num: 5, title: 'Future of Cloud', hours: 8, topics: 'Edge computing, Serverless architecture, Cloud orchestration.' }
+        ]
+    },
+
+    // ==================== DATA SCIENCE CORE (BDS CODES) ====================
+    'BDS402': {
+        name: 'Database Management Systems',
+        code: 'BDS402',
+        modules: [
+            { num: 1, title: 'Introduction', hours: 8, topics: 'DBMS architecture, Data models, ER diagrams.' },
+            { num: 2, title: 'Relational Model', hours: 10, topics: 'SQL, Joins, Triggers, Views, Normalization (1NF to BCNF).' },
+            { num: 3, title: 'Transaction Management', hours: 10, topics: 'ACID properties, Concurrency control, Deadlocks.' },
+            { num: 4, title: 'NoSQL Databases', hours: 10, topics: 'CAP theorem, MongoDB, Key-value stores, Document stores.' },
+            { num: 5, title: 'Data Warehousing', hours: 8, topics: 'OLAP vs OLTP, Star schema, ETL process.' }
+        ]
+    },
+    'BDS502': {
+        name: 'Big Data Analytics',
+        code: 'BDS502',
+        modules: [
+            { num: 1, title: 'Hadoop Ecosystem', hours: 10, topics: 'HDFS, MapReduce, YARN architecture.' },
+            { num: 2, title: 'Spark', hours: 10, topics: 'RDDs, DataFrames, Spark SQL, Streaming analytics.' },
+            { num: 3, title: 'Storage Systems', hours: 8, topics: 'HBase, Cassandra, Hive, Pig Latin.' },
+            { num: 4, title: 'Analytics with Spark', hours: 10, topics: 'GraphX, MLLib, In-memory computing.' },
+            { num: 5, title: 'Real-time Analytics', hours: 8, topics: 'Kafka, Flink, Designing high-throughput pipelines.' }
+        ]
+    },
+
+    // ==================== CORE 2022 SCHEME (CSE/ISE/AIML/DS SHARED) ====================
+    'BCS302': {
+        name: 'Digital Design & Computer Organization',
+        code: 'BCS302',
+        modules: [
+            { num: 1, title: 'Digital Logic', hours: 10, topics: 'K-Maps, Quine-McCluskey, Combinational circuits (Adders, Mux), Sequential circuits (Flip-flops).' },
+            { num: 2, title: 'Basic Structure of Computers', hours: 10, topics: 'Functional units, Performance, Instructions, Addressing modes, Memory operations.' },
+            { num: 3, title: 'I/O Organization', hours: 10, topics: 'Accessing I/O devices, Interrupts, Direct Memory Access (DMA), Bus arbitration.' },
+            { num: 4, title: 'Memory System', hours: 10, topics: 'Internal organization, Cache memory (Mapping, Replacement), Virtual memory, ROM.' },
+            { num: 5, title: 'Basic Processing Unit', hours: 8, topics: 'Hardwired control, Microprogrammed control, Pipelining basics.' }
+        ]
+    },
+    'BCS303': {
+        name: 'Operating Systems',
+        code: 'BCS303',
+        modules: [
+            { num: 1, title: 'Introduction', hours: 8, topics: 'OS structure, Operations, Process management, Dual-mode, System calls.' },
+            { num: 2, title: 'Process Management', hours: 10, topics: 'Scheduling (FCFS, SJF, Priority, RR), Inter-process communication.' },
+            { num: 3, title: 'Synchronization & Deadlocks', hours: 10, topics: 'Critical section, Semaphores, Monitors, Deadlock prevention, avoidance, detection.' },
+            { num: 4, title: 'Memory Management', hours: 10, topics: 'Paging, Segmentation, Swapping, Demand paging, Page replacement algorithms.' },
+            { num: 5, title: 'Storage & File Systems', hours: 8, topics: 'Disk scheduling, File access methods, Directory structure, Protection.' }
+        ]
+    },
+    'BCS304': {
+        name: 'Data Structures and Applications',
+        code: 'BCS304',
+        modules: [
+            { num: 1, title: 'Basic Concepts', hours: 8, topics: 'Recursion, Pointers, Dynamic memory allocation, Asymptotic notation.' },
+            { num: 2, title: 'Stacks & Queues', hours: 10, topics: 'Array/Linked implementation, Applications (Expression evaluation, Conversion).' },
+            { num: 3, title: 'Linked Lists', hours: 10, topics: 'Singly, Doubly, Circular linked lists, Polynomial manipulation.' },
+            { num: 4, title: 'Trees', hours: 10, topics: 'Binary trees, Traversals, BST, Threaded binary trees, AVL trees.' },
+            { num: 5, title: 'Graphs & Searching', hours: 10, topics: 'Adjacency matrix/list, BFS, DFS, Hashing (Collision resolution), Sorting.' }
+        ]
+    },
+    'BCS401': {
+        name: 'Analysis & Design of Algorithms',
+        code: 'BCS401',
+        modules: [
+            { num: 1, title: 'Introduction', hours: 10, topics: 'Algorithm analysis framework, Growth of functions, Divide and Conquer.' },
+            { num: 2, title: 'Greedy Technique', hours: 10, topics: 'Prim\'s, Kruskal\'s, Dijkstra\'s, Huffman coding, Knapsack problem.' },
+            { num: 3, title: 'Dynamic Programming', hours: 10, topics: 'Warshall\'s, Floyd\'s, Knapsack, Optimal BST, Traveling Salesperson.' },
+            { num: 4, title: 'Backtracking & Branch-and-Bound', hours: 10, topics: 'N-Queens, Hamiltonian circuit, Assignment problem, P and NP classes.' },
+            { num: 5, title: 'Decrease-and-Conquer', hours: 8, topics: 'Insertion sort, DFS/BFS applications, Topological sorting.' }
+        ]
+    },
+    'BCS403': {
+        name: 'Database Management Systems',
+        code: 'BCS403',
+        modules: [
+            { num: 1, title: 'Introduction', h: 8, topics: 'Characteristics of DBMS, Data models, ER modeling, Relationships.' },
+            { num: 2, title: 'SQL', h: 10, topics: 'DDL, DML, Constraints, Joins, Set operations, Aggregate functions.' },
+            { num: 3, title: 'Normalization', h: 10, topics: 'Informal design guidelines, Functional dependencies, 1NF, 2NF, 3NF, BCNF.' },
+            { num: 4, title: 'Transaction Control', h: 10, topics: 'Schedules, Serializability, Concurrency control, Lock-based protocols.' },
+            { num: 5, title: 'Recovery & Storage', h: 8, topics: 'Undo/Redo, Log-based recovery, Indexing, B-trees, Hashing.' }
+        ]
+    },
+
+    // ==================== COMMON 2022 SCHEME SUBJECTS (AEC/Ability Enhancement) ====================
+    'BICOK108': {
+        name: 'Indian Constitution',
+        code: 'BICOK108',
+        modules: [
+            { num: 1, title: 'Introduction', h: 3, topics: 'Preamble, Salient features, Citizenship, Fundamental Rights, Duties.' },
+            { num: 2, title: 'Union Executive', h: 4, topics: 'President, Vice President, PM, Cabinet, Parliament, Supreme Court.' },
+            { num: 3, title: 'State Executive', h: 3, topics: 'Governor, CM, Council of Ministers, Assembly, High Courts.' },
+            { num: 4, title: 'Elections & Amendments', h: 3, topics: 'Election commission, Electoral process, Amendment procedure, Major amendments.' },
+            { num: 5, title: 'Engineering Ethics', h: 2, topics: 'Responsibility of engineers, Safety and risk, Professional ethics basics.' }
+        ]
+    },
+    'BSFHK109': {
+        name: 'Scientific Foundations of Health',
+        code: 'BSFHK109',
+        modules: [
+            { num: 1, title: 'Health and Wellness', h: 3, topics: 'Dimensions of health, Wellness, Disease prevention, Immunity.' },
+            { num: 2, title: 'Nutrition', h: 3, topics: 'Balanced diet, Metabolism, BMI, Nutritional disorders.' },
+            { num: 3, title: 'Mental Health', h: 3, topics: 'Stress management, Anxiety, Depression, Resilience, Emotional health.' },
+            { num: 4, title: 'Physical Activity', h: 3, topics: 'Exercise physiology, Aerobic/Anaerobic, Posture, Ergonomics for engineers.' },
+            { num: 5, title: 'Social Health', h: 3, topics: 'Addiction (Drug, Alcohol, Social Media), Personal hygiene, HIV/AIDS awareness.' }
+        ]
+    },
+    'BUHK407': {
+        name: 'Universal Human Values',
+        code: 'BUHK407',
+        modules: [
+            { num: 1, title: 'Self-Exploration', h: 4, topics: 'Happiness and Prosperity, Right understanding, Relationship, Physical facilities.' },
+            { num: 2, title: 'Harmony in the Human Being', h: 4, topics: 'Self and Body, I and Body requirements, Activities of Self.' },
+            { num: 3, title: 'Harmony in Family & Society', h: 4, topics: 'Trust and Respect, Justice in relationships, Fearlessness, Co-existence.' },
+            { num: 4, title: 'Harmony in Nature', h: 4, topics: 'The four orders of nature, Recyclability, Self-regulation.' },
+            { num: 5, title: 'Professional Ethics', h: 4, topics: 'Vision for holistic technology, Competence in professional ethics, Case studies.' }
+        ]
+    },
+    'BRMK507': {
+        name: 'Research Methodology & IPR',
+        code: 'BRMK507',
+        modules: [
+            { num: 1, title: 'Research Basics', h: 5, topics: 'Types of research, Research process, Literature review, Ethics.' },
+            { num: 2, title: 'Research Design', h: 5, topics: 'Variables, Sampling, Data collection methods, Statistical tools.' },
+            { num: 3, title: 'IPR Fundamentals', h: 5, topics: 'Patents, Copyrights, Trademarks, Trade secrets, Geographical indications.' },
+            { num: 4, title: 'Patent Process', h: 5, topics: 'Filing, Examination, Infringement, Licensing and tech transfer.' },
+            { num: 5, title: 'Reporting', h: 5, topics: 'Thesis writing, Technical papers, Plagiarism checks, Citation styles.' }
+        ]
     }
 };
 
