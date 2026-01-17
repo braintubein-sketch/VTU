@@ -7,6 +7,7 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require('nodemailer');
 const { body, validationResult } = require('express-validator');
+const Purchase = require('../models/Purchase');
 
 // Initialize Resend for email (works on Render free tier)
 let resend = null;
@@ -117,8 +118,27 @@ router.post('/submit', [
             submittedAt: new Date().toISOString()
         };
 
-        // Store submission
+        // Store submission in memory (backward compatible)
         submissions.set(submissionId, submission);
+
+        // Also save to MongoDB for admin dashboard
+        try {
+            await Purchase.create({
+                name,
+                email,
+                subjectCode,
+                subjectName,
+                paymentId: paymentId || 'N/A',
+                amount: amount || 79,
+                paymentStatus: 'captured',
+                pdfSent: false
+            });
+            console.log(`[FixQuestions] ✅ Purchase saved to database for ${email}`);
+        } catch (dbError) {
+            console.error('[FixQuestions] Database save error:', dbError.message);
+            // Continue even if DB save fails
+        }
+
 
         // Send emails if configured
         if (resend || transporter) {
