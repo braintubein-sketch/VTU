@@ -156,8 +156,10 @@ router.post('/create-order', async (req, res) => {
 
             const order = await razorpay.orders.create(options);
 
+            // Store order with notes for email functionality
             orders.set(order.id, {
                 ...order,
+                notes: options.notes,  // CRITICAL: Store notes for customer email!
                 email,
                 phone,
                 branch,
@@ -166,6 +168,8 @@ router.post('/create-order', async (req, res) => {
                 status: 'created',
                 createdAt: new Date().toISOString()
             });
+
+            console.log(`[CREATE-ORDER] ✅ Order ${order.id} created with notes:`, options.notes);
 
             res.json({
                 success: true,
