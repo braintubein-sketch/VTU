@@ -185,6 +185,7 @@
   <script src="../scripts/syllabus.js?v=1.0.3"></script>
   <script src="../scripts/syllabus-extended.js?v=1.0.3"></script>
   <script src="../scripts/syllabus-complete.js?v=1.0.3"></script>
+  <script src="../scripts/syllabus-v2.js?v=1.0.3"></script>
   <script>
     // Syllabus data for all subjects
     const syllabusData = {
@@ -865,7 +866,8 @@
         ...(window.syllabusData || {}),
         ...(window.SyllabusData || {}),
         ...(window.SyllabusExtended || {}),
-        ...(window.VTUSyllabus || {})
+        ...(window.VTUSyllabus || {}),
+        ...(window.SyllabusV2 || {})
       };
 
       const data = allSyllabusData[subject.code];
