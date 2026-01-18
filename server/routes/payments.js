@@ -41,14 +41,14 @@ try {
 // Unified email sending function
 async function sendEmail({ to, subject, html, from }) {
     // Use verified domain email
-    const fromEmail = from || 'noreply@braintube.site';
+    const fromEmail = from || 'support@braintube.site';
     const supportEmail = process.env.ADMIN_EMAIL || 'braintube.in@gmail.com';
 
     if (resend) {
         try {
             // Use Resend API (works on Render free tier)
             const result = await resend.emails.send({
-                from: `"Braintube" <${fromEmail}>`,
+                from: `"Braintube Support" <${fromEmail}>`,
                 to: to,
                 subject: subject,
                 html: html,
@@ -564,6 +564,65 @@ router.post('/webhook', async (req, res) => {
                                     `
                                 });
                                 console.log(`[WEBHOOK-ASYNC] ✅ Admin notification sent`);
+
+                                // 2. Send email to customer
+                                const customerEmail = order.notes.email;
+                                if (customerEmail) {
+                                    await sendEmail({
+                                        to: customerEmail,
+                                        subject: `✅ Payment Confirmed - ${order.notes.subjectCode || 'Braintube'} Fix Questions`,
+                                        html: `
+                                            <!DOCTYPE html>
+                                            <html>
+                                            <head>
+                                                <style>
+                                                    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+                                                    .container { max-width: 600px; margin: 0 auto; }
+                                                    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; text-align: center; }
+                                                    .content { background: #ffffff; padding: 30px; }
+                                                    .success-badge { background: #10b981; color: white; padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: bold; margin-bottom: 20px; }
+                                                    .order-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 20px; margin: 20px 0; }
+                                                    .timeline { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 20px 0; border-radius: 0 10px 10px 0; }
+                                                    .footer { background: #f8f9fa; padding: 20px 30px; text-align: center; color: #666; font-size: 14px; }
+                                                    .btn { display: inline-block; background: #764ba2; color: white; padding: 12px 30px; text-decoration: none; border-radius: 25px; margin: 10px 5px; }
+                                                </style>
+                                            </head>
+                                            <body>
+                                                <div class="container">
+                                                    <div class="header">
+                                                        <h1 style="margin: 0; font-size: 28px;">🎉 Payment Successful!</h1>
+                                                        <p style="margin: 10px 0 0 0; opacity: 0.9;">Processed via Webhook Fallback</p>
+                                                    </div>
+                                                    <div class="content">
+                                                        <div style="text-align: center;">
+                                                            <span class="success-badge">✓ PAYMENT CONFIRMED</span>
+                                                        </div>
+                                                        <p>Dear <strong>${order.notes.name}</strong>,</p>
+                                                        <p>Thank you for your purchase! We have successfully received your payment and your order is now being processed.</p>
+                                                        <div class="order-box">
+                                                            <h3 style="margin-top: 0; color: #764ba2;">📋 Order Details</h3>
+                                                            <p><strong>Subject:</strong> ${order.notes.subjectCode} - ${order.notes.subjectName}</p>
+                                                            <p><strong>Amount Paid:</strong> ₹${order.amount / 100}</p>
+                                                            <p><strong>Payment ID:</strong> ${paymentId}</p>
+                                                        </div>
+                                                        <div class="timeline">
+                                                            <h3 style="margin-top: 0; color: #b45309;">⏰ When Will You Receive Your Questions?</h3>
+                                                            <p style="margin-bottom: 0;"><strong>Your Fix Questions PDF will be sent to this email within 2-4 hours.</strong></p>
+                                                        </div>
+                                                        <h3 style="color: #764ba2;">📱 Need Help?</h3>
+                                                        <p>WhatsApp: <strong>+91 8884624741</strong></p>
+                                                    </div>
+                                                    <div class="footer">
+                                                        <p style="margin: 0;"><strong>🎓 Braintube</strong></p>
+                                                        <p style="margin: 5px 0;">VTU Student Platform</p>
+                                                    </div>
+                                                </div>
+                                            </body>
+                                            </html>
+                                        `
+                                    });
+                                    console.log(`[WEBHOOK-ASYNC] ✅ Customer email sent to ${customerEmail}`);
+                                }
                             } catch (emailError) {
                                 console.error('[WEBHOOK-ASYNC] Email error:', emailError.message);
                             }
