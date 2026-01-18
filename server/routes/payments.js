@@ -42,15 +42,17 @@ try {
 async function sendEmail({ to, subject, html, from }) {
     // Use verified domain email
     const fromEmail = from || 'noreply@braintube.site';
+    const supportEmail = process.env.ADMIN_EMAIL || 'braintube.in@gmail.com';
 
     if (resend) {
         try {
             // Use Resend API (works on Render free tier)
             const result = await resend.emails.send({
-                from: `Braintube <${fromEmail}>`,
+                from: `"Braintube" <${fromEmail}>`,
                 to: to,
                 subject: subject,
-                html: html
+                html: html,
+                reply_to: supportEmail
             });
             console.log(`[EMAIL] ✅ Sent via Resend to ${to}`, result);
             return result;
@@ -65,7 +67,8 @@ async function sendEmail({ to, subject, html, from }) {
             from: `"Braintube" <${fromEmail}>`,
             to: to,
             subject: subject,
-            html: html
+            html: html,
+            replyTo: supportEmail
         });
         console.log(`[EMAIL] ✅ Sent via SMTP to ${to}`);
         return result;
