@@ -628,8 +628,99 @@ router.post('/webhook', async (req, res) => {
                             }
                         }
                     } else {
-                        console.warn(`[WEBHOOK-ASYNC] ⚠️ Order ${orderId} not found in memory`);
-                        // In production, you should query database here
+                        // Order not in memory - fetch from Razorpay API as fallback
+                        console.log(`[WEBHOOK-ASYNC] Order ${orderId} not in memory, fetching from Razorpay API...`);
+
+                        if (razorpay) {
+                            try {
+                                const razorpayOrder = await razorpay.orders.fetch(orderId);
+                                const razorpayPayment = await razorpay.payments.fetch(paymentId);
+
+                                console.log(`[WEBHOOK-ASYNC] Fetched order from Razorpay:`, razorpayOrder.notes);
+
+                                // Use notes from Razorpay order
+                                const notes = razorpayOrder.notes || {};
+                                const amount = razorpayOrder.amount;
+
+                                if (notes.email && (resend || transporter)) {
+                                    const adminEmail = process.env.ADMIN_EMAIL || 'braintube.in@gmail.com';
+
+                                    // Send admin notification
+                                    await sendEmail({
+                                        to: adminEmail,
+                                        subject: `💰 [RECOVERED] Payment Confirmed - ${notes.planId}`,
+                                        html: `
+                                            <h2>Payment Recovered via Razorpay API</h2>
+                                            <p><strong>Customer:</strong> ${notes.name}</p>
+                                            <p><strong>Email:</strong> ${notes.email}</p>
+                                            <p><strong>Plan:</strong> ${notes.planId}</p>
+                                            <p><strong>Amount:</strong> ₹${amount / 100}</p>
+                                            <p><strong>Subject:</strong> ${notes.subjectCode} - ${notes.subjectName}</p>
+                                            <p><strong>Payment ID:</strong> ${paymentId}</p>
+                                            <p><em>Note: Order was recovered from Razorpay API (server may have restarted)</em></p>
+                                        `
+                                    });
+                                    console.log(`[WEBHOOK-ASYNC] ✅ Admin notification sent (recovered)`);
+
+                                    // Send customer email
+                                    await sendEmail({
+                                        to: notes.email,
+                                        subject: `✅ Payment Confirmed - ${notes.subjectCode || 'Braintube'} Fix Questions`,
+                                        html: `
+                                            <!DOCTYPE html>
+                                            <html>
+                                            <head>
+                                                <style>
+                                                    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; }
+                                                    .container { max-width: 600px; margin: 0 auto; }
+                                                    .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; text-align: center; }
+                                                    .content { background: #ffffff; padding: 30px; }
+                                                    .success-badge { background: #10b981; color: white; padding: 8px 20px; border-radius: 20px; display: inline-block; font-weight: bold; }
+                                                    .order-box { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 10px; padding: 20px; margin: 20px 0; }
+                                                    .timeline { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px 20px; margin: 20px 0; }
+                                                    .footer { background: #f8f9fa; padding: 20px 30px; text-align: center; color: #666; }
+                                                </style>
+                                            </head>
+                                            <body>
+                                                <div class="container">
+                                                    <div class="header">
+                                                        <h1 style="margin: 0;">🎉 Payment Successful!</h1>
+                                                    </div>
+                                                    <div class="content">
+                                                        <div style="text-align: center;">
+                                                            <span class="success-badge">✓ PAYMENT CONFIRMED</span>
+                                                        </div>
+                                                        <p>Dear <strong>${notes.name}</strong>,</p>
+                                                        <p>Thank you for your purchase! Your payment has been confirmed.</p>
+                                                        <div class="order-box">
+                                                            <h3 style="margin-top: 0; color: #764ba2;">📋 Order Details</h3>
+                                                            <p><strong>Subject:</strong> ${notes.subjectCode} - ${notes.subjectName}</p>
+                                                            <p><strong>Amount Paid:</strong> ₹${amount / 100}</p>
+                                                            <p><strong>Payment ID:</strong> ${paymentId}</p>
+                                                        </div>
+                                                        <div class="timeline">
+                                                            <h3 style="margin-top: 0; color: #b45309;">⏰ Delivery</h3>
+                                                            <p><strong>Your Fix Questions PDF will be sent within 2-4 hours.</strong></p>
+                                                        </div>
+                                                        <h3 style="color: #764ba2;">📱 Need Help?</h3>
+                                                        <p>WhatsApp: <strong>+91 8884624741</strong></p>
+                                                    </div>
+                                                    <div class="footer">
+                                                        <p><strong>🎓 Braintube</strong> - VTU Study Platform</p>
+                                                    </div>
+                                                </div>
+                                            </body>
+                                            </html>
+                                        `
+                                    });
+                                    console.log(`[WEBHOOK-ASYNC] ✅ Customer email sent to ${notes.email} (recovered)`);
+                                }
+                            } catch (razorpayError) {
+                                console.error(`[WEBHOOK-ASYNC] ❌ Failed to fetch from Razorpay:`, razorpayError.message);
+                            }
+                        } else {
+                            console.warn(`[WEBHOOK-ASYNC] ⚠️ Razorpay not initialized, cannot recover order`);
+                        }
                     }
                 } else if (event === 'payment.failed') {
                     console.log(`[WEBHOOK-ASYNC] Payment failed for order ${orderId}`);
