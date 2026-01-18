@@ -175,7 +175,7 @@ router.post('/send-pdf-email', checkAdmin, async (req, res) => {
         for (const purchase of purchases) {
             try {
                 await resend.emails.send({
-                    from: '"Braintube Support" <support@braintube.site>',
+                    from: '"Braintube" <noreply@braintube.site>',
                     to: purchase.email,
                     reply_to: process.env.ADMIN_EMAIL || 'braintube.in@gmail.com',
                     subject: `Your Fix Questions - ${purchase.subjectCode} ${purchase.subjectName}`,
