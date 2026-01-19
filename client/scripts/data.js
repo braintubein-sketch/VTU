@@ -32,6 +32,7 @@ const VTUData = {
   sem1_cse: [
     { code: 'BMATS101', name: 'Mathematics-I for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPHYS102', name: 'Applied Physics for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHS102', name: 'Applied Chemistry for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPOPS103', name: 'Principles of Programming Using C', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BESCK104C', name: 'Introduction to Electronics & Communication', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BETCK105B', name: 'Introduction to Python Programming', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
@@ -45,6 +46,7 @@ const VTUData = {
   sem1_ece: [
     { code: 'BMATE101', name: 'Mathematics-I for EEE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPHYE102', name: 'Applied Physics for EEE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHEE102', name: 'Chemistry for EEE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BBEE103', name: 'Basic Electronics for EEE Stream', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BESCK104B', name: 'Introduction to Electrical Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BETCK105H', name: 'Introduction to Internet of Things (IoT)', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
@@ -58,6 +60,7 @@ const VTUData = {
   sem1_me: [
     { code: 'BMATM101', name: 'Mathematics-I for ME Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPHYM102', name: 'Applied Physics for ME Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHEM102', name: 'Applied Chemistry for ME Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BEMEM103', name: 'Elements of Mechanical Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BESCK104D', name: 'Introduction to Mechanical Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BETCK105A', name: 'Smart Materials and Systems', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
@@ -71,6 +74,7 @@ const VTUData = {
   sem1_cv: [
     { code: 'BMATC101', name: 'Mathematics-I for Civil Engg Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPLYC102', name: 'Applied Physics for Civil Engg Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHEC102', name: 'Applied Chemistry for Civil Engg Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BCIVC103', name: 'Engineering Mechanics', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BESCK104A', name: 'Introduction to Civil Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BETCK105B', name: 'Green Buildings', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
