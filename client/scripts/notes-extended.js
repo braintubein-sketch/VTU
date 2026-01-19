@@ -72,6 +72,47 @@ const NotesExtended = {
         ],
         complete: { file: null, size: '4.0 MB', pages: 208 }
     },
+    'BPOPS203': {
+        name: 'Principles of Programming using C',
+        modules: [
+            { num: 1, title: 'Introduction to C', file: 'pop-1.1-to-1.9-skc.pdf', size: '1.0 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Operators, Decision Control and Looping Statements', file: 'pop_module2_notes.pdf', size: '1.0 MB', pages: 42, status: 'available' },
+            { num: 3, title: 'Functions and Arrays', file: 'module3-arrays.pdf', size: '0.5 MB', pages: 35, status: 'available' },
+            { num: 4, title: 'Strings and Pointers', file: 'module-4_pop.pdf', size: '0.7 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Structure, Union, Enumerated Data Type and Files', file: 'module-5-pop.pdf', size: '0.8 MB', pages: 48, status: 'available' }
+        ],
+        complete: { file: null, size: '4.0 MB', pages: 208 }
+    },
+    // Mathematics Streams
+    'BMATS101': {
+        name: 'Mathematics-I for CSE Stream',
+        modules: [
+            { num: 1, title: 'Differential Calculus', file: 'BMAT101_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Integral Calculus', file: 'BMAT101_M2.pdf', size: '3.2 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Ordinary Differential Equations', file: 'BMAT101_M3.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 4, title: 'Linear Algebra', file: 'BMAT101_M4.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Numerical Methods', file: 'BMAT101_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: null, size: '15.0 MB', pages: 240 }
+    },
+    'BMATE101': { name: 'Mathematics-I for EEE Stream', modules: [{ num: 1, title: 'Differential Calculus', status: 'available' }, { num: 2, title: 'Integral Calculus', status: 'available' }, { num: 3, title: 'ODE', status: 'available' }, { num: 4, title: 'Linear Algebra', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
+    'BMATM101': { name: 'Mathematics-I for ME Stream', modules: [{ num: 1, title: 'Differential Calculus', status: 'available' }, { num: 2, title: 'Integral Calculus', status: 'available' }, { num: 3, title: 'ODE', status: 'available' }, { num: 4, title: 'Linear Algebra', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
+    'BMATC101': { name: 'Mathematics-I for Civil Stream', modules: [{ num: 1, title: 'Differential Calculus', status: 'available' }, { num: 2, title: 'Integral Calculus', status: 'available' }, { num: 3, title: 'ODE', status: 'available' }, { num: 4, title: 'Linear Algebra', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
+    'BMATS201': { name: 'Mathematics-II for CSE Stream', modules: [{ num: 1, title: 'Laplace Transforms', status: 'available' }, { num: 2, title: 'Fourier Series', status: 'available' }, { num: 3, title: 'Fourier Transforms', status: 'available' }, { num: 4, title: 'Z-Transforms', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
+    'BMATE201': { name: 'Mathematics-II for EEE Stream', modules: [{ num: 1, title: 'Laplace Transforms', status: 'available' }, { num: 2, title: 'Fourier Series', status: 'available' }, { num: 3, title: 'Fourier Transforms', status: 'available' }, { num: 4, title: 'Z-Transforms', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
+    'BMATM201': { name: 'Mathematics-II for ME Stream', modules: [{ num: 1, title: 'Laplace Transforms', status: 'available' }, { num: 2, title: 'Fourier Series', status: 'available' }, { num: 3, title: 'Fourier Transforms', status: 'available' }, { num: 4, title: 'Z-Transforms', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
+    'BMATC201': { name: 'Mathematics-II for Civil Stream', modules: [{ num: 1, title: 'Laplace Transforms', status: 'available' }, { num: 2, title: 'Fourier Series', status: 'available' }, { num: 3, title: 'Fourier Transforms', status: 'available' }, { num: 4, title: 'Z-Transforms', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
+
+    // Chemistry Streams
+    'BCHS102': { name: 'Applied Chemistry for CSE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEE102': { name: 'Chemistry for EEE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEM102': { name: 'Applied Chemistry for ME Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEC102': { name: 'Applied Chemistry for Civil Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHS202': { name: 'Applied Chemistry for CSE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEE202': { name: 'Chemistry for EEE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEM202': { name: 'Applied Chemistry for ME Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEC202': { name: 'Applied Chemistry for Civil Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+
     // ==================== SEMESTER 1 & 2 COMMON ====================
     'BESCK104': {
         name: 'Introduction to Electronics',
@@ -84,28 +125,56 @@ const NotesExtended = {
         ],
         complete: { file: 'BESCK104_Complete.pdf', size: '12.5 MB', pages: 211 }
     },
-    'BENGK105': {
+    'BENGK106': {
         name: 'Communicative English',
         modules: [
-            { num: 1, title: 'Listening Skills', file: 'BENGK105_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
-            { num: 2, title: 'Speaking Skills', file: 'BENGK105_M2.pdf', size: '1.8 MB', pages: 28, status: 'available' },
-            { num: 3, title: 'Reading Skills', file: 'BENGK105_M3.pdf', size: '2.0 MB', pages: 32, status: 'available' },
-            { num: 4, title: 'Writing Skills', file: 'BENGK105_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
-            { num: 5, title: 'Grammar & Vocabulary', file: 'BENGK105_M5.pdf', size: '1.8 MB', pages: 28, status: 'available' }
+            { num: 1, title: 'Listening Skills', file: 'BENGK106_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
+            { num: 2, title: 'Speaking Skills', file: 'BENGK106_M2.pdf', size: '1.8 MB', pages: 28, status: 'available' },
+            { num: 3, title: 'Reading Skills', file: 'BENGK106_M3.pdf', size: '2.0 MB', pages: 32, status: 'available' },
+            { num: 4, title: 'Writing Skills', file: 'BENGK106_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Grammar & Vocabulary', file: 'BENGK106_M5.pdf', size: '1.8 MB', pages: 28, status: 'available' }
         ],
-        complete: { file: 'BENGK105_Complete.pdf', size: '8.5 MB', pages: 145 }
+        complete: { file: 'BENGK106_Complete.pdf', size: '8.5 MB', pages: 145 }
     },
-    'BICOK108': {
+    'BPWSK206': {
+        name: 'Professional Writing Skills in English',
+        modules: [
+            { num: 1, title: 'Technical Writing', file: 'BPWSK206_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
+            { num: 2, title: 'Business Letters', file: 'BPWSK206_M2.pdf', size: '1.8 MB', pages: 28, status: 'available' },
+            { num: 3, title: 'Report Writing', file: 'BPWSK206_M3.pdf', size: '2.0 MB', pages: 32, status: 'available' },
+            { num: 4, title: 'Resume Writing', file: 'BPWSK206_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Presentation Skills', file: 'BPWSK206_M5.pdf', size: '1.8 MB', pages: 28, status: 'available' }
+        ],
+        complete: { file: 'BPWSK206_Complete.pdf', size: '8.5 MB', pages: 145 }
+    },
+    'BICOK107': {
         name: 'Indian Constitution',
         modules: [
-            { num: 1, title: 'Introduction & Preamble', file: 'BICOK108_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
-            { num: 2, title: 'Fundamental Rights', file: 'BICOK108_M2.pdf', size: '2.0 MB', pages: 32, status: 'available' },
-            { num: 3, title: 'Directive Principles', file: 'BICOK108_M3.pdf', size: '1.8 MB', pages: 28, status: 'available' },
-            { num: 4, title: 'Union & States', file: 'BICOK108_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
-            { num: 5, title: 'Elections & Amendments', file: 'BICOK108_M5.pdf', size: '1.5 MB', pages: 22, status: 'available' }
+            { num: 1, title: 'Introduction & Preamble', file: 'BICOK107_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
+            { num: 2, title: 'Fundamental Rights', file: 'BICOK107_M2.pdf', size: '2.0 MB', pages: 32, status: 'available' },
+            { num: 3, title: 'Directive Principles', file: 'BICOK107_M3.pdf', size: '1.8 MB', pages: 28, status: 'available' },
+            { num: 4, title: 'Union & States', file: 'BICOK107_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Elections & Amendments', file: 'BICOK107_M5.pdf', size: '1.5 MB', pages: 22, status: 'available' }
         ],
-        complete: { file: 'BICOK108_Complete.pdf', size: '8.0 MB', pages: 139 }
+        complete: { file: 'BICOK107_Complete.pdf', size: '8.0 MB', pages: 139 }
     },
+    'BICOK207': {
+        name: 'Indian Constitution',
+        modules: [
+            { num: 1, title: 'Introduction & Preamble', file: 'BICOK207_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
+            { num: 2, title: 'Fundamental Rights', file: 'BICOK207_M2.pdf', size: '2.0 MB', pages: 32, status: 'available' },
+            { num: 3, title: 'Directive Principles', file: 'BICOK207_M3.pdf', size: '1.8 MB', pages: 28, status: 'available' },
+            { num: 4, title: 'Union & States', file: 'BICOK207_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Elections & Amendments', file: 'BICOK207_M5.pdf', size: '1.5 MB', pages: 22, status: 'available' }
+        ],
+        complete: { file: 'BICOK207_Complete.pdf', size: '8.0 MB', pages: 139 }
+    },
+    'BKSKK107': { name: 'Samskrutika Kannada', modules: [{ num: 1, title: 'Introduction', status: 'available' }], complete: { file: null, size: '5 MB', pages: 80 } },
+    'BKSKK207': { name: 'Samskrutika Kannada', modules: [{ num: 1, title: 'Introduction', status: 'available' }], complete: { file: null, size: '5 MB', pages: 80 } },
+    'BKBKK107': { name: 'Balake Kannada', modules: [{ num: 1, title: 'Introduction', status: 'available' }], complete: { file: null, size: '5 MB', pages: 80 } },
+    'BKBKK207': { name: 'Balake Kannada', modules: [{ num: 1, title: 'Introduction', status: 'available' }], complete: { file: null, size: '5 MB', pages: 80 } },
+
+
     'BEESK203': {
         name: 'Basic Electrical Engineering',
         modules: [

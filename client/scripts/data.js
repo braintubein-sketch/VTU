@@ -38,7 +38,8 @@ const VTUData = {
     { code: 'BETCK105B', name: 'Introduction to Python Programming', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BENGK106', name: 'Communicative English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BKSKK107', name: 'Samskrutika Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BICOK108', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK107', name: 'Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICOK107', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BSFHK158', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'BIDTK138', name: 'Innovation and Design Thinking', credits: 2, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
@@ -52,7 +53,8 @@ const VTUData = {
     { code: 'BETCK105H', name: 'Introduction to Internet of Things (IoT)', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BENGK106', name: 'Communicative English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BKSKK107', name: 'Samskrutika Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BICOK108', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK107', name: 'Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICOK107', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BSFHK158', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'BIDTK138', name: 'Innovation and Design Thinking', credits: 2, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
@@ -66,7 +68,8 @@ const VTUData = {
     { code: 'BETCK105A', name: 'Smart Materials and Systems', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BENGK106', name: 'Communicative English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BKSKK107', name: 'Samskrutika Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BICOK108', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK107', name: 'Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICOK107', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BSFHK158', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'BIDTK138', name: 'Innovation and Design Thinking', credits: 2, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
@@ -80,7 +83,8 @@ const VTUData = {
     { code: 'BETCK105B', name: 'Green Buildings', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BENGK106', name: 'Communicative English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BKSKK107', name: 'Samskrutika Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BICOK108', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK107', name: 'Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICOK107', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BSFHK158', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'BIDTK138', name: 'Innovation and Design Thinking', credits: 2, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
@@ -109,7 +113,8 @@ const VTUData = {
     { code: 'BETCK205B', name: 'Introduction to Python Programming', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPWSK206', name: 'Professional Writing Skills in English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BKSKK207', name: 'Samskrutika Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BICOK208', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK207', name: 'Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICOK207', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BSFHK258', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'BIDTK258', name: 'Innovation and Design Thinking', credits: 2, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
@@ -135,7 +140,8 @@ const VTUData = {
     { code: 'BETCK205A', name: 'Smart Materials and Systems', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPWSK206', name: 'Professional Writing Skills in English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BKSKK207', name: 'Samskrutika Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BICOK208', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK207', name: 'Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICOK207', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BSFHK258', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'BIDTK258', name: 'Innovation and Design Thinking', credits: 2, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
@@ -148,7 +154,8 @@ const VTUData = {
     { code: 'BETCK205B', name: 'Green Buildings', credits: 3, type: 'Emerging Tech', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPWSK206', name: 'Professional Writing Skills in English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BKSKK207', name: 'Samskrutika Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BICOK208', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK207', name: 'Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICOK207', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BSFHK258', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'BIDTK258', name: 'Innovation and Design Thinking', credits: 2, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
