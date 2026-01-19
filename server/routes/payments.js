@@ -115,9 +115,7 @@ const orders = new Map();
 
 // Pricing plans
 const plans = {
-    premium: { amount: 19900, currency: 'INR', name: 'Premium Plan', duration: 'semester' },
-    ultimate: { amount: 49900, currency: 'INR', name: 'Ultimate Plan', duration: 'year' },
-    fix_questions: { amount: 7900, currency: 'INR', name: 'Fix Questions', duration: 'subject' }
+    fix_questions: { amount: 9900, currency: 'INR', name: 'Fix Questions', duration: 'subject' }
 };
 
 // Create order

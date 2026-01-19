@@ -115,7 +115,7 @@ router.post('/submit', [
             subjectCode,
             subjectName,
             paymentId: paymentId || 'N/A',
-            amount: amount || 79,
+            amount: amount || 99,
             status: 'pending',
             submittedAt: new Date().toISOString()
         };
@@ -131,7 +131,7 @@ router.post('/submit', [
                 subjectCode,
                 subjectName,
                 paymentId: paymentId || 'N/A',
-                amount: amount || 79,
+                amount: amount || 99,
                 paymentStatus: 'captured',
                 pdfSent: false
             });
@@ -197,7 +197,7 @@ router.post('/submit', [
                                     
                                     <div class="info-row">
                                         <div class="label">Amount:</div>
-                                        <div class="value">₹${amount || 79}</div>
+                                        <div class="value">₹${amount || 99}</div>
                                     </div>
                                     
                                     <div class="info-row">
@@ -262,12 +262,12 @@ router.post('/submit', [
                                     
                                     <p>Dear <strong>${name}</strong>,</p>
                                     
-                                    <p>Thank you for your purchase! We have successfully received your payment of <strong>₹${amount || 79}</strong> and your order is now being processed.</p>
+                                    <p>Thank you for your purchase! We have successfully received your payment of <strong>₹${amount || 99}</strong> and your order is now being processed.</p>
                                     
                                     <div class="order-box">
                                         <h3 style="margin-top: 0; color: #764ba2;">📋 Order Details</h3>
                                         <p style="margin: 5px 0;"><strong>Subject:</strong> ${subjectCode} - ${subjectName}</p>
-                                        <p style="margin: 5px 0;"><strong>Amount Paid:</strong> ₹${amount || 79}</p>
+                                        <p style="margin: 5px 0;"><strong>Amount Paid:</strong> ₹${amount || 99}</p>
                                         <p style="margin: 5px 0;"><strong>Payment ID:</strong> ${paymentId || 'Processing'}</p>
                                         <p style="margin: 5px 0;"><strong>Order ID:</strong> ${submissionId}</p>
                                         <p style="margin: 5px 0;"><strong>Order Date:</strong> ${new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>

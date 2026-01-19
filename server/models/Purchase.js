@@ -42,7 +42,7 @@ const purchaseSchema = new mongoose.Schema({
     },
     amount: {
         type: Number,
-        default: 79
+        default: 99
     },
 
     // Status tracking
