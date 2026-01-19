@@ -19,24 +19,69 @@ const NotesData = {
     'BPHY102': {
         name: 'Applied Physics',
         modules: [
-            { num: 1, title: 'Quantum Mechanics', file: 'BPHY102_M1_Quantum.pdf', size: '3.0 MB', pages: 45, status: 'available' },
-            { num: 2, title: 'Laser Physics', file: 'BPHY102_M2_Laser.pdf', size: '2.8 MB', pages: 42, status: 'available' },
-            { num: 3, title: 'Optical Fibers', file: 'BPHY102_M3_Optical_Fibers.pdf', size: '2.5 MB', pages: 38, status: 'available' },
-            { num: 4, title: 'Electrical Properties of Materials', file: 'BPHY102_M4_Electrical.pdf', size: '3.2 MB', pages: 48, status: 'available' },
-            { num: 5, title: 'Nanotechnology', file: 'BPHY102_M5_Nano.pdf', size: '2.6 MB', pages: 40, status: 'available' }
+            { num: 1, title: 'Laser & Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Physics of Animation & Statistical Physics', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
         ],
-        complete: { file: 'BPHY102_Complete_Notes.pdf', size: '12.8 MB', pages: 213 }
+        complete: { file: 'BPHY102_Complete_Notes.pdf', size: '15.0 MB', pages: 260 }
     },
     'BPOPS103': {
         name: 'Principles of Programming using C',
         modules: [
-            { num: 1, title: 'Introduction to C', file: 'BPOPS103_M1_Introduction.pdf', size: '2.5 MB', pages: 38, status: 'available' },
-            { num: 2, title: 'Control Structures', file: 'BPOPS103_M2_Control.pdf', size: '3.0 MB', pages: 45, status: 'available' },
-            { num: 3, title: 'Arrays & Strings', file: 'BPOPS103_M3_Arrays_Strings.pdf', size: '3.2 MB', pages: 48, status: 'available' },
-            { num: 4, title: 'Functions & Pointers', file: 'BPOPS103_M4_Functions_Pointers.pdf', size: '3.8 MB', pages: 58, status: 'available' },
-            { num: 5, title: 'Structures & File Handling', file: 'BPOPS103_M5_Structures_Files.pdf', size: '3.5 MB', pages: 52, status: 'available' }
+            { num: 1, title: 'Introduction to C', file: 'pop-1.1-to-1.9-skc.pdf', size: '1.0 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Control Structures', file: 'pop_module2_notes.pdf', size: '1.0 MB', pages: 42, status: 'available' },
+            { num: 3, title: 'Arrays & Functions', file: 'module3-arrays.pdf', size: '0.5 MB', pages: 35, status: 'available' },
+            { num: 4, title: 'Functions & Pointers', file: 'module-4_pop.pdf', size: '0.7 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Structures & File Handling', file: 'module-5-pop.pdf', size: '0.8 MB', pages: 48, status: 'available' }
         ],
-        complete: { file: 'BPOPS103_Complete_Notes.pdf', size: '14.2 MB', pages: 241 }
+        complete: { file: 'BPOPS103_Complete_Notes.pdf', size: '4.0 MB', pages: 208 }
+    },
+    // Stream-specific Physics codes (all point to same content)
+    'BPHYS102': {
+        name: 'Applied Physics for CSE Stream',
+        modules: [
+            { num: 1, title: 'Laser & Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Physics of Animation & Statistical Physics', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+        ],
+        complete: { file: 'BPHY102_Complete_Notes.pdf', size: '15.0 MB', pages: 260 }
+    },
+    'BPHYE102': {
+        name: 'Applied Physics for EEE Stream',
+        modules: [
+            { num: 1, title: 'Laser & Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Physics of Animation & Statistical Physics', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+        ],
+        complete: { file: 'BPHY102_Complete_Notes.pdf', size: '15.0 MB', pages: 260 }
+    },
+    'BPHYM102': {
+        name: 'Applied Physics for ME Stream',
+        modules: [
+            { num: 1, title: 'Laser & Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Physics of Animation & Statistical Physics', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+        ],
+        complete: { file: 'BPHY102_Complete_Notes.pdf', size: '15.0 MB', pages: 260 }
+    },
+    'BPLYC102': {
+        name: 'Applied Physics for Civil Engg Stream',
+        modules: [
+            { num: 1, title: 'Laser & Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Physics of Animation & Statistical Physics', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+        ],
+        complete: { file: 'BPHY102_Complete_Notes.pdf', size: '15.0 MB', pages: 260 }
     },
 
     // ==================== SEMESTER 2 COMMON SUBJECTS ====================
