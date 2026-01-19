@@ -27,7 +27,45 @@ const VTUData = {
     { id: 8, name: 'Semester 8', type: 'Project + Internship' }
   ],
 
-  // ==================== SEMESTER 1 (Common - Physics Cycle) ====================
+  // ==================== SEMESTER 1 (Stream-wise - VTU 2022 Scheme) ====================
+  // CSE Stream (CSE, ISE, AIML, DS)
+  sem1_cse: [
+    { code: 'BMAT101', name: 'Mathematics-I for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPHY102', name: 'Applied Physics for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPOPS103', name: 'Principles of Programming using C', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK104A', name: 'Introduction to Electronics', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BENGK105', name: 'Communicative English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPHYL106', name: 'Applied Physics Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BPOPL107', name: 'C Programming Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BICOK108', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BSFHK109', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
+  ],
+  // ECE/EEE Stream
+  sem1_ece: [
+    { code: 'BMAT101', name: 'Mathematics-I for ECE/EEE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPHY102', name: 'Applied Physics for ECE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPOPS103', name: 'Principles of Programming using C', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK104B', name: 'Elements of Electrical Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BENGK105', name: 'Communicative English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPHYL106', name: 'Applied Physics Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BPOPL107', name: 'C Programming Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BICOK108', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BSFHK109', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
+  ],
+  // ME/CV Stream (Mechanical/Civil)
+  sem1_me: [
+    { code: 'BMAT101', name: 'Mathematics-I for ME/CV Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHE102', name: 'Applied Chemistry for ME/CV Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BEME103', name: 'Elements of Mechanical Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK104C', name: 'Basic Electrical Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BENGK105', name: 'Communicative English', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHEL106', name: 'Applied Chemistry Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BEMEL107', name: 'Workshop Practice', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BICOK108', name: 'Indian Constitution', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BSFHK109', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
+  ],
+
+  // Common Semester 1 for backwards compatibility
   sem1: [
     { code: 'BMAT101', name: 'Mathematics-I for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPHY102', name: 'Applied Physics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -40,16 +78,55 @@ const VTUData = {
     { code: 'BSFHK109', name: 'Scientific Foundations of Health', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
 
-  // ==================== SEMESTER 2 (Common - Chemistry Cycle) ====================
+  // ==================== SEMESTER 2 (Stream-wise - VTU 2022 Scheme) ====================
+  // CSE Stream (CSE, ISE, AIML, DS)
+  sem2_cse: [
+    { code: 'BMAT201', name: 'Mathematics-II for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHE202', name: 'Applied Chemistry', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BECS203', name: 'Digital Design', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICSK204', name: 'Introduction to Python Programming', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKSKK205', name: 'Samskrutika Kannada / Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHEL206', name: 'Applied Chemistry Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BICSKL207', name: 'Python Programming Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BEDSK208', name: 'Computer Aided Engineering Drawing', credits: 2, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BUHK209', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
+  ],
+  // ECE/EEE Stream
+  sem2_ece: [
+    { code: 'BMAT201', name: 'Mathematics-II for ECE/EEE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHE202', name: 'Applied Chemistry', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BECE203', name: 'Electronic Circuits', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPLC204', name: 'Introduction to C Programming', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKSKK205', name: 'Samskrutika Kannada / Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHEL206', name: 'Applied Chemistry Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BECEL207', name: 'Electronic Circuits Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BEDSK208', name: 'Computer Aided Engineering Drawing', credits: 2, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BUHK209', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
+  ],
+  // ME/CV Stream
+  sem2_me: [
+    { code: 'BMAT201', name: 'Mathematics-II for ME/CV Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPHY202', name: 'Applied Physics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BEME203', name: 'Mechanical Engineering Science', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPLC204', name: 'Introduction to C Programming', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKSKK205', name: 'Samskrutika Kannada / Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPHYL206', name: 'Applied Physics Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BPLCL207', name: 'C Programming Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BEDSK208', name: 'Computer Aided Engineering Drawing', credits: 2, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BUHK209', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
+  ],
+
+  // Common Semester 2 for backwards compatibility
   sem2: [
     { code: 'BMAT201', name: 'Mathematics-II for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BCHE202', name: 'Applied Chemistry', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BEESK203', name: 'Basic Electrical Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BICSK204', name: 'Introduction to Computer Science', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-    { code: 'BKSKK205', name: 'Samskrutika Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BECS203', name: 'Digital Design', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICSK204', name: 'Introduction to Python Programming', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKSKK205', name: 'Samskrutika Kannada / Balake Kannada', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BCHEL206', name: 'Applied Chemistry Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
-    { code: 'BEESKL207', name: 'Basic Electrical Engineering Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
-    { code: 'BEDSK208', name: 'Engineering Design & Drafting', credits: 2, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+    { code: 'BICSKL207', name: 'Python Programming Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BEDSK208', name: 'Computer Aided Engineering Drawing', credits: 2, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+    { code: 'BUHK209', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
   ],
 
   // ==================== CSE SUBJECTS (Semester 3-8) ====================
@@ -412,8 +489,23 @@ const VTUData = {
   },
 
   getSubjects(branchId, semId) {
-    if (semId === 1) return this.sem1;
-    if (semId === 2) return this.sem2;
+    // Stream mapping for 1st and 2nd semester
+    const cseStreamBranches = ['cse', 'ise', 'aiml', 'ds'];
+    const eceStreamBranches = ['ece', 'eee'];
+    const meStreamBranches = ['me', 'cv'];
+
+    if (semId === 1) {
+      if (cseStreamBranches.includes(branchId)) return this.sem1_cse;
+      if (eceStreamBranches.includes(branchId)) return this.sem1_ece;
+      if (meStreamBranches.includes(branchId)) return this.sem1_me;
+      return this.sem1; // fallback
+    }
+    if (semId === 2) {
+      if (cseStreamBranches.includes(branchId)) return this.sem2_cse;
+      if (eceStreamBranches.includes(branchId)) return this.sem2_ece;
+      if (meStreamBranches.includes(branchId)) return this.sem2_me;
+      return this.sem2; // fallback
+    }
     return this.subjects[`${branchId}-${semId}`] || [];
   }
 };
