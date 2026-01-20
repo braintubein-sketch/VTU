@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="google-adsense-account" content="ca-pub-2703338145574896">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VTU SGPA and CGPA Calculator - Calculate your Semester Grade Point Average and Cumulative Grade Point Average as per VTU grading system.">
+    <title>SGPA & CGPA Calculator - Braintube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/theme-v3.css">
+    <link rel="stylesheet" href="../styles/whatsapp-modal.css?v=3.0.0">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
+    <style>
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calc-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            backdrop-filter: blur(20px);
+        }
+
+        .calc-card h2 {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .calc-card h2 .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .subject-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr auto;
+            gap: var(--space-3);
+            margin-bottom: var(--space-3);
+            align-items: center;
+        }
+
+        @media (max-width: 500px) {
+            .subject-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .subject-row input,
+        .subject-row select {
+            padding: var(--space-3);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: var(--text-sm);
+        }
+
+        .subject-row input:focus,
+        .subject-row select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .remove-btn {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .remove-btn:hover {
+            background: rgba(239, 68, 68, 0.4);
+        }
+
+        .add-subject-btn {
+            width: 100%;
+            padding: var(--space-3);
+            background: transparent;
+            border: 2px dashed var(--glass-border);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            cursor: pointer;
+            margin: var(--space-4) 0;
+            transition: all 0.2s;
+            font-size: var(--text-sm);
+        }
+
+        .add-subject-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .result-box {
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5);
+            text-align: center;
+            margin-top: var(--space-4);
+        }
+
+        .result-box .label {
+            font-size: var(--text-sm);
+            opacity: 0.9;
+            margin-bottom: var(--space-2);
+        }
+
+        .result-box .value {
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            font-family: var(--font-display);
+        }
+
+        .result-box .status {
+            margin-top: var(--space-2);
+            font-size: var(--text-sm);
+            opacity: 0.9;
+        }
+
+        .grading-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-4);
+        }
+
+        .grading-table th,
+        .grading-table td {
+            padding: var(--space-3);
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .grading-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+        }
+
+        .grading-table tr:hover {
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .semester-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: var(--space-3);
+            margin-bottom: var(--space-3);
+            align-items: center;
+        }
+
+        .formula-box {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            margin-top: var(--space-4);
+            font-family: monospace;
+            font-size: var(--text-sm);
+            text-align: center;
+        }
+
+        .tabs {
+            display: flex;
+            gap: var(--space-2);
+            margin-bottom: var(--space-6);
+            background: var(--bg-secondary);
+            padding: var(--space-2);
+            border-radius: var(--radius-lg);
+        }
+
+        .tab {
+            flex: 1;
+            padding: var(--space-3) var(--space-4);
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tab.active {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .calc-actions {
+            display: flex;
+            gap: var(--space-3);
+            margin-top: var(--space-4);
+        }
+
+        .calc-actions .btn {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                    </svg>
+                </div>
+                <span>Brain<span class="text-gradient">tube</span></span>
+            </a>
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="branches.html" class="nav-link">Branches</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="calculator.html" class="nav-link active">Calculator</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-secondary hide-mobile">Login</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="../index.html" class="mobile-nav-link">Home</a>
+        <a href="branches.html" class="mobile-nav-link">Branches</a>
+        <a href="resources.html" class="mobile-nav-link">Resources</a>
+        <a href="calculator.html" class="mobile-nav-link">Calculator</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Calculator</span>
+                </nav>
+                <h1>VTU <span class="text-gradient">SGPA & CGPA</span> Calculator</h1>
+                <p style="max-width: 600px; margin-top: var(--space-4);">Calculate your Semester Grade Point Average
+                    (SGPA) and Cumulative Grade Point Average (CGPA) as per VTU 2022 Scheme grading system.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab active" data-tab="sgpa">SGPA Calculator</button>
+                    <button class="tab" data-tab="cgpa">CGPA Calculator</button>
+                    <button class="tab" data-tab="grading">Grading System</button>
+                </div>
+
+                <!-- SGPA Calculator -->
+                <div class="tab-content active" id="sgpa-content">
+                    <div class="calc-card">
+                        <h2>
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="white" stroke-width="2">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                                </svg>
+                            </span>
+                            SGPA Calculator
+                        </h2>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Enter your subjects,
+                            credits, and grades to calculate your Semester GPA.</p>
+
+                        <div class="subject-row" style="font-weight: 600; color: var(--text-secondary);">
+                            <span>Subject Name</span>
+                            <span>Credits</span>
+                            <span>Grade</span>
+                            <span></span>
+                        </div>
+
+                        <div id="sgpa-subjects">
+                            <div class="subject-row">
+                                <input type="text" placeholder="Subject name" value="Mathematics-I">
+                                <input type="number" placeholder="Credits" value="4" min="1" max="6">
+                                <select>
+                                    <option value="">Select Grade</option>
+                                    <option value="10">O (Outstanding)</option>
+                                    <option value="9">A+ (Excellent)</option>
+                                    <option value="8" selected>A (Very Good)</option>
+                                    <option value="7">B+ (Good)</option>
+                                    <option value="6">B (Above Average)</option>
+                                    <option value="5">C (Average)</option>
+                                    <option value="4">P (Pass)</option>
+                                    <option value="0">F (Fail)</option>
+                                </select>
+                                <button class="remove-btn" onclick="removeSubject(this)">✕</button>
+                            </div>
+                            <div class="subject-row">
+                                <input type="text" placeholder="Subject name" value="Applied Physics">
+                                <input type="number" placeholder="Credits" value="4" min="1" max="6">
+                                <select>
+                                    <option value="">Select Grade</option>
+                                    <option value="10">O (Outstanding)</option>
+                                    <option value="9" selected>A+ (Excellent)</option>
+                                    <option value="8">A (Very Good)</option>
+                                    <option value="7">B+ (Good)</option>
+                                    <option value="6">B (Above Average)</option>
+                                    <option value="5">C (Average)</option>
+                                    <option value="4">P (Pass)</option>
+                                    <option value="0">F (Fail)</option>
+                                </select>
+                                <button class="remove-btn" onclick="removeSubject(this)">✕</button>
+                            </div>
+                            <div class="subject-row">
+                                <input type="text" placeholder="Subject name" value="POP (C Programming)">
+                                <input type="number" placeholder="Credits" value="3" min="1" max="6">
+                                <select>
+                                    <option value="">Select Grade</option>
+                                    <option value="10" selected>O (Outstanding)</option>
+                                    <option value="9">A+ (Excellent)</option>
+                                    <option value="8">A (Very Good)</option>
+                                    <option value="7">B+ (Good)</option>
+                                    <option value="6">B (Above Average)</option>
+                                    <option value="5">C (Average)</option>
+                                    <option value="4">P (Pass)</option>
+                                    <option value="0">F (Fail)</option>
+                                </select>
+                                <button class="remove-btn" onclick="removeSubject(this)">✕</button>
+                            </div>
+                        </div>
+
+                        <button class="add-subject-btn" onclick="addSubject()">+ Add Subject</button>
+
+                        <div class="calc-actions">
+                            <button class="btn btn-primary" onclick="calculateSGPA()">Calculate SGPA</button>
+                            <button class="btn btn-secondary" onclick="resetSGPA()">Reset</button>
+                        </div>
+
+                        <div class="result-box" id="sgpa-result" style="display: none;">
+                            <div class="label">Your SGPA</div>
+                            <div class="value" id="sgpa-value">0.00</div>
+                            <div class="status" id="sgpa-status">-</div>
+                        </div>
+
+                        <div class="formula-box">
+                            <strong>Formula:</strong> SGPA = Σ(Credits × Grade Points) / Σ(Credits)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CGPA Calculator -->
+                <div class="tab-content" id="cgpa-content">
+                    <div class="calc-card">
+                        <h2>
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="white" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                            </span>
+                            CGPA Calculator
+                        </h2>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Enter your SGPA and
+                            credits for each semester to calculate your overall CGPA.</p>
+
+                        <div class="semester-row" style="font-weight: 600; color: var(--text-secondary);">
+                            <span>Semester</span>
+                            <span>SGPA</span>
+                            <span>Credits</span>
+                            <span></span>
+                        </div>
+
+                        <div id="cgpa-semesters">
+                            <div class="semester-row">
+                                <span>Semester 1</span>
+                                <input type="number" placeholder="SGPA" step="0.01" min="0" max="10" value="8.5">
+                                <input type="number" placeholder="Credits" value="24" min="1" max="30">
+                                <button class="remove-btn" onclick="removeSemester(this)">✕</button>
+                            </div>
+                            <div class="semester-row">
+                                <span>Semester 2</span>
+                                <input type="number" placeholder="SGPA" step="0.01" min="0" max="10" value="8.2">
+                                <input type="number" placeholder="Credits" value="24" min="1" max="30">
+                                <button class="remove-btn" onclick="removeSemester(this)">✕</button>
+                            </div>
+                        </div>
+
+                        <button class="add-subject-btn" onclick="addSemester()">+ Add Semester</button>
+
+                        <div class="calc-actions">
+                            <button class="btn btn-primary" onclick="calculateCGPA()">Calculate CGPA</button>
+                            <button class="btn btn-secondary" onclick="resetCGPA()">Reset</button>
+                        </div>
+
+                        <div class="result-box" id="cgpa-result" style="display: none;">
+                            <div class="label">Your CGPA</div>
+                            <div class="value" id="cgpa-value">0.00</div>
+                            <div class="status" id="cgpa-status">-</div>
+                        </div>
+
+                        <div class="formula-box">
+                            <strong>Formula:</strong> CGPA = Σ(SGPA × Semester Credits) / Σ(Total Credits)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grading System -->
+                <div class="tab-content" id="grading-content">
+                    <div class="calc-card">
+                        <h2>
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="white" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="16" x2="12" y2="12" />
+                                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                                </svg>
+                            </span>
+                            VTU 2022 Scheme Grading System
+                        </h2>
+
+                        <table class="grading-table">
+                            <thead>
+                                <tr>
+                                    <th>Grade</th>
+                                    <th>Description</th>
+                                    <th>Marks Range</th>
+                                    <th>Grade Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>O</strong></td>
+                                    <td>Outstanding</td>
+                                    <td>90 - 100</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>A+</strong></td>
+                                    <td>Excellent</td>
+                                    <td>80 - 89</td>
+                                    <td>9</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>A</strong></td>
+                                    <td>Very Good</td>
+                                    <td>70 - 79</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B+</strong></td>
+                                    <td>Good</td>
+                                    <td>60 - 69</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>B</strong></td>
+                                    <td>Above Average</td>
+                                    <td>55 - 59</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>C</strong></td>
+                                    <td>Average</td>
+                                    <td>50 - 54</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>P</strong></td>
+                                    <td>Pass</td>
+                                    <td>40 - 49</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>F</strong></td>
+                                    <td>Fail</td>
+                                    <td>0 - 39</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="formula-box" style="margin-top: var(--space-6);">
+                            <strong>CGPA to Percentage Conversion:</strong><br>
+                            Percentage = (CGPA - 0.75) × 10
+                        </div>
+
+                        <div
+                            style="margin-top: var(--space-6); padding: var(--space-4); background: rgba(99, 102, 241, 0.1); border-radius: var(--radius-md);">
+                            <h3 style="margin-bottom: var(--space-3);">📌 Important Notes:</h3>
+                            <ul style="color: var(--text-secondary); line-height: 1.8;">
+                                <li>SGPA is calculated for individual semesters</li>
+                                <li>CGPA is the weighted average of all SGPAs</li>
+                                <li>Failed subjects (F grade) are included with 0 grade points</li>
+                                <li>Minimum CGPA required for degree: 4.00</li>
+                                <li>Credits typically range from 20-26 per semester</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="../index.html" class="logo">
+                        <div class="logo-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                            </svg>
+                        </div>
+                        <span>Brain<span class="text-gradient">tube</span></span>
+                    </a>
+                    <p>Your complete VTU study companion with notes, question papers, and resources.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="branches.html">All Branches</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="calculator.html">Calculator</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund.html">Refund Policy</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <a href="https://instagram.com/braintube.in" target="_blank">Instagram</a>
+                    <a href="https://youtube.com/@braintube" target="_blank">YouTube</a>
+                    <a href="https://wa.me/918884624741" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024-2026 Braintube. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/whatsapp-modal.js?v=3.0.0"></script>
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab + '-content').classList.add('active');
+            });
+        });
+
+        // SGPA Functions
+        let subjectCount = 3;
+
+        function addSubject() {
+            subjectCount++;
+            const container = document.getElementById('sgpa-subjects');
+            const row = document.createElement('div');
+            row.className = 'subject-row';
+            row.innerHTML = `
+                <input type="text" placeholder="Subject ${subjectCount}">
+                <input type="number" placeholder="Credits" value="3" min="1" max="6">
+                <select>
+                    <option value="">Select Grade</option>
+                    <option value="10">O (Outstanding)</option>
+                    <option value="9">A+ (Excellent)</option>
+                    <option value="8">A (Very Good)</option>
+                    <option value="7">B+ (Good)</option>
+                    <option value="6">B (Above Average)</option>
+                    <option value="5">C (Average)</option>
+                    <option value="4">P (Pass)</option>
+                    <option value="0">F (Fail)</option>
+                </select>
+                <button class="remove-btn" onclick="removeSubject(this)">✕</button>
+            `;
+            container.appendChild(row);
+        }
+
+        function removeSubject(btn) {
+            if (document.querySelectorAll('#sgpa-subjects .subject-row').length > 1) {
+                btn.parentElement.remove();
+            }
+        }
+
+        function calculateSGPA() {
+            const rows = document.querySelectorAll('#sgpa-subjects .subject-row');
+            let totalCredits = 0;
+            let totalPoints = 0;
+
+            rows.forEach(row => {
+                const credits = parseFloat(row.querySelector('input[type="number"]').value) || 0;
+                const grade = parseFloat(row.querySelector('select').value) || 0;
+                totalCredits += credits;
+                totalPoints += credits * grade;
+            });
+
+            const sgpa = totalCredits > 0 ? (totalPoints / totalCredits).toFixed(2) : 0;
+            document.getElementById('sgpa-value').textContent = sgpa;
+            document.getElementById('sgpa-result').style.display = 'block';
+
+            // Set status
+            let status = '';
+            if (sgpa >= 9) status = '🏆 Excellent Performance!';
+            else if (sgpa >= 8) status = '⭐ Very Good Performance!';
+            else if (sgpa >= 7) status = '👍 Good Performance!';
+            else if (sgpa >= 6) status = '📚 Above Average';
+            else if (sgpa >= 5) status = '📖 Average';
+            else if (sgpa >= 4) status = '✓ Passed';
+            else status = '❌ Below Passing';
+            document.getElementById('sgpa-status').textContent = status;
+        }
+
+        function resetSGPA() {
+            document.getElementById('sgpa-subjects').innerHTML = `
+                <div class="subject-row">
+                    <input type="text" placeholder="Subject name">
+                    <input type="number" placeholder="Credits" value="4" min="1" max="6">
+                    <select>
+                        <option value="">Select Grade</option>
+                        <option value="10">O (Outstanding)</option>
+                        <option value="9">A+ (Excellent)</option>
+                        <option value="8">A (Very Good)</option>
+                        <option value="7">B+ (Good)</option>
+                        <option value="6">B (Above Average)</option>
+                        <option value="5">C (Average)</option>
+                        <option value="4">P (Pass)</option>
+                        <option value="0">F (Fail)</option>
+                    </select>
+                    <button class="remove-btn" onclick="removeSubject(this)">✕</button>
+                </div>
+            `;
+            document.getElementById('sgpa-result').style.display = 'none';
+            subjectCount = 1;
+        }
+
+        // CGPA Functions
+        let semesterCount = 2;
+
+        function addSemester() {
+            semesterCount++;
+            const container = document.getElementById('cgpa-semesters');
+            const row = document.createElement('div');
+            row.className = 'semester-row';
+            row.innerHTML = `
+                <span>Semester ${semesterCount}</span>
+                <input type="number" placeholder="SGPA" step="0.01" min="0" max="10">
+                <input type="number" placeholder="Credits" value="24" min="1" max="30">
+                <button class="remove-btn" onclick="removeSemester(this)">✕</button>
+            `;
+            container.appendChild(row);
+        }
+
+        function removeSemester(btn) {
+            if (document.querySelectorAll('#cgpa-semesters .semester-row').length > 1) {
+                btn.parentElement.remove();
+                // Renumber semesters
+                document.querySelectorAll('#cgpa-semesters .semester-row').forEach((row, index) => {
+                    row.querySelector('span').textContent = `Semester ${index + 1}`;
+                });
+                semesterCount = document.querySelectorAll('#cgpa-semesters .semester-row').length;
+            }
+        }
+
+        function calculateCGPA() {
+            const rows = document.querySelectorAll('#cgpa-semesters .semester-row');
+            let totalCredits = 0;
+            let totalPoints = 0;
+
+            rows.forEach(row => {
+                const inputs = row.querySelectorAll('input');
+                const sgpa = parseFloat(inputs[0].value) || 0;
+                const credits = parseFloat(inputs[1].value) || 0;
+                totalCredits += credits;
+                totalPoints += credits * sgpa;
+            });
+
+            const cgpa = totalCredits > 0 ? (totalPoints / totalCredits).toFixed(2) : 0;
+            document.getElementById('cgpa-value').textContent = cgpa;
+            document.getElementById('cgpa-result').style.display = 'block';
+
+            // Calculate percentage
+            const percentage = ((cgpa - 0.75) * 10).toFixed(2);
+
+            // Set status
+            let status = `📊 Equivalent Percentage: ${percentage}%`;
+            document.getElementById('cgpa-status').textContent = status;
+        }
+
+        function resetCGPA() {
+            document.getElementById('cgpa-semesters').innerHTML = `
+                <div class="semester-row">
+                    <span>Semester 1</span>
+                    <input type="number" placeholder="SGPA" step="0.01" min="0" max="10">
+                    <input type="number" placeholder="Credits" value="24" min="1" max="30">
+                    <button class="remove-btn" onclick="removeSemester(this)">✕</button>
+                </div>
+            `;
+            document.getElementById('cgpa-result').style.display = 'none';
+            semesterCount = 1;
+        }
+    </script>
+</body>
+
+</html>
