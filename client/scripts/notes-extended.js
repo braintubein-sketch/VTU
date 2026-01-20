@@ -87,21 +87,21 @@ const NotesExtended = {
     'BMATS101': {
         name: 'Mathematics-I for CSE Stream',
         modules: [
-            { num: 1, title: 'Differential Calculus', file: 'BMAT101_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
-            { num: 2, title: 'Integral Calculus', file: 'BMAT101_M2.pdf', size: '3.2 MB', pages: 52, status: 'available' },
-            { num: 3, title: 'Ordinary Differential Equations', file: 'BMAT101_M3.pdf', size: '2.8 MB', pages: 42, status: 'available' },
-            { num: 4, title: 'Linear Algebra', file: 'BMAT101_M4.pdf', size: '3.0 MB', pages: 45, status: 'available' },
-            { num: 5, title: 'Numerical Methods', file: 'BMAT101_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+            { num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', size: '0.6 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', size: '1.3 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Ordinary Differential Equations', file: '22MATS11-Module 3.pdf', size: '0.8 MB', pages: 42, status: 'available' },
+            { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', size: '8.1 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', size: '6.3 MB', pages: 55, status: 'available' }
         ],
-        complete: { file: null, size: '15.0 MB', pages: 240 }
+        complete: { file: null, size: '17.0 MB', pages: 240 }
     },
-    'BMATE101': { name: 'Mathematics-I for EEE Stream', modules: [{ num: 1, title: 'Differential Calculus', status: 'available' }, { num: 2, title: 'Integral Calculus', status: 'available' }, { num: 3, title: 'ODE', status: 'available' }, { num: 4, title: 'Linear Algebra', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
-    'BMATM101': { name: 'Mathematics-I for ME Stream', modules: [{ num: 1, title: 'Differential Calculus', status: 'available' }, { num: 2, title: 'Integral Calculus', status: 'available' }, { num: 3, title: 'ODE', status: 'available' }, { num: 4, title: 'Linear Algebra', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
-    'BMATC101': { name: 'Mathematics-I for Civil Stream', modules: [{ num: 1, title: 'Differential Calculus', status: 'available' }, { num: 2, title: 'Integral Calculus', status: 'available' }, { num: 3, title: 'ODE', status: 'available' }, { num: 4, title: 'Linear Algebra', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
-    'BMATS201': { name: 'Mathematics-II for CSE Stream', modules: [{ num: 1, title: 'Laplace Transforms', status: 'available' }, { num: 2, title: 'Fourier Series', status: 'available' }, { num: 3, title: 'Fourier Transforms', status: 'available' }, { num: 4, title: 'Z-Transforms', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
-    'BMATE201': { name: 'Mathematics-II for EEE Stream', modules: [{ num: 1, title: 'Laplace Transforms', status: 'available' }, { num: 2, title: 'Fourier Series', status: 'available' }, { num: 3, title: 'Fourier Transforms', status: 'available' }, { num: 4, title: 'Z-Transforms', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
-    'BMATM201': { name: 'Mathematics-II for ME Stream', modules: [{ num: 1, title: 'Laplace Transforms', status: 'available' }, { num: 2, title: 'Fourier Series', status: 'available' }, { num: 3, title: 'Fourier Transforms', status: 'available' }, { num: 4, title: 'Z-Transforms', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
-    'BMATC201': { name: 'Mathematics-II for Civil Stream', modules: [{ num: 1, title: 'Laplace Transforms', status: 'available' }, { num: 2, title: 'Fourier Series', status: 'available' }, { num: 3, title: 'Fourier Transforms', status: 'available' }, { num: 4, title: 'Z-Transforms', status: 'available' }, { num: 5, title: 'Numerical Methods', status: 'available' }], complete: { file: null, size: '15 MB', pages: 240 } },
+    'BMATE101': { name: 'Mathematics-I for EEE Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
+    'BMATM101': { name: 'Mathematics-I for ME Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
+    'BMATC101': { name: 'Mathematics-I for Civil Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
+    'BMATS201': { name: 'Mathematics-II for CSE Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
+    'BMATE201': { name: 'Mathematics-II for EEE Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
+    'BMATM201': { name: 'Mathematics-II for ME Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
+    'BMATC201': { name: 'Mathematics-II for Civil Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
 
     // Chemistry Streams
     'BCHS102': { name: 'Applied Chemistry for CSE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
@@ -128,13 +128,9 @@ const NotesExtended = {
     'BENGK106': {
         name: 'Communicative English',
         modules: [
-            { num: 1, title: 'Listening Skills', file: 'BENGK106_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
-            { num: 2, title: 'Speaking Skills', file: 'BENGK106_M2.pdf', size: '1.8 MB', pages: 28, status: 'available' },
-            { num: 3, title: 'Reading Skills', file: 'BENGK106_M3.pdf', size: '2.0 MB', pages: 32, status: 'available' },
-            { num: 4, title: 'Writing Skills', file: 'BENGK106_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
-            { num: 5, title: 'Grammar & Vocabulary', file: 'BENGK106_M5.pdf', size: '1.8 MB', pages: 28, status: 'available' }
+            { num: 1, title: 'All Modules Combined', file: '1 Sem English Notes All modules.pdf', size: '0.5 MB', pages: 50, status: 'available' }
         ],
-        complete: { file: 'BENGK106_Complete.pdf', size: '8.5 MB', pages: 145 }
+        complete: { file: '1 Sem English Notes All modules.pdf', size: '0.5 MB', pages: 50 }
     },
     'BPWSK206': {
         name: 'Professional Writing Skills in English',
@@ -150,29 +146,151 @@ const NotesExtended = {
     'BICOK107': {
         name: 'Indian Constitution',
         modules: [
-            { num: 1, title: 'Introduction & Preamble', file: 'BICOK107_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
-            { num: 2, title: 'Fundamental Rights', file: 'BICOK107_M2.pdf', size: '2.0 MB', pages: 32, status: 'available' },
-            { num: 3, title: 'Directive Principles', file: 'BICOK107_M3.pdf', size: '1.8 MB', pages: 28, status: 'available' },
-            { num: 4, title: 'Union & States', file: 'BICOK107_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
-            { num: 5, title: 'Elections & Amendments', file: 'BICOK107_M5.pdf', size: '1.5 MB', pages: 22, status: 'available' }
+            { num: 1, title: 'Complete Notes', file: '22ICO17- Notes_230511_090018.pdf', size: '0.9 MB', pages: 50, status: 'available' },
+            { num: 2, title: 'Solved Questions', file: 'cip-1st year solved questions.pdf', size: '0.8 MB', pages: 40, status: 'available' }
         ],
-        complete: { file: 'BICOK107_Complete.pdf', size: '8.0 MB', pages: 139 }
+        complete: { file: 'www.vtuupdates.com_21CIP.pdf', size: '0.6 MB', pages: 60 }
     },
     'BICOK207': {
         name: 'Indian Constitution',
         modules: [
-            { num: 1, title: 'Introduction & Preamble', file: 'BICOK207_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
-            { num: 2, title: 'Fundamental Rights', file: 'BICOK207_M2.pdf', size: '2.0 MB', pages: 32, status: 'available' },
-            { num: 3, title: 'Directive Principles', file: 'BICOK207_M3.pdf', size: '1.8 MB', pages: 28, status: 'available' },
-            { num: 4, title: 'Union & States', file: 'BICOK207_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
-            { num: 5, title: 'Elections & Amendments', file: 'BICOK207_M5.pdf', size: '1.5 MB', pages: 22, status: 'available' }
+            { num: 1, title: 'Complete Notes', file: '22ICO17- Notes_230511_090018.pdf', size: '0.9 MB', pages: 50, status: 'available' },
+            { num: 2, title: 'Solved Questions', file: 'cip-1st year solved questions.pdf', size: '0.8 MB', pages: 40, status: 'available' }
         ],
-        complete: { file: 'BICOK207_Complete.pdf', size: '8.0 MB', pages: 139 }
+        complete: { file: 'www.vtuupdates.com_21CIP.pdf', size: '0.6 MB', pages: 60 }
     },
-    'BKSKK107': { name: 'Samskrutika Kannada', modules: [{ num: 1, title: 'Introduction', status: 'available' }], complete: { file: null, size: '5 MB', pages: 80 } },
-    'BKSKK207': { name: 'Samskrutika Kannada', modules: [{ num: 1, title: 'Introduction', status: 'available' }], complete: { file: null, size: '5 MB', pages: 80 } },
-    'BKBKK107': { name: 'Balake Kannada', modules: [{ num: 1, title: 'Introduction', status: 'available' }], complete: { file: null, size: '5 MB', pages: 80 } },
-    'BKBKK207': { name: 'Balake Kannada', modules: [{ num: 1, title: 'Introduction', status: 'available' }], complete: { file: null, size: '5 MB', pages: 80 } },
+    'BKSKK107': { name: 'Samskrutika Kannada', modules: [{ num: 1, title: 'Complete Notes', file: 'Kannada.pdf', size: '1.3 MB', pages: 80, status: 'available' }, { num: 2, title: 'Questions & Answers', file: 'ಸಾಂಸ್ಕೃತಿಕ_ಕನ್ನಡ_ಸಾಂಧರ್ಬಿಕ_ಪ್ರಶ್ನೋತ್ತರಗಳು_PDF.pdf', size: '0.3 MB', pages: 30, status: 'available' }], complete: { file: 'Kannada.pdf', size: '1.3 MB', pages: 80 } },
+    'BKSKK207': { name: 'Samskrutika Kannada', modules: [{ num: 1, title: 'Complete Notes', file: 'Kannada.pdf', size: '1.3 MB', pages: 80, status: 'available' }, { num: 2, title: 'Questions & Answers', file: 'ಸಾಂಸ್ಕೃತಿಕ_ಕನ್ನಡ_ಸಾಂಧರ್ಬಿಕ_ಪ್ರಶ್ನೋತ್ತರಗಳು_PDF.pdf', size: '0.3 MB', pages: 30, status: 'available' }], complete: { file: 'Kannada.pdf', size: '1.3 MB', pages: 80 } },
+    'BKBKK107': { name: 'Balake Kannada', modules: [{ num: 1, title: 'Model Question Paper', file: 'Balake kannada model question paper .pdf', size: '0.5 MB', pages: 20, status: 'available' }, { num: 2, title: 'Model Solutions', file: 'balane kannada modl sol.pdf', size: '0.2 MB', pages: 15, status: 'available' }], complete: { file: 'Balake kannada model question paper .pdf', size: '0.5 MB', pages: 20 } },
+    'BKBKK207': { name: 'Balake Kannada', modules: [{ num: 1, title: 'Model Question Paper', file: 'Balake kannada model question paper .pdf', size: '0.5 MB', pages: 20, status: 'available' }, { num: 2, title: 'Model Solutions', file: 'balane kannada modl sol.pdf', size: '0.2 MB', pages: 15, status: 'available' }], complete: { file: 'Balake kannada model question paper .pdf', size: '0.5 MB', pages: 20 } },
+    // IDT - Innovation and Design Thinking
+    'BIDTK138': {
+        name: 'Innovation and Design Thinking',
+        modules: [
+            { num: 1, title: 'Introduction to Design Thinking', file: 'IDT Module 1.pdf', size: '1.0 MB', pages: 30, status: 'available' },
+            { num: 2, title: 'Design Methodology', file: 'IDT Module 2.pdf', size: '1.1 MB', pages: 35, status: 'available' },
+            { num: 3, title: 'Innovation Process', file: 'IDT Module 3.pdf', size: '1.0 MB', pages: 32, status: 'available' },
+            { num: 4, title: 'Prototyping & Testing', file: 'IDT Module 4.pdf', size: '0.8 MB', pages: 28, status: 'available' }
+        ],
+        complete: { file: null, size: '4.0 MB', pages: 125 }
+    },
+    'BIDTK258': {
+        name: 'Innovation and Design Thinking',
+        modules: [
+            { num: 1, title: 'Introduction to Design Thinking', file: 'IDT Module 1.pdf', size: '1.0 MB', pages: 30, status: 'available' },
+            { num: 2, title: 'Design Methodology', file: 'IDT Module 2.pdf', size: '1.1 MB', pages: 35, status: 'available' },
+            { num: 3, title: 'Innovation Process', file: 'IDT Module 3.pdf', size: '1.0 MB', pages: 32, status: 'available' },
+            { num: 4, title: 'Prototyping & Testing', file: 'IDT Module 4.pdf', size: '0.8 MB', pages: 28, status: 'available' }
+        ],
+        complete: { file: null, size: '4.0 MB', pages: 125 }
+    },
+    // SFH - Scientific Foundations of Health
+    'BSFHK158': {
+        name: 'Scientific Foundations of Health',
+        modules: [
+            { num: 1, title: 'Complete Notes All Modules', file: 'Scientific Foundations of Health (SFH).pdf', size: '4.0 MB', pages: 100, status: 'available' },
+            { num: 2, title: 'MCQ Questions (Module 3-5)', file: 'SFH (Module -3, 4 and 5 )- MCQ for Test-2.pdf', size: '6.2 MB', pages: 80, status: 'available' }
+        ],
+        complete: { file: 'sfh.pdf', size: '4.0 MB', pages: 100 }
+    },
+    'BSFHK258': {
+        name: 'Scientific Foundations of Health',
+        modules: [
+            { num: 1, title: 'Complete Notes All Modules', file: 'Scientific Foundations of Health (SFH).pdf', size: '4.0 MB', pages: 100, status: 'available' },
+            { num: 2, title: 'MCQ Questions (Module 3-5)', file: 'SFH (Module -3, 4 and 5 )- MCQ for Test-2.pdf', size: '6.2 MB', pages: 80, status: 'available' }
+        ],
+        complete: { file: 'sfh.pdf', size: '4.0 MB', pages: 100 }
+    },
+    // Python Programming
+    'BETCK105B': {
+        name: 'Introduction to Python Programming',
+        modules: [
+            { num: 1, title: 'Complete Python Textbook', file: 'Python textbook.pdf', size: '5.1 MB', pages: 200, status: 'available' },
+            { num: 2, title: 'Module 2 Question Bank', file: 'python-2nd module question Bank.pdf', size: '0.3 MB', pages: 20, status: 'available' },
+            { num: 3, title: 'Module 3 Question Bank', file: 'python-3rd module question Bank.pdf', size: '0.3 MB', pages: 20, status: 'available' },
+            { num: 4, title: 'Lab Programs', file: 'Lab Programs.pdf', size: '1.3 MB', pages: 50, status: 'available' }
+        ],
+        complete: { file: 'Python textbook.pdf', size: '5.1 MB', pages: 200 }
+    },
+    'BETCK205B': {
+        name: 'Introduction to Python Programming',
+        modules: [
+            { num: 1, title: 'Complete Python Textbook', file: 'Python textbook.pdf', size: '5.1 MB', pages: 200, status: 'available' },
+            { num: 2, title: 'Module 2 Question Bank', file: 'python-2nd module question Bank.pdf', size: '0.3 MB', pages: 20, status: 'available' },
+            { num: 3, title: 'Module 3 Question Bank', file: 'python-3rd module question Bank.pdf', size: '0.3 MB', pages: 20, status: 'available' },
+            { num: 4, title: 'Lab Programs', file: 'Lab Programs.pdf', size: '1.3 MB', pages: 50, status: 'available' }
+        ],
+        complete: { file: 'Python textbook.pdf', size: '5.1 MB', pages: 200 }
+    },
+    // IEC - Introduction to Electronics & Communication
+    'BESCK104C': {
+        name: 'Introduction to Electronics & Communication',
+        modules: [
+            { num: 1, title: 'Module 1 Notes', file: 'Mod 1 IEEE notes.pdf', size: '0.5 MB', pages: 30, status: 'available' },
+            { num: 2, title: 'Module 2 Part A - OpAmp', file: 'IEE-Module 2 Part A Opamp notes.pdf', size: '1.2 MB', pages: 40, status: 'available' },
+            { num: 3, title: 'Module 3 Notes', file: 'IEC_MODULE-3_NOTES_22ESC143.pdf', size: '6.5 MB', pages: 60, status: 'available' },
+            { num: 4, title: 'Module 4 Notes', file: 'IEE Mod 4  notes.pdf', size: '0.6 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Module 5 Communication', file: 'IEE Mod 5 Communication.pdf', size: '1.5 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: null, size: '10.0 MB', pages: 210 }
+    },
+    'BESCK204C': {
+        name: 'Introduction to Electronics & Communication',
+        modules: [
+            { num: 1, title: 'Module 1 Notes', file: 'Mod 1 IEEE notes.pdf', size: '0.5 MB', pages: 30, status: 'available' },
+            { num: 2, title: 'Module 2 Part A - OpAmp', file: 'IEE-Module 2 Part A Opamp notes.pdf', size: '1.2 MB', pages: 40, status: 'available' },
+            { num: 3, title: 'Module 3 Notes', file: 'IEC_MODULE-3_NOTES_22ESC143.pdf', size: '6.5 MB', pages: 60, status: 'available' },
+            { num: 4, title: 'Module 4 Notes', file: 'IEE Mod 4  notes.pdf', size: '0.6 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Module 5 Communication', file: 'IEE Mod 5 Communication.pdf', size: '1.5 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: null, size: '10.0 MB', pages: 210 }
+    },
+    // Civil Engineering Introduction
+    'BESCK104A': {
+        name: 'Introduction to Civil Engineering',
+        modules: [
+            { num: 1, title: 'Module 1 - Introduction', file: 'civil(mod1)@vtunetwork.pdf', size: '0.1 MB', pages: 10, status: 'available' },
+            { num: 2, title: 'Module 2 - Surveying', file: 'civil(mod2)@vtunetwork.pdf', size: '31.6 MB', pages: 150, status: 'available' },
+            { num: 3, title: 'Module 3 - Building Materials', file: 'civil(mod3)@vtunetwork.pdf', size: '9.2 MB', pages: 80, status: 'available' },
+            { num: 4, title: 'Module 4 - Construction', file: 'civil(mod4)@vtunetwork.pdf', size: '7.4 MB', pages: 70, status: 'available' },
+            { num: 5, title: 'Module 5 - Environment', file: 'civil(mod5)@vtunetwork.pdf', size: '13.1 MB', pages: 100, status: 'available' }
+        ],
+        complete: { file: null, size: '61.0 MB', pages: 410 }
+    },
+    'BESCK204A': {
+        name: 'Introduction to Civil Engineering',
+        modules: [
+            { num: 1, title: 'Module 1 - Introduction', file: 'civil(mod1)@vtunetwork.pdf', size: '0.1 MB', pages: 10, status: 'available' },
+            { num: 2, title: 'Module 2 - Surveying', file: 'civil(mod2)@vtunetwork.pdf', size: '31.6 MB', pages: 150, status: 'available' },
+            { num: 3, title: 'Module 3 - Building Materials', file: 'civil(mod3)@vtunetwork.pdf', size: '9.2 MB', pages: 80, status: 'available' },
+            { num: 4, title: 'Module 4 - Construction', file: 'civil(mod4)@vtunetwork.pdf', size: '7.4 MB', pages: 70, status: 'available' },
+            { num: 5, title: 'Module 5 - Environment', file: 'civil(mod5)@vtunetwork.pdf', size: '13.1 MB', pages: 100, status: 'available' }
+        ],
+        complete: { file: null, size: '61.0 MB', pages: 410 }
+    },
+    // Mechanical Engineering Introduction
+    'BESCK104D': {
+        name: 'Introduction to Mechanical Engineering',
+        modules: [
+            { num: 1, title: 'Module 1 - Intro to ME', file: 'Module -1 Notes.pdf', size: '2.8 MB', pages: 50, status: 'available' },
+            { num: 2, title: 'Module 2 Notes', file: 'Module-2.pdf', size: '1.0 MB', pages: 35, status: 'available' },
+            { num: 3, title: 'Module 3 Notes', file: 'Module-3 ( IME- I section).pdf', size: '1.5 MB', pages: 40, status: 'available' },
+            { num: 4, title: 'Module 4 Notes', file: 'Module-4 ( IME- I section).pdf', size: '1.7 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Module 5 Notes', file: 'Module -5. ( IME- I section).pdf', size: '2.3 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: null, size: '9.3 MB', pages: 225 }
+    },
+    'BESCK204D': {
+        name: 'Introduction to Mechanical Engineering',
+        modules: [
+            { num: 1, title: 'Module 1 - Intro to ME', file: 'Module -1 Notes.pdf', size: '2.8 MB', pages: 50, status: 'available' },
+            { num: 2, title: 'Module 2 Notes', file: 'Module-2.pdf', size: '1.0 MB', pages: 35, status: 'available' },
+            { num: 3, title: 'Module 3 Notes', file: 'Module-3 ( IME- I section).pdf', size: '1.5 MB', pages: 40, status: 'available' },
+            { num: 4, title: 'Module 4 Notes', file: 'Module-4 ( IME- I section).pdf', size: '1.7 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Module 5 Notes', file: 'Module -5. ( IME- I section).pdf', size: '2.3 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: null, size: '9.3 MB', pages: 225 }
+    },
 
 
     'BEESK203': {
