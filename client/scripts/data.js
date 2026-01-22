@@ -28,12 +28,14 @@ const VTUData = {
   ],
 
   // ==================== SEMESTER 1 (Stream-wise - VTU 2022 Scheme) ====================
-  // CSE Stream (CSE, ISE, AIML, DS) - Physics Group
+  // CSE Stream (CSE, ISE, AIML, DS) - All subjects for both Physics & Chemistry Groups
   sem1_cse: [
     // Core Subjects
     { code: 'BMATS101', name: 'Mathematics-I for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPHYS102', name: 'Applied Physics for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHES102', name: 'Applied Chemistry for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BPOPS103', name: 'Principles of Programming Using C', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCEDK103', name: 'Computer-Aided Engineering Drawing', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     // ESC-I (Engineering Science Course - Choose 1)
     { code: 'BESCK104A', name: 'Introduction to Civil Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BESCK104B', name: 'Introduction to Electrical Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
@@ -168,11 +170,13 @@ const VTUData = {
   ],
 
   // ==================== SEMESTER 2 (Stream-wise - VTU 2022 Scheme) ====================
-  // CSE Stream (CSE, ISE, AIML, DS) - For students who attended 1st sem under Physics Group
+  // CSE Stream (CSE, ISE, AIML, DS) - All subjects for both Physics & Chemistry Groups
   sem2_cse: [
     // Core Subjects
     { code: 'BMATS201', name: 'Mathematics-II for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPHYS202', name: 'Applied Physics for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BCHES202', name: 'Applied Chemistry for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPOPS203', name: 'Principles of Programming Using C', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     { code: 'BCEDK203', name: 'Computer-Aided Engineering Drawing', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
     // ESC-II (Engineering Science Course - Choose 1)
     { code: 'BESCK204A', name: 'Introduction to Civil Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
