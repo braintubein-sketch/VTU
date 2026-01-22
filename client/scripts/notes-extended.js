@@ -20,13 +20,13 @@ const NotesExtended = {
     'BPHYS102': {
         name: 'Applied Physics for CSE Stream',
         modules: [
-            { num: 1, title: 'Laser and Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
-            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
-            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
-            { num: 4, title: 'Electrical Properties of Materials and Superconductivity', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
-            { num: 5, title: 'Applications of Physics in Computing', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+            { num: 1, title: 'Laser and Optical Fibers', file: 'BPHYS102/BPHYS102 MODULE 1.pdf', size: '4.6 MB', pages: 15, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: 'BPHYS102/BPHYS102 MODULE 2.pdf', size: '4.1 MB', pages: 10, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: 'BPHYS102/BPHYS102 MODULE 3.pdf', size: '4.1 MB', pages: 11, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials & Superconductivity', file: 'BPHYS102/BPHYS102 MODULE 4.pdf', size: '4.4 MB', pages: 10, status: 'available' },
+            { num: 5, title: 'Applications of Physics in Computing', file: 'BPHYS102/BPHYS102 MODULE 5.pdf', size: '4.3 MB', pages: 9, status: 'available' }
         ],
-        complete: { file: null, size: '15.0 MB', pages: 260 }
+        complete: { file: null, size: '21.5 MB', pages: 55 }
     },
     'BPHYE102': {
         name: 'Applied Physics for EEE Stream',
@@ -102,6 +102,19 @@ const NotesExtended = {
     'BMATE201': { name: 'Mathematics-II for EEE Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
     'BMATM201': { name: 'Mathematics-II for ME Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
     'BMATC201': { name: 'Mathematics-II for Civil Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
+
+    // 2nd Semester Physics (For Chemistry Group Students)
+    'BPHYS202': {
+        name: 'Applied Physics for CSE Stream',
+        modules: [
+            { num: 1, title: 'Laser and Optical Fibers', file: 'BPHYS202/BPHYS202 MODULE 1.pdf', size: '4.6 MB', pages: 15, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: 'BPHYS202/BPHYS202 MODULE 2.pdf', size: '4.1 MB', pages: 10, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: 'BPHYS202/BPHYS202 MODULE 3.pdf', size: '4.1 MB', pages: 11, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials & Superconductivity', file: 'BPHYS202/BPHYS202 MODULE 4.pdf', size: '4.4 MB', pages: 10, status: 'available' },
+            { num: 5, title: 'Applications of Physics in Computing', file: 'BPHYS202/BPHYS202 MODULE 5.pdf', size: '4.3 MB', pages: 9, status: 'available' }
+        ],
+        complete: { file: null, size: '21.5 MB', pages: 55 }
+    },
 
     // Chemistry Streams
     'BCHS102': { name: 'Applied Chemistry for CSE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
