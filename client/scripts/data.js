@@ -66,6 +66,44 @@ const VTUData = {
     { code: 'BIDTK158', name: 'Innovation and Design Thinking', credits: 2, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'BSFHK158', name: 'Scientific Foundations of Health', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true }
   ],
+  // CSE Stream (CSE, ISE, AIML, DS) - Chemistry Group (1st Sem Chemistry, 2nd Sem Physics)
+  sem1_cse_chem: [
+    // Core Subjects
+    { code: 'BMATS101', name: 'Mathematics-I for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCHES102', name: 'Applied Chemistry for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BCEDK103', name: 'Computer-Aided Engineering Drawing', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    // ESC-I (Engineering Science Course - Choose 1)
+    { code: 'BESCK104A', name: 'Introduction to Civil Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK104B', name: 'Introduction to Electrical Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK104C', name: 'Introduction to Electronics Communication', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK104D', name: 'Introduction to Mechanical Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    // ETC-I (Emerging Technology - Choose 1) OR PLC-I
+    { code: 'BETCK105A', name: 'Smart Materials and Systems', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105B', name: 'Green Buildings', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105C', name: 'Introduction to Nano Technology', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105D', name: 'Introduction to Sustainable Engineering', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105E', name: 'Renewable Energy Sources', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105F', name: 'Waste Management', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105G', name: 'Emerging Applications of Biosensors', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105H', name: 'Introduction to Internet of Things (IoT)', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105I', name: 'Introduction to Cyber Security', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK105J', name: 'Introduction to Embedded System', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    // PLC-I (Programming Language Course - Choose 1)
+    { code: 'BPLCK105A', name: 'Introduction to Web Programming', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPLCK105B', name: 'Introduction to Python Programming', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPLCK105C', name: 'Basics of JAVA Programming', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPLCK105D', name: 'Introduction to C++ Programming', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+    // AEC (Ability Enhancement Course - Choose 1)
+    { code: 'BPWSK106', name: 'Professional Writing Skills in English', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BENGK106', name: 'Communicative English', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+    // HSMC (Humanities - Choose 1)
+    { code: 'BICOK107', name: 'Indian Constitution', credits: 1, type: 'HSMC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKSKK107', name: 'Samskrutika Kannada', credits: 1, type: 'HSMC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK107', name: 'Balake Kannada', credits: 1, type: 'HSMC', hasNotes: true, hasQP: true, hasFix: true },
+    // SDC (Skill Development - Choose 1)
+    { code: 'BSFHK158', name: 'Scientific Foundations of Health', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+    { code: 'BIDTK158', name: 'Innovation and Design Thinking', credits: 2, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true }
+  ],
   // ECE/EEE Stream
   sem1_ece: [
     { code: 'BMATE101', name: 'Mathematics-I for EEE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -168,6 +206,45 @@ const VTUData = {
     // SDC (Skill Development - Choose 1)
     { code: 'BSFHK258', name: 'Scientific Foundations of Health', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
     { code: 'KIDTK258', name: 'Innovation and Design Thinking', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true }
+  ],
+  // CSE Stream (CSE, ISE, AIML, DS) - For students who attended 1st sem under Chemistry Group
+  sem2_cse_chem: [
+    // Core Subjects
+    { code: 'BMATS201', name: 'Mathematics-II for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPHYS202', name: 'Applied Physics for CSE Stream', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPOPS203', name: 'Principles of Programming Using C', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+    // ESC-II (Engineering Science Course - Choose 1)
+    { code: 'BESCK204A', name: 'Introduction to Civil Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK204B', name: 'Introduction to Electrical Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK204C', name: 'Introduction to Electronics Communication', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK204D', name: 'Introduction to Mechanical Engineering', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BESCK204E', name: 'Introduction to C Programming', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+    // PLC-II (Programming Language Course - Choose 1) OR ETC-II
+    { code: 'BPLCK205A', name: 'Introduction to Web Programming', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPLCK205B', name: 'Introduction to Python Programming', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPLCK205C', name: 'Basics of JAVA Programming', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPLCK205D', name: 'Introduction to C++ Programming', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+    // ETC-II (Emerging Technology - Choose 1)
+    { code: 'BETCK205A', name: 'Smart Materials and Systems', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205B', name: 'Green Buildings', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205C', name: 'Introduction to Nano Technology', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205D', name: 'Introduction to Sustainable Engineering', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205E', name: 'Renewable Energy Sources', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205F', name: 'Waste Management', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205G', name: 'Emerging Applications of Biosensors', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205H', name: 'Introduction to Internet of Things (IoT)', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205I', name: 'Introduction to Cyber Security', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BETCK205J', name: 'Introduction to Embedded System', credits: 3, type: 'ETC', hasNotes: true, hasQP: true, hasFix: true },
+    // AEC (Ability Enhancement Course - Choose 1)
+    { code: 'BENGK206', name: 'Communicative English', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BPWSK206', name: 'Professional Writing Skills in English', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+    // HSMC (Humanities - Choose 1)
+    { code: 'BKSKK207', name: 'Samskrutika Kannada', credits: 1, type: 'HSMC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BKBKK207', name: 'Balake Kannada', credits: 1, type: 'HSMC', hasNotes: true, hasQP: true, hasFix: true },
+    { code: 'BICOK207', name: 'Indian Constitution', credits: 1, type: 'HSMC', hasNotes: true, hasQP: true, hasFix: true },
+    // SDC (Skill Development - Choose 1)
+    { code: 'BIDTK258', name: 'Innovation and Design Thinking', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+    { code: 'BSFHK258', name: 'Scientific Foundations of Health', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true }
   ],
   // ECE/EEE Stream
   sem2_ece: [
