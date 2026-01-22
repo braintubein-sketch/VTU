@@ -87,13 +87,13 @@ const NotesExtended = {
     'BMATS101': {
         name: 'Mathematics-I for CSE Stream',
         modules: [
-            { num: 1, title: 'Calculus (Polar Curves, Curvature, Radius of Curvature)', file: 'BMATS101/BMATS101 MODULE 1.pdf', size: '4.1 MB', pages: 50, status: 'available' },
-            { num: 2, title: 'Series Expansion and Multivariable Calculus', file: 'BMATS101/BMATS101 MODULE 2.pdf', size: '4.1 MB', pages: 55, status: 'available' },
-            { num: 3, title: 'Ordinary Differential Equations of First Order', file: 'BMATS101/BMATS101 MODULE 3.pdf', size: '4.2 MB', pages: 48, status: 'available' },
-            { num: 4, title: 'Modular Arithmetic (RSA, Cryptography)', file: 'BMATS101/BMATS101 MODULE 4.pdf', size: '4.0 MB', pages: 45, status: 'available' },
-            { num: 5, title: 'Linear Algebra (Matrices, Eigenvalues, Gauss Elimination)', file: 'BMATS101/BMATS101 MODULE 5.pdf', size: '4.1 MB', pages: 52, status: 'available' }
+            { num: 1, title: 'Calculus (Polar Curves, Curvature, Radius of Curvature)', file: 'BMATS101/BMATS101 MODULE 1.pdf', size: '4.1 MB', pages: 18, status: 'available' },
+            { num: 2, title: 'Series Expansion and Multivariable Calculus', file: 'BMATS101/BMATS101 MODULE 2.pdf', size: '4.1 MB', pages: 16, status: 'available' },
+            { num: 3, title: 'Ordinary Differential Equations of First Order', file: 'BMATS101/BMATS101 MODULE 3.pdf', size: '4.2 MB', pages: 18, status: 'available' },
+            { num: 4, title: 'Modular Arithmetic (RSA, Cryptography)', file: 'BMATS101/BMATS101 MODULE 4.pdf', size: '4.0 MB', pages: 8, status: 'available' },
+            { num: 5, title: 'Linear Algebra (Matrices, Eigenvalues, Gauss Elimination)', file: 'BMATS101/BMATS101 MODULE 5.pdf', size: '4.1 MB', pages: 13, status: 'available' }
         ],
-        complete: { file: null, size: '20.5 MB', pages: 250 }
+        complete: { file: null, size: '20.5 MB', pages: 73 }
     },
     'BMATE101': { name: 'Mathematics-I for EEE Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
     'BMATM101': { name: 'Mathematics-I for ME Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
