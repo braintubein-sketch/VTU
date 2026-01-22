@@ -829,8 +829,8 @@
               </div>
               <div class="resource-actions">
                 ${notesAvailable && m.file ? `
-                    <a href="../assets/notes/${m.file}?v=1.0.3" class="btn btn-secondary btn-sm" target="_blank">View</a>
-                    <a href="../assets/notes/${m.file}?v=1.0.3" class="btn btn-primary btn-sm" download target="_blank">Download</a>
+                    <a href="https://docs.google.com/viewer?url=${encodeURIComponent(window.location.origin + '/assets/notes/' + m.file)}&embedded=true" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">View</a>
+                    <a href="../assets/notes/${m.file}?v=1.0.3" class="btn btn-primary btn-sm" download>Download</a>
                 ` : `
                     <button class="btn btn-secondary btn-sm" disabled>Coming Soon</button>
                 `}
@@ -849,8 +849,8 @@
               <div class="resource-meta"><span>${extendedData.complete.size}</span><span>${extendedData.complete.pages} Pages</span></div>
             </div>
             <div class="resource-actions">
-              <a href="../assets/notes/${extendedData.complete.file}?v=1.0.3" class="btn btn-secondary btn-sm" target="_blank">View</a>
-              <a href="../assets/notes/${extendedData.complete.file}?v=1.0.3" class="btn btn-primary btn-sm" download target="_blank">Download</a>
+              <a href="https://docs.google.com/viewer?url=${encodeURIComponent(window.location.origin + '/assets/notes/' + extendedData.complete.file)}&embedded=true" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">View</a>
+              <a href="../assets/notes/${extendedData.complete.file}?v=1.0.3" class="btn btn-primary btn-sm" download>Download</a>
             </div>
           </div>
           ` : ''}
