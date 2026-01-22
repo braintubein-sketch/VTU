@@ -130,6 +130,15 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('combined'));
 }
 
+// Serve PDF files with inline content-disposition (view in browser instead of download)
+app.use('/assets/notes', (req, res, next) => {
+    if (req.path.endsWith('.pdf')) {
+        res.setHeader('Content-Disposition', 'inline');
+        res.setHeader('Content-Type', 'application/pdf');
+    }
+    next();
+});
+
 // Serve static files from client directory
 app.use(express.static(path.join(__dirname, '../client')));
 
