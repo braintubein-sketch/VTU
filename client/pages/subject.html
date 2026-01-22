@@ -766,8 +766,8 @@
         renderPapers(subject);
         renderFixQuestions(subject);
 
-        // Handle tab selection
-        const targetTab = activeTab || (subject.hasFix ? 'fix' : 'syllabus');
+        // Handle tab selection - Default to 'notes' tab
+        const targetTab = activeTab || 'notes';
 
         // Switch to the target tab
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
