@@ -95,7 +95,17 @@ const NotesExtended = {
         ],
         complete: { file: null, size: '20.5 MB', pages: 73 }
     },
-    'BMATE101': { name: 'Mathematics-I for EEE Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
+    'BMATE101': {
+        name: 'Mathematics-I for EEE/ECE Stream',
+        modules: [
+            { num: 1, title: 'Calculus (Polar Curves, Curvature, Radius of Curvature)', file: 'BMATE101/BMATE101 MODULE 1.pdf', size: '4.0 MB', pages: 7, status: 'available' },
+            { num: 2, title: 'Series Expansion and Multivariable Calculus', file: 'BMATE101/BMATE101 MODULE 2.pdf', size: '4.0 MB', pages: 5, status: 'available' },
+            { num: 3, title: 'Ordinary Differential Equations of First Order', file: 'BMATE101/BMATE101 MODULE 3.pdf', size: '4.0 MB', pages: 7, status: 'available' },
+            { num: 4, title: 'Integral Calculus (Multiple Integrals, Beta & Gamma)', file: 'BMATE101/BMATE101 MODULE 4.pdf', size: '4.0 MB', pages: 7, status: 'available' },
+            { num: 5, title: 'Linear Algebra (Matrices, Eigenvalues, Gauss Methods)', file: 'BMATE101/BMATE101 MODULE 5.pdf', size: '4.0 MB', pages: 6, status: 'available' }
+        ],
+        complete: { file: null, size: '20.0 MB', pages: 32 }
+    },
     'BMATM101': { name: 'Mathematics-I for ME Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
     'BMATC101': { name: 'Mathematics-I for Civil Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
     'BMATS201': { name: 'Mathematics-II for CSE Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
