@@ -316,10 +316,13 @@ const VTUData = {
       { code: 'BCS302', name: 'Digital Design & Computer Organization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS303', name: 'Operating Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS304', name: 'Data Structures and Applications', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCS305A', name: 'Object Oriented Programming with Java', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCS305B', name: 'Object Oriented Programming with C++', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCSL306', name: 'Data Structures Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
-      { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
+      { code: 'BCS306A', name: 'Object Oriented Programming with Java', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS306B', name: 'Object Oriented Programming with C++', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS306C', name: 'Object Oriented Programming with C#', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS358A', name: 'Data Analytics with Excel', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BCS358B', name: 'R Programming', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BCS358C', name: 'Project Management With GIT', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BCS358D', name: 'Data Visualization with Python', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true }
     ],
     'cse-4': [
       { code: 'BCS401', name: 'Analysis & Design of Algorithms', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
