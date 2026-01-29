@@ -374,12 +374,16 @@ const VTUData = {
 
     // ==================== AI & ML SUBJECTS ====================
     'aiml-3': [
-      { code: 'BAD301', name: 'Mathematics for Machine Learning', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BAD302', name: 'Digital Design & Computer Organization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BAD303', name: 'Operating Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BAD304', name: 'Data Structures and Applications', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BAD305', name: 'Python Programming', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BADL306', name: 'Python Programming Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BCS301', name: 'Mathematics for Computer Science', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS302', name: 'Digital Design & Computer Organization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS303', name: 'Operating Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS304', name: 'Data Structures and Applications', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS306A', name: 'Object Oriented Programming with Java', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS306B', name: 'Object Oriented Programming with C++', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BDS306C', name: 'Data Analytics with R', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS358A', name: 'Data Analytics with Excel', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BCSL305', name: 'Data Structures Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'aiml-4': [
       { code: 'BAD401', name: 'Analysis & Design of Algorithms', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -416,12 +420,15 @@ const VTUData = {
 
     // ==================== ISE SUBJECTS ====================
     'ise-3': [
-      { code: 'BIS301', name: 'Mathematics for Computer Science', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BIS302', name: 'Digital Design & Computer Organization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BIS303', name: 'Operating Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BIS304', name: 'Data Structures and Applications', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BIS305', name: 'Object Oriented Programming with Java', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BISL306', name: 'Data Structures Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BCS301', name: 'Mathematics for Computer Science', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS302', name: 'Digital Design & Computer Organization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS303', name: 'Operating Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS304', name: 'Data Structures and Applications', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS306A', name: 'Object Oriented Programming with Java', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS306B', name: 'Object Oriented Programming with C++', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS358A', name: 'Data Analytics with Excel', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BCSL305', name: 'Data Structures Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'ise-4': [
       { code: 'BIS401', name: 'Analysis & Design of Algorithms', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -458,12 +465,14 @@ const VTUData = {
 
     // ==================== ECE SUBJECTS ====================
     'ece-3': [
-      { code: 'BEC301', name: 'Transform Calculus, Fourier Series & Numerical Techniques', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC302', name: 'Network Analysis', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC303', name: 'Electronic Devices', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC304', name: 'Digital System Design', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC305', name: 'Signals & Systems', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BECL306', name: 'Digital System Design Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BMATEC301', name: 'Mathematics for EC Engineering', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC302', name: 'Digital System Design using Verilog', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC303', name: 'Electronic Principles and Circuits', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC304', name: 'Network Analysis', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC306A', name: 'Object Oriented Programming with Java', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC306B', name: 'Object Oriented Programming with C++', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BECL305', name: 'Analog and Digital Electronics Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'ece-4': [
       { code: 'BEC401', name: 'Complex Analysis, Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -500,12 +509,14 @@ const VTUData = {
 
     // ==================== EEE SUBJECTS ====================
     'eee-3': [
-      { code: 'BEE301', name: 'Transform Calculus, Fourier Series & Numerical Techniques', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE302', name: 'Analog Electronic Circuits', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE303', name: 'Network Analysis', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE304', name: 'Electrical & Electronic Measurements', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE305', name: 'Digital Electronics', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEEL306', name: 'Analog Electronics Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BMATE301', name: 'Mathematics for EEE Engineering', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE302', name: 'Electric Circuit Analysis', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE303', name: 'Analog Electronic Circuits', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE304', name: 'Transformers and Generators', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE306A', name: 'Digital Logic Circuits', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE306B', name: 'Electrical Measurements & Instrumentation', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEEL305', name: 'Transformers and Generators Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'eee-4': [
       { code: 'BEE401', name: 'Complex Analysis, Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -542,12 +553,14 @@ const VTUData = {
 
     // ==================== MECHANICAL ENGINEERING ====================
     'me-3': [
-      { code: 'BME301', name: 'Transform Calculus, Fourier Series & Numerical Techniques', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BMATM301', name: 'Mathematics for Mechanical Engineering', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BME302', name: 'Mechanics of Materials', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BME303', name: 'Basic Thermodynamics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BME304', name: 'Metal Casting & Welding', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BME305', name: 'Mechanical Measurements & Metrology', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BMEL306', name: 'Foundry & Forging Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BME303', name: 'Manufacturing Process', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME304', name: 'Basic Thermodynamics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME305', name: 'Modelling & Design for Manufacturing', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME306B', name: 'Smart Materials & Systems', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true },
+      { code: 'BMEL358C', name: 'Spreadsheet for Engineers', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true }
     ],
     'me-4': [
       { code: 'BME401', name: 'Complex Analysis, Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -584,12 +597,13 @@ const VTUData = {
 
     // ==================== CIVIL ENGINEERING ====================
     'cv-3': [
-      { code: 'BCV301', name: 'Transform Calculus, Fourier Series & Numerical Techniques', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV302', name: 'Mechanics of Materials', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV303', name: 'Fluid Mechanics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV304', name: 'Building Materials & Construction', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV305', name: 'Surveying', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCVL306', name: 'Surveying Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BMATC301', name: 'Mathematics for Civil Engineering', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV302', name: 'Strength of Materials', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV303', name: 'Engineering Survey', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV304', name: 'Engineering Geology', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV305', name: 'Computer Aided Building Planning & Drawing', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV358A', name: 'Data Analytics with Excel', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'cv-4': [
       { code: 'BCV401', name: 'Complex Analysis, Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -626,12 +640,15 @@ const VTUData = {
 
     // ==================== DATA SCIENCE ====================
     'ds-3': [
-      { code: 'BDS301', name: 'Mathematics for Data Science', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDS302', name: 'Digital Design & Computer Organization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDS303', name: 'Operating Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDS304', name: 'Data Structures and Applications', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDS305', name: 'Python for Data Science', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDSL306', name: 'Python Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BCS301', name: 'Mathematics for Computer Science', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS302', name: 'Digital Design & Computer Organization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS303', name: 'Operating Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS304', name: 'Data Structures and Applications', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS306A', name: 'Object Oriented Programming with Java', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BDS306C', name: 'Data Analytics with R', credits: 3, type: 'PLC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS358A', name: 'Data Analytics with Excel', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BCSL305', name: 'Data Structures Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'ds-4': [
       { code: 'BDS401', name: 'Analysis & Design of Algorithms', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
