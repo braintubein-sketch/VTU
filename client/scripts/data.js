@@ -708,25 +708,36 @@ const VTUData = {
   },
 
   getSubjects(branchId, semId) {
+    if (!branchId) return [];
+
+    // Normalize branchId to lowercase to prevent case-sensitivity issues
+    const normalizedBranch = branchId.toLowerCase();
+
     // Stream mapping for 1st and 2nd semester (VTU 2022 Scheme)
     const cseStreamBranches = ['cse', 'ise', 'aiml', 'ds'];
-    const eceStreamBranches = ['ece', 'eee'];
+    const eceStreamBranches = ['ece', 'eee', 'ec']; // Include variants
 
     if (semId === 1) {
-      if (cseStreamBranches.includes(branchId)) return this.sem1_cse;
-      if (eceStreamBranches.includes(branchId)) return this.sem1_ece;
-      if (branchId === 'me') return this.sem1_me;
-      if (branchId === 'cv') return this.sem1_cv;
+      if (cseStreamBranches.includes(normalizedBranch)) return this.sem1_cse;
+      if (eceStreamBranches.includes(normalizedBranch)) return this.sem1_ece;
+      if (normalizedBranch === 'me') return this.sem1_me;
+      if (normalizedBranch === 'cv') return this.sem1_cv;
       return this.sem1; // fallback
     }
     if (semId === 2) {
-      if (cseStreamBranches.includes(branchId)) return this.sem2_cse;
-      if (eceStreamBranches.includes(branchId)) return this.sem2_ece;
-      if (branchId === 'me') return this.sem2_me;
-      if (branchId === 'cv') return this.sem2_cv;
+      if (cseStreamBranches.includes(normalizedBranch)) return this.sem2_cse;
+      if (eceStreamBranches.includes(normalizedBranch)) return this.sem2_ece;
+      if (normalizedBranch === 'me') return this.sem2_me;
+      if (normalizedBranch === 'cv') return this.sem2_cv;
       return this.sem2; // fallback
     }
-    return this.subjects[`${branchId}-${semId}`] || [];
+
+    // Check main subjects database
+    if (this.subjects && this.subjects[`${normalizedBranch}-${semId}`]) {
+      return this.subjects[`${normalizedBranch}-${semId}`];
+    }
+
+    return [];
   }
 };
 

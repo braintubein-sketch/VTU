@@ -62,13 +62,13 @@
           <span class="breadcrumb-separator">/</span>
           <a href="branches.html">Branches</a>
           <span class="breadcrumb-separator">/</span>
-          <a href="#" id="branchLink">CSE</a>
+          <a href="#" id="branchLink">...</a>
           <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current" id="subjectCode">BCS304</span>
+          <span class="breadcrumb-current" id="subjectCode">...</span>
         </nav>
         <span class="subject-code" id="subjectCodeBadge"
-          style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">BCS304</span>
-        <h1 id="subjectName" style="margin-top: var(--space-4);">Data Structures</h1>
+          style="font-size: var(--text-base); padding: var(--space-2) var(--space-4);">...</span>
+        <h1 id="subjectName" style="margin-top: var(--space-4);">Loading Subject...</h1>
         <div class="flex gap-6" style="margin-top: var(--space-4); color: var(--text-secondary); flex-wrap: wrap;">
           <span style="display: flex; align-items: center; gap: 4px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -176,9 +176,9 @@
     </div>
   </footer>
 
-  <script src="../scripts/data.js?v=1.0.3"></script>
-  <script src="../scripts/config.js?v=1.0.3"></script>
-  <script src="../scripts/main.js?v=1.0.3"></script>
+  <script src="../scripts/data.js?v=1.0.4"></script>
+  <script src="../scripts/config.js?v=1.0.4"></script>
+  <script src="../scripts/main.js?v=1.0.4"></script>
   <script src="../scripts/notes-extended.js?v=1.0.3"></script>
   <script src="../scripts/syllabus.js?v=1.0.3"></script>
   <script src="../scripts/syllabus-extended.js?v=1.0.3"></script>
@@ -780,6 +780,22 @@
           document.querySelector('.tab[data-tab="syllabus"]').classList.add('active');
           document.getElementById('syllabus-panel').style.display = 'block';
         }
+      } else {
+        // Subject Not Found Error State
+        document.getElementById('subjectCodeBadge').textContent = code || 'Error';
+        document.getElementById('subjectName').textContent = 'Subject Resources Coming Soon';
+        document.getElementById('tabContent').innerHTML = `
+          <div class="card" style="text-align: center; padding: 4rem 2rem;">
+            <div style="font-size: 4rem; margin-bottom: 2rem;">📚</div>
+            <h2 style="margin-bottom: 1rem;">Content Ready Scheduled</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+              We are currently populating resources for <strong>${code}</strong>. 
+              The Fix Questions and Notes for this subject are being uploaded as per the VTU 2022 scheme.
+            </p>
+            <a href="branch.html?branch=${branchId}&sem=${sem}" class="btn btn-primary">Browse Other Subjects</a>
+          </div>
+        `;
+        showToast('Processing subject resources...', 'info');
       }
 
       // Tab switching
