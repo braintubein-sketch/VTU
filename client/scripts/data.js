@@ -487,6 +487,8 @@ const VTUData = {
       { code: 'BECL404', name: 'Communication Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
       { code: 'BEC405A', name: 'Microcontrollers', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BEC456A', name: 'Microcontroller Laboratory', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BEC456B', name: 'Programmable Logic Controllers', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BEC456C', name: 'Octave Programming', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
       { code: 'BBOK407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
@@ -533,6 +535,7 @@ const VTUData = {
       { code: 'BEEL404', name: 'Electric Motors Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
       { code: 'BEE405A', name: 'Electrical Power Generation and Economics', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BEEL456A', name: 'Basics of VHDL Laboratory', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BEEL456D', name: 'Arduino & Raspberry Pi Based Projects', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
       { code: 'BBOK407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
