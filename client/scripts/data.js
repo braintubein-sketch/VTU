@@ -325,14 +325,16 @@ const VTUData = {
       { code: 'BCS358D', name: 'Data Visualization with Python', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true }
     ],
     'cse-4': [
-      { code: 'BCS401', name: 'Analysis & Design of Algorithms', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCS402', name: 'Microcontrollers', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS401', name: 'Analysis & Design of Algorithms', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS402', name: 'Microcontrollers and Embedded Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS403', name: 'Database Management Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCS404', name: 'Discrete Mathematical Structures', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCS405A', name: 'Graph Theory', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCS405B', name: 'Biology for Engineers', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCSL406', name: 'Analysis & Design of Algorithms Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
-      { code: 'BUHK407', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: false, hasFix: true }
+      { code: 'BCSL404', name: 'ADA Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BCS405A', name: 'Discrete Mathematical Structures', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS405B', name: 'Graph Theory', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS456A', name: 'Green IT and Sustainability', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS456C', name: 'UI/UX Design', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BBOC407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'cse-5': [
       { code: 'BCS501', name: 'Software Engineering & Project Management', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -386,12 +388,14 @@ const VTUData = {
       { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'aiml-4': [
-      { code: 'BAD401', name: 'Analysis & Design of Algorithms', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BAD401', name: 'Analysis & Design of Algorithms', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BAD402', name: 'Database Management Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BAD403', name: 'Probability & Statistics for ML', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BAD404', name: 'Introduction to Machine Learning', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BAD405', name: 'Computer Networks', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BADL406', name: 'Machine Learning Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BAD403', name: 'Artificial Intelligence', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BADL404', name: 'ADA Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BAD405A', name: 'Discrete Mathematical Structures', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BAD456C', name: 'UI/UX Design', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BBOC407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'aiml-5': [
       { code: 'BAD501', name: 'Deep Learning', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -431,12 +435,14 @@ const VTUData = {
       { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'ise-4': [
-      { code: 'BIS401', name: 'Analysis & Design of Algorithms', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BIS402', name: 'Microcontrollers', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BIS401', name: 'Analysis & Design of Algorithms', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BIS402', name: 'Microcontrollers and Embedded Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BIS403', name: 'Database Management Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BIS404', name: 'Discrete Mathematical Structures', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BIS405', name: 'Computer Networks', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BISL406', name: 'DBMS Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BISL404', name: 'ADA Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BIS405A', name: 'Discrete Mathematical Structures', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BIS456C', name: 'UI/UX Design', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BBOC407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'ise-5': [
       { code: 'BIS501', name: 'Software Engineering', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -475,12 +481,14 @@ const VTUData = {
       { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'ece-4': [
-      { code: 'BEC401', name: 'Complex Analysis, Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC402', name: 'Analog Circuits', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC403', name: 'Microcontrollers', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC404', name: 'Electromagnetic Waves', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEC405', name: 'Control Systems', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BECL406', name: 'Analog Circuits Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BEC401', name: 'Electromagnetics Theory', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC402', name: 'Principles of Communication Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC403', name: 'Control Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BECL404', name: 'Communication Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BEC405A', name: 'Microcontrollers', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEC456A', name: 'Microcontroller Laboratory', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BBOK407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'ece-5': [
       { code: 'BEC501', name: 'Digital Communication', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -519,12 +527,14 @@ const VTUData = {
       { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'eee-4': [
-      { code: 'BEE401', name: 'Complex Analysis, Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE402', name: 'Electromagnetic Field Theory', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE403', name: 'Electrical Machines - I', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE404', name: 'Microcontrollers', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEE405', name: 'Signals & Systems', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BEEL406', name: 'Electrical Machines Lab - I', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BEE401', name: 'Electric Motors', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE402', name: 'Transmission and Distribution', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEE403', name: 'Microcontrollers', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEEL404', name: 'Electric Motors Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BEE405A', name: 'Electrical Power Generation and Economics', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BEEL456A', name: 'Basics of VHDL Laboratory', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BBOK407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'eee-5': [
       { code: 'BEE501', name: 'Power Electronics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -563,12 +573,14 @@ const VTUData = {
       { code: 'BMEL358C', name: 'Spreadsheet for Engineers', credits: 1, type: 'SDC', hasNotes: true, hasQP: false, hasFix: true }
     ],
     'me-4': [
-      { code: 'BME401', name: 'Complex Analysis, Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BME402', name: 'Applied Thermodynamics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME401', name: 'Applied Thermodynamics', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME402', name: 'Machining Science & Metrology', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BME403', name: 'Fluid Mechanics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BME404', name: 'Kinematics of Machines', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BME405', name: 'Metal Forming & Powder Metallurgy', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BMEL406', name: 'Machine Shop Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BMEL404', name: 'Mechanical Measurements and Metrology Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BME405D', name: 'Robotics and Automation', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BME456A', name: 'Introduction to AI & ML', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BBOK407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'me-5': [
       { code: 'BME501', name: 'Design of Machine Elements - I', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -606,12 +618,14 @@ const VTUData = {
       { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'cv-4': [
-      { code: 'BCV401', name: 'Complex Analysis, Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV402', name: 'Analysis of Determinate Structures', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV403', name: 'Applied Hydraulics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV404', name: 'Concrete Technology', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCV405', name: 'Basic Geotechnical Engineering', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCVL406', name: 'Concrete & Highway Materials Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BCV401', name: 'Basic Structural Analysis', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV402', name: 'Applied Hydraulics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV403', name: 'Concrete Technology', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCVL404', name: 'Building Materials Testing Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BCV405B', name: 'Advanced Surveying', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCV456A', name: 'Technical Writing using LaTeX', credits: 1, type: 'AEC', hasNotes: true, hasQP: false, hasFix: true },
+      { code: 'BBOK407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'cv-5': [
       { code: 'BCV501', name: 'Analysis of Indeterminate Structures', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
@@ -651,12 +665,14 @@ const VTUData = {
       { code: 'BSCK307', name: 'Social Connect & Responsibility', credits: 1, type: 'Activity', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'ds-4': [
-      { code: 'BDS401', name: 'Analysis & Design of Algorithms', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BDS401', name: 'Analysis & Design of Algorithms', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BDS402', name: 'Database Management Systems', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDS403', name: 'Probability & Statistics', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDS404', name: 'Data Visualization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDS405', name: 'Introduction to Data Science', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BDSL406', name: 'Data Visualization Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true }
+      { code: 'BDS403', name: 'Data Visualization', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BDSL404', name: 'ADA Laboratory', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BDS405A', name: 'Discrete Mathematical Structures', credits: 3, type: 'ESC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BDS456C', name: 'UI/UX Design', credits: 1, type: 'AEC', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BBOC407', name: 'Biology for Engineers', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BUHK408', name: 'Universal Human Values', credits: 1, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'ds-5': [
       { code: 'BDS501', name: 'Machine Learning', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
