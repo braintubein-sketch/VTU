@@ -1,173 +1,165 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="VTU study materials, notes, question papers and resources for all semesters.">
-  <title>Branch Resources - Braintube</title>
+  <meta name="description" content="VTU study materials — notes, question papers, and important questions organized by semester.">
+  <title>Branch - Braintube</title>
   <link rel="stylesheet" href="../styles/premium.css">
-  <link rel="stylesheet" href="../styles/pages.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><circle cx='50' cy='50' r='44' fill='url(%23g)'/><text x='50' y='65' font-size='48' fill='white' text-anchor='middle' font-family='Inter,Arial' font-weight='800'>B</text></svg>">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 </head>
 <body>
-  <div class="page-loader" id="pageLoader">
-    <img src="../assets/logo.png" alt="Braintube" class="loader-logo">
-    <div class="loader-spinner"></div>
-    <div class="loader-text">Loading</div>
-  </div>
+  <div class="page-loader" id="loader"><img src="../assets/logo.png" alt="B"><div class="loader-spin"></div></div>
 
-  <nav class="nav-premium scrolled">
+  <nav class="nav">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo"><span class="nav-logo-dot"></span> Braintube</a>
+      <a href="../index.html" class="nav-brand"><img src="../assets/logo.png" alt="B"> Braintube</a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="branches.html" style="color:var(--text-primary);">Subjects</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="branches.html" class="active">Branches</a></li>
+        <li><a href="branches.html">Notes</a></li>
+        <li><a href="branches.html">Question Papers</a></li>
+        <li><a href="blog/index.html">Updates</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="branches.html" class="nav-cta">Start Learning</a>
-      <button class="nav-mobile-toggle" onclick="document.getElementById('mob').style.opacity=1;document.getElementById('mob').style.pointerEvents='auto'">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <a href="branches.html" class="nav-cta">Browse Subjects</a>
+      <button class="nav-toggle" onclick="document.getElementById('mob').classList.add('open')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </nav>
-
-  <div id="mob" style="position:fixed;inset:0;z-index:999;background:rgba(5,5,5,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity 0.4s;">
-    <a href="../index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Home</a>
-    <a href="branches.html" style="color:var(--accent-cyan);text-decoration:none;font-size:1.3rem;font-weight:600;">Subjects</a>
-    <a href="blog/index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Blog</a>
-    <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
-    <a href="contact.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Contact</a>
-    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">₹œ•</button>
+  <div class="mobile-menu" id="mob">
+    <button class="close-btn" onclick="document.getElementById('mob').classList.remove('open')">✕</button>
+    <a href="../index.html">Home</a><a href="branches.html">Branches</a><a href="about.html">About</a><a href="contact.html">Contact</a>
   </div>
 
-  <!-- Hero -->
-  <section class="page-hero-premium">
-    <div style="display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:16px;">
-      <div id="branchIcon" style="font-size:2.5rem;">ðŸ–¥ï¸</div>
+  <div class="page-top">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span>
+      <a href="branches.html">Branches</a><span class="sep">/</span>
+      <span class="current" id="branchTitle">Loading...</span>
     </div>
-    <h1 id="branchTitle">Computer Science</h1>
-    <p id="branchFullName" style="color:var(--text-secondary);">Computer Science & Engineering ₹€¢ Scheme 2022</p>
-  </section>
+    <h1 id="branchName">Loading Branch...</h1>
+    <p id="branchDesc">Select a semester to view subjects</p>
+  </div>
 
-  <div class="content-premium">
-    <!-- Breadcrumb -->
-    <div style="margin-bottom:24px;display:flex;gap:8px;align-items:center;font-size:0.85rem;">
-      <a href="../index.html" style="color:var(--text-muted);text-decoration:none;">Home</a>
-      <span style="color:var(--text-muted);">/</span>
-      <a href="branches.html" style="color:var(--text-muted);text-decoration:none;">Branches</a>
-      <span style="color:var(--text-muted);">/</span>
-      <span id="branchName" style="color:var(--accent-cyan);">Loading...</span>
-    </div>
+  <div class="page-content">
+    <!-- Semester Tabs -->
+    <div class="tabs" id="semTabs"></div>
 
-    <!-- Semester Navigation -->
-    <h3 style="text-align:center;margin-bottom:16px;font-size:1rem;color:var(--text-secondary);font-weight:500;">Select Semester</h3>
-    <div class="semester-tabs" id="semesterNav" style="justify-content:center;"></div>
+    <!-- Subjects List -->
+    <div id="subjectsList"></div>
 
-    <!-- Subjects Grid -->
-    <div id="subjectsSection" style="margin-top:32px;">
-      <h3 id="semesterTitle" style="margin-bottom:20px;font-size:1.15rem;font-weight:600;">Semester 3 Subjects</h3>
-      <div id="subjectsGrid" style="display:flex;flex-direction:column;gap:12px;"></div>
+    <div id="emptyState" style="display:none;text-align:center;padding:60px 0;color:var(--text-muted);">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin-bottom:16px;opacity:0.3;"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+      <p>No subjects found for this semester.</p>
     </div>
   </div>
 
-  <footer class="footer-premium">
+  <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-bottom">
-        <span>₹© 2026 Braintube. All rights reserved.</span>
-        <span>Independent platform. Not affiliated with VTU.</span>
+      <div class="footer-brand">Braintube</div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a>
       </div>
     </div>
+    <div class="footer-copy">© 2026 Braintube. Not affiliated with VTU.</div>
   </footer>
 
-  <script src="../scripts/data.js?v=1.0.4"></script>
-  <script src="../scripts/config.js?v=1.0.4"></script>
-  <script src="../scripts/main.js?v=1.0.4"></script>
+  <script src="../scripts/data.js"></script>
   <script>
-    let currentBranch = null;
-    let currentSemester = 1;
-    let currentScheme = '2022';
+    window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('loaded'), 300); });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      const branchId = params.get('branch') || 'cse';
-      currentScheme = params.get('scheme') || '2022';
-      currentBranch = VTUData.getBranch(branchId);
+    const params = new URLSearchParams(window.location.search);
+    const branchId = params.get('branch') || 'cse';
+    let currentSem = 3;
 
-      if (!currentBranch) {
-        window.location.href = 'branches.html';
-        return;
+    // Branch info
+    const branchNames = {
+      cse: 'Computer Science & Engineering', ise: 'Information Science & Engineering',
+      aiml: 'AI & Machine Learning', ece: 'Electronics & Communication',
+      eee: 'Electrical & Electronics', me: 'Mechanical Engineering',
+      cv: 'Civil Engineering', ds: 'Data Science'
+    };
+
+    const branchStreams = {
+      cse: 'cse', ise: 'cse', aiml: 'cse', ds: 'cse',
+      ece: 'ece', eee: 'eee', me: 'me', cv: 'cv'
+    };
+
+    document.getElementById('branchName').textContent = branchNames[branchId] || 'Unknown Branch';
+    document.getElementById('branchTitle').textContent = branchNames[branchId] || branchId.toUpperCase();
+    document.title = `${branchNames[branchId] || branchId.toUpperCase()} - Braintube`;
+
+    // Build semester tabs
+    function buildTabs() {
+      const container = document.getElementById('semTabs');
+      container.innerHTML = '';
+      for (let i = 1; i <= 8; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'tab' + (i === currentSem ? ' active' : '');
+        btn.textContent = `Sem ${i}`;
+        btn.onclick = () => { currentSem = i; buildTabs(); loadSubjects(); };
+        container.appendChild(btn);
       }
-
-      document.getElementById('branchName').textContent = currentBranch.name;
-      document.getElementById('branchTitle').textContent = currentBranch.name;
-      document.getElementById('branchFullName').textContent = `${currentBranch.fullName} ₹€¢ Scheme ${currentScheme}`;
-      document.getElementById('branchIcon').textContent = currentBranch.icon;
-      document.title = `${currentBranch.name} (${currentScheme}) - Braintube`;
-
-      renderSemesterNav();
-      loadSemester(currentSemester);
-    });
-
-    function renderSemesterNav() {
-      const nav = document.getElementById('semesterNav');
-      nav.innerHTML = VTUData.semesters.map(sem => `
-        <button class="semester-tab ${sem.id === currentSemester ? 'active' : ''}" 
-                onclick="loadSemester(${sem.id})" 
-                title="${sem.name} - ${sem.type}">
-          Sem ${sem.id}
-        </button>
-      `).join('');
     }
 
-    function loadSemester(semId) {
-      currentSemester = semId;
-      document.querySelectorAll('.semester-tab').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.trim() === `Sem ${semId}`);
-      });
-      document.getElementById('semesterTitle').textContent = `Semester ${semId} Subjects`;
-      const subjects = VTUData.getSubjects(currentBranch.id, semId);
-      renderSubjects(subjects);
-    }
+    // Load subjects
+    function loadSubjects() {
+      const stream = branchStreams[branchId] || 'cse';
+      const key = `sem${currentSem}_${stream}`;
+      const subjects = VTUData[key] || [];
 
-    function renderSubjects(subjects) {
-      const grid = document.getElementById('subjectsGrid');
+      const list = document.getElementById('subjectsList');
+      const empty = document.getElementById('emptyState');
 
       if (subjects.length === 0) {
-        grid.innerHTML = `
-          <div style="text-align:center;padding:60px 24px;border:1px solid var(--border);border-radius:16px;background:var(--bg-card);">
-            <div style="font-size:3rem;margin-bottom:16px;">ðŸ“š</div>
-            <h4 style="font-size:1.1rem;margin-bottom:8px;">Resources in Curation</h4>
-            <p style="color:var(--text-secondary);max-width:400px;margin:0 auto;font-size:0.9rem;line-height:1.6;">
-              Our team is currently curating high-quality study materials for this semester. Check back soon!
-            </p>
-          </div>
-        `;
+        list.innerHTML = '';
+        empty.style.display = 'block';
         return;
       }
 
-      grid.innerHTML = subjects.map(subject => `
-        <a href="subject.html?branch=${currentBranch.id}&sem=${currentSemester}&code=${subject.code}" class="subject-list-card">
-          <div style="flex:1;">
-            <div class="subject-code">${subject.code}</div>
-            <div class="subject-name">${subject.name}</div>
-            <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
-              ${subject.hasNotes ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(0,80,255,0.1);color:var(--accent-cyan);border:1px solid rgba(0,80,255,0.15);">ðŸ“ Notes</span>' : ''}
-              ${subject.hasQP ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(0,214,255,0.08);color:var(--accent-cyan);border:1px solid rgba(0,214,255,0.12);">ðŸ“„ Papers</span>' : ''}
-              ${subject.hasFix ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(34,197,94,0.08);color:#22c55e;border:1px solid rgba(34,197,94,0.15);">₹œ… Fix Q</span>' : ''}
-              <span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(255,255,255,0.03);color:var(--text-muted);border:1px solid var(--border);">${subject.credits} Credits</span>
-            </div>
-          </div>
-          <div class="subject-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-          </div>
-        </a>
-      `).join('');
+      empty.style.display = 'none';
+
+      // Group by type
+      const groups = {};
+      subjects.forEach(s => {
+        const type = s.type || 'Theory';
+        if (!groups[type]) groups[type] = [];
+        groups[type].push(s);
+      });
+
+      let html = '';
+      for (const [type, subs] of Object.entries(groups)) {
+        html += `<div style="margin-bottom:24px;">`;
+        html += `<h3 style="font-size:0.82rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:12px;">${type}</h3>`;
+        html += `<div class="card-grid" style="grid-template-columns:1fr;">`;
+        subs.forEach(s => {
+          const tags = [];
+          if (s.hasNotes) tags.push('<span class="tag active">Notes</span>');
+          if (s.hasQP) tags.push('<span class="tag active">QP</span>');
+          if (s.hasFix) tags.push('<span class="tag active">Fix Q</span>');
+          html += `
+            <a href="subject.html?branch=${branchId}&sem=${currentSem}&code=${s.code}" class="card" style="padding:0;">
+              <div class="subject-card-item">
+                <div>
+                  <div class="code">${s.code} · ${s.credits} Credits</div>
+                  <div class="name">${s.name}</div>
+                  <div class="tags">${tags.join('')}</div>
+                </div>
+                <div class="arrow">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+              </div>
+            </a>`;
+        });
+        html += '</div></div>';
+      }
+      list.innerHTML = html;
     }
+
+    buildTabs();
+    loadSubjects();
   </script>
-<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
 </body>
 </html>
-

@@ -1,152 +1,138 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore all VTU engineering branches - CSE, ECE, EEE, ME, CV, AI/ML and more. Access study materials for your department.">
+  <meta name="description" content="Browse all VTU branches — CSE, ISE, ECE, EEE, ME, CV, AIML, DS. Access notes, question papers and study materials.">
   <title>All Branches - Braintube</title>
   <link rel="stylesheet" href="../styles/premium.css">
-  <link rel="stylesheet" href="../styles/pages.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><circle cx='50' cy='50' r='44' fill='url(%23g)'/><text x='50' y='65' font-size='48' fill='white' text-anchor='middle' font-family='Inter,Arial' font-weight='800'>B</text></svg>">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="../assets/logo.png">
 </head>
 <body>
-  <div class="page-loader" id="pageLoader">
-    <img src="../assets/logo.png" alt="Braintube" class="loader-logo">
-    <div class="loader-spinner"></div>
-    <div class="loader-text">Loading</div>
-  </div>
+  <div class="page-loader" id="loader"><img src="../assets/logo.png" alt="B"><div class="loader-spin"></div></div>
 
-  <!-- Navigation -->
-  <nav class="nav-premium scrolled" id="navbar">
+  <nav class="nav">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo"><span class="nav-logo-dot"></span> Braintube</a>
+      <a href="../index.html" class="nav-brand"><img src="../assets/logo.png" alt="B"> Braintube</a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="branches.html" style="color:var(--text-primary);">Subjects</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="branches.html" class="active">Branches</a></li>
+        <li><a href="branches.html">Notes</a></li>
+        <li><a href="branches.html">Question Papers</a></li>
+        <li><a href="blog/index.html">Updates</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="branches.html" class="nav-cta">Start Learning</a>
-      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="document.getElementById('mob').style.opacity=1;document.getElementById('mob').style.pointerEvents='auto'">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <a href="branches.html" class="nav-cta">Browse Subjects</a>
+      <button class="nav-toggle" onclick="document.getElementById('mob').classList.add('open')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
   </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mob" style="position:fixed;inset:0;z-index:999;background:rgba(5,5,5,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity 0.4s;">
-    <a href="../index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Home</a>
-    <a href="branches.html" style="color:var(--accent-cyan);text-decoration:none;font-size:1.3rem;font-weight:600;">Subjects</a>
-    <a href="blog/index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Blog</a>
-    <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
-    <a href="contact.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Contact</a>
-    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">₹œ•</button>
+  <div class="mobile-menu" id="mob">
+    <button class="close-btn" onclick="document.getElementById('mob').classList.remove('open')">✕</button>
+    <a href="../index.html">Home</a><a href="branches.html">Branches</a><a href="about.html">About</a><a href="contact.html">Contact</a>
   </div>
 
-  <!-- Hero -->
-  <section class="page-hero-premium">
-    <div class="story-badge" style="margin:0 auto 24px;"><span class="story-badge-dot"></span> VTU 2022 & 2025 Scheme</div>
-    <h1>Choose your <span class="text-gradient">branch</span></h1>
-    <p>Access curated notes, previous year papers, and AI-powered study tools for every VTU engineering branch.</p>
-  </section>
+  <div class="page-top">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a><span class="sep">/</span><span class="current">Branches</span>
+    </div>
+    <h1>All VTU Branches</h1>
+    <p>Select your branch to access notes, question papers, and study materials.</p>
+  </div>
 
-  <!-- Branch Cards -->
-  <div class="content-premium">
-    <div class="branch-grid-premium">
+  <div class="page-content">
+    <!-- Scheme Selection -->
+    <div class="tabs" style="margin-bottom:28px;">
+      <button class="tab active">2022 Scheme</button>
+      <button class="tab">2025 Scheme</button>
+    </div>
 
-      <a href="branch.html?branch=cse" class="branch-card-premium">
-        <div class="card-icon">ðŸ–¥ï¸</div>
-        <h3>Computer Science Engineering</h3>
-        <p>Data Structures, Algorithms, DBMS, Operating Systems, Networks, Web Tech & more</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
+    <div class="card-grid cols-2">
+      <a href="branch.html?branch=cse" class="card">
+        <div class="branch-card">
+          <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div>
+            <h3>Computer Science & Engineering</h3>
+            <p>52 subjects · Data Structures, Algorithms, DBMS, OS, Networks</p>
+          </div>
+        </div>
       </a>
-
-      <a href="branch.html?branch=ise" class="branch-card-premium">
-        <div class="card-icon">ðŸŒ</div>
-        <h3>Information Science Engineering</h3>
-        <p>Software Engineering, Web Technologies, Data Mining, Cloud Computing & more</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
+      <a href="branch.html?branch=ise" class="card">
+        <div class="branch-card">
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div>
+            <h3>Information Science & Engineering</h3>
+            <p>50 subjects · Software Engineering, Web Tech, Data Mining</p>
+          </div>
+        </div>
       </a>
-
-      <a href="branch.html?branch=aiml" class="branch-card-premium">
-        <div class="card-icon">ðŸ¤–</div>
-        <h3>AI & Machine Learning</h3>
-        <p>Neural Networks, Deep Learning, NLP, Computer Vision, Reinforcement Learning</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
+      <a href="branch.html?branch=aiml" class="card">
+        <div class="branch-card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/></svg></div>
+          <div>
+            <h3>AI & Machine Learning</h3>
+            <p>48 subjects · Neural Networks, Deep Learning, NLP, CV</p>
+          </div>
+        </div>
       </a>
-
-      <a href="branch.html?branch=ece" class="branch-card-premium">
-        <div class="card-icon">ðŸ“¡</div>
-        <h3>Electronics & Communication</h3>
-        <p>Analog Circuits, Digital Electronics, Signal Processing, VLSI & more</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
+      <a href="branch.html?branch=ece" class="card">
+        <div class="branch-card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><line x1="2" y1="20" x2="2.01" y2="20"/></svg></div>
+          <div>
+            <h3>Electronics & Communication</h3>
+            <p>52 subjects · Analog, Digital, Signals, VLSI</p>
+          </div>
+        </div>
       </a>
-
-      <a href="branch.html?branch=eee" class="branch-card-premium">
-        <div class="card-icon">₹š¡</div>
-        <h3>Electrical Engineering</h3>
-        <p>Power Systems, Control Systems, Electrical Machines, Power Electronics</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
+      <a href="branch.html?branch=eee" class="card">
+        <div class="branch-card">
+          <div class="icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div>
+            <h3>Electrical & Electronics</h3>
+            <p>50 subjects · Power Systems, Control, Machines</p>
+          </div>
+        </div>
       </a>
-
-      <a href="branch.html?branch=me" class="branch-card-premium">
-        <div class="card-icon">₹š™ï¸</div>
-        <h3>Mechanical Engineering</h3>
-        <p>Thermodynamics, Fluid Mechanics, Manufacturing, Machine Design & more</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
+      <a href="branch.html?branch=me" class="card">
+        <div class="branch-card">
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4"/></svg></div>
+          <div>
+            <h3>Mechanical Engineering</h3>
+            <p>52 subjects · Thermodynamics, Fluid Mechanics, Manufacturing</p>
+          </div>
+        </div>
       </a>
-
-      <a href="branch.html?branch=cv" class="branch-card-premium">
-        <div class="card-icon">ðŸ—ï¸</div>
-        <h3>Civil Engineering</h3>
-        <p>Structural Analysis, Geotechnics, Surveying, Environmental Engineering</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
+      <a href="branch.html?branch=cv" class="card">
+        <div class="branch-card">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
+          <div>
+            <h3>Civil Engineering</h3>
+            <p>50 subjects · Structures, Geotechnics, Surveying</p>
+          </div>
+        </div>
       </a>
-
-      <a href="branch.html?branch=ds" class="branch-card-premium">
-        <div class="card-icon">ðŸ“Š</div>
-        <h3>Data Science</h3>
-        <p>Statistics, Machine Learning, Big Data Analytics, Data Visualization</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
+      <a href="branch.html?branch=ds" class="card">
+        <div class="branch-card">
+          <div class="icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div>
+            <h3>Data Science</h3>
+            <p>46 subjects · Statistics, ML, Big Data Analytics</p>
+          </div>
+        </div>
       </a>
-
-      <a href="branch.html?branch=ra" class="branch-card-premium">
-        <div class="card-icon">ðŸ¦¾</div>
-        <h3>Robotics & Automation</h3>
-        <p>Robot Kinematics, Industrial Automation, Embedded Systems, IoT</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
-      </a>
-
-      <a href="branch.html?branch=ae" class="branch-card-premium">
-        <div class="card-icon">₹œˆï¸</div>
-        <h3>Aerospace Engineering</h3>
-        <p>Aerodynamics, Propulsion, Aircraft Structures, Flight Mechanics</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
-      </a>
-
-      <a href="branch.html?branch=bt" class="branch-card-premium">
-        <div class="card-icon">ðŸ§¬</div>
-        <h3>Biotechnology</h3>
-        <p>Biochemistry, Molecular Biology, Genetic Engineering, Bioprocess Tech</p>
-        <span class="card-arrow">Explore subjects ₹†’</span>
-      </a>
-
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer-premium">
+  <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-bottom">
-        <span>₹© 2026 Braintube. All rights reserved.</span>
-        <span>Independent platform. Not affiliated with VTU.</span>
+      <div class="footer-brand">Braintube</div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
       </div>
     </div>
+    <div class="footer-copy">© 2026 Braintube. Not affiliated with VTU.</div>
   </footer>
-
-<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
+  <script>window.addEventListener('load',()=>{setTimeout(()=>document.getElementById('loader').classList.add('loaded'),300);});</script>
 </body>
 </html>
-
