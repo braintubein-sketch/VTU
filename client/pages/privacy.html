@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,6 +10,11 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><circle cx='50' cy='50' r='44' fill='url(%23g)'/><text x='50' y='65' font-size='48' fill='white' text-anchor='middle' font-family='Inter,Arial' font-weight='800'>B</text></svg>">
 </head>
 <body>
+  <div class="page-loader" id="pageLoader">
+    <img src="../assets/logo.png" alt="Braintube" class="loader-logo">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading</div>
+  </div>
   <nav class="nav-premium scrolled">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo"><span class="nav-logo-dot"></span> Braintube</a>
@@ -30,7 +35,7 @@
     <a href="../index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Home</a>
     <a href="branches.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Subjects</a>
     <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
-    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">✕</button>
+    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">âœ•</button>
   </div>
 
   <section class="page-hero-premium">
@@ -93,10 +98,11 @@
   <footer class="footer-premium">
     <div class="footer-inner">
       <div class="footer-bottom">
-        <span>© 2026 Braintube. All rights reserved.</span>
+        <span>Â© 2026 Braintube. All rights reserved.</span>
         <span>Independent platform. Not affiliated with VTU.</span>
       </div>
     </div>
   </footer>
+<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
 </body>
 </html>

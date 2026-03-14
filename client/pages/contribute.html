@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,10 +12,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../styles/theme-v3.css">
+    <link rel="stylesheet" href="../styles/premium.css"><link rel="stylesheet" href="../styles/pages.css">
     <link rel="stylesheet" href="../styles/whatsapp-modal.css?v=3.0.0">
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
     <style>
         .contribution-container {
             max-width: 900px;
@@ -118,30 +118,34 @@
 </head>
 
 <body>
-    <header class="header" id="header">
-        <div class="header-inner">
-            <a href="../index.html" class="logo">
-                <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                    </svg>
-                </div>
-                <span>Brain<span class="text-gradient">tube</span></span>
-            </a>
-            <nav class="nav">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="branches.html" class="nav-link">Branches</a>
-                <a href="resources.html" class="nav-link">Resources</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-            <div class="header-actions">
-                <a href="login.html" class="btn btn-secondary hide-mobile" id="loginHeaderBtn">Login</a>
-                <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
-            </div>
-        </div>
-    </header>
+  <div class="page-loader" id="pageLoader">
+    <img src="../assets/logo.png" alt="Braintube" class="loader-logo">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading</div>
+  </div>
+    <nav class="nav-premium scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="B" class="nav-logo-img"> Braintube</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="branches.html">Subjects</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="branches.html" class="nav-cta">Start Learning</a>
+      <button class="nav-mobile-toggle" onclick="document.getElementById('mob').style.opacity=1;document.getElementById('mob').style.pointerEvents='auto'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mob" style="position:fixed;inset:0;z-index:999;background:rgba(5,5,5,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity 0.4s;">
+    <a href="../index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Home</a>
+    <a href="branches.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Subjects</a>
+    <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
+    <a href="contact.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Contact</a>
+    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">x</button>
+  </div>
 
     <main class="contribution-container">
         <section class="hero-section">
@@ -394,6 +398,8 @@
     </script>
     <script src="../scripts/whatsapp-modal.js"></script>
 
+<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
 </body>
 
 </html>
+

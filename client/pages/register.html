@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,10 +11,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../styles/theme-v3.css">
+    <link rel="stylesheet" href="../styles/premium.css"><link rel="stylesheet" href="../styles/pages.css">
     <link rel="stylesheet" href="../styles/whatsapp-modal.css?v=3.0.0">
     <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
     <style>
         .auth-container {
             min-height: 100vh;
@@ -79,6 +79,11 @@
 </head>
 
 <body>
+  <div class="page-loader" id="pageLoader">
+    <img src="../assets/logo.png" alt="Braintube" class="loader-logo">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading</div>
+  </div>
     <div class="auth-container">
         <div class="auth-card">
             <div class="auth-header">
@@ -220,6 +225,8 @@
     </script>
     <script src="../scripts/whatsapp-modal.js"></script>
 
+<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
 </body>
 
 </html>
+

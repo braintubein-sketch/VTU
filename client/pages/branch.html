@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,6 +11,11 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="page-loader" id="pageLoader">
+    <img src="../assets/logo.png" alt="Braintube" class="loader-logo">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading</div>
+  </div>
 
   <nav class="nav-premium scrolled">
     <div class="nav-inner">
@@ -35,16 +40,16 @@
     <a href="blog/index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Blog</a>
     <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
     <a href="contact.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Contact</a>
-    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">✕</button>
+    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">âœ•</button>
   </div>
 
   <!-- Hero -->
   <section class="page-hero-premium">
     <div style="display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:16px;">
-      <div id="branchIcon" style="font-size:2.5rem;">🖥️</div>
+      <div id="branchIcon" style="font-size:2.5rem;">ðŸ–¥ï¸</div>
     </div>
     <h1 id="branchTitle">Computer Science</h1>
-    <p id="branchFullName" style="color:var(--text-secondary);">Computer Science & Engineering • Scheme 2022</p>
+    <p id="branchFullName" style="color:var(--text-secondary);">Computer Science & Engineering â€¢ Scheme 2022</p>
   </section>
 
   <div class="content-premium">
@@ -71,7 +76,7 @@
   <footer class="footer-premium">
     <div class="footer-inner">
       <div class="footer-bottom">
-        <span>© 2026 Braintube. All rights reserved.</span>
+        <span>Â© 2026 Braintube. All rights reserved.</span>
         <span>Independent platform. Not affiliated with VTU.</span>
       </div>
     </div>
@@ -98,7 +103,7 @@
 
       document.getElementById('branchName').textContent = currentBranch.name;
       document.getElementById('branchTitle').textContent = currentBranch.name;
-      document.getElementById('branchFullName').textContent = `${currentBranch.fullName} • Scheme ${currentScheme}`;
+      document.getElementById('branchFullName').textContent = `${currentBranch.fullName} â€¢ Scheme ${currentScheme}`;
       document.getElementById('branchIcon').textContent = currentBranch.icon;
       document.title = `${currentBranch.name} (${currentScheme}) - Braintube`;
 
@@ -133,7 +138,7 @@
       if (subjects.length === 0) {
         grid.innerHTML = `
           <div style="text-align:center;padding:60px 24px;border:1px solid var(--border);border-radius:16px;background:var(--bg-card);">
-            <div style="font-size:3rem;margin-bottom:16px;">📚</div>
+            <div style="font-size:3rem;margin-bottom:16px;">ðŸ“š</div>
             <h4 style="font-size:1.1rem;margin-bottom:8px;">Resources in Curation</h4>
             <p style="color:var(--text-secondary);max-width:400px;margin:0 auto;font-size:0.9rem;line-height:1.6;">
               Our team is currently curating high-quality study materials for this semester. Check back soon!
@@ -149,9 +154,9 @@
             <div class="subject-code">${subject.code}</div>
             <div class="subject-name">${subject.name}</div>
             <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
-              ${subject.hasNotes ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(0,80,255,0.1);color:var(--accent-cyan);border:1px solid rgba(0,80,255,0.15);">📝 Notes</span>' : ''}
-              ${subject.hasQP ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(0,214,255,0.08);color:var(--accent-cyan);border:1px solid rgba(0,214,255,0.12);">📄 Papers</span>' : ''}
-              ${subject.hasFix ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(34,197,94,0.08);color:#22c55e;border:1px solid rgba(34,197,94,0.15);">✅ Fix Q</span>' : ''}
+              ${subject.hasNotes ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(0,80,255,0.1);color:var(--accent-cyan);border:1px solid rgba(0,80,255,0.15);">ðŸ“ Notes</span>' : ''}
+              ${subject.hasQP ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(0,214,255,0.08);color:var(--accent-cyan);border:1px solid rgba(0,214,255,0.12);">ðŸ“„ Papers</span>' : ''}
+              ${subject.hasFix ? '<span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(34,197,94,0.08);color:#22c55e;border:1px solid rgba(34,197,94,0.15);">âœ… Fix Q</span>' : ''}
               <span style="font-size:0.7rem;padding:3px 10px;border-radius:100px;background:rgba(255,255,255,0.03);color:var(--text-muted);border:1px solid var(--border);">${subject.credits} Credits</span>
             </div>
           </div>
@@ -162,5 +167,6 @@
       `).join('');
     }
   </script>
+<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
 </body>
 </html>

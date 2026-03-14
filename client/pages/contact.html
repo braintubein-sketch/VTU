@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,6 +11,11 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="page-loader" id="pageLoader">
+    <img src="../assets/logo.png" alt="Braintube" class="loader-logo">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading</div>
+  </div>
 
   <nav class="nav-premium scrolled">
     <div class="nav-inner">
@@ -35,7 +40,7 @@
     <a href="blog/index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Blog</a>
     <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
     <a href="contact.html" style="color:var(--accent-cyan);text-decoration:none;font-size:1.3rem;font-weight:600;">Contact</a>
-    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">✕</button>
+    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">âœ•</button>
   </div>
 
   <section class="page-hero-premium">
@@ -47,12 +52,12 @@
   <div class="content-narrow">
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:40px;">
       <div class="info-card fade-up" style="text-align:center;">
-        <div style="font-size:2rem;margin-bottom:12px;">📧</div>
+        <div style="font-size:2rem;margin-bottom:12px;">ðŸ“§</div>
         <h3 style="font-size:1rem;margin-bottom:8px;">Email</h3>
         <a href="mailto:braintubein@gmail.com" style="color:var(--accent-cyan);text-decoration:none;font-size:0.9rem;">braintubein@gmail.com</a>
       </div>
       <div class="info-card fade-up" style="text-align:center;">
-        <div style="font-size:2rem;margin-bottom:12px;">📱</div>
+        <div style="font-size:2rem;margin-bottom:12px;">ðŸ“±</div>
         <h3 style="font-size:1rem;margin-bottom:8px;">Social</h3>
         <p style="font-size:0.9rem;margin:0;">Follow us on <a href="https://instagram.com/braintube.in" target="_blank" style="color:var(--accent-cyan);text-decoration:none;">Instagram</a></p>
       </div>
@@ -85,7 +90,7 @@
   <footer class="footer-premium">
     <div class="footer-inner">
       <div class="footer-bottom">
-        <span>© 2026 Braintube. All rights reserved.</span>
+        <span>Â© 2026 Braintube. All rights reserved.</span>
         <span>Independent platform. Not affiliated with VTU.</span>
       </div>
     </div>
@@ -97,5 +102,6 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
   </script>
+<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
 </body>
 </html>

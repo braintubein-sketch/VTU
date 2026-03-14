@@ -11,6 +11,11 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="page-loader" id="pageLoader">
+    <img src="../../assets/logo.png" alt="Braintube" class="loader-logo">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading</div>
+  </div>
   <nav class="nav-premium scrolled">
     <div class="nav-inner">
       <a href="../../index.html" class="nav-logo"><span class="nav-logo-dot"></span> Braintube</a>
@@ -194,6 +199,8 @@
       </div>
     </div>
   </footer>
+<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
 </body>
 </html>
+
 
