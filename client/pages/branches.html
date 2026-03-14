@@ -1,139 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Explore all VTU engineering branches - CSE, ECE, EEE, ME, CV, AI/ML and more. Access study materials for your department.">
-    <title>All Branches - Braintube</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../styles/theme-v3.css">
-    <link rel="stylesheet" href="../styles/whatsapp-modal.css?v=3.0.0">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore all VTU engineering branches - CSE, ECE, EEE, ME, CV, AI/ML and more. Access study materials for your department.">
+  <title>All Branches - Braintube</title>
+  <link rel="stylesheet" href="../styles/premium.css">
+  <link rel="stylesheet" href="../styles/pages.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><circle cx='50' cy='50' r='44' fill='url(%23g)'/><text x='50' y='65' font-size='48' fill='white' text-anchor='middle' font-family='Inter,Arial' font-weight='800'>B</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <header class="header" id="header">
-        <div class="header-inner">
-            <a href="../index.html" class="logo">
-                <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                    </svg>
-                </div>
-                <span>Brain<span class="text-gradient">tube</span></span>
-            </a>
-            <nav class="nav">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="branches.html" class="nav-link active">Branches</a>
-                <a href="resources.html" class="nav-link">Resources</a>
-                <a href="pricing.html" class="nav-link">Premium</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-            <div class="header-actions">
-                <a href="login.html" class="btn btn-secondary hide-mobile">Login</a>
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </header>
 
-    <nav class="mobile-nav" id="mobileNav">
-        <a href="../index.html" class="mobile-nav-link">Home</a>
-        <a href="branches.html" class="mobile-nav-link">Branches</a>
-        <a href="resources.html" class="mobile-nav-link">Resources</a>
-        <a href="pricing.html" class="mobile-nav-link">Premium</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
+  <!-- Navigation -->
+  <nav class="nav-premium scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="nav-logo-dot"></span> Braintube</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="branches.html" style="color:var(--text-primary);">Subjects</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="branches.html" class="nav-cta">Start Learning</a>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu" onclick="document.getElementById('mob').style.opacity=1;document.getElementById('mob').style.pointerEvents='auto'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
 
-    <main>
-        <section class="page-hero">
-            <div class="container">
-                <nav class="breadcrumb">
-                    <a href="../index.html">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">Branches</span>
-                </nav>
-                <h1>Choose Your <span class="text-gradient">Branch</span></h1>
-                <p style="max-width: 600px; margin-top: var(--space-4);">Select your engineering department to access
-                    comprehensive study materials, notes, and resources.</p>
-            </div>
-        </section>
+  <!-- Mobile Menu -->
+  <div id="mob" style="position:fixed;inset:0;z-index:999;background:rgba(5,5,5,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity 0.4s;">
+    <a href="../index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Home</a>
+    <a href="branches.html" style="color:var(--accent-cyan);text-decoration:none;font-size:1.3rem;font-weight:600;">Subjects</a>
+    <a href="blog/index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Blog</a>
+    <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
+    <a href="contact.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Contact</a>
+    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">✕</button>
+  </div>
 
-        <section class="section">
-            <div class="container">
-                <div class="search-container">
-                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8" />
-                        <path d="m21 21-4.3-4.3" />
-                    </svg>
-                    <input type="text" class="search-input" id="branchSearch" placeholder="Search branches...">
-                </div>
+  <!-- Hero -->
+  <section class="page-hero-premium">
+    <div class="story-badge" style="margin:0 auto 24px;"><span class="story-badge-dot"></span> VTU 2022 & 2025 Scheme</div>
+    <h1>Choose your <span class="text-gradient">branch</span></h1>
+    <p>Access curated notes, previous year papers, and AI-powered study tools for every VTU engineering branch.</p>
+  </section>
 
-                <div class="branches-grid" id="branchesGrid"></div>
-            </div>
-        </section>
-    </main>
+  <!-- Branch Cards -->
+  <div class="content-premium">
+    <div class="branch-grid-premium">
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-                <p class="footer-copyright">© 2026 Braintube. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+      <a href="branch.html?branch=cse" class="branch-card-premium">
+        <div class="card-icon">🖥️</div>
+        <h3>Computer Science Engineering</h3>
+        <p>Data Structures, Algorithms, DBMS, Operating Systems, Networks, Web Tech & more</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
 
-    <script src="../scripts/data.js"></script>
-    <script src="../scripts/config.js"></script>
-    <script src="../scripts/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderBranches(VTUData.branches);
+      <a href="branch.html?branch=ise" class="branch-card-premium">
+        <div class="card-icon">🌐</div>
+        <h3>Information Science Engineering</h3>
+        <p>Software Engineering, Web Technologies, Data Mining, Cloud Computing & more</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
 
-            document.getElementById('branchSearch').addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase();
-                const filtered = VTUData.branches.filter(b =>
-                    b.name.toLowerCase().includes(query) || b.fullName.toLowerCase().includes(query)
-                );
-                renderBranches(filtered);
-            });
-        });
+      <a href="branch.html?branch=aiml" class="branch-card-premium">
+        <div class="card-icon">🤖</div>
+        <h3>AI & Machine Learning</h3>
+        <p>Neural Networks, Deep Learning, NLP, Computer Vision, Reinforcement Learning</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
 
-        function renderBranches(branches) {
-            document.getElementById('branchesGrid').innerHTML = branches.map(b => `
-        <a href="scheme.html?branch=${b.id}" class="branch-card">
-          <div class="branch-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <h3 class="branch-name">${b.name}</h3>
-          <p class="branch-fullname">${b.fullName}</p>
-          <div class="branch-meta">
-            <span class="branch-meta-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-              ${b.subjects} Subjects
-            </span>
-            <span class="branch-meta-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
-              ${b.documents}+ Docs
-            </span>
-          </div>
-        </a>
-      `).join('');
-        }
-    </script>
-    <script src="../scripts/auth.js?v=1.0.3"></script>
-    <script src="../scripts/whatsapp-modal.js"></script>
+      <a href="branch.html?branch=ece" class="branch-card-premium">
+        <div class="card-icon">📡</div>
+        <h3>Electronics & Communication</h3>
+        <p>Analog Circuits, Digital Electronics, Signal Processing, VLSI & more</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
+
+      <a href="branch.html?branch=eee" class="branch-card-premium">
+        <div class="card-icon">⚡</div>
+        <h3>Electrical Engineering</h3>
+        <p>Power Systems, Control Systems, Electrical Machines, Power Electronics</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
+
+      <a href="branch.html?branch=me" class="branch-card-premium">
+        <div class="card-icon">⚙️</div>
+        <h3>Mechanical Engineering</h3>
+        <p>Thermodynamics, Fluid Mechanics, Manufacturing, Machine Design & more</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
+
+      <a href="branch.html?branch=cv" class="branch-card-premium">
+        <div class="card-icon">🏗️</div>
+        <h3>Civil Engineering</h3>
+        <p>Structural Analysis, Geotechnics, Surveying, Environmental Engineering</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
+
+      <a href="branch.html?branch=ds" class="branch-card-premium">
+        <div class="card-icon">📊</div>
+        <h3>Data Science</h3>
+        <p>Statistics, Machine Learning, Big Data Analytics, Data Visualization</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
+
+      <a href="branch.html?branch=ra" class="branch-card-premium">
+        <div class="card-icon">🦾</div>
+        <h3>Robotics & Automation</h3>
+        <p>Robot Kinematics, Industrial Automation, Embedded Systems, IoT</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
+
+      <a href="branch.html?branch=ae" class="branch-card-premium">
+        <div class="card-icon">✈️</div>
+        <h3>Aerospace Engineering</h3>
+        <p>Aerodynamics, Propulsion, Aircraft Structures, Flight Mechanics</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
+
+      <a href="branch.html?branch=bt" class="branch-card-premium">
+        <div class="card-icon">🧬</div>
+        <h3>Biotechnology</h3>
+        <p>Biochemistry, Molecular Biology, Genetic Engineering, Bioprocess Tech</p>
+        <span class="card-arrow">Explore subjects →</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-premium">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span>© 2026 Braintube. All rights reserved.</span>
+        <span>Independent platform. Not affiliated with VTU.</span>
+      </div>
+    </div>
+  </footer>
+
 </body>
-
 </html>

@@ -1,197 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Braintube Privacy Policy - How we collect, use, and protect your personal information.">
-    <title>Privacy Policy - Braintube</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../styles/theme-v3.css">
-    <link rel="stylesheet" href="../styles/whatsapp-modal.css?v=3.0.0">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896"
-        crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Braintube Privacy Policy - How we collect, use, and protect your personal information.">
+  <title>Privacy Policy - Braintube</title>
+  <link rel="stylesheet" href="../styles/premium.css">
+  <link rel="stylesheet" href="../styles/pages.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><circle cx='50' cy='50' r='44' fill='url(%23g)'/><text x='50' y='65' font-size='48' fill='white' text-anchor='middle' font-family='Inter,Arial' font-weight='800'>B</text></svg>">
 </head>
-
 <body>
-    <header class="header" id="header">
-        <div class="header-inner">
-            <a href="../index.html" class="logo">
-                <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                        <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                    </svg>
-                </div>
-                <span>Brain<span class="text-gradient">tube</span></span>
-            </a>
-            <nav class="nav">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="branches.html" class="nav-link">Branches</a>
-                <a href="blog/index.html" class="nav-link">Blog</a>
-                <a href="resources.html" class="nav-link">Resources</a>
-                <a href="pricing.html" class="nav-link">Premium</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </nav>
-            <div class="header-actions">
-                <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
-            </div>
-        </div>
-    </header>
+  <nav class="nav-premium scrolled">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><span class="nav-logo-dot"></span> Braintube</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="branches.html">Subjects</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="branches.html" class="nav-cta">Start Learning</a>
+      <button class="nav-mobile-toggle" onclick="document.getElementById('mob').style.opacity=1;document.getElementById('mob').style.pointerEvents='auto'">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mob" style="position:fixed;inset:0;z-index:999;background:rgba(5,5,5,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity 0.4s;">
+    <a href="../index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Home</a>
+    <a href="branches.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Subjects</a>
+    <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
+    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">✕</button>
+  </div>
 
-    <nav class="mobile-nav" id="mobileNav">
-        <a href="../index.html" class="mobile-nav-link">Home</a>
-        <a href="branches.html" class="mobile-nav-link">Branches</a>
-        <a href="pricing.html" class="mobile-nav-link">Premium</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-    </nav>
+  <section class="page-hero-premium">
+    <h1>Privacy <span class="text-gradient">Policy</span></h1>
+    <p>Last updated: March 2026</p>
+  </section>
 
-    <main>
-        <section class="page-hero">
-            <div class="container">
-                <h1>Privacy <span class="text-gradient">Policy</span></h1>
-                <p style="max-width: 600px; margin: var(--space-4) auto 0;">How we collect, use, and protect your
-                    information.</p>
-            </div>
-        </section>
+  <div class="content-narrow">
+    <div class="info-card">
+      <h2>Information We Collect</h2>
+      <p>Braintube collects information to provide better services to our users. We may collect the following types of information:</p>
+      <ul>
+        <li><strong style="color:var(--text-primary);">Personal Information:</strong> Name, email address, and university details when you create an account.</li>
+        <li><strong style="color:var(--text-primary);">Usage Data:</strong> Information about how you interact with our platform, including pages visited, time spent, and features used.</li>
+        <li><strong style="color:var(--text-primary);">Device Information:</strong> Browser type, operating system, device type, and IP address for analytics and security purposes.</li>
+        <li><strong style="color:var(--text-primary);">Cookies:</strong> We use cookies and similar technologies to enhance your experience and analyze usage patterns.</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h2>How We Use Your Information</h2>
+      <p>We use collected information for the following purposes:</p>
+      <ul>
+        <li>To provide, maintain, and improve our platform and services</li>
+        <li>To personalize your learning experience with relevant content</li>
+        <li>To communicate with you about updates, features, and educational content</li>
+        <li>To analyze usage patterns and optimize platform performance</li>
+        <li>To ensure the security and integrity of our platform</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h2>Third-Party Services</h2>
+      <p>Braintube uses the following third-party services:</p>
+      <ul>
+        <li><strong style="color:var(--text-primary);">Google AdSense:</strong> For displaying relevant advertisements. Google may use cookies to serve ads based on your browsing history.</li>
+        <li><strong style="color:var(--text-primary);">Google Analytics:</strong> For tracking website traffic and user behavior to improve our services.</li>
+      </ul>
+      <p>These services have their own privacy policies governing the use of your information.</p>
+    </div>
+    <div class="info-card">
+      <h2>Data Protection</h2>
+      <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Your data is stored securely and access is restricted to authorized personnel only.</p>
+    </div>
+    <div class="info-card">
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate data</li>
+        <li>Request deletion of your account and associated data</li>
+        <li>Opt out of marketing communications</li>
+      </ul>
+      <p>To exercise these rights, please contact us at <a href="mailto:braintubein@gmail.com" style="color:var(--accent-cyan);">braintubein@gmail.com</a>.</p>
+    </div>
+    <div class="info-card">
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:braintubein@gmail.com" style="color:var(--accent-cyan);">braintubein@gmail.com</a>.</p>
+    </div>
+  </div>
 
-        <section class="section">
-            <div class="container">
-                <div class="card" style="padding: var(--space-10); max-width: 900px; margin: 0 auto; line-height: 1.8;">
-
-                    <div style="margin-bottom: var(--space-8);">
-                        <h2 style="margin-bottom: var(--space-4);">1. Information We Collect</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">
-                            We collect information you provide directly to us, including:
-                        </p>
-                        <ul style="color: var(--text-secondary); padding-left: var(--space-6); list-style-type: disc;">
-                            <li>Name and email address when you make a purchase or contact us</li>
-                            <li>Payment information processed securely through Razorpay</li>
-                            <li>Subject preferences and branch/semester information</li>
-                            <li>Messages and feedback you send to us</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-bottom: var(--space-8);">
-                        <h2 style="margin-bottom: var(--space-4);">2. How We Use Your Information</h2>
-                        <ul style="color: var(--text-secondary); padding-left: var(--space-6); list-style-type: disc;">
-                            <li>To deliver purchased study materials via email</li>
-                            <li>To send order confirmations and receipts</li>
-                            <li>To respond to your questions and support requests</li>
-                            <li>To improve our services and content offerings</li>
-                            <li>To send occasional updates about new materials (you can opt out)</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-bottom: var(--space-8);">
-                        <h2 style="margin-bottom: var(--space-4);">3. Payment Security</h2>
-                        <p style="color: var(--text-secondary);">
-                            All payments are processed securely through <strong>Razorpay</strong>, a PCI-DSS compliant
-                            payment gateway. We do not store your credit/debit card details on our servers. Razorpay
-                            handles all sensitive payment information with bank-level security.
-                        </p>
-                    </div>
-
-                    <div style="margin-bottom: var(--space-8);">
-                        <h2 style="margin-bottom: var(--space-4);">4. Data Sharing</h2>
-                        <p style="color: var(--text-secondary);">
-                            We do <strong>not</strong> sell, trade, or rent your personal information to third parties.
-                            We may share information only with:
-                        </p>
-                        <ul
-                            style="color: var(--text-secondary); padding-left: var(--space-6); list-style-type: disc; margin-top: var(--space-3);">
-                            <li>Payment processors (Razorpay) to complete transactions</li>
-                            <li>Email services to deliver your purchased materials</li>
-                            <li>Legal authorities if required by law</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-bottom: var(--space-8);">
-                        <h2 style="margin-bottom: var(--space-4);">5. Cookies and Advertising</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">
-                            We use minimal cookies to remember your preferences and improve your browsing experience.
-                            You can disable cookies in your browser settings, though some features may not work
-                            properly.
-                        </p>
-                        <p style="color: var(--text-secondary); margin-bottom: var(--space-3);">
-                            <strong>Third-Party Advertising:</strong> We use Google AdSense to display advertisements on
-                            our website.
-                            Google and its advertising partners may use cookies to serve ads based on your prior visits
-                            to this
-                            website or other websites. You can opt out of personalized advertising by visiting
-                            <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener"
-                                style="color: var(--primary-400);">Google Ads Settings</a>.
-                        </p>
-                        <p style="color: var(--text-secondary);">
-                            For more information about how Google uses data when you use our site, please visit
-                            <a href="https://policies.google.com/technologies/partner-sites" target="_blank"
-                                rel="noopener" style="color: var(--primary-400);">Google's Privacy Policy</a>.
-                        </p>
-                    </div>
-
-                    <div style="margin-bottom: var(--space-8);">
-                        <h2 style="margin-bottom: var(--space-4);">6. Your Rights</h2>
-                        <p style="color: var(--text-secondary);">
-                            You have the right to:
-                        </p>
-                        <ul
-                            style="color: var(--text-secondary); padding-left: var(--space-6); list-style-type: disc; margin-top: var(--space-3);">
-                            <li>Request access to your personal data</li>
-                            <li>Request correction of inaccurate information</li>
-                            <li>Request deletion of your data (subject to legal requirements)</li>
-                            <li>Opt out of marketing communications</li>
-                        </ul>
-                    </div>
-
-                    <div style="margin-bottom: var(--space-8);">
-                        <h2 style="margin-bottom: var(--space-4);">7. Contact Us</h2>
-                        <p style="color: var(--text-secondary);">
-                            For any privacy-related questions or requests, please contact us at:<br>
-                            <a href="mailto:braintube.in@gmail.com" class="text-gradient"
-                                style="font-weight: 600;">braintube.in@gmail.com</a>
-                        </p>
-                    </div>
-
-                    <div
-                        style="border-top: 1px solid var(--border-color); padding-top: var(--space-6); text-align: center;">
-                        <p style="color: var(--text-muted); font-size: var(--text-sm);">
-                            Last Updated: January 10, 2026
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-                <div style="text-align: center; width: 100%;">
-                    <p class="footer-copyright">© 2026 Braintube. All rights reserved.</p>
-                    <p
-                        style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); max-width: 600px; margin-left: auto; margin-right: auto;">
-                        Braintube is an independent educational platform providing study resources for VTU students.
-                        We are not affiliated with Visvesvaraya Technological University (VTU). All resources are for
-                        educational purposes.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../scripts/config.js"></script>
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/auth.js?v=1.0.3"></script>
-    <script src="../scripts/whatsapp-modal.js"></script>
-
+  <footer class="footer-premium">
+    <div class="footer-inner">
+      <div class="footer-bottom">
+        <span>© 2026 Braintube. All rights reserved.</span>
+        <span>Independent platform. Not affiliated with VTU.</span>
+      </div>
+    </div>
+  </footer>
 </body>
-
 </html>
