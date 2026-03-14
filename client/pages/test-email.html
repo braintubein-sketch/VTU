@@ -182,7 +182,7 @@
             </div>
 
             <div class="form-group">
-                <label for="amount">Amount (â‚¹)</label>
+                <label for="amount">Amount (₹‚¹)</label>
                 <input type="number" id="amount" name="amount" value="99" required>
             </div>
 
@@ -247,18 +247,18 @@
 
                 if (data.success) {
                     showResult(
-                        `âœ… Success! <br><br>
+                        `₹œ… Success! <br><br>
                         <strong>Submission ID:</strong> ${data.submissionId}<br>
                         <strong>Emails Sent:</strong> ${data.emailSent ? 'Yes' : 'No (check server logs)'}<br><br>
                         Check your email inbox (${email}) for the auto-reply!`,
                         'success'
                     );
                 } else {
-                    showResult(`âŒ Error: ${data.error || 'Unknown error'}`, 'error');
+                    showResult(`₹Œ Error: ${data.error || 'Unknown error'}`, 'error');
                 }
             } catch (error) {
                 loading.style.display = 'none';
-                showResult(`âŒ Network Error: ${error.message}`, 'error');
+                showResult(`₹Œ Network Error: ${error.message}`, 'error');
             }
         });
 
@@ -274,3 +274,4 @@
 </body>
 
 </html>
+

@@ -759,13 +759,13 @@
                                 <span style="font-weight: 600;">Semester 1</span>
                                 <input type="number" placeholder="SGPA" step="0.01" min="0" max="10">
                                 <input type="number" placeholder="Credits" value="24" min="1" max="30">
-                                <button class="remove-btn" onclick="removeSemester(this)">âœ•</button>
+                                <button class="remove-btn" onclick="removeSemester(this)">₹œ•</button>
                             </div>
                             <div class="semester-row">
                                 <span style="font-weight: 600;">Semester 2</span>
                                 <input type="number" placeholder="SGPA" step="0.01" min="0" max="10">
                                 <input type="number" placeholder="Credits" value="24" min="1" max="30">
-                                <button class="remove-btn" onclick="removeSemester(this)">âœ•</button>
+                                <button class="remove-btn" onclick="removeSemester(this)">₹œ•</button>
                             </div>
                         </div>
 
@@ -1031,7 +1031,7 @@
                         <span class="grade-badge grade-empty">-</span>
                     </td>
                     <td style="text-align: center;">
-                        <button class="remove-btn" onclick="this.closest('tr').remove(); renumberRows();" style="width: 24px; height: 24px; padding: 0; display: inline-flex;">âœ•</button>
+                        <button class="remove-btn" onclick="this.closest('tr').remove(); renumberRows();" style="width: 24px; height: 24px; padding: 0; display: inline-flex;">₹œ•</button>
                     </td>
                 </tr>
             `).join('');
@@ -1062,7 +1062,7 @@
                     <span class="grade-badge grade-empty">-</span>
                 </td>
                 <td style="text-align: center;">
-                    <button class="remove-btn" onclick="this.closest('tr').remove(); renumberRows();" style="width: 24px; height: 24px; padding: 0; display: inline-flex;">âœ•</button>
+                    <button class="remove-btn" onclick="this.closest('tr').remove(); renumberRows();" style="width: 24px; height: 24px; padding: 0; display: inline-flex;">₹œ•</button>
                 </td>
             `;
             tbody.appendChild(row);
@@ -1121,12 +1121,12 @@
 
             let status = '';
             if (sgpa >= 9) status = 'ðŸ† Outstanding';
-            else if (sgpa >= 8) status = 'â­ Excellent';
+            else if (sgpa >= 8) status = '₹­ Excellent';
             else if (sgpa >= 7) status = 'ðŸ‘ Good';
             else if (sgpa >= 6) status = 'ðŸ“š Above Avg';
             else if (sgpa >= 5) status = 'ðŸ“– Average';
-            else if (sgpa >= 4) status = 'âœ“ Pass';
-            else status = 'âŒ Fail';
+            else if (sgpa >= 4) status = '₹œ“ Pass';
+            else status = '₹Œ Fail';
             document.getElementById('sgpa-status').textContent = status;
 
             document.getElementById('sgpa-result').style.display = 'block';
@@ -1160,7 +1160,7 @@
                 <span style="font-weight: 600;">Semester ${semesterCount}</span>
                 <input type="number" placeholder="SGPA" step="0.01" min="0" max="10">
                 <input type="number" placeholder="Credits" value="24" min="1" max="30">
-                <button class="remove-btn" onclick="removeSemester(this)">âœ•</button>
+                <button class="remove-btn" onclick="removeSemester(this)">₹œ•</button>
             `;
             container.appendChild(row);
         }
@@ -1223,7 +1223,7 @@
                     <span style="font-weight: 600;">Semester 1</span>
                     <input type="number" placeholder="SGPA" step="0.01" min="0" max="10">
                     <input type="number" placeholder="Credits" value="24" min="1" max="30">
-                    <button class="remove-btn" onclick="removeSemester(this)">âœ•</button>
+                    <button class="remove-btn" onclick="removeSemester(this)">₹œ•</button>
                 </div>
             `;
             document.getElementById('cgpa-result').style.display = 'none';
@@ -1254,4 +1254,5 @@
 </body>
 
 </html>
+
 

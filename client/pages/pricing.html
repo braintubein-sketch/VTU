@@ -74,7 +74,7 @@
                     <div class="pricing-card">
                         <div class="pricing-header">
                             <h3 class="pricing-name">Free</h3>
-                            <div class="pricing-price">â‚¹0 <span>/ forever</span></div>
+                            <div class="pricing-price">₹‚¹0 <span>/ forever</span></div>
                         </div>
                         <ul class="pricing-features">
                             <li class="pricing-feature">
@@ -120,7 +120,7 @@
                     <div class="pricing-card featured">
                         <div class="pricing-header">
                             <h3 class="pricing-name">Fix Questions</h3>
-                            <div class="pricing-price">â‚¹99 <span>/ subject</span></div>
+                            <div class="pricing-price">₹‚¹99 <span>/ subject</span></div>
                         </div>
                         <ul class="pricing-features">
                             <li class="pricing-feature">
@@ -276,7 +276,7 @@
         <div class="modal">
             <div class="modal-header">
                 <h3 class="modal-title">Complete Payment</h3>
-                <button class="modal-close" onclick="closeModal('paymentModal')">âœ•</button>
+                <button class="modal-close" onclick="closeModal('paymentModal')">₹œ•</button>
             </div>
             <div class="modal-body">
                 <div class="form">
@@ -318,7 +318,7 @@
                         </div>
                         <div class="flex justify-between" style="margin-top: var(--space-2);">
                             <span>Amount:</span>
-                            <span id="selectedAmount" style="font-weight: 600; color: var(--primary-400);">â‚¹199</span>
+                            <span id="selectedAmount" style="font-weight: 600; color: var(--primary-400);">₹‚¹199</span>
                         </div>
                     </div>
                 </div>
@@ -340,7 +340,7 @@
             selectedPlan = plan;
             const prices = { premium: 199, ultimate: 499 };
             document.getElementById('selectedPlan').textContent = plan.charAt(0).toUpperCase() + plan.slice(1);
-            document.getElementById('selectedAmount').textContent = `â‚¹${prices[plan]}`;
+            document.getElementById('selectedAmount').textContent = `₹‚¹${prices[plan]}`;
             openModal('paymentModal');
         }
 
@@ -459,4 +459,5 @@
 </body>
 
 </html>
+
 
