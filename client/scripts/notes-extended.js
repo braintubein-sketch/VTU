@@ -1,0 +1,815 @@
+/**
+ * Braintube - Complete Notes Database for VTU 2022 Scheme
+ * All Branches: CSE, AI&ML, ISE, ECE, EEE, ME, CV, DS
+ * Reference: vtucircle.com structure
+ */
+
+const NotesExtended = {
+    // ==================== SEMESTER 1 PHYSICS & POP ====================
+    'BPHY102': {
+        name: 'Applied Physics',
+        modules: [
+            { num: 1, title: 'Laser and Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials and Superconductivity', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Applications of Physics in Computing', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+        ],
+        complete: { file: null, size: '15.0 MB', pages: 260 }
+    },
+    'BPHYS102': {
+        name: 'Applied Physics for CSE Stream',
+        modules: [
+            { num: 1, title: 'Laser and Optical Fibers', file: 'BPHYS102/BPHYS102 MODULE 1.pdf', size: '4.6 MB', pages: 15, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: 'BPHYS102/BPHYS102 MODULE 2.pdf', size: '4.1 MB', pages: 10, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: 'BPHYS102/BPHYS102 MODULE 3.pdf', size: '4.1 MB', pages: 11, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials & Superconductivity', file: 'BPHYS102/BPHYS102 MODULE 4.pdf', size: '4.4 MB', pages: 10, status: 'available' },
+            { num: 5, title: 'Applications of Physics in Computing', file: 'BPHYS102/BPHYS102 MODULE 5.pdf', size: '4.3 MB', pages: 9, status: 'available' }
+        ],
+        complete: { file: null, size: '21.5 MB', pages: 55 }
+    },
+    'BPHYE102': {
+        name: 'Applied Physics for EEE Stream',
+        modules: [
+            { num: 1, title: 'Laser and Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials and Superconductivity', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Applications of Physics in Computing', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+        ],
+        complete: { file: null, size: '15.0 MB', pages: 260 }
+    },
+    'BPHYM102': {
+        name: 'Applied Physics for ME Stream',
+        modules: [
+            { num: 1, title: 'Laser and Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials and Superconductivity', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Applications of Physics in Computing', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+        ],
+        complete: { file: null, size: '15.0 MB', pages: 260 }
+    },
+    'BPLYC102': {
+        name: 'Applied Physics for Civil Engg Stream',
+        modules: [
+            { num: 1, title: 'Laser and Optical Fibers', file: 'Module 1_Laser & Optical Fibers_SWP.docx.pdf', size: '2.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: '2-Module_Quantum Mechanics.pdf', size: '3.6 MB', pages: 52, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: '3-Module_Quantum Computing-Dr. GHP.pdf', size: '2.2 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials and Superconductivity', file: 'module 4 ..new.pdf', size: '1.6 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'Applications of Physics in Computing', file: '5-Module_Chpter 1_Physics of Animation_by GHP.pdf', size: '6.5 MB', pages: 85, status: 'available' }
+        ],
+        complete: { file: null, size: '15.0 MB', pages: 260 }
+    },
+    'BPOPS103': {
+        name: 'Principles of Programming using C',
+        modules: [
+            { num: 1, title: 'Introduction to C', file: 'pop-1.1-to-1.9-skc.pdf', size: '1.0 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Operators, Decision Control and Looping Statements', file: 'pop_module2_notes.pdf', size: '1.0 MB', pages: 42, status: 'available' },
+            { num: 3, title: 'Functions and Arrays', file: 'module3-arrays.pdf', size: '0.5 MB', pages: 35, status: 'available' },
+            { num: 4, title: 'Strings and Pointers', file: 'module-4_pop.pdf', size: '0.7 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Structure, Union, Enumerated Data Type and Files', file: 'module-5-pop.pdf', size: '0.8 MB', pages: 48, status: 'available' }
+        ],
+        complete: { file: null, size: '4.0 MB', pages: 208 }
+    },
+    'BPOPS203': {
+        name: 'Principles of Programming using C',
+        modules: [
+            { num: 1, title: 'Introduction to C', file: 'pop-1.1-to-1.9-skc.pdf', size: '1.0 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Operators, Decision Control and Looping Statements', file: 'pop_module2_notes.pdf', size: '1.0 MB', pages: 42, status: 'available' },
+            { num: 3, title: 'Functions and Arrays', file: 'module3-arrays.pdf', size: '0.5 MB', pages: 35, status: 'available' },
+            { num: 4, title: 'Strings and Pointers', file: 'module-4_pop.pdf', size: '0.7 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Structure, Union, Enumerated Data Type and Files', file: 'module-5-pop.pdf', size: '0.8 MB', pages: 48, status: 'available' }
+        ],
+        complete: { file: null, size: '4.0 MB', pages: 208 }
+    },
+    // Mathematics Streams
+    'BMATS101': {
+        name: 'Mathematics-I for CSE Stream',
+        modules: [
+            { num: 1, title: 'Calculus (Polar Curves, Curvature, Radius of Curvature)', file: 'BMATS101/BMATS101 MODULE 1.pdf', size: '4.1 MB', pages: 18, status: 'available' },
+            { num: 2, title: 'Series Expansion and Multivariable Calculus', file: 'BMATS101/BMATS101 MODULE 2.pdf', size: '4.1 MB', pages: 16, status: 'available' },
+            { num: 3, title: 'Ordinary Differential Equations of First Order', file: 'BMATS101/BMATS101 MODULE 3.pdf', size: '4.2 MB', pages: 18, status: 'available' },
+            { num: 4, title: 'Modular Arithmetic (RSA, Cryptography)', file: 'BMATS101/BMATS101 MODULE 4.pdf', size: '4.0 MB', pages: 8, status: 'available' },
+            { num: 5, title: 'Linear Algebra (Matrices, Eigenvalues, Gauss Elimination)', file: 'BMATS101/BMATS101 MODULE 5.pdf', size: '4.1 MB', pages: 13, status: 'available' }
+        ],
+        complete: { file: null, size: '20.5 MB', pages: 73 }
+    },
+    'BMATE101': {
+        name: 'Mathematics-I for EEE/ECE Stream',
+        modules: [
+            { num: 1, title: 'Calculus (Polar Curves, Curvature, Radius of Curvature)', file: 'BMATE101/BMATE101 MODULE 1.pdf', size: '4.0 MB', pages: 7, status: 'available' },
+            { num: 2, title: 'Series Expansion and Multivariable Calculus', file: 'BMATE101/BMATE101 MODULE 2.pdf', size: '4.0 MB', pages: 5, status: 'available' },
+            { num: 3, title: 'Ordinary Differential Equations of First Order', file: 'BMATE101/BMATE101 MODULE 3.pdf', size: '4.0 MB', pages: 7, status: 'available' },
+            { num: 4, title: 'Integral Calculus (Multiple Integrals, Beta & Gamma)', file: 'BMATE101/BMATE101 MODULE 4.pdf', size: '4.0 MB', pages: 7, status: 'available' },
+            { num: 5, title: 'Linear Algebra (Matrices, Eigenvalues, Gauss Methods)', file: 'BMATE101/BMATE101 MODULE 5.pdf', size: '4.0 MB', pages: 6, status: 'available' }
+        ],
+        complete: { file: null, size: '20.0 MB', pages: 32 }
+    },
+    'BMATM101': { name: 'Mathematics-I for ME Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
+    'BMATC101': { name: 'Mathematics-I for Civil Stream', modules: [{ num: 1, title: 'Differential Calculus', file: '22MATS11 - Module 1.pdf', status: 'available' }, { num: 2, title: 'Integral Calculus', file: '22MATS11 - Module 2.pdf', status: 'available' }, { num: 3, title: 'ODE', file: '22MATS11-Module 3.pdf', status: 'available' }, { num: 4, title: 'Linear Algebra', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '17 MB', pages: 240 } },
+    'BMATS201': { name: 'Mathematics-II for CSE Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
+    'BMATE201': { name: 'Mathematics-II for EEE Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
+    'BMATM201': { name: 'Mathematics-II for ME Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
+    'BMATC201': { name: 'Mathematics-II for Civil Stream', modules: [{ num: 1, title: 'Laplace Transforms', file: '21MAT21-(mod1)@vtunetwork.pdf', status: 'available' }, { num: 2, title: 'Fourier Series', file: '21MAT21_(mod2)@vtunetwork.pdf', status: 'available' }, { num: 3, title: 'Fourier Transforms', file: '21MAT21-(mod3)@vtunetwork.pdf', status: 'available' }, { num: 4, title: 'Z-Transforms', file: '21MAT21-(mod4)@vtunetwork.pdf', status: 'available' }, { num: 5, title: 'Numerical Methods', file: '21MAT21-(mod5)@vtunetwork.pdf', status: 'available' }], complete: { file: null, size: '34 MB', pages: 240 } },
+
+    // 2nd Semester Physics (For Chemistry Group Students)
+    'BPHYS202': {
+        name: 'Applied Physics for CSE Stream',
+        modules: [
+            { num: 1, title: 'Laser and Optical Fibers', file: 'BPHYS202/BPHYS202 MODULE 1.pdf', size: '4.6 MB', pages: 15, status: 'available' },
+            { num: 2, title: 'Quantum Mechanics', file: 'BPHYS202/BPHYS202 MODULE 2.pdf', size: '4.1 MB', pages: 10, status: 'available' },
+            { num: 3, title: 'Quantum Computing', file: 'BPHYS202/BPHYS202 MODULE 3.pdf', size: '4.1 MB', pages: 11, status: 'available' },
+            { num: 4, title: 'Electrical Properties of Materials & Superconductivity', file: 'BPHYS202/BPHYS202 MODULE 4.pdf', size: '4.4 MB', pages: 10, status: 'available' },
+            { num: 5, title: 'Applications of Physics in Computing', file: 'BPHYS202/BPHYS202 MODULE 5.pdf', size: '4.3 MB', pages: 9, status: 'available' }
+        ],
+        complete: { file: null, size: '21.5 MB', pages: 55 }
+    },
+
+    // Chemistry Streams
+    'BCHS102': { name: 'Applied Chemistry for CSE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEE102': { name: 'Chemistry for EEE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEM102': { name: 'Applied Chemistry for ME Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEC102': { name: 'Applied Chemistry for Civil Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHS202': { name: 'Applied Chemistry for CSE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEE202': { name: 'Chemistry for EEE Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEM202': { name: 'Applied Chemistry for ME Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+    'BCHEC202': { name: 'Applied Chemistry for Civil Stream', modules: [{ num: 1, title: 'Energy Systems', status: 'available' }, { num: 2, title: 'Corrosion', status: 'available' }, { num: 3, title: 'Polymers', status: 'available' }, { num: 4, title: 'Water Technology', status: 'available' }, { num: 5, title: 'Nano Materials', status: 'available' }], complete: { file: null, size: '12 MB', pages: 200 } },
+
+    // ==================== SEMESTER 1 & 2 COMMON ====================
+    'BESCK104': {
+        name: 'Introduction to Electronics',
+        modules: [
+            { num: 1, title: 'Semiconductor Diodes', file: 'BESCK104_M1.pdf', size: '2.5 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Transistors', file: 'BESCK104_M2.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 3, title: 'Op-Amps', file: 'BESCK104_M3.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 4, title: 'Digital Electronics', file: 'BESCK104_M4.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 5, title: 'Communication Systems', file: 'BESCK104_M5.pdf', size: '2.5 MB', pages: 38, status: 'available' }
+        ],
+        complete: { file: 'BESCK104_Complete.pdf', size: '12.5 MB', pages: 211 }
+    },
+    'BENGK106': {
+        name: 'Communicative English',
+        modules: [
+            { num: 1, title: 'All Modules Combined', file: '1 Sem English Notes All modules.pdf', size: '0.5 MB', pages: 50, status: 'available' }
+        ],
+        complete: { file: '1 Sem English Notes All modules.pdf', size: '0.5 MB', pages: 50 }
+    },
+    'BPWSK206': {
+        name: 'Professional Writing Skills in English',
+        modules: [
+            { num: 1, title: 'Technical Writing', file: 'BPWSK206_M1.pdf', size: '1.5 MB', pages: 22, status: 'available' },
+            { num: 2, title: 'Business Letters', file: 'BPWSK206_M2.pdf', size: '1.8 MB', pages: 28, status: 'available' },
+            { num: 3, title: 'Report Writing', file: 'BPWSK206_M3.pdf', size: '2.0 MB', pages: 32, status: 'available' },
+            { num: 4, title: 'Resume Writing', file: 'BPWSK206_M4.pdf', size: '2.2 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Presentation Skills', file: 'BPWSK206_M5.pdf', size: '1.8 MB', pages: 28, status: 'available' }
+        ],
+        complete: { file: 'BPWSK206_Complete.pdf', size: '8.5 MB', pages: 145 }
+    },
+    'BICOK107': {
+        name: 'Indian Constitution',
+        modules: [
+            { num: 1, title: 'Complete Notes', file: '22ICO17- Notes_230511_090018.pdf', size: '0.9 MB', pages: 50, status: 'available' },
+            { num: 2, title: 'Solved Questions', file: 'cip-1st year solved questions.pdf', size: '0.8 MB', pages: 40, status: 'available' }
+        ],
+        complete: { file: 'www.vtuupdates.com_21CIP.pdf', size: '0.6 MB', pages: 60 }
+    },
+    'BICOK207': {
+        name: 'Indian Constitution',
+        modules: [
+            { num: 1, title: 'Complete Notes', file: '22ICO17- Notes_230511_090018.pdf', size: '0.9 MB', pages: 50, status: 'available' },
+            { num: 2, title: 'Solved Questions', file: 'cip-1st year solved questions.pdf', size: '0.8 MB', pages: 40, status: 'available' }
+        ],
+        complete: { file: 'www.vtuupdates.com_21CIP.pdf', size: '0.6 MB', pages: 60 }
+    },
+    'BKSKK107': { name: 'Samskrutika Kannada', modules: [{ num: 1, title: 'Complete Notes', file: 'Kannada.pdf', size: '1.3 MB', pages: 80, status: 'available' }, { num: 2, title: 'Questions & Answers', file: 'ಸಾಂಸ್ಕೃತಿಕ_ಕನ್ನಡ_ಸಾಂಧರ್ಬಿಕ_ಪ್ರಶ್ನೋತ್ತರಗಳು_PDF.pdf', size: '0.3 MB', pages: 30, status: 'available' }], complete: { file: 'Kannada.pdf', size: '1.3 MB', pages: 80 } },
+    'BKSKK207': { name: 'Samskrutika Kannada', modules: [{ num: 1, title: 'Complete Notes', file: 'Kannada.pdf', size: '1.3 MB', pages: 80, status: 'available' }, { num: 2, title: 'Questions & Answers', file: 'ಸಾಂಸ್ಕೃತಿಕ_ಕನ್ನಡ_ಸಾಂಧರ್ಬಿಕ_ಪ್ರಶ್ನೋತ್ತರಗಳು_PDF.pdf', size: '0.3 MB', pages: 30, status: 'available' }], complete: { file: 'Kannada.pdf', size: '1.3 MB', pages: 80 } },
+    'BKBKK107': { name: 'Balake Kannada', modules: [{ num: 1, title: 'Model Question Paper', file: 'Balake kannada model question paper .pdf', size: '0.5 MB', pages: 20, status: 'available' }, { num: 2, title: 'Model Solutions', file: 'balane kannada modl sol.pdf', size: '0.2 MB', pages: 15, status: 'available' }], complete: { file: 'Balake kannada model question paper .pdf', size: '0.5 MB', pages: 20 } },
+    'BKBKK207': { name: 'Balake Kannada', modules: [{ num: 1, title: 'Model Question Paper', file: 'Balake kannada model question paper .pdf', size: '0.5 MB', pages: 20, status: 'available' }, { num: 2, title: 'Model Solutions', file: 'balane kannada modl sol.pdf', size: '0.2 MB', pages: 15, status: 'available' }], complete: { file: 'Balake kannada model question paper .pdf', size: '0.5 MB', pages: 20 } },
+    // IDT - Innovation and Design Thinking
+    'BIDTK138': {
+        name: 'Innovation and Design Thinking',
+        modules: [
+            { num: 1, title: 'Introduction to Design Thinking', file: 'IDT Module 1.pdf', size: '1.0 MB', pages: 30, status: 'available' },
+            { num: 2, title: 'Design Methodology', file: 'IDT Module 2.pdf', size: '1.1 MB', pages: 35, status: 'available' },
+            { num: 3, title: 'Innovation Process', file: 'IDT Module 3.pdf', size: '1.0 MB', pages: 32, status: 'available' },
+            { num: 4, title: 'Prototyping & Testing', file: 'IDT Module 4.pdf', size: '0.8 MB', pages: 28, status: 'available' }
+        ],
+        complete: { file: null, size: '4.0 MB', pages: 125 }
+    },
+    'BIDTK258': {
+        name: 'Innovation and Design Thinking',
+        modules: [
+            { num: 1, title: 'Introduction to Design Thinking', file: 'IDT Module 1.pdf', size: '1.0 MB', pages: 30, status: 'available' },
+            { num: 2, title: 'Design Methodology', file: 'IDT Module 2.pdf', size: '1.1 MB', pages: 35, status: 'available' },
+            { num: 3, title: 'Innovation Process', file: 'IDT Module 3.pdf', size: '1.0 MB', pages: 32, status: 'available' },
+            { num: 4, title: 'Prototyping & Testing', file: 'IDT Module 4.pdf', size: '0.8 MB', pages: 28, status: 'available' }
+        ],
+        complete: { file: null, size: '4.0 MB', pages: 125 }
+    },
+    // SFH - Scientific Foundations of Health
+    'BSFHK158': {
+        name: 'Scientific Foundations of Health',
+        modules: [
+            { num: 1, title: 'Complete Notes All Modules', file: 'Scientific Foundations of Health (SFH).pdf', size: '4.0 MB', pages: 100, status: 'available' },
+            { num: 2, title: 'MCQ Questions (Module 3-5)', file: 'SFH (Module -3, 4 and 5 )- MCQ for Test-2.pdf', size: '6.2 MB', pages: 80, status: 'available' }
+        ],
+        complete: { file: 'sfh.pdf', size: '4.0 MB', pages: 100 }
+    },
+    'BSFHK258': {
+        name: 'Scientific Foundations of Health',
+        modules: [
+            { num: 1, title: 'Complete Notes All Modules', file: 'Scientific Foundations of Health (SFH).pdf', size: '4.0 MB', pages: 100, status: 'available' },
+            { num: 2, title: 'MCQ Questions (Module 3-5)', file: 'SFH (Module -3, 4 and 5 )- MCQ for Test-2.pdf', size: '6.2 MB', pages: 80, status: 'available' }
+        ],
+        complete: { file: 'sfh.pdf', size: '4.0 MB', pages: 100 }
+    },
+    // Python Programming
+    'BETCK105B': {
+        name: 'Introduction to Python Programming',
+        modules: [
+            { num: 1, title: 'Complete Python Textbook', file: 'Python textbook.pdf', size: '5.1 MB', pages: 200, status: 'available' },
+            { num: 2, title: 'Module 2 Question Bank', file: 'python-2nd module question Bank.pdf', size: '0.3 MB', pages: 20, status: 'available' },
+            { num: 3, title: 'Module 3 Question Bank', file: 'python-3rd module question Bank.pdf', size: '0.3 MB', pages: 20, status: 'available' },
+            { num: 4, title: 'Lab Programs', file: 'Lab Programs.pdf', size: '1.3 MB', pages: 50, status: 'available' }
+        ],
+        complete: { file: 'Python textbook.pdf', size: '5.1 MB', pages: 200 }
+    },
+    'BETCK205B': {
+        name: 'Introduction to Python Programming',
+        modules: [
+            { num: 1, title: 'Complete Python Textbook', file: 'Python textbook.pdf', size: '5.1 MB', pages: 200, status: 'available' },
+            { num: 2, title: 'Module 2 Question Bank', file: 'python-2nd module question Bank.pdf', size: '0.3 MB', pages: 20, status: 'available' },
+            { num: 3, title: 'Module 3 Question Bank', file: 'python-3rd module question Bank.pdf', size: '0.3 MB', pages: 20, status: 'available' },
+            { num: 4, title: 'Lab Programs', file: 'Lab Programs.pdf', size: '1.3 MB', pages: 50, status: 'available' }
+        ],
+        complete: { file: 'Python textbook.pdf', size: '5.1 MB', pages: 200 }
+    },
+    // IEC - Introduction to Electronics & Communication
+    'BESCK104C': {
+        name: 'Introduction to Electronics & Communication',
+        modules: [
+            { num: 1, title: 'Module 1 Notes', file: 'Mod 1 IEEE notes.pdf', size: '0.5 MB', pages: 30, status: 'available' },
+            { num: 2, title: 'Module 2 Part A - OpAmp', file: 'IEE-Module 2 Part A Opamp notes.pdf', size: '1.2 MB', pages: 40, status: 'available' },
+            { num: 3, title: 'Module 3 Notes', file: 'IEC_MODULE-3_NOTES_22ESC143.pdf', size: '6.5 MB', pages: 60, status: 'available' },
+            { num: 4, title: 'Module 4 Notes', file: 'IEE Mod 4  notes.pdf', size: '0.6 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Module 5 Communication', file: 'IEE Mod 5 Communication.pdf', size: '1.5 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: null, size: '10.0 MB', pages: 210 }
+    },
+    'BESCK204C': {
+        name: 'Introduction to Electronics & Communication',
+        modules: [
+            { num: 1, title: 'Module 1 Notes', file: 'Mod 1 IEEE notes.pdf', size: '0.5 MB', pages: 30, status: 'available' },
+            { num: 2, title: 'Module 2 Part A - OpAmp', file: 'IEE-Module 2 Part A Opamp notes.pdf', size: '1.2 MB', pages: 40, status: 'available' },
+            { num: 3, title: 'Module 3 Notes', file: 'IEC_MODULE-3_NOTES_22ESC143.pdf', size: '6.5 MB', pages: 60, status: 'available' },
+            { num: 4, title: 'Module 4 Notes', file: 'IEE Mod 4  notes.pdf', size: '0.6 MB', pages: 35, status: 'available' },
+            { num: 5, title: 'Module 5 Communication', file: 'IEE Mod 5 Communication.pdf', size: '1.5 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: null, size: '10.0 MB', pages: 210 }
+    },
+    // Civil Engineering Introduction
+    'BESCK104A': {
+        name: 'Introduction to Civil Engineering',
+        modules: [
+            { num: 1, title: 'Module 1 - Introduction', file: 'civil(mod1)@vtunetwork.pdf', size: '0.1 MB', pages: 10, status: 'available' },
+            { num: 2, title: 'Module 2 - Surveying', file: 'civil(mod2)@vtunetwork.pdf', size: '31.6 MB', pages: 150, status: 'available' },
+            { num: 3, title: 'Module 3 - Building Materials', file: 'civil(mod3)@vtunetwork.pdf', size: '9.2 MB', pages: 80, status: 'available' },
+            { num: 4, title: 'Module 4 - Construction', file: 'civil(mod4)@vtunetwork.pdf', size: '7.4 MB', pages: 70, status: 'available' },
+            { num: 5, title: 'Module 5 - Environment', file: 'civil(mod5)@vtunetwork.pdf', size: '13.1 MB', pages: 100, status: 'available' }
+        ],
+        complete: { file: null, size: '61.0 MB', pages: 410 }
+    },
+    'BESCK204A': {
+        name: 'Introduction to Civil Engineering',
+        modules: [
+            { num: 1, title: 'Module 1 - Introduction', file: 'civil(mod1)@vtunetwork.pdf', size: '0.1 MB', pages: 10, status: 'available' },
+            { num: 2, title: 'Module 2 - Surveying', file: 'civil(mod2)@vtunetwork.pdf', size: '31.6 MB', pages: 150, status: 'available' },
+            { num: 3, title: 'Module 3 - Building Materials', file: 'civil(mod3)@vtunetwork.pdf', size: '9.2 MB', pages: 80, status: 'available' },
+            { num: 4, title: 'Module 4 - Construction', file: 'civil(mod4)@vtunetwork.pdf', size: '7.4 MB', pages: 70, status: 'available' },
+            { num: 5, title: 'Module 5 - Environment', file: 'civil(mod5)@vtunetwork.pdf', size: '13.1 MB', pages: 100, status: 'available' }
+        ],
+        complete: { file: null, size: '61.0 MB', pages: 410 }
+    },
+    // Mechanical Engineering Introduction
+    'BESCK104D': {
+        name: 'Introduction to Mechanical Engineering',
+        modules: [
+            { num: 1, title: 'Module 1 - Intro to ME', file: 'Module -1 Notes.pdf', size: '2.8 MB', pages: 50, status: 'available' },
+            { num: 2, title: 'Module 2 Notes', file: 'Module-2.pdf', size: '1.0 MB', pages: 35, status: 'available' },
+            { num: 3, title: 'Module 3 Notes', file: 'Module-3 ( IME- I section).pdf', size: '1.5 MB', pages: 40, status: 'available' },
+            { num: 4, title: 'Module 4 Notes', file: 'Module-4 ( IME- I section).pdf', size: '1.7 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Module 5 Notes', file: 'Module -5. ( IME- I section).pdf', size: '2.3 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: null, size: '9.3 MB', pages: 225 }
+    },
+    'BESCK204D': {
+        name: 'Introduction to Mechanical Engineering',
+        modules: [
+            { num: 1, title: 'Module 1 - Intro to ME', file: 'Module -1 Notes.pdf', size: '2.8 MB', pages: 50, status: 'available' },
+            { num: 2, title: 'Module 2 Notes', file: 'Module-2.pdf', size: '1.0 MB', pages: 35, status: 'available' },
+            { num: 3, title: 'Module 3 Notes', file: 'Module-3 ( IME- I section).pdf', size: '1.5 MB', pages: 40, status: 'available' },
+            { num: 4, title: 'Module 4 Notes', file: 'Module-4 ( IME- I section).pdf', size: '1.7 MB', pages: 45, status: 'available' },
+            { num: 5, title: 'Module 5 Notes', file: 'Module -5. ( IME- I section).pdf', size: '2.3 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: null, size: '9.3 MB', pages: 225 }
+    },
+
+
+    'BEESK203': {
+        name: 'Basic Electrical Engineering',
+        modules: [
+            { num: 1, title: 'DC Circuits', file: 'BEESK203_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'AC Circuits', file: 'BEESK203_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Transformers', file: 'BEESK203_M3.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 4, title: 'Electrical Machines', file: 'BEESK203_M4.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 5, title: 'Measuring Instruments', file: 'BEESK203_M5.pdf', size: '2.5 MB', pages: 38, status: 'available' }
+        ],
+        complete: { file: 'BEESK203_Complete.pdf', size: '14.5 MB', pages: 244 }
+    },
+    'BICSK204': {
+        name: 'Introduction to Computer Science',
+        modules: [
+            { num: 1, title: 'Computer Fundamentals', file: 'BICSK204_M1.pdf', size: '2.5 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Number Systems', file: 'BICSK204_M2.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 3, title: 'Programming Concepts', file: 'BICSK204_M3.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 4, title: 'Data Structures Basics', file: 'BICSK204_M4.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 5, title: 'Computer Networks Intro', file: 'BICSK204_M5.pdf', size: '2.5 MB', pages: 38, status: 'available' }
+        ],
+        complete: { file: 'BICSK204_Complete.pdf', size: '13.0 MB', pages: 221 }
+    },
+
+    // ==================== CSE SEMESTER 3-8 COMPLETE ====================
+    'BCS305B': {
+        name: 'Object Oriented Programming with C++',
+        modules: [
+            { num: 1, title: 'C++ Basics & OOP Concepts', file: 'BCS305B_M1.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 2, title: 'Classes & Objects', file: 'BCS305B_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Inheritance & Polymorphism', file: 'BCS305B_M3.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 4, title: 'Templates & Exception Handling', file: 'BCS305B_M4.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 5, title: 'File Handling & STL', file: 'BCS305B_M5.pdf', size: '3.0 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: 'BCS305B_Complete.pdf', size: '14.8 MB', pages: 248 }
+    },
+    'BCS402': {
+        name: 'Microcontrollers',
+        modules: [
+            { num: 1, title: '8051 Architecture', file: 'BCS402_M1.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 2, title: 'Instruction Set & Programming', file: 'BCS402_M2.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 3, title: 'Timers & Counters', file: 'BCS402_M3.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 4, title: 'Serial Communication', file: 'BCS402_M4.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 5, title: 'Interfacing & Applications', file: 'BCS402_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BCS402_Complete.pdf', size: '15.0 MB', pages: 252 }
+    },
+    'BCS405A': {
+        name: 'Graph Theory',
+        modules: [
+            { num: 1, title: 'Introduction to Graphs', file: 'BCS405A_M1.pdf', size: '2.5 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Trees & Connectivity', file: 'BCS405A_M2.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 3, title: 'Eulerian & Hamiltonian Graphs', file: 'BCS405A_M3.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 4, title: 'Graph Coloring', file: 'BCS405A_M4.pdf', size: '2.5 MB', pages: 38, status: 'available' },
+            { num: 5, title: 'Planar Graphs & Applications', file: 'BCS405A_M5.pdf', size: '3.2 MB', pages: 48, status: 'available' }
+        ],
+        complete: { file: 'BCS405A_Complete.pdf', size: '12.5 MB', pages: 211 }
+    },
+    'BCS515A': {
+        name: 'Cloud Computing',
+        modules: [
+            { num: 1, title: 'Cloud Fundamentals', file: 'BCS515A_M1.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 2, title: 'Virtualization', file: 'BCS515A_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Cloud Architecture', file: 'BCS515A_M3.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 4, title: 'Cloud Services (IaaS, PaaS, SaaS)', file: 'BCS515A_M4.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 5, title: 'Cloud Security', file: 'BCS515A_M5.pdf', size: '3.0 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: 'BCS515A_Complete.pdf', size: '14.8 MB', pages: 248 }
+    },
+    'BCS601': {
+        name: 'System Software & Compilers',
+        modules: [
+            { num: 1, title: 'System Software Intro', file: 'BCS601_M1.pdf', size: '2.5 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Assemblers', file: 'BCS601_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Loaders & Linkers', file: 'BCS601_M3.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 4, title: 'Lexical & Syntax Analysis', file: 'BCS601_M4.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 5, title: 'Code Generation & Optimization', file: 'BCS601_M5.pdf', size: '3.8 MB', pages: 58, status: 'available' }
+        ],
+        complete: { file: 'BCS601_Complete.pdf', size: '15.5 MB', pages: 261 }
+    },
+    'BCS602': {
+        name: 'Computer Graphics & Image Processing',
+        modules: [
+            { num: 1, title: 'Graphics Fundamentals', file: 'BCS602_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Line & Circle Algorithms', file: 'BCS602_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: '2D & 3D Transformations', file: 'BCS602_M3.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 4, title: 'Clipping & Visible Surfaces', file: 'BCS602_M4.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 5, title: 'Image Processing Basics', file: 'BCS602_M5.pdf', size: '3.8 MB', pages: 58, status: 'available' }
+        ],
+        complete: { file: 'BCS602_Complete.pdf', size: '16.0 MB', pages: 268 }
+    },
+    'BCS613A': {
+        name: 'Web Technology',
+        modules: [
+            { num: 1, title: 'HTML5 & CSS3', file: 'BCS613A_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'JavaScript & DOM', file: 'BCS613A_M2.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 3, title: 'PHP & MySQL', file: 'BCS613A_M3.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 4, title: 'XML & AJAX', file: 'BCS613A_M4.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 5, title: 'Web Services & Security', file: 'BCS613A_M5.pdf', size: '3.0 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: 'BCS613A_Complete.pdf', size: '16.0 MB', pages: 270 }
+    },
+    'BCS701': {
+        name: 'Internet of Things',
+        modules: [
+            { num: 1, title: 'Introduction to Internet of Things', file: 'BCS701/IOT_BCS701_MOD1_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' },
+            { num: 2, title: 'IoT and M2M, SDN & NFV for IoT', file: 'BCS701/IOT_BCS701_MOD2_NOTES.pdf', size: '1.3 MB', pages: 24, status: 'available' },
+            { num: 3, title: 'IoT Platforms Design & Logical Design using Python', file: 'BCS701/IOT_BCS701_MOD3_NOTES.pdf', size: '2.1 MB', pages: 59, status: 'available' },
+            { num: 4, title: 'IoT Physical Devices & Endpoints (Raspberry Pi)', file: 'BCS701/IOT_BCS701_MOD4_NOTES.pdf', size: '0.7 MB', pages: 38, status: 'available' },
+            { num: 5, title: 'Data Analytics for IoT (Hadoop, Spark, Storm)', file: 'BCS701/IOT_BCS701_MOD5_NOTES.pdf', size: '0.9 MB', pages: 35, status: 'available' }
+        ],
+        complete: null
+    },
+    'BCS702': {
+        name: 'Parallel Computing',
+        modules: [
+            { num: 1, title: 'Introduction to Parallel Programming (SIMD, MIMD)', file: 'BCS702/PC_BCS702_MOD1_NOTES.pdf', size: '4.4 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'GPU Programming and Performance (Amdahl\'s Law)', file: 'BCS702/PC_BCS702_MOD2_NOTES.pdf', size: '0.3 MB', pages: 12, status: 'available' },
+            { num: 3, title: 'Distributed Memory Programming with MPI', file: 'BCS702/PC_BCS702_MOD3_NOTES.pdf', size: '1.8 MB', pages: 30, status: 'available' },
+            { num: 4, title: 'Shared-Memory Programming with OpenMP', file: 'BCS702/PC_BCS702_MOD4_NOTES.pdf', size: '1.5 MB', pages: 28, status: 'available' },
+            { num: 5, title: 'GPU Programming with CUDA', file: 'BCS702/PC_BCS702_MOD5_NOTES.pdf', size: '1.4 MB', pages: 25, status: 'available' }
+        ],
+        complete: null
+    },
+    'BEC703': {
+        name: 'Wireless Communication',
+        modules: [
+            { num: 1, title: 'Principles of Wireless Communications & Wireless Channel', file: 'BEC703/BEC703- Module 1 Principles of Wireless Communication.pdf', size: '1.4 MB', pages: 40, status: 'available' },
+            { num: 2, title: 'CDMA & Orthogonal Frequency Division Multiplexing (OFDM)', file: 'BEC703/BEC703- Module 2 CDMA (1).pdf', size: '1.9 MB', pages: 45, status: 'available' },
+            { num: 3, title: 'Evolution of Cellular Technologies (GSM, GPRS, 3G)', file: 'BEC703/BEC703- Module 3 Evolution of Cellular Technologies.pdf', size: '1.2 MB', pages: 35, status: 'available' },
+            { num: 4, title: 'MIMO Wireless Communications', file: 'BEC703/BEC703 _Module 4 MIMO Wireless Communications.pdf', size: '4.7 MB', pages: 80, status: 'available' },
+            { num: 5, title: 'Overview and Channel Structure of LTE', file: 'BEC703/Module 5 Overview and Channel Structure of LTE.pdf', size: '1.1 MB', pages: 30, status: 'available' }
+        ],
+        complete: null
+    },
+    'BEE703': {
+        name: 'Power System Analysis',
+        modules: [
+            { num: 1, title: 'Network Topology (Graph Theory, Incidence Matrices, Y Bus)', file: 'BEE703/Lecture Notes_BEE703_Module-1_Network Topology.pdf', size: '3.0 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Load Flow Studies (Gauss-Seidel Method)', file: 'BEE703/Lecture Notes_BEE703_Module-2_Load Flow Analysis.pdf', size: '2.0 MB', pages: 40, status: 'available' },
+            { num: 3, title: 'Load Flow Studies (Newton-Raphson & FDLF)', file: 'BEE703/Lecture Notes_BEE703_Module-3_Load Flow Analysis(continued)_Dr.R.Gunasekari.pdf', size: '1.9 MB', pages: 38, status: 'available' },
+            { num: 4, title: 'Economic Operation & Unit Commitment', file: 'BEE703/Lecture Notes_BEE703_Module-4_Economic Operation of Power System and Unit Commitment_Dr.R.Gunasekari.pdf', size: '1.6 MB', pages: 32, status: 'available' },
+            { num: 5, title: 'Symmetrical Fault Analysis & Power System Stability', file: 'BEE703/Lecture Notes_BEE703_Module-5_Symmetrical Fault Analysis and Power System Stability_Dr.R.Gunasekari.pdf', size: '2.7 MB', pages: 50, status: 'available' }
+        ],
+        complete: null
+    },
+    'BCS703': {
+        name: 'Cryptography and Network Security',
+        modules: [
+            { num: 1, title: 'Network Security Model & Classical Encryption Techniques', file: 'BCS703/BCS703-module-1-pdf.pdf', size: '2.1 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Pseudorandom Number Generators & Public-Key Cryptography (RSA)', file: 'BCS703/BCS703-module-2-pdf.pdf', size: '1.1 MB', pages: 30, status: 'available' },
+            { num: 3, title: 'Cryptographic Hash Functions & Key Management', file: 'BCS703/BCS703-module-3-pdf.pdf', size: '1.0 MB', pages: 28, status: 'available' },
+            { num: 4, title: 'User Authentication & Web Security (Kerberos, TLS)', file: 'BCS703/BCS703-module-4-pdf.pdf', size: '1.9 MB', pages: 40, status: 'available' },
+            { num: 5, title: 'IP Security (IPSec) & DomainKeys Identified Mail', file: 'BCS703/BCS703-module-5-pdf.pdf', size: '1.2 MB', pages: 32, status: 'available' }
+        ],
+        complete: null
+    },
+    'BCS711A': {
+        name: 'Deep Learning',
+        modules: [
+            { num: 1, title: 'Neural Network Fundamentals', file: 'BCS711A_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'CNN - Convolutional Networks', file: 'BCS711A_M2.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 3, title: 'RNN & LSTM', file: 'BCS711A_M3.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 4, title: 'Transformers & Attention', file: 'BCS711A_M4.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 5, title: 'GANs & Applications', file: 'BCS711A_M5.pdf', size: '3.8 MB', pages: 58, status: 'available' }
+        ],
+        complete: { file: 'BCS711A_Complete.pdf', size: '18.5 MB', pages: 310 }
+    },
+
+    // ==================== AI & ML BRANCH ====================
+    'BAD302': {
+        name: 'Digital Design & Computer Organization',
+        modules: [
+            { num: 1, title: 'Number Systems & Boolean Algebra', file: 'BAD302_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Combinational Circuits', file: 'BAD302_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Sequential Circuits', file: 'BAD302_M3.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 4, title: 'CPU Architecture', file: 'BAD302_M4.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 5, title: 'Memory & I/O', file: 'BAD302_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BAD302_Complete.pdf', size: '16.5 MB', pages: 282 }
+    },
+    'BAD305': {
+        name: 'Python Programming',
+        modules: [
+            { num: 1, title: 'Python Basics', file: 'BAD305_M1.pdf', size: '2.5 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Control Structures & Functions', file: 'BAD305_M2.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 3, title: 'Data Structures in Python', file: 'BAD305_M3.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 4, title: 'OOP in Python', file: 'BAD305_M4.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 5, title: 'File Handling & Libraries', file: 'BAD305_M5.pdf', size: '3.0 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: 'BAD305_Complete.pdf', size: '13.5 MB', pages: 231 }
+    },
+    'BAD401': {
+        name: 'Analysis & Design of Algorithms',
+        modules: [
+            { num: 1, title: 'Algorithm Analysis', file: 'BAD401_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Divide and Conquer', file: 'BAD401_M2.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 3, title: 'Greedy Algorithms', file: 'BAD401_M3.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 4, title: 'Dynamic Programming', file: 'BAD401_M4.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 5, title: 'Backtracking & B&B', file: 'BAD401_M5.pdf', size: '4.0 MB', pages: 62, status: 'available' }
+        ],
+        complete: { file: 'BAD401_Complete.pdf', size: '17.0 MB', pages: 290 }
+    },
+    'BAD403': {
+        name: 'Probability & Statistics for ML',
+        modules: [
+            { num: 1, title: 'Probability Fundamentals', file: 'BAD403_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Random Variables', file: 'BAD403_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Probability Distributions', file: 'BAD403_M3.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 4, title: 'Statistical Inference', file: 'BAD403_M4.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 5, title: 'Regression & Correlation', file: 'BAD403_M5.pdf', size: '3.2 MB', pages: 48, status: 'available' }
+        ],
+        complete: { file: 'BAD403_Complete.pdf', size: '15.8 MB', pages: 268 }
+    },
+    'BAD504': {
+        name: 'Big Data Analytics',
+        modules: [
+            { num: 1, title: 'Big Data Introduction', file: 'BAD504_M1.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 2, title: 'Hadoop Ecosystem', file: 'BAD504_M2.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 3, title: 'MapReduce Programming', file: 'BAD504_M3.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 4, title: 'Apache Spark', file: 'BAD504_M4.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 5, title: 'NoSQL Databases', file: 'BAD504_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BAD504_Complete.pdf', size: '17.5 MB', pages: 294 }
+    },
+    'BAD601': {
+        name: 'Reinforcement Learning',
+        modules: [
+            { num: 1, title: 'RL Introduction & MDP', file: 'BAD601_M1.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 2, title: 'Dynamic Programming', file: 'BAD601_M2.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 3, title: 'Monte Carlo Methods', file: 'BAD601_M3.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 4, title: 'Temporal Difference Learning', file: 'BAD601_M4.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 5, title: 'Deep RL', file: 'BAD601_M5.pdf', size: '4.2 MB', pages: 65, status: 'available' }
+        ],
+        complete: { file: 'BAD601_Complete.pdf', size: '17.0 MB', pages: 288 }
+    },
+    'BAD701': {
+        name: 'Generative AI & LLMs',
+        modules: [
+            { num: 1, title: 'Generative Models Intro', file: 'BAD701_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Transformer Architecture', file: 'BAD701_M2.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 3, title: 'GPT & BERT Models', file: 'BAD701_M3.pdf', size: '4.8 MB', pages: 75, status: 'available' },
+            { num: 4, title: 'Fine-tuning & Prompt Engineering', file: 'BAD701_M4.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 5, title: 'LLM Applications', file: 'BAD701_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BAD701_Complete.pdf', size: '18.8 MB', pages: 317 }
+    },
+
+    // ==================== ECE BRANCH ====================
+    'BEC402': {
+        name: 'Analog Circuits',
+        modules: [
+            { num: 1, title: 'BJT Amplifiers', file: 'BEC402_M1.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 2, title: 'FET Amplifiers', file: 'BEC402_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Feedback Amplifiers', file: 'BEC402_M3.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 4, title: 'Oscillators', file: 'BEC402_M4.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 5, title: 'Power Amplifiers', file: 'BEC402_M5.pdf', size: '2.8 MB', pages: 42, status: 'available' }
+        ],
+        complete: { file: 'BEC402_Complete.pdf', size: '15.8 MB', pages: 265 }
+    },
+    'BEC403': {
+        name: 'Microcontrollers',
+        modules: [
+            { num: 1, title: '8051 Architecture', file: 'BEC403_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Instruction Set', file: 'BEC403_M2.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 3, title: 'Timers & Interrupts', file: 'BEC403_M3.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 4, title: 'Serial Communication', file: 'BEC403_M4.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 5, title: 'Interfacing', file: 'BEC403_M5.pdf', size: '3.8 MB', pages: 58, status: 'available' }
+        ],
+        complete: { file: 'BEC403_Complete.pdf', size: '15.8 MB', pages: 265 }
+    },
+    'BEC501': {
+        name: 'Digital Communication',
+        modules: [
+            { num: 1, title: 'Sampling & Quantization', file: 'BEC501_M1.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 2, title: 'PCM & DPCM', file: 'BEC501_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Digital Modulation (ASK, FSK, PSK)', file: 'BEC501_M3.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 4, title: 'Error Control Coding', file: 'BEC501_M4.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 5, title: 'Spread Spectrum', file: 'BEC501_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BEC501_Complete.pdf', size: '17.0 MB', pages: 290 }
+    },
+    'BEC502': {
+        name: 'Digital Signal Processing',
+        modules: [
+            { num: 1, title: 'Discrete Time Signals', file: 'BEC502_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Z-Transform', file: 'BEC502_M2.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 3, title: 'DFT & FFT', file: 'BEC502_M3.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 4, title: 'FIR Filter Design', file: 'BEC502_M4.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 5, title: 'IIR Filter Design', file: 'BEC502_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BEC502_Complete.pdf', size: '17.8 MB', pages: 300 }
+    },
+    'BEC601': {
+        name: 'Wireless Communication',
+        modules: [
+            { num: 1, title: 'Wireless Channel', file: 'BEC601_M1.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 2, title: 'Cellular Concepts', file: 'BEC601_M2.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 3, title: 'GSM & CDMA', file: 'BEC601_M3.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 4, title: 'LTE & 4G', file: 'BEC601_M4.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 5, title: '5G & Beyond', file: 'BEC601_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BEC601_Complete.pdf', size: '17.0 MB', pages: 288 }
+    },
+
+    // ==================== EEE BRANCH ====================
+    'BEE403': {
+        name: 'Electrical Machines - I',
+        modules: [
+            { num: 1, title: 'DC Generators', file: 'BEE403_M1.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 2, title: 'DC Motors', file: 'BEE403_M2.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 3, title: 'Transformers', file: 'BEE403_M3.pdf', size: '5.0 MB', pages: 78, status: 'available' },
+            { num: 4, title: 'Testing of DC Machines', file: 'BEE403_M4.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 5, title: 'Special Transformers', file: 'BEE403_M5.pdf', size: '3.0 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: 'BEE403_Complete.pdf', size: '18.0 MB', pages: 305 }
+    },
+    'BEE501': {
+        name: 'Power Electronics',
+        modules: [
+            { num: 1, title: 'Power Semiconductor Devices', file: 'BEE501_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Rectifiers', file: 'BEE501_M2.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 3, title: 'DC-DC Converters', file: 'BEE501_M3.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 4, title: 'Inverters', file: 'BEE501_M4.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 5, title: 'AC Voltage Controllers', file: 'BEE501_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BEE501_Complete.pdf', size: '18.0 MB', pages: 307 }
+    },
+    'BEE601': {
+        name: 'Power System Analysis - II',
+        modules: [
+            { num: 1, title: 'Symmetrical Components', file: 'BEE601_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Fault Analysis', file: 'BEE601_M2.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 3, title: 'Power System Stability', file: 'BEE601_M3.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 4, title: 'Economic Load Dispatch', file: 'BEE601_M4.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 5, title: 'FACTS Devices', file: 'BEE601_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BEE601_Complete.pdf', size: '18.0 MB', pages: 303 }
+    },
+
+    // ==================== ME BRANCH ====================
+    'BME402': {
+        name: 'Applied Thermodynamics',
+        modules: [
+            { num: 1, title: 'Gas Power Cycles', file: 'BME402_M1.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 2, title: 'Vapor Power Cycles', file: 'BME402_M2.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 3, title: 'Refrigeration Cycles', file: 'BME402_M3.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 4, title: 'Psychrometry', file: 'BME402_M4.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 5, title: 'Gas Mixtures & Combustion', file: 'BME402_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BME402_Complete.pdf', size: '16.5 MB', pages: 278 }
+    },
+    'BME404': {
+        name: 'Kinematics of Machines',
+        modules: [
+            { num: 1, title: 'Mechanisms & Links', file: 'BME404_M1.pdf', size: '3.2 MB', pages: 48, status: 'available' },
+            { num: 2, title: 'Velocity & Acceleration Analysis', file: 'BME404_M2.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 3, title: 'Cams', file: 'BME404_M3.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 4, title: 'Gears', file: 'BME404_M4.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 5, title: 'Gear Trains', file: 'BME404_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BME404_Complete.pdf', size: '16.8 MB', pages: 285 }
+    },
+    'BME502': {
+        name: 'Dynamics of Machines',
+        modules: [
+            { num: 1, title: 'Force Analysis', file: 'BME502_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Flywheel & Governors', file: 'BME502_M2.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 3, title: 'Balancing', file: 'BME502_M3.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 4, title: 'Vibrations', file: 'BME502_M4.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 5, title: 'Gyroscope', file: 'BME502_M5.pdf', size: '3.0 MB', pages: 45, status: 'available' }
+        ],
+        complete: { file: 'BME502_Complete.pdf', size: '17.5 MB', pages: 297 }
+    },
+
+    // ==================== CV BRANCH ====================
+    'BCV402': {
+        name: 'Analysis of Determinate Structures',
+        modules: [
+            { num: 1, title: 'Introduction to Structural Analysis', file: 'BCV402_M1.pdf', size: '3.0 MB', pages: 45, status: 'available' },
+            { num: 2, title: 'Analysis of Trusses', file: 'BCV402_M2.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 3, title: 'Cables & Arches', file: 'BCV402_M3.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 4, title: 'Influence Lines', file: 'BCV402_M4.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 5, title: 'Deflection of Beams', file: 'BCV402_M5.pdf', size: '4.0 MB', pages: 62, status: 'available' }
+        ],
+        complete: { file: 'BCV402_Complete.pdf', size: '17.0 MB', pages: 289 }
+    },
+    'BCV502': {
+        name: 'Design of RC Structures',
+        modules: [
+            { num: 1, title: 'Working Stress Method', file: 'BCV502_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'Limit State Design', file: 'BCV502_M2.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 3, title: 'Design of Slabs', file: 'BCV502_M3.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 4, title: 'Design of Beams', file: 'BCV502_M4.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 5, title: 'Design of Columns', file: 'BCV502_M5.pdf', size: '3.8 MB', pages: 58, status: 'available' }
+        ],
+        complete: { file: 'BCV502_Complete.pdf', size: '18.5 MB', pages: 310 }
+    },
+
+    // ==================== DS BRANCH ====================
+    'BDS305': {
+        name: 'Python for Data Science',
+        modules: [
+            { num: 1, title: 'Python Fundamentals', file: 'BDS305_M1.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 2, title: 'NumPy & Arrays', file: 'BDS305_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Pandas for Data Analysis', file: 'BDS305_M3.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 4, title: 'Data Visualization', file: 'BDS305_M4.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 5, title: 'Scikit-learn Basics', file: 'BDS305_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BDS305_Complete.pdf', size: '16.0 MB', pages: 272 }
+    },
+    'BDS405': {
+        name: 'Introduction to Data Science',
+        modules: [
+            { num: 1, title: 'Data Science Overview', file: 'BDS405_M1.pdf', size: '2.5 MB', pages: 38, status: 'available' },
+            { num: 2, title: 'Data Collection & Cleaning', file: 'BDS405_M2.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 3, title: 'Exploratory Data Analysis', file: 'BDS405_M3.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 4, title: 'Feature Engineering', file: 'BDS405_M4.pdf', size: '3.8 MB', pages: 58, status: 'available' },
+            { num: 5, title: 'Model Building Basics', file: 'BDS405_M5.pdf', size: '3.2 MB', pages: 48, status: 'available' }
+        ],
+        complete: { file: 'BDS405_Complete.pdf', size: '15.5 MB', pages: 261 }
+    },
+    'BDS502': {
+        name: 'Big Data Analytics',
+        modules: [
+            { num: 1, title: 'Big Data Introduction', file: 'BDS502_M1.pdf', size: '2.8 MB', pages: 42, status: 'available' },
+            { num: 2, title: 'Hadoop Ecosystem', file: 'BDS502_M2.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 3, title: 'MapReduce', file: 'BDS502_M3.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 4, title: 'Apache Spark', file: 'BDS502_M4.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 5, title: 'Stream Processing', file: 'BDS502_M5.pdf', size: '3.5 MB', pages: 55, status: 'available' }
+        ],
+        complete: { file: 'BDS502_Complete.pdf', size: '17.5 MB', pages: 294 }
+    },
+    'BDS601': {
+        name: 'Deep Learning',
+        modules: [
+            { num: 1, title: 'Neural Network Basics', file: 'BDS601_M1.pdf', size: '3.5 MB', pages: 55, status: 'available' },
+            { num: 2, title: 'CNNs for Image Data', file: 'BDS601_M2.pdf', size: '4.5 MB', pages: 70, status: 'available' },
+            { num: 3, title: 'RNNs for Sequential Data', file: 'BDS601_M3.pdf', size: '4.2 MB', pages: 65, status: 'available' },
+            { num: 4, title: 'Transformers', file: 'BDS601_M4.pdf', size: '4.0 MB', pages: 62, status: 'available' },
+            { num: 5, title: 'Generative Models', file: 'BDS601_M5.pdf', size: '3.8 MB', pages: 58, status: 'available' }
+        ],
+        complete: { file: 'BDS601_Complete.pdf', size: '18.5 MB', pages: 310 }
+    }
+};
+
+// Extended Lab Manuals for ALL branches
+const LabManualExtended = {
+    // Sem 1-2 Common
+    'BCHEL206': { name: 'Applied Chemistry Lab', experiments: ['Electrochemistry', 'Conductometry', 'Potentiometry', 'pH metry', 'Colorimetry'], file: 'BCHEL206_Lab.pdf', size: '4.5 MB', pages: 68 },
+    'BEESKL207': { name: 'Basic Electrical Engineering Lab', experiments: ['KVL & KCL verification', 'Thevenin theorem', 'RLC circuits', 'Transformer testing', 'Motor characteristics'], file: 'BEESKL207_Lab.pdf', size: '5.0 MB', pages: 75 },
+    'BEDSK208': { name: 'Engineering Design & Drafting', experiments: ['Orthographic projection', 'Isometric views', 'AutoCAD basics', '3D modeling', 'Assembly drawings'], file: 'BEDSK208_Lab.pdf', size: '6.0 MB', pages: 90 },
+
+    // CSE Labs
+    'BCSL306': { name: 'Data Structures Laboratory', experiments: ['Array operations', 'Stack - Infix to Postfix', 'Queue simulation', 'Linked lists', 'Binary tree traversal', 'BST operations', 'Graph BFS/DFS', 'Hashing'], file: 'BCSL306_Lab.pdf', size: '6.2 MB', pages: 95 },
+    'BCSL406': { name: 'ADA Laboratory', experiments: ['Quick sort', 'Merge sort', 'Binary search', 'Knapsack greedy', 'Dijkstra', 'Kruskal MST', 'Floyd-Warshall', '0/1 Knapsack DP', 'N-Queens', 'TSP'], file: 'BCSL406_Lab.pdf', size: '5.8 MB', pages: 88 },
+    'BCSL506': { name: 'Computer Networks Lab', experiments: ['CRC implementation', 'Bellman-Ford', 'Dijkstra routing', 'TCP/UDP sockets', 'Stop-and-Wait', 'Sliding window', 'Leaky bucket', 'DNS simulation'], file: 'BCSL506_Lab.pdf', size: '5.5 MB', pages: 82 },
+    'BCSL606': { name: 'System Software Lab', experiments: ['Lexical analyzer', 'Parser using Yacc', 'Symbol table', 'Intermediate code', 'Code optimization', 'Two-pass assembler', 'Macro processor', 'Loader'], file: 'BCSL606_Lab.pdf', size: '5.2 MB', pages: 78 },
+
+    // AI & ML Labs
+    'BADL306': { name: 'Python Programming Lab', experiments: ['Python basics', 'Control structures', 'Functions', 'File handling', 'NumPy', 'Pandas', 'Matplotlib', 'Data analysis'], file: 'BADL306_Lab.pdf', size: '5.0 MB', pages: 75 },
+    'BADL406': { name: 'Machine Learning Lab', experiments: ['Data preprocessing', 'Linear regression', 'Logistic regression', 'Decision trees', 'Random forest', 'K-means', 'KNN', 'SVM', 'Neural networks'], file: 'BADL406_Lab.pdf', size: '6.5 MB', pages: 98 },
+    'BADL505': { name: 'Deep Learning Lab', experiments: ['Neural network basics', 'CNN image classification', 'Transfer learning', 'RNN sequence prediction', 'LSTM sentiment analysis', 'GAN implementation', 'Object detection'], file: 'BADL505_Lab.pdf', size: '7.2 MB', pages: 108 },
+    'BADL605': { name: 'NLP & Computer Vision Lab', experiments: ['Text preprocessing', 'Word embeddings', 'Sentiment analysis', 'Named entity recognition', 'Image classification', 'Object detection', 'Face recognition'], file: 'BADL605_Lab.pdf', size: '7.5 MB', pages: 112 },
+
+    // ECE Labs
+    'BECL306': { name: 'Digital System Design Lab', experiments: ['Logic gates', 'Combinational circuits', 'Sequential circuits', 'Counters', 'Shift registers', 'VHDL programs'], file: 'BECL306_Lab.pdf', size: '5.5 MB', pages: 82 },
+    'BECL406': { name: 'Analog Circuits Lab', experiments: ['CE amplifier', 'CB amplifier', 'CC amplifier', 'FET amplifier', 'Oscillators', 'Power amplifier'], file: 'BECL406_Lab.pdf', size: '5.2 MB', pages: 78 },
+    'BECL505': { name: 'DSP Lab', experiments: ['DFT computation', 'FFT implementation', 'FIR filter design', 'IIR filter design', 'Convolution', 'Correlation'], file: 'BECL505_Lab.pdf', size: '5.8 MB', pages: 88 },
+
+    // EEE Labs
+    'BEEL306': { name: 'Analog Electronics Lab', experiments: ['Diode characteristics', 'Rectifiers', 'BJT characteristics', 'Amplifier circuits', 'Op-amp circuits'], file: 'BEEL306_Lab.pdf', size: '5.0 MB', pages: 75 },
+    'BEEL406': { name: 'Electrical Machines Lab - I', experiments: ['DC generator characteristics', 'DC motor characteristics', 'Transformer testing', 'Speed control'], file: 'BEEL406_Lab.pdf', size: '5.5 MB', pages: 82 },
+    'BEEL505': { name: 'Power Electronics Lab', experiments: ['SCR characteristics', 'Rectifier circuits', 'Chopper circuits', 'Inverter circuits', 'AC voltage controller'], file: 'BEEL505_Lab.pdf', size: '5.8 MB', pages: 88 },
+
+    // ME Labs
+    'BMEL306': { name: 'Foundry & Forging Lab', experiments: ['Mould preparation', 'Core making', 'Sand testing', 'Casting', 'Forging operations'], file: 'BMEL306_Lab.pdf', size: '4.8 MB', pages: 72 },
+    'BMEL406': { name: 'Machine Shop Lab', experiments: ['Lathe operations', 'Milling operations', 'Drilling', 'Grinding', 'CNC programming'], file: 'BMEL406_Lab.pdf', size: '5.2 MB', pages: 78 },
+    'BMEL505': { name: 'Fluid Mechanics Lab', experiments: ['Flow measurement', 'Pipe friction', 'Pump characteristics', 'Turbine testing', 'Wind tunnel'], file: 'BMEL505_Lab.pdf', size: '5.5 MB', pages: 82 },
+
+    // CV Labs
+    'BCVL306': { name: 'Surveying Lab', experiments: ['Chain surveying', 'Compass surveying', 'Plane table', 'Levelling', 'Theodolite', 'Total station'], file: 'BCVL306_Lab.pdf', size: '5.2 MB', pages: 78 },
+    'BCVL406': { name: 'Concrete & Highway Materials Lab', experiments: ['Cement testing', 'Aggregate testing', 'Concrete mix design', 'Bitumen testing', 'Marshal stability'], file: 'BCVL406_Lab.pdf', size: '5.8 MB', pages: 88 },
+    'BCVL505': { name: 'Geotechnical Engineering Lab', experiments: ['Soil classification', 'Atterberg limits', 'Compaction', 'Permeability', 'Shear strength', 'Consolidation'], file: 'BCVL505_Lab.pdf', size: '6.0 MB', pages: 92 },
+
+    // DS Labs
+    'BDSL306': { name: 'Python Lab', experiments: ['Python basics', 'NumPy operations', 'Pandas dataframes', 'Data visualization', 'Statistical analysis'], file: 'BDSL306_Lab.pdf', size: '5.0 MB', pages: 75 },
+    'BDSL406': { name: 'Data Visualization Lab', experiments: ['Matplotlib', 'Seaborn', 'Plotly', 'Dashboard creation', 'Interactive visualization'], file: 'BDSL406_Lab.pdf', size: '5.5 MB', pages: 82 },
+    'BDSL505': { name: 'Machine Learning Lab', experiments: ['Data preprocessing', 'Regression models', 'Classification models', 'Clustering', 'Model evaluation'], file: 'BDSL505_Lab.pdf', size: '6.2 MB', pages: 95 }
+};
+
+// Merge with main NotesData
+if (typeof window !== 'undefined') {
+    window.NotesExtended = NotesExtended;
+    window.LabManualExtended = LabManualExtended;
+    if (window.NotesData) Object.assign(window.NotesData, NotesExtended);
+    if (window.LabManualData) Object.assign(window.LabManualData, LabManualExtended);
+}

@@ -1,332 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Braintube – Notes, model papers, and previous year question papers for VTU students. Free study materials for all branches and semesters.">
-  <title>Braintube – VTU Study Materials</title>
-  <link rel="canonical" href="https://braintube.site/">
+  <meta name="description"
+    content="Braintube — The AI-powered learning platform built for VTU students. Notes, PYQs, AI tutoring, and exam preparation in one place.">
+  <title>Braintube — Engineering Made Simple</title>
+  <link rel="canonical" href="https://braintube.site/" />
   <link rel="stylesheet" href="styles/premium.css">
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><circle cx='50' cy='50' r='44' fill='url(%23g)'/><text x='50' y='65' font-size='48' fill='white' text-anchor='middle' font-family='Inter,Arial' font-weight='800'>B</text></svg>">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2703338145574896"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-  <!-- Loader -->
-  <div class="page-loader" id="loader">
-    <img src="assets/logo.png" alt="Braintube">
-    <div class="loader-spin"></div>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <img src="assets/logo.png" alt="Braintube" class="loader-logo">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">Loading Braintube</div>
   </div>
 
-  <!-- Nav -->
-  <nav class="nav">
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav-premium" id="navbar">
     <div class="nav-inner">
-      <a href="/" class="nav-brand"><img src="assets/logo.png" alt="B"> Braintube</a>
+      <a href="/" class="nav-logo">
+        <img src="assets/logo.png" alt="B" class="nav-logo-img">
+        Braintube
+      </a>
       <ul class="nav-links">
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="pages/branches.html">Branches</a></li>
-        <li><a href="pages/branches.html">Notes</a></li>
-        <li><a href="pages/branches.html">Question Papers</a></li>
-        <li><a href="pages/blog/index.html">Updates</a></li>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#features">PYQs</a></li>
+        <li><a href="#ai-tutor">AI Tutor</a></li>
+        <li><a href="pages/blog/index.html">Blog</a></li>
         <li><a href="pages/about.html">About</a></li>
       </ul>
-      <a href="pages/branches.html" class="nav-cta">Browse Subjects</a>
-      <button class="nav-toggle" id="menuBtn" aria-label="Menu">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <a href="pages/branches.html" class="nav-cta">Start Learning</a>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="close-btn" id="closeMenu">✕</button>
-    <a href="/" onclick="closeMob()">Home</a>
-    <a href="pages/branches.html">Branches</a>
-    <a href="pages/branches.html">Notes</a>
-    <a href="pages/branches.html">Question Papers</a>
-    <a href="pages/blog/index.html">Updates</a>
-    <a href="pages/about.html">About</a>
-    <a href="pages/contact.html">Contact</a>
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu"
+    style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:rgba(5,5,5,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:opacity 0.4s ease;">
+    <a href="#overview"
+      style="color:white;text-decoration:none;font-size:1.5rem;font-weight:600;letter-spacing:-0.02em;"
+      onclick="closeMobileMenu()">Overview</a>
+    <a href="#subjects"
+      style="color:white;text-decoration:none;font-size:1.5rem;font-weight:600;letter-spacing:-0.02em;"
+      onclick="closeMobileMenu()">Subjects</a>
+    <a href="#features"
+      style="color:white;text-decoration:none;font-size:1.5rem;font-weight:600;letter-spacing:-0.02em;"
+      onclick="closeMobileMenu()">PYQs</a>
+    <a href="#ai-tutor"
+      style="color:white;text-decoration:none;font-size:1.5rem;font-weight:600;letter-spacing:-0.02em;"
+      onclick="closeMobileMenu()">AI Tutor</a>
+    <a href="pages/blog/index.html"
+      style="color:white;text-decoration:none;font-size:1.5rem;font-weight:600;letter-spacing:-0.02em;">Blog</a>
+    <a href="pages/branches.html" class="btn-premium" style="margin-top:16px;">Start Learning</a>
+    <button onclick="closeMobileMenu()"
+      style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">✕</button>
   </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Braintube – <span>VTU Study Materials</span></h1>
-    <p>Notes, model papers, and previous year question papers for VTU students. Free resources for all branches and semesters — 2022 & 2025 scheme.</p>
-    <div class="hero-btns">
-      <a href="pages/branches.html" class="btn btn-primary">Browse Subjects →</a>
-      <a href="#branches" class="btn btn-secondary">Download Notes</a>
-    </div>
-  </section>
+  <!-- ===== SCROLLYTELLING CANVAS SECTION ===== -->
+  <section class="canvas-section" id="overview">
+    <div class="canvas-sticky">
+      <canvas id="neural-canvas"></canvas>
 
-  <!-- Branches -->
-  <div class="divider"></div>
-  <section class="section" id="branches">
-    <h2 class="section-title">Choose your <span>branch</span></h2>
-    <div class="card-grid cols-2">
-
-      <a href="pages/branch.html?branch=cse" class="card">
-        <div class="branch-card">
-          <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-          <div>
-            <h3>Computer Science Engineering</h3>
-            <p>Data Structures, Algorithms, DBMS, OS, Networks & more</p>
+      <!-- Story 1: Hero (0-15%) -->
+      <div class="story-overlay active" id="story-hero">
+        <div class="story-content">
+          <div class="story-badge">
+            <span class="story-badge-dot"></span>
+            AI-Powered Learning Platform
           </div>
-        </div>
-      </a>
-
-      <a href="pages/branch.html?branch=ise" class="card">
-        <div class="branch-card">
-          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div>
-            <h3>Information Science Engineering</h3>
-            <p>Software Engineering, Web Tech, Data Mining & more</p>
+          <h1 class="headline-xl text-gradient">Braintube</h1>
+          <p style="margin-top:16px; font-size: clamp(1.2rem, 2vw, 1.75rem); color: rgba(255,255,255,0.5); font-weight:300;">
+            Engineering made simple.</p>
+          <p style="max-width:520px;">The AI learning platform built for VTU students. Notes, PYQs, AI tutoring, and
+            exam preparation — all in one place.</p>
+          <div style="display:flex;gap:12px;justify-content:center;margin-top:32px;flex-wrap:wrap;">
+            <a href="pages/branches.html" class="btn-premium">Start Learning
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#subjects" class="btn-outline">Explore Subjects</a>
           </div>
-        </div>
-      </a>
-
-      <a href="pages/branch.html?branch=aiml" class="card">
-        <div class="branch-card">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/></svg></div>
-          <div>
-            <h3>AI & Machine Learning</h3>
-            <p>Neural Networks, Deep Learning, NLP, Computer Vision</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="pages/branch.html?branch=ece" class="card">
-        <div class="branch-card">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><line x1="2" y1="20" x2="2.01" y2="20"/></svg></div>
-          <div>
-            <h3>Electronics & Communication</h3>
-            <p>Analog & Digital Circuits, Signal Processing, VLSI</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="pages/branch.html?branch=eee" class="card">
-        <div class="branch-card">
-          <div class="icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-          <div>
-            <h3>Electrical Engineering</h3>
-            <p>Power Systems, Control Systems, Machines & more</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="pages/branch.html?branch=me" class="card">
-        <div class="branch-card">
-          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-          <div>
-            <h3>Mechanical Engineering</h3>
-            <p>Thermodynamics, Fluid Mechanics, Manufacturing</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="pages/branch.html?branch=cv" class="card">
-        <div class="branch-card">
-          <div class="icon"><svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
-          <div>
-            <h3>Civil Engineering</h3>
-            <p>Structural Analysis, Geotechnics, Surveying & more</p>
-          </div>
-        </div>
-      </a>
-
-      <a href="pages/branch.html?branch=ds" class="card">
-        <div class="branch-card">
-          <div class="icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-          <div>
-            <h3>Data Science</h3>
-            <p>Statistics, Machine Learning, Big Data Analytics</p>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- What We Offer -->
-  <div class="divider"></div>
-  <section class="section">
-    <h2 class="section-title">What's on <span>Braintube</span></h2>
-    <div class="features-grid">
-      <div class="card">
-        <div class="feature-item">
-          <div class="fi-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
-          <div><h4>Module-Wise Notes</h4><p>Organized notes for every subject, every module. Updated for 2022 & 2025 scheme.</p></div>
         </div>
       </div>
-      <div class="card">
-        <div class="feature-item">
-          <div class="fi-icon"><svg viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-          <div><h4>Previous Year Papers</h4><p>Solved PYQs from the last 10 years with model answers.</p></div>
+
+      <!-- Story 2: Subject Ecosystem (15-40%) -->
+      <div class="story-overlay" id="story-subjects">
+        <div class="story-content">
+          <div class="story-badge">
+            <span class="story-badge-dot"></span>
+            Subject Ecosystem
+          </div>
+          <h2 class="headline-lg">Every VTU subject.<br><span class="text-gradient">Perfectly organized.</span></h2>
+          <p>Access structured notes, simplified explanations, and exam-focused content for every branch and every
+            semester — 2022 and 2025 scheme.</p>
+          <div class="features-row">
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Computer Science</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><line x1="2" y1="20" x2="2.01" y2="20"/></svg> Electronics</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Mechanical</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg> Civil</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/></svg> AI & ML</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Electrical</span>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="feature-item">
-          <div class="fi-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-          <div><h4>Important Questions</h4><p>Predicted questions based on 10+ years of VTU exam patterns.</p></div>
+
+      <!-- Story 3: Notes & PYQ (40-65%) -->
+      <div class="story-overlay" id="story-notes">
+        <div class="story-content">
+          <div class="story-badge">
+            <span class="story-badge-dot"></span>
+            Study Materials
+          </div>
+          <h2 class="headline-lg">Learn faster.<br><span class="text-gradient">Revise smarter.</span></h2>
+          <p>Everything you need to ace your VTU exams — organized by module, optimized for revision, and updated every
+            semester.</p>
+          <div class="features-row">
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg> Previous Year Questions</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> Formula Sheets</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Quick Notes</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> Exam-Focused Revision</span>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="feature-item">
-          <div class="fi-icon"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/></svg></div>
-          <div><h4>AI Tutor</h4><p>Ask any engineering question and get instant explanations.</p></div>
+
+      <!-- Story 4: AI Engine (65-85%) -->
+      <div class="story-overlay" id="story-ai">
+        <div class="story-content">
+          <div class="story-badge">
+            <span class="story-badge-dot"></span>
+            AI Learning Engine
+          </div>
+          <h2 class="headline-lg">Your personal<br><span class="text-gradient-blue">AI engineering tutor.</span></h2>
+          <p>Ask engineering doubts instantly. Get step-by-step explanations. Generate exam answers. Simplify any
+            concept.</p>
+          <div class="features-row">
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Ask Doubts Instantly</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/></svg> Step-by-Step Solutions</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg> Exam Answer Generator</span>
+            <span class="feature-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> Concept Simplifier</span>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <div class="feature-item">
-          <div class="fi-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <div><h4>Lab Programs</h4><p>Complete lab programs with code, explanation and output.</p></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="feature-item">
-          <div class="fi-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-          <div><h4>VTU Updates</h4><p>Latest exam notifications, timetables and circulars.</p></div>
+
+      <!-- Story 5: Final CTA (85-100%) -->
+      <div class="story-overlay" id="story-cta">
+        <div class="story-content">
+          <h2 class="headline-xl text-gradient">Study smarter.<br>Score higher.</h2>
+          <p style="font-size: clamp(1rem, 1.5vw, 1.35rem); margin-top: 20px;">Braintube — built for VTU students.</p>
+          <div style="display:flex;gap:12px;justify-content:center;margin-top:40px;flex-wrap:wrap;">
+            <a href="pages/branches.html" class="btn-premium">Start Learning
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#subjects" class="btn-outline">Explore Subjects</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AI Tutor Section -->
-  <div class="divider"></div>
-  <section class="section">
-    <h2 class="section-title">AI <span>Tutor</span></h2>
-    <p style="color:var(--text-sec);margin-bottom:24px;max-width:500px;">Ask any engineering question and get instant, syllabus-aware answers.</p>
-    <div class="chat-box">
-      <div class="chat-header">
-        <div class="dot"></div>
-        <div><strong style="font-size:0.9rem;">Braintube AI</strong><br><span style="font-size:0.72rem;color:var(--text-muted);">VTU Syllabus-Aware</span></div>
+  <!-- ===== BRANCHES SECTION ===== -->
+  <div class="section-divider"></div>
+  <section class="section-premium" id="subjects">
+    <div class="fade-up" style="text-align: center; margin-bottom: 24px;">
+      <div class="story-badge" style="margin: 0 auto 24px;">
+        <span class="story-badge-dot"></span>
+        VTU 2022 & 2025 Scheme
       </div>
-      <div class="chat-body" id="chatBody">
-        <div class="chat-msg user">Explain the time complexity of merge sort</div>
-        <div class="chat-msg bot">
-          <strong>Merge Sort Time Complexity:</strong><br><br>
+      <h2 class="headline-lg">Choose your <span class="text-gradient">branch</span></h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:16px auto 0;font-size:1.05rem;">
+        Access curated study materials for every VTU engineering branch.
+      </p>
+    </div>
+
+    <div class="subject-grid fade-up">
+      <a href="pages/branch.html?branch=cse" class="subject-card">
+        <div class="icon-box blue"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Computer Science Engineering</h3>
+        <p>Data Structures, Algorithms, DBMS, OS, Networks & more</p>
+      </a>
+      <a href="pages/branch.html?branch=ise" class="subject-card">
+        <div class="icon-box cyan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Information Science Engineering</h3>
+        <p>Software Engineering, Web Tech, Data Mining & more</p>
+      </a>
+      <a href="pages/branch.html?branch=aiml" class="subject-card">
+        <div class="icon-box purple"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/></svg></div>
+        <h3>AI & Machine Learning</h3>
+        <p>Neural Networks, Deep Learning, NLP, Computer Vision</p>
+      </a>
+      <a href="pages/branch.html?branch=ece" class="subject-card">
+        <div class="icon-box cyan"><svg viewBox="0 0 24 24"><path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6"/><line x1="2" y1="20" x2="2.01" y2="20"/></svg></div>
+        <h3>Electronics & Communication</h3>
+        <p>Analog Circuits, Digital Electronics, Signal Processing</p>
+      </a>
+      <a href="pages/branch.html?branch=eee" class="subject-card">
+        <div class="icon-box blue"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Electrical Engineering</h3>
+        <p>Power Systems, Control Systems, Machines & more</p>
+      </a>
+      <a href="pages/branch.html?branch=me" class="subject-card">
+        <div class="icon-box cyan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        <h3>Mechanical Engineering</h3>
+        <p>Thermodynamics, Fluid Mechanics, Manufacturing</p>
+      </a>
+      <a href="pages/branch.html?branch=cv" class="subject-card">
+        <div class="icon-box blue"><svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
+        <h3>Civil Engineering</h3>
+        <p>Structural Analysis, Geotechnics, Surveying & more</p>
+      </a>
+      <a href="pages/branch.html?branch=ds" class="subject-card">
+        <div class="icon-box green"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Data Science</h3>
+        <p>Statistics, Machine Learning, Big Data Analytics</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES SECTION ===== -->
+  <div class="section-divider"></div>
+  <section class="section-premium" id="features">
+    <div class="fade-up" style="text-align: center; margin-bottom: 48px;">
+      <div class="story-badge" style="margin: 0 auto 24px;">
+        <span class="story-badge-dot"></span>
+        Platform Features
+      </div>
+      <h2 class="headline-lg">Everything you need.<br><span class="text-gradient">Nothing you don't.</span></h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;" class="fade-up">
+      <!-- Feature 1 -->
+      <div class="subject-card" style="cursor:default;">
+        <div class="icon-box-lg icon-box blue" style="margin-bottom:20px;"><svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></div>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;">Module-Wise Notes</h3>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Organized study notes for every subject, every
+          module, every semester. Simplified for quick understanding.</p>
+      </div>
+      <div class="subject-card" style="cursor:default;">
+        <div class="icon-box-lg icon-box cyan" style="margin-bottom:20px;"><svg viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;">Previous Year Papers</h3>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Solved PYQs from the last 10 years with
+          model answers. Know exactly what the examiner wants.</p>
+      </div>
+      <div class="subject-card" style="cursor:default;">
+        <div class="icon-box-lg icon-box purple" style="margin-bottom:20px;"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/></svg></div>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;">AI Tutor Engine</h3>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Ask any engineering question and get instant,
+          step-by-step explanations. VTU syllabus-aware responses.</p>
+      </div>
+      <div class="subject-card" style="cursor:default;">
+        <div class="icon-box-lg icon-box blue" style="margin-bottom:20px;"><svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M8 7h2"/><path d="M8 11h4"/></svg></div>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;">Formula Sheets</h3>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">One-page formula sheets for every subject. Perfect
+          for last-minute revision before the exam.</p>
+      </div>
+      <div class="subject-card" style="cursor:default;">
+        <div class="icon-box-lg icon-box cyan" style="margin-bottom:20px;"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;">Quick Revision</h3>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Bite-sized summaries of every topic. Revise an
+          entire module in under 30 minutes.</p>
+      </div>
+      <div class="subject-card" style="cursor:default;">
+        <div class="icon-box-lg icon-box green" style="margin-bottom:20px;"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3 style="font-size:1.15rem;margin-bottom:8px;">Important Questions</h3>
+        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Predicted questions based on 10+ years of VTU
+          exam patterns. Focus on what's most likely to appear.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AI TUTOR SECTION ===== -->
+  <div class="section-divider"></div>
+  <section class="section-premium" id="ai-tutor">
+    <div class="fade-up" style="text-align:center;">
+      <div class="story-badge" style="margin:0 auto 24px;">
+        <span class="story-badge-dot"></span>
+        AI-Powered
+      </div>
+      <h2 class="headline-lg">Meet your<br><span class="text-gradient-blue">AI engineering tutor.</span></h2>
+      <p style="color:var(--text-secondary);max-width:550px;margin:16px auto 0;font-size:1.05rem;">
+        Ask any engineering question. Get instant, syllabus-aware answers. No more struggling alone.
+      </p>
+    </div>
+
+    <!-- AI Demo Card -->
+    <div class="fade-up"
+      style="max-width:560px;margin:48px auto 0;border-radius:20px;border:1px solid var(--border);background:var(--bg-card);overflow:hidden;">
+      <!-- Chat Header -->
+      <div
+        style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;">
+        <div
+          style="width:32px;height:32px;border-radius:50%;background:var(--accent-gradient);display:flex;align-items:center;justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/></svg></div>
+        <div>
+          <div style="font-size:0.9rem;font-weight:600;">Braintube AI</div>
+          <div style="font-size:0.7rem;color:var(--text-muted);">VTU Syllabus-Aware</div>
+        </div>
+        <div
+          style="margin-left:auto;width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,0.5);">
+        </div>
+      </div>
+      <!-- Chat Messages -->
+      <div style="padding:20px;display:flex;flex-direction:column;gap:12px;min-height:200px;">
+        <div style="align-self:flex-end;background:rgba(0,80,255,0.15);border:1px solid rgba(0,80,255,0.2);border-radius:16px 16px 4px 16px;padding:10px 16px;font-size:0.875rem;max-width:80%;">
+          Explain the time complexity of merge sort</div>
+        <div style="align-self:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:0.875rem;max-width:85%;color:var(--text-secondary);line-height:1.6;">
+          <strong style="color:var(--text-primary);">Merge Sort Time Complexity:</strong><br><br>
           <strong>Best / Average / Worst:</strong> O(n log n)<br><br>
-          Merge sort divides the array into two halves (log n levels), and at each level, it merges all n elements. Hence, the total work is <strong>n × log n</strong>.<br>
-          <span class="ref">↳ Frequently asked in VTU Data Structures (BCS304)</span>
+          Merge sort divides the array into two halves (log n levels), and at each level, it merges all n elements.
+          Hence, the total work is <strong>n × log n</strong>.<br><br>
+          <span style="color:var(--accent-cyan);">↳ This is a frequently asked 5-mark question in VTU Data Structures (BCS304).</span>
         </div>
       </div>
-      <div class="chat-input">
-        <input type="text" id="chatInput" placeholder="Ask any engineering question...">
-        <button onclick="askQuestion()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      <!-- Input -->
+      <div style="padding:12px 16px;border-top:1px solid var(--border);display:flex;gap:8px;">
+        <input type="text" placeholder="Ask any engineering question..."
+          style="flex:1;background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:12px;padding:10px 16px;color:white;font-family:var(--font);font-size:0.85rem;outline:none;">
+        <button
+          style="width:40px;height:40px;border-radius:12px;background:var(--accent-gradient);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Updates -->
-  <div class="divider"></div>
-  <section class="section">
-    <h2 class="section-title">Latest <span>Updates</span></h2>
-    <div class="card" style="padding:0;">
-      <div class="update-item" style="padding:16px 20px;">
-        <div class="update-date">Mar 2026</div>
-        <div>
-          <h4>VTU Even Semester Exam Timetable Released <span class="update-badge">New</span></h4>
-          <p>Exams start from June 2026. Check your branch timetable.</p>
-        </div>
+  <!-- ===== BLOG SECTION ===== -->
+  <div class="section-divider"></div>
+  <section class="section-premium">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px;">
+      <div class="story-badge" style="margin:0 auto 24px;">
+        <span class="story-badge-dot"></span>
+        Blog
       </div>
-      <div class="update-item" style="padding:16px 20px;">
-        <div class="update-date">Feb 2026</div>
-        <div>
-          <h4>2025 Scheme Syllabus Available</h4>
-          <p>New 2025 scheme notes and syllabus for all branches now on Braintube.</p>
-        </div>
-      </div>
-      <div class="update-item" style="padding:16px 20px;">
-        <div class="update-date">Jan 2026</div>
-        <div>
-          <h4>Odd Semester Results Announced</h4>
-          <p>VTU odd semester results for 2022 scheme are now available.</p>
-        </div>
-      </div>
+      <h2 class="headline-lg">Latest <span class="text-gradient">insights</span></h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:16px auto 0;">Study strategies and career advice for
+        VTU students.</p>
     </div>
-    <div style="margin-top:20px;">
-      <a href="pages/blog/index.html" class="btn btn-secondary btn-sm">View All Updates →</a>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;" class="fade-up">
+      <a href="pages/blog/vtu-exam-preparation-strategy.html" class="subject-card"
+        style="text-decoration:none;color:inherit;">
+        <div
+          style="margin-bottom:16px;width:100%;height:140px;border-radius:12px;background:linear-gradient(135deg,rgba(0,80,255,0.15),rgba(0,214,255,0.05));display:flex;align-items:center;justify-content:center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,214,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div
+          style="font-size:0.7rem;color:var(--accent-cyan);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:8px;">
+          Strategy</div>
+        <h3 style="font-size:1rem;margin-bottom:8px;line-height:1.3;">The Ultimate 30-Day VTU Exam Preparation Strategy
+        </h3>
+        <p style="font-size:0.8rem;color:var(--text-muted);">Feb 23, 2026 · 12 min read</p>
+      </a>
+      <a href="pages/blog/gate-preparation-vtu-students.html" class="subject-card"
+        style="text-decoration:none;color:inherit;">
+        <div
+          style="margin-bottom:16px;width:100%;height:140px;border-radius:12px;background:linear-gradient(135deg,rgba(0,80,255,0.15),rgba(0,214,255,0.05));display:flex;align-items:center;justify-content:center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,214,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div
+          style="font-size:0.7rem;color:var(--accent-cyan);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:8px;">
+          Higher Education</div>
+        <h3 style="font-size:1rem;margin-bottom:8px;line-height:1.3;">GATE Preparation Roadmap for VTU Students</h3>
+        <p style="font-size:0.8rem;color:var(--text-muted);">Feb 15, 2026 · 11 min read</p>
+      </a>
+      <a href="pages/blog/engineering-internship-guide.html" class="subject-card"
+        style="text-decoration:none;color:inherit;">
+        <div
+          style="margin-bottom:16px;width:100%;height:140px;border-radius:12px;background:linear-gradient(135deg,rgba(0,80,255,0.15),rgba(0,214,255,0.05));display:flex;align-items:center;justify-content:center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(0,214,255,0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div
+          style="font-size:0.7rem;color:var(--accent-cyan);text-transform:uppercase;letter-spacing:0.08em;font-weight:600;margin-bottom:8px;">
+          Careers</div>
+        <h3 style="font-size:1rem;margin-bottom:8px;line-height:1.3;">How to Land Your First Engineering Internship</h3>
+        <p style="font-size:0.8rem;color:var(--text-muted);">Feb 23, 2026 · 10 min read</p>
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;" class="fade-up">
+      <a href="pages/blog/index.html" class="btn-outline">View All Articles →</a>
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="divider"></div>
-  <section class="section" style="text-align:center;padding:60px 20px;">
-    <h2 class="section-title" style="margin-bottom:12px;">Ready to ace your <span>VTU exams?</span></h2>
-    <p style="color:var(--text-sec);max-width:450px;margin:0 auto 24px;">Access free notes, question papers and study materials for all VTU branches.</p>
-    <a href="pages/branches.html" class="btn btn-primary">Start Studying →</a>
+  <!-- ===== CTA SECTION ===== -->
+  <div class="section-divider"></div>
+  <section class="section-premium" style="text-align:center;padding:120px 24px 100px;">
+    <div class="fade-up">
+      <h2 class="headline-lg">Ready to ace your<br><span class="text-gradient">VTU exams?</span></h2>
+      <p style="color:var(--text-secondary);max-width:480px;margin:20px auto 0;font-size:1.05rem;">
+        Join thousands of VTU students who study smarter with Braintube.
+      </p>
+      <div style="display:flex;gap:12px;justify-content:center;margin-top:36px;flex-wrap:wrap;">
+        <a href="pages/branches.html" class="btn-premium">Start Learning Free
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-premium">
     <div class="footer-inner">
-      <div class="footer-brand">Braintube</div>
-      <div class="footer-links">
-        <a href="pages/branches.html">Branches</a>
-        <a href="pages/about.html">About</a>
-        <a href="pages/contact.html">Contact</a>
-        <a href="pages/blog/index.html">Blog</a>
-        <a href="pages/privacy.html">Privacy</a>
-        <a href="pages/terms.html">Terms</a>
-        <a href="pages/faq.html">FAQ</a>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" style="margin-bottom:4px;">
+            <img src="assets/logo.png" alt="B" class="nav-logo-img">
+            Braintube
+          </a>
+          <p>The AI-powered learning platform built for VTU engineering students. Access notes, PYQs, and AI tutoring for
+            every subject.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="pages/branches.html">Browse Subjects</a>
+          <a href="pages/blog/index.html">Blog</a>
+          <a href="pages/about.html">About Us</a>
+          <a href="pages/contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="pages/blog/vtu-exam-preparation-strategy.html">Exam Strategy</a>
+          <a href="pages/blog/gate-preparation-vtu-students.html">GATE Prep</a>
+          <a href="pages/blog/time-management-engineering-students.html">Time Management</a>
+          <a href="pages/blog/vtu-lab-manual-tips.html">Lab Manual Tips</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="pages/privacy.html">Privacy Policy</a>
+          <a href="pages/terms.html">Terms of Service</a>
+        </div>
       </div>
-    </div>
-    <div class="footer-copy">
-      © 2026 Braintube. All rights reserved. Independent platform — not affiliated with VTU.
+      <div class="footer-bottom">
+        <span>© 2026 Braintube. All rights reserved.</span>
+        <span>Braintube is an independent platform. Not affiliated with VTU.</span>
+      </div>
     </div>
   </footer>
 
+  <!-- ===== AI CHAT BUTTON ===== -->
+  <button class="ai-chat-btn" id="aiChatBtn" aria-label="Open AI Tutor">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+
+  <!-- ===== AI PANEL ===== -->
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-panel-header">
+      <div class="ai-panel-avatar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-8a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/></svg></div>
+      <div>
+        <div class="ai-panel-title">Braintube AI</div>
+        <div class="ai-panel-subtitle">VTU Syllabus-Aware Tutor</div>
+      </div>
+    </div>
+    <div class="ai-panel-body" id="aiPanelBody">
+      <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:16px;">Try asking:</p>
+      <div class="ai-suggestion" onclick="askAI(this.textContent)">Explain binary search tree insertion</div>
+      <div class="ai-suggestion" onclick="askAI(this.textContent)">Derive Euler's formula</div>
+      <div class="ai-suggestion" onclick="askAI(this.textContent)">What is Kirchhoff's voltage law?</div>
+      <div class="ai-suggestion" onclick="askAI(this.textContent)">Explain Carnot cycle efficiency</div>
+      <div class="ai-suggestion" onclick="askAI(this.textContent)">Write merge sort in C</div>
+    </div>
+    <div class="ai-panel-input">
+      <input type="text" placeholder="Ask any engineering question...">
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="scripts/neural-canvas.js"></script>
   <script>
-    // Loader
-    window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('loaded'), 400); });
+    // === Neural Canvas Init ===
+    const neuralCanvas = new NeuralCanvas(document.getElementById('neural-canvas'));
 
-    // Mobile menu
-    document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
-    document.getElementById('closeMenu').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
-    function closeMob() { document.getElementById('mobileMenu').classList.remove('open'); }
+    // === Scroll Storytelling Engine ===
+    const canvasSection = document.querySelector('.canvas-section');
+    const stories = {
+      hero: { el: document.getElementById('story-hero'), start: 0, end: 0.15 },
+      subjects: { el: document.getElementById('story-subjects'), start: 0.15, end: 0.40 },
+      notes: { el: document.getElementById('story-notes'), start: 0.40, end: 0.65 },
+      ai: { el: document.getElementById('story-ai'), start: 0.65, end: 0.85 },
+      cta: { el: document.getElementById('story-cta'), start: 0.85, end: 1.0 }
+    };
 
-    // AI Chat
-    function askQuestion() {
-      const input = document.getElementById('chatInput');
-      const body = document.getElementById('chatBody');
-      const q = input.value.trim();
-      if (!q) return;
+    function updateScroll() {
+      const rect = canvasSection.getBoundingClientRect();
+      const scrollHeight = canvasSection.offsetHeight - window.innerHeight;
+      const progress = Math.max(0, Math.min(1, -rect.top / scrollHeight));
 
-      body.innerHTML += `<div class="chat-msg user">${q}</div>`;
-      input.value = '';
+      // Update canvas
+      neuralCanvas.setProgress(progress);
 
-      const typing = document.createElement('div');
-      typing.className = 'chat-msg bot';
-      typing.innerHTML = '<div class="loader-spin" style="width:18px;height:18px;"></div>';
-      body.appendChild(typing);
-      body.scrollTop = body.scrollHeight;
+      // Update story overlays
+      Object.values(stories).forEach(story => {
+        const isActive = progress >= story.start && progress < story.end;
+        story.el.classList.toggle('active', isActive);
+      });
 
+      // Update scroll progress bar
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const pageProgress = window.scrollY / totalScroll;
+      document.getElementById('scrollProgress').style.width = (pageProgress * 100) + '%';
+    }
+
+    // === Navbar Scroll ===
+    const navbar = document.getElementById('navbar');
+    function updateNav() {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    }
+
+    // === Fade-up Observer ===
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+    // === AI Chat Toggle ===
+    const aiBtn = document.getElementById('aiChatBtn');
+    const aiPanel = document.getElementById('aiPanel');
+    let aiOpen = false;
+
+    aiBtn.addEventListener('click', () => {
+      aiOpen = !aiOpen;
+      aiPanel.classList.toggle('open', aiOpen);
+      aiBtn.innerHTML = aiOpen
+        ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+    });
+
+    // === Mobile Menu ===
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.style.opacity = '1';
+      mobileMenu.style.pointerEvents = 'auto';
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.style.opacity = '0';
+      mobileMenu.style.pointerEvents = 'none';
+    }
+
+    // === Event Listeners ===
+    window.addEventListener('scroll', () => {
+      updateScroll();
+      updateNav();
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      updateScroll();
+    });
+
+    // Initial state
+    updateScroll();
+    updateNav();
+
+    // === Page Loader ===
+    window.addEventListener('load', () => {
       setTimeout(() => {
-        typing.innerHTML = getResponse(q);
-        body.scrollTop = body.scrollHeight;
-      }, 1000);
+        document.getElementById('pageLoader').classList.add('loaded');
+      }, 600);
+    });
+
+    // === AI Chat Engine ===
+    const aiBody = document.getElementById('aiPanelBody');
+    const aiInput = document.querySelector('.ai-panel-input input');
+    const aiSend = document.querySelector('.ai-panel-input button');
+
+    function askAI(question) {
+      if (!question || !question.trim()) return;
+      aiBody.innerHTML = '';
+      // User message
+      const userMsg = document.createElement('div');
+      userMsg.style.cssText = 'align-self:flex-end;background:rgba(0,80,255,0.15);border:1px solid rgba(0,80,255,0.2);border-radius:16px 16px 4px 16px;padding:10px 16px;font-size:0.875rem;max-width:85%;margin-bottom:12px;';
+      userMsg.textContent = question;
+      aiBody.appendChild(userMsg);
+      // Typing indicator
+      const typing = document.createElement('div');
+      typing.style.cssText = 'align-self:flex-start;color:var(--text-muted);font-size:0.85rem;padding:8px 0;';
+      typing.innerHTML = '<div class="loader-spinner" style="width:20px;height:20px;border-width:2px;"></div>';
+      aiBody.appendChild(typing);
+      aiBody.style.display = 'flex';
+      aiBody.style.flexDirection = 'column';
+      // Simulate response
+      setTimeout(() => {
+        typing.remove();
+        const botMsg = document.createElement('div');
+        botMsg.style.cssText = 'align-self:flex-start;background:var(--bg-card);border:1px solid var(--border);border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:0.875rem;max-width:90%;color:var(--text-secondary);line-height:1.6;';
+        botMsg.innerHTML = generateResponse(question);
+        aiBody.appendChild(botMsg);
+      }, 1200);
+      aiInput.value = '';
     }
 
-    function getResponse(q) {
+    function generateResponse(q) {
       const ql = q.toLowerCase();
-      if (ql.includes('binary search') || ql.includes('bst'))
-        return `<strong>Binary Search Tree Insertion:</strong><br><br>1. If tree empty → new node is root<br>2. If key &lt; current → go left<br>3. If key &gt; current → go right<br>4. Insert at empty spot<br><br><strong>Time:</strong> O(log n) average, O(n) worst<br><span class="ref">↳ VTU Data Structures (BCS304)</span>`;
-      if (ql.includes('euler'))
-        return `<strong>Euler's Formula:</strong><br><br>e<sup>ix</sup> = cos(x) + i·sin(x)<br><br>Special case: <strong>e<sup>iπ</sup> + 1 = 0</strong><br><span class="ref">↳ VTU Engineering Mathematics</span>`;
-      if (ql.includes('kirchhoff'))
-        return `<strong>Kirchhoff's Voltage Law:</strong><br><br>Sum of voltages around any closed loop = 0<br><strong>ΣV = 0</strong><br><span class="ref">↳ VTU Circuit Analysis</span>`;
-      if (ql.includes('carnot'))
-        return `<strong>Carnot Efficiency:</strong><br><br>η = 1 - (T<sub>L</sub>/T<sub>H</sub>)<br><br>Maximum possible efficiency for any heat engine.<br><span class="ref">↳ VTU Thermodynamics</span>`;
-      if (ql.includes('merge sort'))
-        return `<strong>Merge Sort:</strong><br><br>Divide array → sort halves → merge<br><strong>Time:</strong> O(n log n) — all cases<br><strong>Space:</strong> O(n)<br><span class="ref">↳ VTU DSA (BCS304)</span>`;
-      return `<strong>Great question!</strong><br><br>Try asking about specific VTU concepts like data structures, circuits, thermodynamics, or mathematics.<br><span class="ref">↳ Full AI tutor coming soon!</span>`;
+      if (ql.includes('binary search tree') || ql.includes('bst')) {
+        return `<strong style="color:var(--text-primary)">Binary Search Tree Insertion:</strong><br><br>To insert a node into a BST:<br>1. If tree is empty, new node becomes root<br>2. If key < current node, go left<br>3. If key > current node, go right<br>4. Insert at the empty position found<br><br><strong>Time Complexity:</strong> O(h) where h = height<br>Average: O(log n) | Worst: O(n)<br><br><span style="color:var(--accent-cyan)">↳ Important topic in VTU Data Structures (BCS304)</span>`;
+      } else if (ql.includes('euler')) {
+        return `<strong style="color:var(--text-primary)">Euler's Formula:</strong><br><br>e<sup>ix</sup> = cos(x) + i·sin(x)<br><br>When x = π: <strong>e<sup>iπ</sup> + 1 = 0</strong><br><br>This elegant identity connects five fundamental constants: e, i, π, 1, and 0.<br><br><span style="color:var(--accent-cyan)">↳ Key formula in VTU Engineering Mathematics</span>`;
+      } else if (ql.includes('kirchhoff')) {
+        return `<strong style="color:var(--text-primary)">Kirchhoff's Voltage Law (KVL):</strong><br><br>The algebraic sum of all voltages around any closed loop in a circuit equals zero.<br><br><strong>ΣV = 0</strong><br><br>This means: voltage rises = voltage drops around any loop.<br><br><span style="color:var(--accent-cyan)">↳ Fundamental concept in VTU Circuit Analysis</span>`;
+      } else if (ql.includes('carnot')) {
+        return `<strong style="color:var(--text-primary)">Carnot Cycle Efficiency:</strong><br><br>η = 1 - (T<sub>L</sub>/T<sub>H</sub>)<br><br>Where T<sub>H</sub> = hot reservoir temp, T<sub>L</sub> = cold reservoir temp (in Kelvin).<br><br>The Carnot cycle represents the maximum possible efficiency for any heat engine.<br><br><span style="color:var(--accent-cyan)">↳ Important for VTU Thermodynamics exam</span>`;
+      } else if (ql.includes('merge sort')) {
+        return `<strong style="color:var(--text-primary)">Merge Sort in C:</strong><br><br><code style="background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:4px;font-size:0.8rem;">void mergeSort(int a[], int l, int r) {<br>&nbsp;&nbsp;if (l < r) {<br>&nbsp;&nbsp;&nbsp;&nbsp;int m = (l+r)/2;<br>&nbsp;&nbsp;&nbsp;&nbsp;mergeSort(a, l, m);<br>&nbsp;&nbsp;&nbsp;&nbsp;mergeSort(a, m+1, r);<br>&nbsp;&nbsp;&nbsp;&nbsp;merge(a, l, m, r);<br>&nbsp;&nbsp;}<br>}</code><br><br><strong>Complexity:</strong> O(n log n) — all cases<br><br><span style="color:var(--accent-cyan)">↳ Frequently asked in VTU DSA (BCS304)</span>`;
+      } else {
+        return `<strong style="color:var(--text-primary)">Great question!</strong><br><br>I can help with VTU engineering topics across all branches. Try asking about specific concepts like:<br><br>• Data Structures & Algorithms<br>• Circuit Analysis & Electronics<br>• Thermodynamics & Mechanics<br>• Engineering Mathematics<br><br><span style="color:var(--accent-cyan)">↳ Full AI tutor coming soon with deeper answers!</span>`;
+      }
     }
 
-    document.getElementById('chatInput').addEventListener('keydown', e => { if (e.key === 'Enter') askQuestion(); });
+    aiSend.addEventListener('click', () => askAI(aiInput.value));
+    aiInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') askAI(aiInput.value); });
   </script>
 
 </body>
+
 </html>
