@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,10 +11,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../styles/premium.css"><link rel="stylesheet" href="../styles/pages.css">
+  <link rel="stylesheet" href="../styles/theme-v3.css">
   <link rel="stylesheet" href="../styles/whatsapp-modal.css?v=3.0.0">
   <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230050FF'/><stop offset='100%25' style='stop-color:%2300D6FF'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%238b5cf6'/><stop offset='100%25' style='stop-color:%2306b6d4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='65' font-size='50' fill='white' text-anchor='middle' font-family='Arial' font-weight='bold'>B</text></svg>">
   <!-- Razorpay Checkout Script -->
   <link rel="preconnect" href="https://checkout.razorpay.com">
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -39,36 +39,37 @@
 </head>
 
 <body>
-  <div class="page-loader" id="pageLoader">
-    <img src="../assets/logo.png" alt="Braintube" class="loader-logo">
-    <div class="loader-spinner"></div>
-    <div class="loader-text">Loading</div>
-  </div>
-  <nav class="nav-premium scrolled">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-logo"><img src="../assets/logo.png" alt="B" class="nav-logo-img"> Braintube</a>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="branches.html">Subjects</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <a href="branches.html" class="nav-cta">Start Learning</a>
-      <button class="nav-mobile-toggle" onclick="document.getElementById('mob').style.opacity=1;document.getElementById('mob').style.pointerEvents='auto'">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+          </svg>
+        </div>
+        <span>Brain<span class="text-gradient">tube</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="branches.html" class="nav-link active">Branches</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="pricing.html" class="nav-link">Premium</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-secondary hide-mobile">Login</a>
+        <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
     </div>
-  </nav>
-  <div id="mob" style="position:fixed;inset:0;z-index:999;background:rgba(5,5,5,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;pointer-events:none;transition:opacity 0.4s;">
-    <a href="../index.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Home</a>
-    <a href="branches.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Subjects</a>
-    <a href="about.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">About</a>
-    <a href="contact.html" style="color:white;text-decoration:none;font-size:1.3rem;font-weight:600;">Contact</a>
-    <button onclick="document.getElementById('mob').style.opacity=0;document.getElementById('mob').style.pointerEvents='none'" style="position:absolute;top:16px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;">x</button>
-  </div>
+  </header>
 
-  
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="../index.html" class="mobile-nav-link">Home</a>
+    <a href="branches.html" class="mobile-nav-link">Branches</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+  </nav>
 
   <main>
     <section class="page-hero">
@@ -203,7 +204,7 @@
               style="text-decoration: none; padding: var(--space-6); display: flex; gap: var(--space-4); align-items: flex-start; transition: transform 0.3s ease;">
               <div
                 style="font-size: 2rem; background: var(--primary-900); padding: var(--space-2); border-radius: var(--radius-lg);">
-                ðŸŽ¯</div>
+                🎯</div>
               <div>
                 <h4 style="margin-bottom: var(--space-2); color: var(--text-primary);">How to Score 9.0+ CGPA</h4>
                 <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.5;">Master the proven
@@ -215,7 +216,7 @@
               style="text-decoration: none; padding: var(--space-6); display: flex; gap: var(--space-4); align-items: flex-start; transition: transform 0.3s ease;">
               <div
                 style="font-size: 2rem; background: var(--success-900); padding: var(--space-2); border-radius: var(--radius-lg);">
-                ðŸ“</div>
+                📐</div>
               <div>
                 <h4 style="margin-bottom: var(--space-2); color: var(--text-primary);">Clearing Math Backlogs</h4>
                 <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: 1.5;">Specific tips for
@@ -228,7 +229,20 @@
     </section>
   </main>
 
-  <footer class="footer-premium"><div class="footer-inner"><div class="footer-bottom"><span> 2026 Braintube. All rights reserved.</span><span>Independent platform. Not affiliated with VTU.</span></div></div></footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div style="text-align: center; width: 100%;">
+          <p class="footer-copyright">© 2026 Braintube. All rights reserved.</p>
+          <p
+            style="font-size: var(--text-xs); color: var(--text-muted); margin-top: var(--space-2); max-width: 600px; margin-left: auto; margin-right: auto;">
+            Braintube is an independent educational platform providing study resources for VTU students.
+            We are not affiliated with Visvesvaraya Technological University (VTU).
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="../scripts/data.js?v=1.0.4"></script>
   <script src="../scripts/config.js?v=1.0.4"></script>
@@ -840,7 +854,7 @@
         document.getElementById('subjectName').textContent = 'Subject Resources Coming Soon';
         document.getElementById('tabContent').innerHTML = `
           <div class="card" style="text-align: center; padding: 4rem 2rem;">
-            <div style="font-size: 4rem; margin-bottom: 2rem;">ðŸ“š</div>
+            <div style="font-size: 4rem; margin-bottom: 2rem;">📚</div>
             <h2 style="margin-bottom: 1rem;">Content Ready Scheduled</h2>
             <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
               We are currently populating resources for <strong>${code}</strong>. 
@@ -1065,8 +1079,8 @@
               Reference Books
             </h4>
             <ul style="color: var(--text-secondary); font-size: var(--text-sm);">
-              <li style="margin-bottom: var(--space-2);">â€¢ Textbook as per VTU syllabus</li>
-              <li style="margin-bottom: var(--space-2);">â€¢ Reference books recommended by faculty</li>
+              <li style="margin-bottom: var(--space-2);">• Textbook as per VTU syllabus</li>
+              <li style="margin-bottom: var(--space-2);">• Reference books recommended by faculty</li>
             </ul>
           </div>
           `}
@@ -1157,13 +1171,13 @@
             </div>
             
             <div style="background: rgba(255,255,255,0.15); border-radius: var(--radius-xl); padding: var(--space-6); margin-bottom: var(--space-6); max-width: 300px; margin-left: auto; margin-right: auto;">
-              <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.7); text-decoration: line-through;">â‚¹149</div>
-              <div style="font-size: var(--text-3xl); font-weight: 800; color: white;">â‚¹99</div>
+              <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.7); text-decoration: line-through;">₹149</div>
+              <div style="font-size: var(--text-3xl); font-weight: 800; color: white;">₹99</div>
             </div>
             
             <button class="btn" id="buy-now-btn" style="background: white; color: #764ba2; font-weight: 700; padding: var(--space-4) var(--space-10); font-size: var(--text-lg); border-radius: var(--radius-lg); display: flex; align-items: center; gap: 8px; margin: 0 auto;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-              Buy Now - â‚¹99
+              Buy Now - ₹99
             </button>
             
             <div style="margin-top: var(--space-6); display: flex; justify-content: center; gap: var(--space-6); flex-wrap: wrap;">
@@ -1238,11 +1252,11 @@
               
               <div style="background: var(--bg-secondary); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
                 <div style="font-size: var(--text-sm); color: var(--text-muted);">Amount to Pay</div>
-                <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--primary);">â‚¹${amount}</div>
+                <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--primary);">₹${amount}</div>
               </div>
               
               <button type="submit" class="btn btn-primary" style="width: 100%; padding: var(--space-4); font-size: var(--text-lg);">
-                ðŸ’³ Proceed to Payment
+                💳 Proceed to Payment
               </button>
               
               <button type="button" onclick="closePaymentForm()" style="width: 100%; padding: var(--space-3); background: transparent; border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-secondary); cursor: pointer;">
@@ -1454,7 +1468,7 @@
       modal.innerHTML = `
         <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; z-index: 9999; padding: var(--space-4);">
           <div style="background: white; border-radius: var(--radius-xl); padding: var(--space-10); max-width: 500px; width: 100%; text-align: center; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
-            <div style="font-size: 5rem; margin-bottom: var(--space-4);">ðŸŽ‰</div>
+            <div style="font-size: 5rem; margin-bottom: var(--space-4);">🎉</div>
             <h1 style="margin-bottom: var(--space-3); color: #764ba2; font-size: var(--text-3xl);">Thank You!</h1>
             <p style="color: #666; margin-bottom: var(--space-2); font-size: var(--text-lg);">
               Dear <strong>${userName || 'Student'}</strong>,
@@ -1473,7 +1487,7 @@
             </p>
             
             <button onclick="goToFixQuestions('${subjectCode}')" class="btn" style="background: #764ba2; color: white; width: 100%; padding: var(--space-4); font-size: var(--text-lg); border: none; border-radius: var(--radius-lg); cursor: pointer;">
-              âœ“ Continue
+              ✓ Continue
             </button>
           </div>
         </div>
@@ -1526,8 +1540,6 @@
   <script src="../scripts/auth.js?v=1.0.3"></script>
   <script src="../scripts/whatsapp-modal.js"></script>
 
-<script>window.addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('pageLoader');if(l)l.classList.add('loaded');},400);});</script>
 </body>
 
 </html>
-
