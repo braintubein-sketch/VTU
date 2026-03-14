@@ -1,0 +1,197 @@
+/* ============================================
+   Braintube – Premium Page Loader
+   Animated loading screen with logo pulse
+   ============================================ */
+
+.bt-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #09090b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.5s;
+}
+
+.bt-loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Logo Container */
+.bt-loader-logo {
+  position: relative;
+  width: 72px;
+  height: 72px;
+}
+
+/* The "B" Logo */
+.bt-loader-logo .logo-mark {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+  animation: bt-logo-pulse 1.8s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.3),
+              0 0 80px rgba(6, 182, 212, 0.15);
+}
+
+/* Rotating ring */
+.bt-loader-logo .logo-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 24px;
+  border: 2px solid transparent;
+  border-top-color: #8b5cf6;
+  border-right-color: #06b6d4;
+  animation: bt-ring-spin 1.2s linear infinite;
+}
+
+/* Second ring (counter-rotate) */
+.bt-loader-logo .logo-ring-2 {
+  position: absolute;
+  inset: -16px;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  border-bottom-color: rgba(139, 92, 246, 0.3);
+  border-left-color: rgba(6, 182, 212, 0.2);
+  animation: bt-ring-spin 2s linear infinite reverse;
+}
+
+/* Brand text */
+.bt-loader-brand {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+}
+.bt-loader-brand span {
+  background: linear-gradient(135deg, #a78bfa, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Progress bar */
+.bt-loader-progress {
+  width: 160px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.bt-loader-progress .bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+  border-radius: 10px;
+  animation: bt-progress 1.5s ease-out forwards;
+}
+
+/* Floating particles */
+.bt-loader-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.bt-loader-particles .particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: bt-float-up linear infinite;
+  opacity: 0;
+}
+.bt-loader-particles .particle:nth-child(1) {
+  width: 3px; height: 3px;
+  background: #8b5cf6;
+  left: 20%; bottom: -10px;
+  animation-duration: 4s; animation-delay: 0s;
+}
+.bt-loader-particles .particle:nth-child(2) {
+  width: 2px; height: 2px;
+  background: #06b6d4;
+  left: 45%; bottom: -10px;
+  animation-duration: 3.5s; animation-delay: 0.5s;
+}
+.bt-loader-particles .particle:nth-child(3) {
+  width: 4px; height: 4px;
+  background: #a78bfa;
+  left: 70%; bottom: -10px;
+  animation-duration: 5s; animation-delay: 1s;
+}
+.bt-loader-particles .particle:nth-child(4) {
+  width: 2px; height: 2px;
+  background: #22d3ee;
+  left: 85%; bottom: -10px;
+  animation-duration: 3s; animation-delay: 0.3s;
+}
+.bt-loader-particles .particle:nth-child(5) {
+  width: 3px; height: 3px;
+  background: #7c3aed;
+  left: 10%; bottom: -10px;
+  animation-duration: 4.5s; animation-delay: 0.8s;
+}
+.bt-loader-particles .particle:nth-child(6) {
+  width: 2px; height: 2px;
+  background: #67e8f9;
+  left: 55%; bottom: -10px;
+  animation-duration: 3.8s; animation-delay: 1.2s;
+}
+
+/* Subtle tagline */
+.bt-loader-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: bt-fade-in 0.8s ease 0.3s both;
+}
+
+/* ====== KEYFRAMES ====== */
+@keyframes bt-logo-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+@keyframes bt-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bt-progress {
+  0% { width: 0%; }
+  40% { width: 60%; }
+  80% { width: 85%; }
+  100% { width: 100%; }
+}
+
+@keyframes bt-float-up {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+@keyframes bt-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Prevent scroll while loading */
+body.bt-loading {
+  overflow: hidden;
+}
