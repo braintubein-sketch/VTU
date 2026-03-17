@@ -177,9 +177,29 @@
 
 .vtu-msg.user {
     align-self: flex-end;
-    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: white;
     border-bottom-right-radius: 4px;
+    margin-left: auto;
+}
+
+.vtu-ai-btn-sm {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.vtu-ai-btn-sm:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
 }
 
 .vtu-msg strong {

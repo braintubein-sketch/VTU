@@ -238,6 +238,58 @@
             return bestMatch;
         }
 
+        // Handle generic conversation better
+        if (q.includes('thank') || q.includes('awesome') || q.includes('great')) {
+            return "You're very welcome! I'm here to make your VTU journey easier. Always happy to help! 😊";
+        }
+        if (q.includes('how are you')) {
+            return "I'm functioning perfectly! Just finished indexing more VTU notes. How are your studies going?";
+        }
+
+        // DEEP SEARCH IN VTUDATA (Answering every specific subject question)
+        if (typeof VTUData !== 'undefined') {
+            const searchTerms = q.split(' ');
+            let foundSubject = null;
+            let foundBranch = null;
+            let foundSem = null;
+
+            // Search by Code or Name
+            for (const key in VTUData.subjects) {
+                const subList = VTUData.subjects[key];
+                const match = subList.find(s => q.includes(s.code.toLowerCase()) || q.includes(s.name.toLowerCase()));
+                if (match) {
+                    foundSubject = match;
+                    const parts = key.split('-');
+                    foundBranch = parts[0];
+                    foundSem = parts[1];
+                    break;
+                }
+            }
+
+            // Also search sem1/sem2 arrays
+            if (!foundSubject) {
+                const commonSems = ['sem1_cse', 'sem1_ece', 'sem1_me', 'sem1_cv', 'sem2_cse', 'sem2_ece', 'sem2_me', 'sem2_cv'];
+                for (const sKey of commonSems) {
+                    const match = VTUData[sKey].find(s => q.includes(s.code.toLowerCase()) || q.includes(s.name.toLowerCase()));
+                    if (match) {
+                        foundSubject = match;
+                        foundSem = sKey.includes('sem1') ? '1' : '2';
+                        foundBranch = sKey.split('_')[1];
+                        break;
+                    }
+                }
+            }
+
+            if (foundSubject) {
+                return `<strong>Subject Found: ${foundSubject.name}</strong><br><br>` + 
+                       `• <strong>Code:</strong> ${foundSubject.code}<br>` +
+                       `• <strong>Credits:</strong> ${foundSubject.credits}<br>` +
+                       `• <strong>Type:</strong> ${foundSubject.type}<br>` +
+                       `• <strong>Semester:</strong> ${foundSem}<br><br>` +
+                       `<a href="${basePath}pages/subject.html?branch=${foundBranch}&sem=${foundSem}&code=${foundSubject.code}" class="vtu-ai-btn-sm">View Resources</a>`;
+            }
+        }
+
         // Broad semantic fallbacks
         if (q.includes('update') || q.includes('news')) {
              return vtuKnowledge.find(k => k.keywords.includes('latest update')).ans;
