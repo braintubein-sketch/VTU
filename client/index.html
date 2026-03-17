@@ -111,7 +111,7 @@
             </nav>
 
             <div class="header-actions">
-                <button class="btn btn-ghost btn-icon hide-mobile" id="themeToggle" aria-label="Toggle theme">
+                <button class="btn btn-ghost btn-icon" id="themeToggle" aria-label="Toggle theme">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="4" />
@@ -343,78 +343,70 @@
                     <p>Calculate your Semester GPA instantly with our advanced calculator</p>
                 </div>
 
-                <div class="calc-grid"
-                    style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;">
-                    <div class="card card-gradient"
-                        style="padding: var(--space-8); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);">
-                        <div
-                            style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-8);">
-                            <div class="branch-icon" style="background: white; color: var(--primary);">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 7v10M7 12h10" />
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <div class="calc-grid">
+                    <div class="card card-gradient" style="padding: var(--space-6); border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);">
+                        <div style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6);">
+                            <div class="branch-icon" style="background: white; color: var(--primary); width: 48px; height: 48px; border-radius: 12px; margin-bottom: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2">
+                                     <path d="M12 7v10M7 12h10" />
+                                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                                 </svg>
                             </div>
                             <div>
-                                <h3 style="margin: 0; color: white;">Quick Grade Calc</h3>
-                                <p style="margin: 0; color: rgba(255,255,255,0.8); font-size: var(--text-sm);">Instant
-                                    VTU Grade Check</p>
+                                <h3 style="margin: 0; color: white; font-size: var(--text-lg);">Quick Grade Calc</h3>
+                                <p style="margin: 0; color: rgba(255,255,255,0.8); font-size: var(--text-xs);">Instant VTU Grade Check</p>
                             </div>
                         </div>
 
-                        <div style="display: grid; gap: var(--space-4);">
-                            <div
-                                style="display: grid; grid-template-columns: 1fr 100px 80px; gap: var(--space-4); font-weight: 700; color: rgba(255,255,255,0.6); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.05em;">
+                        <div style="display: grid; gap: var(--space-3);">
+                            <div class="quick-calc-header">
                                 <span>Subject</span>
                                 <span style="text-align: center;">Marks</span>
                                 <span style="text-align: center;">Grade</span>
                             </div>
 
-                            <div style="display: grid; grid-template-columns: 1fr 100px 80px; gap: var(--space-4); align-items: center;"
-                                class="quick-calc-row">
-                                <span style="color: white; font-weight: 500;">Mathematics</span>
+                            <div class="quick-calc-row">
+                                <span style="color: white; font-weight: 500; font-size: var(--text-sm);">Mathematics</span>
                                 <input type="number" placeholder="0-100" min="0" max="100"
                                     style="padding: 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; background: rgba(255,255,255,0.1); color: white; text-align: center; font-weight: 600;"
                                     oninput="quickCalcGrade(this)">
                                 <div style="display: flex; justify-content: center;">
                                     <span class="quick-grade"
-                                        style="font-weight: 800; color: white; background: rgba(255,255,255,0.2); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s;">-</span>
+                                        style="font-weight: 800; color: white; background: rgba(255,255,255,0.2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s; font-size: 0.85rem;">-</span>
                                 </div>
                             </div>
 
-                            <div style="display: grid; grid-template-columns: 1fr 100px 80px; gap: var(--space-4); align-items: center;"
-                                class="quick-calc-row">
-                                <span style="color: white; font-weight: 500;">Programming</span>
+                            <div class="quick-calc-row">
+                                <span style="color: white; font-weight: 500; font-size: var(--text-sm);">Programming</span>
                                 <input type="number" placeholder="0-100" min="0" max="100"
                                     style="padding: 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; background: rgba(255,255,255,0.1); color: white; text-align: center; font-weight: 600;"
                                     oninput="quickCalcGrade(this)">
                                 <div style="display: flex; justify-content: center;">
                                     <span class="quick-grade"
-                                        style="font-weight: 800; color: white; background: rgba(255,255,255,0.2); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s;">-</span>
+                                        style="font-weight: 800; color: white; background: rgba(255,255,255,0.2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s; font-size: 0.85rem;">-</span>
                                 </div>
                             </div>
 
-                            <div style="display: grid; grid-template-columns: 1fr 100px 80px; gap: var(--space-4); align-items: center;"
-                                class="quick-calc-row">
-                                <span style="color: white; font-weight: 500;">Electronics</span>
+                            <div class="quick-calc-row">
+                                <span style="color: white; font-weight: 500; font-size: var(--text-sm);">Electronics</span>
                                 <input type="number" placeholder="0-100" min="0" max="100"
                                     style="padding: 10px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; background: rgba(255,255,255,0.1); color: white; text-align: center; font-weight: 600;"
                                     oninput="quickCalcGrade(this)">
                                 <div style="display: flex; justify-content: center;">
                                     <span class="quick-grade"
-                                        style="font-weight: 800; color: white; background: rgba(255,255,255,0.2); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s;">-</span>
+                                        style="font-weight: 800; color: white; background: rgba(255,255,255,0.2); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s; font-size: 0.85rem;">-</span>
                                 </div>
                             </div>
                         </div>
 
                         <a href="pages/calculator.html" class="btn"
-                            style="width: 100%; margin-top: var(--space-8); justify-content: center; background: white; color: var(--primary); font-weight: 700; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                            Open Full SGPA Calculator →
+                            style="width: 100%; margin-top: var(--space-6); justify-content: center; background: white; color: var(--primary); font-weight: 700; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            Open Full Calculator →
                         </a>
                     </div>
 
-                    <div style="padding-left: var(--space-6);">
+                    <div class="calc-info-content">
                         <h3 style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Calculate Your GPA
                             Instantly</h3>
                         <p style="color: var(--text-secondary); margin-bottom: var(--space-6); line-height: 1.8;">
@@ -931,53 +923,6 @@
     <script src="scripts/main.js?v=1.0.4"></script>
     <script src="scripts/auth.js?v=1.0.3"></script>
     <script src="scripts/whatsapp-modal.js"></script>
-    <script>
-        // Quick calculator for home page
-        function quickCalcGrade(input) {
-            const marks = parseInt(input.value);
-            const gradeSpan = input.closest('.quick-calc-row').querySelector('.quick-grade');
-
-            if (isNaN(marks) || marks < 0 || marks > 100) {
-                gradeSpan.textContent = '-';
-                gradeSpan.style.background = 'rgba(255,255,255,0.2)';
-                return;
-            }
-
-            let grade = '-', color = 'rgba(255,255,255,0.2)';
-
-            if (marks >= 90) { grade = 'O'; color = '#22c55e'; }
-            else if (marks >= 80) { grade = 'A+'; color = '#3b82f6'; }
-            else if (marks >= 70) { grade = 'A'; color = '#6366f1'; }
-            else if (marks >= 60) { grade = 'B+'; color = '#a855f7'; }
-            else if (marks >= 55) { grade = 'B'; color = '#ec4899'; }
-            else if (marks >= 50) { grade = 'C'; color = '#f59e0b'; }
-            else if (marks >= 40) { grade = 'P'; color = '#6b7280'; }
-            else { grade = 'F'; color = '#ef4444'; }
-
-            gradeSpan.textContent = grade;
-            gradeSpan.style.background = color;
-            gradeSpan.style.boxShadow = `0 0 15px ${color}80`;
-            gradeSpan.style.transform = 'scale(1.1)';
-            setTimeout(() => gradeSpan.style.transform = 'scale(1)', 200);
-        }
-    </script>
-    <style>
-        @media (max-width: 768px) {
-            .calc-grid {
-                grid-template-columns: 1fr !important;
-                gap: var(--space-6);
-            }
-
-            #calculator .calc-grid>div:last-child {
-                padding-left: 0 !important;
-                text-align: center;
-            }
-
-            #calculator .calc-grid>div:last-child div {
-                justify-content: center;
-            }
-        }
-    </style>
     <script src="scripts/vtu-ai.js"></script>
 </body>
 

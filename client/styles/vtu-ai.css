@@ -6,56 +6,57 @@
 /* Floating Button */
 .vtu-ai-btn {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-glow);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 9999;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: var(--z-fixed);
+    transition: all var(--transition-spring);
     border: none;
     outline: none;
 }
 
 .vtu-ai-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.5);
 }
 
 .vtu-ai-btn svg {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     color: white;
 }
 
 /* Chat Panel */
 .vtu-ai-panel {
     position: fixed;
-    bottom: 100px;
-    right: 24px;
+    bottom: 90px;
+    right: var(--space-6);
     width: 380px;
-    height: 500px;
+    height: 600px;
     max-height: calc(100vh - 120px);
-    background: rgba(9, 9, 11, 0.95);
+    background: var(--bg-secondary);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
     display: flex;
     flex-direction: column;
-    z-index: 9998;
+    z-index: var(--z-fixed);
     transform-origin: bottom right;
     transform: scale(0.8) translateY(20px);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    font-family: 'Inter', sans-serif;
+    transition: all var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: var(--font-primary);
 }
 
 .vtu-ai-panel.active {
@@ -66,26 +67,26 @@
 
 /* Header */
 .vtu-ai-header {
-    padding: 20px 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-5) var(--space-6);
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
-    gap: 16px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 24px 24px 0 0;
+    gap: var(--space-4);
+    background: var(--bg-glass);
+    border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
 }
 
 .vtu-ai-avatar {
     width: 44px;
     height: 44px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    border-radius: var(--radius-lg);
+    background: var(--gradient-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Outfit', sans-serif;
+    font-family: var(--font-display);
     font-weight: 800;
-    font-size: 20px;
+    font-size: var(--text-xl);
     color: white;
 }
 
@@ -95,52 +96,54 @@
 
 .vtu-ai-title h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: var(--text-base);
     font-weight: 600;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .vtu-ai-title p {
-    margin: 4px 0 0;
-    font-size: 12px;
-    color: #a1a1aa;
+    margin: var(--space-1) 0 0;
+    font-size: var(--text-xs);
+    color: var(--text-muted);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--space-2);
 }
 
 .vtu-ai-status {
     width: 8px;
     height: 8px;
-    background: #22c55e;
+    background: var(--success-500);
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
 }
 
 .vtu-ai-close {
-    background: none;
+    background: var(--bg-glass);
     border: none;
-    color: #a1a1aa;
+    color: var(--text-secondary);
     cursor: pointer;
-    padding: 8px;
-    transition: color 0.2s;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .vtu-ai-close:hover {
-    color: #fff;
+    background: var(--error-500);
+    color: white;
 }
 
 /* Chat Body (Messages) */
 .vtu-ai-body {
     flex: 1;
     overflow-y: auto;
-    padding: 24px;
+    padding: var(--space-6);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--space-4);
 }
 
 .vtu-ai-body::-webkit-scrollbar {
@@ -150,15 +153,15 @@
     background: transparent;
 }
 .vtu-ai-body::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--border-color);
     border-radius: 10px;
 }
 
 .vtu-msg {
     max-width: 85%;
-    padding: 14px 18px;
-    border-radius: 18px;
-    font-size: 14.5px;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
     line-height: 1.5;
     animation: vtu-msg-pop 0.3s ease-out forwards;
 }
@@ -170,54 +173,56 @@
 
 .vtu-msg.bot {
     align-self: flex-start;
-    background: rgba(255, 255, 255, 0.06);
-    color: #e4e4e7;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
     border-bottom-left-radius: 4px;
+    border: 1px solid var(--border-color);
 }
 
 .vtu-msg.user {
     align-self: flex-end;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: var(--gradient-primary);
     color: white;
     border-bottom-right-radius: 4px;
     margin-left: auto;
+    box-shadow: var(--shadow-md);
 }
 
 .vtu-ai-btn-sm {
     display: inline-block;
-    padding: 6px 14px;
-    background: rgba(139, 92, 246, 0.2);
-    border: 1px solid var(--primary);
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-glass);
+    border: 1px solid var(--primary-500);
     color: white;
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
     font-weight: 500;
-    transition: all 0.2s;
-    margin-top: 8px;
+    transition: all var(--transition-fast);
+    margin-top: var(--space-2);
 }
 
 .vtu-ai-btn-sm:hover {
-    background: var(--primary);
+    background: var(--primary-500);
     transform: translateY(-2px);
 }
 
 .vtu-msg strong {
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
 .vtu-msg .ref {
     display: block;
-    margin-top: 10px;
-    font-size: 12px;
-    color: #06b6d4;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: var(--space-3);
+    font-size: var(--text-xs);
+    color: var(--accent-400);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-color);
 }
 
 .vtu-msg a {
-    color: #a5f3fc;
+    color: var(--accent-300);
     text-decoration: underline;
 }
 
@@ -231,7 +236,7 @@
 .vtu-typing-dot {
     width: 6px;
     height: 6px;
-    background: #a1a1aa;
+    background: var(--text-muted);
     border-radius: 50%;
     animation: vtu-typing-bounce 1.4s infinite ease-in-out both;
 }
@@ -246,9 +251,9 @@
 
 /* Quick Suggestions */
 .vtu-ai-suggestions {
-    padding: 0 24px 16px;
+    padding: 0 var(--space-6) var(--space-4);
     display: flex;
-    gap: 8px;
+    gap: var(--space-2);
     overflow-x: auto;
     scrollbar-width: none;
 }
@@ -259,70 +264,71 @@
 
 .vtu-suggestion {
     white-space: nowrap;
-    padding: 8px 14px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #a1a1aa;
-    font-size: 12.5px;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: var(--text-xs);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all var(--transition-fast);
 }
 
 .vtu-suggestion:hover {
-    background: rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.4);
-    color: #fff;
+    background: rgba(139, 92, 246, 0.1);
+    border-color: var(--primary-500);
+    color: var(--text-primary);
 }
 
 /* Input Area */
 .vtu-ai-footer {
-    padding: 16px 24px 24px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 0 0 24px 24px;
+    padding: var(--space-4) var(--space-6) var(--space-6);
+    background: var(--bg-glass);
+    border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
 }
 
 .vtu-ai-input-wrap {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 6px 6px 6px 16px;
-    transition: border-color 0.2s;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-1) var(--space-1) var(--space-1) var(--space-4);
+    transition: all var(--transition-fast);
 }
 
 .vtu-ai-input-wrap:focus-within {
-    border-color: #8b5cf6;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
 }
 
 .vtu-ai-input-wrap input {
     flex: 1;
     background: none;
     border: none;
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 14.5px;
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: var(--text-sm);
     outline: none;
-    padding: 8px 0;
+    padding: var(--space-3) 0;
 }
 
 .vtu-ai-input-wrap input::placeholder {
-    color: #71717a;
+    color: var(--text-muted);
 }
 
 .vtu-ai-send {
-    width: 36px;
-    height: 36px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-lg);
+    background: var(--gradient-primary);
     border: none;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all var(--transition-fast);
 }
 
 .vtu-ai-send:hover {
@@ -331,6 +337,13 @@
 
 /* Mobile Responsive */
 @media (max-width: 480px) {
+    .vtu-ai-btn {
+        bottom: var(--space-4);
+        right: var(--space-4);
+        width: 56px;
+        height: 56px;
+    }
+
     .vtu-ai-panel {
         width: 100%;
         height: 100%;
@@ -342,9 +355,10 @@
     }
     .vtu-ai-header {
         border-radius: 0;
+        padding: var(--space-4) var(--space-5);
     }
     .vtu-ai-footer {
         border-radius: 0;
-        padding-bottom: max(24px, env(safe-area-inset-bottom));
+        padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
     }
 }

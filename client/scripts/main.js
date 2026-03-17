@@ -51,18 +51,30 @@ window.initMobileMenu = function () {
 
     // Remove existing listeners to avoid duplicates
     const newToggle = menuToggle.cloneNode(true);
-    menuToggle.parentNode.replaceChild(newToggle, menuToggle);
+    if (menuToggle.parentNode) {
+        menuToggle.parentNode.replaceChild(newToggle, menuToggle);
+    }
 
-    newToggle.addEventListener('click', () => {
+    newToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         newToggle.classList.toggle('active');
         mobileNav.classList.toggle('active');
         document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
     });
 
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileNav.classList.contains('active') && !mobileNav.contains(e.target) && !newToggle.contains(e.target)) {
+            newToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
     // Close on link click
     mobileNav.querySelectorAll('.mobile-nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
+            newToggle.classList.remove('active');
             mobileNav.classList.remove('active');
             document.body.style.overflow = '';
         });
@@ -71,17 +83,19 @@ window.initMobileMenu = function () {
 
 // Theme toggle
 function initThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    if (!themeToggle) return;
+    const themeToggles = document.querySelectorAll('#themeToggle, .theme-toggle-btn');
+    if (themeToggles.length === 0) return;
 
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
     });
 }
 
@@ -101,8 +115,6 @@ function initBranchesGrid() {
     const grid = document.getElementById('branchesGrid');
     if (!grid || typeof VTUData === 'undefined') return;
 
-
-
     grid.innerHTML = VTUData.branches.map(branch => `
     <a href="pages/branch.html?branch=${branch.id}" class="branch-card">
       <div class="branch-icon">${window.iconSvgs[branch.icon] || window.iconSvgs['laptop']}</div>
@@ -120,6 +132,38 @@ function initBranchesGrid() {
       </div>
     </a>
   `).join('');
+}
+
+/**
+ * Quick Grade Calculator for Hero/Home Section
+ * Converts marks to VTU Grades (2022 Scheme)
+ */
+window.quickCalcGrade = function (input) {
+    const marks = parseInt(input.value);
+    const row = input.closest('.quick-calc-row');
+    const gradeDisplay = row.querySelector('.quick-grade');
+
+    if (isNaN(marks) || marks < 0) {
+        gradeDisplay.textContent = '-';
+        gradeDisplay.style.background = 'rgba(255,255,255,0.2)';
+        return;
+    }
+
+    let grade = 'F';
+    let color = '#ef4444'; // Error/Fail red
+
+    if (marks >= 90) { grade = 'O'; color = '#22c55e'; }
+    else if (marks >= 80) { grade = 'A+'; color = '#4ade80'; }
+    else if (marks >= 70) { grade = 'A'; color = '#84cc16'; }
+    else if (marks >= 60) { grade = 'B+'; color = '#eab308'; }
+    else if (marks >= 55) { grade = 'B'; color = '#f59e0b'; }
+    else if (marks >= 50) { grade = 'C'; color = '#f97316'; }
+    else if (marks >= 40) { grade = 'P'; color = '#6366f1'; }
+    else { grade = 'F'; color = '#ef4444'; }
+
+    gradeDisplay.textContent = grade;
+    gradeDisplay.style.background = color;
+    gradeDisplay.style.boxShadow = `0 0 15px ${color}66`;
 }
 
 // Scroll animations
