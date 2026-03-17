@@ -1,0 +1,330 @@
+/* ============================================
+   Braintube – VTU AI Tutor Styles
+   Floating chat widget for instant answers
+   ============================================ */
+
+/* Floating Button */
+.vtu-ai-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    outline: none;
+}
+
+.vtu-ai-btn:hover {
+    transform: scale(1.1);
+}
+
+.vtu-ai-btn svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+/* Chat Panel */
+.vtu-ai-panel {
+    position: fixed;
+    bottom: 100px;
+    right: 24px;
+    width: 380px;
+    height: 500px;
+    max-height: calc(100vh - 120px);
+    background: rgba(9, 9, 11, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    z-index: 9998;
+    transform-origin: bottom right;
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    font-family: 'Inter', sans-serif;
+}
+
+.vtu-ai-panel.active {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Header */
+.vtu-ai-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 24px 24px 0 0;
+}
+
+.vtu-ai-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: white;
+}
+
+.vtu-ai-title {
+    flex: 1;
+}
+
+.vtu-ai-title h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.vtu-ai-title p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #a1a1aa;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.vtu-ai-status {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+.vtu-ai-close {
+    background: none;
+    border: none;
+    color: #a1a1aa;
+    cursor: pointer;
+    padding: 8px;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vtu-ai-close:hover {
+    color: #fff;
+}
+
+/* Chat Body (Messages) */
+.vtu-ai-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vtu-ai-body::-webkit-scrollbar {
+    width: 6px;
+}
+.vtu-ai-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.vtu-ai-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.vtu-msg {
+    max-width: 85%;
+    padding: 14px 18px;
+    border-radius: 18px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    animation: vtu-msg-pop 0.3s ease-out forwards;
+}
+
+@keyframes vtu-msg-pop {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.vtu-msg.bot {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.06);
+    color: #e4e4e7;
+    border-bottom-left-radius: 4px;
+}
+
+.vtu-msg.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.vtu-msg strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.vtu-msg .ref {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #06b6d4;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vtu-msg a {
+    color: #a5f3fc;
+    text-decoration: underline;
+}
+
+/* Typing Indicator */
+.vtu-typing {
+    display: flex;
+    gap: 4px;
+    padding: 6px 4px;
+}
+
+.vtu-typing-dot {
+    width: 6px;
+    height: 6px;
+    background: #a1a1aa;
+    border-radius: 50%;
+    animation: vtu-typing-bounce 1.4s infinite ease-in-out both;
+}
+
+.vtu-typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.vtu-typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes vtu-typing-bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1); }
+}
+
+/* Quick Suggestions */
+.vtu-ai-suggestions {
+    padding: 0 24px 16px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.vtu-ai-suggestions::-webkit-scrollbar {
+    display: none;
+}
+
+.vtu-suggestion {
+    white-space: nowrap;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a1a1aa;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.vtu-suggestion:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #fff;
+}
+
+/* Input Area */
+.vtu-ai-footer {
+    padding: 16px 24px 24px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0 0 24px 24px;
+}
+
+.vtu-ai-input-wrap {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 6px 6px 6px 16px;
+    transition: border-color 0.2s;
+}
+
+.vtu-ai-input-wrap:focus-within {
+    border-color: #8b5cf6;
+}
+
+.vtu-ai-input-wrap input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    outline: none;
+    padding: 8px 0;
+}
+
+.vtu-ai-input-wrap input::placeholder {
+    color: #71717a;
+}
+
+.vtu-ai-send {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.vtu-ai-send:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .vtu-ai-panel {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        border: none;
+    }
+    .vtu-ai-header {
+        border-radius: 0;
+    }
+    .vtu-ai-footer {
+        border-radius: 0;
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+    }
+}
