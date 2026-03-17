@@ -1,0 +1,25 @@
+{
+    "lastUpdated": "March 17, 2026",
+    "news": [
+        {
+            "id": "results_2026",
+            "title": "BE/B.Tech Results Declared",
+            "content": "VTU declared BE/B.Tech Dec 2025/Jan 2026 results on March 3, 2026. BBA/BCA results were declared on March 16. Check them at results.vtu.ac.in.",
+            "link": "https://results.vtu.ac.in"
+        },
+        {
+            "id": "timetable_june_2026",
+            "title": "Draft Timetable June/July 2026",
+            "content": "Draft timetables for June/July 2026 Semester End Exams are currently out for review. Final timetables expect by mid-April.",
+            "link": "https://vtu.ac.in/en/time-table/"
+        },
+        {
+            "id": "scheme_2025_ai",
+            "title": "2025 Scheme AI Integration",
+            "content": "The 2025 scheme mandates AI subjects for all 1st-year students. Braintube is already preparing notes for these new subjects.",
+            "link": ""
+        }
+    ],
+    "futureExams": "June/July 2026",
+    "portalStatus": "Operational"
+}

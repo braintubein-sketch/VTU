@@ -32,6 +32,21 @@
          document.head.appendChild(aiCss);
     }
 
+    // Dynamic Updates State
+    let liveUpdates = null;
+    async function fetchLiveUpdates() {
+        try {
+            const response = await fetch(basePath + 'data/vtu-updates.json');
+            if (response.ok) {
+                liveUpdates = await response.json();
+                console.log('VTU AI: Live updates loaded', liveUpdates.lastUpdated);
+            }
+        } catch (e) {
+            console.warn('VTU AI: Could not load live updates');
+        }
+    }
+    fetchLiveUpdates();
+
     // Comprehensive VTU Knowledge Base
     const vtuKnowledge = [
         // Data Structures
@@ -171,6 +186,19 @@
         if (q === 'hi' || q === 'hello' || q === 'hey') {
             return "Hello! I'm the Braintube VTU AI. How can I help you ace your midterms today? 🚀";
         }
+        
+        // Handle Live Updates Priority
+        if (q.includes('update') || q.includes('news') || q.includes('recent') || q.includes('circular')) {
+            if (liveUpdates && liveUpdates.news) {
+                let newsHtml = `<strong>Latest VTU Updates (${liveUpdates.lastUpdated})</strong><br><br>`;
+                liveUpdates.news.forEach(item => {
+                    newsHtml += `• <strong>${item.title}:</strong> ${item.content}${item.link ? ` <a href="${item.link}" target="_blank">Link</a>` : ''}<br>`;
+                });
+                newsHtml += `<br><span class="ref">↳ Live from VTU Circulars</span>`;
+                return newsHtml;
+            }
+        }
+
         if (q.includes('who are you') || q.includes('what are you')) {
             return "I am a syllabus-aware AI designed purely for VTU engineering students by the Braintube team. I know physics, math, CS, circuits, and more!";
         }
