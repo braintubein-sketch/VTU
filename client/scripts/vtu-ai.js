@@ -61,7 +61,14 @@
         // VTU Info
         { keywords: ['passing marks', 'pass mark', 'grace'], ans: `<strong>VTU Passing Guidelines (2022 Scheme)</strong><br><br>• <strong>CIE (Internals):</strong> Minimum 20 out of 50 (40%)<br>• <strong>SEE (Externals):</strong> Minimum 18 out of 50 (35%)<br>• <strong>Total:</strong> Minimum 40 out of 100 to pass the subject.<br><br>No grace marks policy currently for regular subjects.<br><span class="ref">↳ Braintube VTU Information</span>` },
         { keywords: ['sgpa', 'cgpa', 'calculator'], ans: `<strong>SGPA & CGPA</strong><br><br>VTU uses a 10-point grading scale (O, A+, A, B+, B, C, P).<br><br><strong>SGPA</strong> = Σ(Credits × Grade Points) / ΣCredits<br><strong>CGPA</strong> = Cumulative of all passed semesters.<br><br>Try our <a href="${basePath}pages/calculator.html">VTU SGPA Calculator</a> to calculate easily.<br><span class="ref">↳ Braintube Tools</span>` },
-        { keywords: ['notes', 'pdf', 'study material'], ans: `<strong>Braintube Notes</strong><br><br>You can find perfectly organized, module-wise PDF notes for almost every scheme (2022 & 2025).<br><br>Head over to the <a href="${basePath}pages/branches.html">Branches Page</a>, select your branch and semester to download ad-free notes instantly.<br><span class="ref">↳ Braintube Library</span>` }
+        { keywords: ['notes', 'pdf', 'study material'], ans: `<strong>Braintube Notes</strong><br><br>You can find perfectly organized, module-wise PDF notes for almost every scheme (2022 & 2025).<br><br>Head over to the <a href="${basePath}pages/branches.html">Branches Page</a>, select your branch and semester to download ad-free notes instantly.<br><span class="ref">↳ Braintube Library</span>` },
+
+        // NEW MARCH 2026 UPDATES & EDUCATION
+        { keywords: ['latest update', 'current news', 'vtu news', 'recent update', 'latest circular'], ans: `<strong>Latest VTU Updates (March 2026)</strong><br><br>• <strong>Results:</strong> Dec 2025/Jan 2026 BE/B.Tech Results were declared on <strong>March 3, 2026</strong>. BBA/BCA results followed on March 16.<br>• <strong>Upcoming Exams:</strong> Draft timetables for <strong>June/July 2026</strong> exams are currently being circulated for verification.<br>• <strong>Revaluation:</strong> Expected to open shortly for those who appeared in the Dec/Jan cycle.<br>• <strong>Portal:</strong> Check <a href="https://results.vtu.ac.in" target="_blank">results.vtu.ac.in</a> for official marks.<br><span class="ref">↳ Updated: March 17, 2026</span>` },
+        { keywords: ['2025 scheme', 'nep 2025', 'new curriculum'], ans: `<strong>VTU 2025 Scheme Updates</strong><br><br>The 2025 scheme is now in full effect for 1st-year students!<br><br>• <strong>Mandatory AI:</strong> Every engineering branch now includes "Introduction to AI" in the 1st year.<br>• <strong>Skill Focus:</strong> More lab-heavy curriculum with early project exposure.<br>• <strong>CS/CST:</strong> Computer Science & Technology now completely follows the CSE syllabus for uniformity.<br><span class="ref">↳ VTU Academic Council 2026</span>` },
+        { keywords: ['result', 'check marks', 'usn'], ans: `<strong>Checking Your VTU Results</strong><br><br>1. Go to <a href="https://results.vtu.ac.in" target="_blank">results.vtu.ac.in</a>.<br>2. Enter your <strong>USN</strong> (University Seat Number).<br>3. Solve the captcha and click Submit.<br><br><em>Note: If the site is slow, try early morning or late night.</em><br><span class="ref">↳ March 2026 Result Cycle</span>` },
+        { keywords: ['education', 'tips', 'how to study', 'success', '9 cgpa'], ans: `<strong>Braintube Education Expert Tips</strong><br><br>To excel in VTU:<br>• <strong>Master 3 Modules:</strong> VTU exams follow the 5-module rule. Perfecting 3 modules guarantees a comfortable pass; mastering 4-5 ensures 9+ CGPA.<br>• <strong>Topper Notes:</strong> Standard textbooks can be overwhelming. Use our curated <a href="${basePath}pages/branches.html">Module-wise Topper Notes</a>.<br>• <strong>Old QPs:</strong> 60% of questions are repeated patterns from previous 5 years.<br><span class="ref">↳ Braintube Success Guide</span>` },
+        { keywords: ['vtu', 'university', 'what is vtu'], ans: `<strong>About VTU</strong><br><br>Visvesvaraya Technological University (VTU) is one of India's largest technical universities, governing almost all engineering colleges in Karnataka. It is headquartered in Belagavi and named after the legendary engineer Sir M. Visvesvaraya.<br><span class="ref">↳ University Info</span>` }
     ];
 
     // Build the UI
@@ -187,8 +194,16 @@
             return bestMatch;
         }
 
+        // Broad semantic fallbacks
+        if (q.includes('update') || q.includes('news')) {
+             return vtuKnowledge.find(k => k.keywords.includes('latest update')).ans;
+        }
+        if (q.includes('study') || q.includes('exam') || q.includes('help')) {
+             return vtuKnowledge.find(k => k.keywords.includes('education')).ans;
+        }
+
         // Default Fallback
-        return "<strong>I'm still learning! 🧠</strong><br><br>I couldn't find a direct syllabus answer for that yet.<br><br>Try asking me about specific VTU topics like: <br>• <em>Merge Sort</em><br>• <em>Schrodinger Eq</em><br>• <em>Carnot Cycle</em><br>• <em>Hooke's Law</em><br>• <em>Passing marks</em>";
+        return "<strong>I'm still learning! 🧠</strong><br><br>I couldn't find a direct answer for that yet.<br><br>Try asking me about:<br>• <em>Latest updates</em><br>• <em>How to score high?</em><br>• <em>Results 2026</em><br>• <em>Specific subjects (Merge Sort, Thermodynamics, etc.)</em>";
     }
 
     // Submission
