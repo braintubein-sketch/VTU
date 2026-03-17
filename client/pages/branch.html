@@ -131,7 +131,7 @@
       document.getElementById('branchName').textContent = currentBranch.name;
       document.getElementById('branchTitle').textContent = currentBranch.name;
       document.getElementById('branchFullName').textContent = `${currentBranch.fullName} • Scheme ${currentScheme}`;
-      document.getElementById('branchIcon').textContent = currentBranch.icon;
+      document.getElementById('branchIcon').innerHTML = window.iconSvgs[currentBranch.icon] || window.iconSvgs['laptop'];
       document.title = `${currentBranch.name} (${currentScheme}) - Braintube`;
 
       // Render semester navigation
