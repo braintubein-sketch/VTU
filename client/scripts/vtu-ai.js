@@ -136,7 +136,7 @@
 
     function addMessage(text, isUser = false) {
         const div = document.createElement('div');
-        div.className = \`vtu-msg \${isUser ? 'user' : 'bot'}\`;
+        div.className = `vtu-msg ${isUser ? 'user' : 'bot'}`;
         div.innerHTML = text;
         body.appendChild(div);
         scrollToBottom();
