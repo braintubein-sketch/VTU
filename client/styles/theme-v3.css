@@ -2193,6 +2193,7 @@ ol {
     .subjects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
 
 /* ==========================================
    CONTACT PAGE
