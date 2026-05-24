@@ -127,6 +127,14 @@
         return;
       }
 
+      // Restore saved semester if returning to same branch
+      try {
+        const saved = JSON.parse(localStorage.getItem('bt_student'));
+        if (saved && saved.branch === branchId && saved.scheme === currentScheme && saved.semester) {
+          currentSemester = saved.semester;
+        }
+      } catch(e) {}
+
       // Update page info
       document.getElementById('branchName').textContent = currentBranch.name;
       document.getElementById('branchTitle').textContent = currentBranch.name;
@@ -154,6 +162,18 @@
 
     function loadSemester(semId) {
       currentSemester = semId;
+
+      // Save selection to localStorage for returning visitors
+      try {
+        const existing = JSON.parse(localStorage.getItem('bt_student') || '{}');
+        existing.branch = currentBranch.id;
+        existing.branchName = currentBranch.name;
+        existing.branchFullName = currentBranch.fullName;
+        existing.scheme = currentScheme;
+        existing.semester = semId;
+        existing.updatedAt = Date.now();
+        localStorage.setItem('bt_student', JSON.stringify(existing));
+      } catch(e) {}
 
       // Update active button
       document.querySelectorAll('.semester-btn').forEach(btn => {

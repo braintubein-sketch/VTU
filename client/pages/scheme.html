@@ -181,6 +181,15 @@
 
         // Handle scheme selection
         function selectScheme(year) {
+            // Save selection to localStorage for returning visitors
+            const branchInfo = VTUData.getBranch(branchId);
+            localStorage.setItem('bt_student', JSON.stringify({
+                branch: branchId,
+                branchName: branchInfo ? branchInfo.name : branchId.toUpperCase(),
+                branchFullName: branchInfo ? branchInfo.fullName : branchId.toUpperCase(),
+                scheme: year,
+                updatedAt: Date.now()
+            }));
             window.location.href = `branch.html?branch=${branchId}&scheme=${year}`;
         }
 
