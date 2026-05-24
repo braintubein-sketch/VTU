@@ -347,13 +347,13 @@ const VTUData = {
       { code: 'BRMK507', name: 'Research Methodology & IPR', credits: 2, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true }
     ],
     'cse-6': [
-      { code: 'BCS601', name: 'System Software & Compilers', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
+      { code: 'BCS601', name: 'Cloud Computing', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS602', name: 'Computer Graphics & Fundamentals of Image Processing', credits: 4, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS603', name: 'Machine Learning', credits: 3, type: 'Theory', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS613A', name: 'Web Technology', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS613B', name: 'Big Data Analytics', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
       { code: 'BCS614A', name: 'Internet of Things', credits: 3, type: 'Elective', hasNotes: true, hasQP: true, hasFix: true },
-      { code: 'BCSL606', name: 'System Software & Compilers Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
+      { code: 'BCSL606', name: 'Cloud Computing Lab', credits: 1, type: 'Lab', hasNotes: true, hasQP: false, hasFix: true, isLab: true },
       { code: 'BCSP607', name: 'Mini Project', credits: 2, type: 'Project', hasNotes: false, hasQP: false, hasFix: true }
     ],
     'cse-7': [

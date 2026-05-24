@@ -367,6 +367,152 @@
         ],
         objectives: ['Design automata', 'Analyze computability', 'Understand complexity classes']
       },
+      'BCS601': {
+        name: 'Cloud Computing',
+        code: 'BCS601',
+        credits: 4,
+        isPremium: true,
+        description: 'This course covers the fundamentals of Cloud Computing including distributed system models, virtualization, cloud platform architecture, cloud security, and cloud programming environments as per VTU 2022 Scheme.',
+        modules: [
+          { num: 1, title: 'Distributed System Models and Enabling Technologies', hours: 8, topics: 'Scalable Computing Over the Internet, Technologies for Network-Based Systems, System Models for Distributed and Cloud Computing, Software Environments for Distributed Systems and Clouds, Performance Metrics and Benchmarks' },
+          { num: 2, title: 'Virtual Machines and Virtualization of Clusters and Data Centers', hours: 10, topics: 'Implementation Levels of Virtualization, Virtualization Structures/Tools and Mechanisms, Virtualization of CPU/Memory/IO Devices, Virtual Clusters and Resource Management, Virtualization for Data Center Automation' },
+          { num: 3, title: 'Cloud Platform Architecture over Virtualized Data Centers', hours: 10, topics: 'Cloud Computing and Service Models (IaaS, PaaS, SaaS), Data Center Design and Interconnection Networks, Architectural Design of Compute and Storage Clouds, Public Cloud Platforms: GAE, AWS, Azure, InterCloud Resource Management' },
+          { num: 4, title: 'Cloud Security and Trust Management', hours: 8, topics: 'Cloud Security Risks, Privacy and Data Integrity, Cloud Data Encryption, Security of Database Services, OS and VM Security, Distributed Intrusion/Anomaly Detection, Data and Software Protection Techniques, Reputation-Guided Protection' },
+          { num: 5, title: 'Cloud Programming and Software Environments', hours: 8, topics: 'Features of Cloud and Grid Platforms, Parallel and Distributed Programming Paradigms, Programming Support for Google App Engine, Programming on Amazon AWS and Microsoft Azure, Emerging Cloud Software Environments' }
+        ],
+        objectives: [
+          'Understand distributed system models and enabling technologies for cloud computing',
+          'Learn virtualization techniques for clusters and data centers',
+          'Explore cloud platform architectures and service models (IaaS, PaaS, SaaS)',
+          'Analyze cloud security risks and defense strategies',
+          'Develop cloud applications using popular cloud platforms'
+        ],
+        outcomes: [
+          'CO1: Explain the fundamentals of distributed and cloud computing',
+          'CO2: Apply virtualization concepts for cloud infrastructure',
+          'CO3: Design cloud architectures using IaaS, PaaS, and SaaS models',
+          'CO4: Implement security measures for cloud-based systems',
+          'CO5: Develop and deploy applications on cloud platforms like AWS and Azure'
+        ],
+        textbooks: [
+          'Distributed and Cloud Computing: From Parallel Processing to the Internet of Things by Kai Hwang, Geoffrey C Fox, Jack J Dongarra, Morgan Kaufmann Publishers',
+          'Cloud Computing: Principles and Paradigms by Rajkumar Buyya, James Broberg and Andrzej Goscinski, Wiley'
+        ],
+        references: [
+          'Cloud Computing: A Practical Approach by Anthony T Velte, Toby J Velte and Robert Elsenpeter, McGraw-Hill',
+          'Mastering Cloud Computing by Rajkumar Buyya, Christian Vecchiola and S Thamarai Selvi, McGraw Hill'
+        ],
+        fixQuestions: {
+          module1: [
+            'Explain scalable computing over the Internet. Discuss different system models for distributed computing.',
+            'Describe the enabling technologies for network-based systems with examples.',
+            'What are the system models for distributed and cloud computing? Compare them.',
+            'Explain the software environments for distributed systems and clouds.',
+            'Discuss the performance metrics and benchmarks used in distributed and cloud computing systems.'
+          ],
+          module2: [
+            'Explain different levels of virtualization implementation with diagrams.',
+            'Describe virtualization structures, tools and mechanisms used in cloud computing.',
+            'How is CPU, Memory and I/O device virtualization achieved? Explain.',
+            'What are Virtual Clusters? Explain resource management in virtual clusters.',
+            'Describe virtualization for data center automation with architecture diagram.'
+          ],
+          module3: [
+            'Explain cloud computing service models: IaaS, PaaS, and SaaS with examples.',
+            'Describe the architectural design of compute and storage clouds.',
+            'Compare public cloud platforms: Google App Engine, AWS, and Microsoft Azure.',
+            'Explain data center design and interconnection network architectures.',
+            'What is InterCloud resource management? Describe its architecture and challenges.'
+          ],
+          module4: [
+            'What are the major security risks in cloud computing? Explain with mitigation strategies.',
+            'Describe cloud data encryption techniques and their importance.',
+            'Explain security aspects of database services and operating systems in cloud.',
+            'What is distributed intrusion detection? How is anomaly detection performed in cloud?',
+            'Discuss data and software protection techniques for reputation-guided protection of data centers.'
+          ],
+          module5: [
+            'Compare the features of cloud and grid platforms.',
+            'Explain parallel and distributed programming paradigms in cloud computing.',
+            'Describe programming support provided by Google App Engine with example.',
+            'How to develop and deploy applications on Amazon AWS? Explain with steps.',
+            'Discuss emerging cloud software environments and their significance.'
+          ]
+        }
+      },
+      'BCS602': {
+        name: 'Computer Graphics & Fundamentals of Image Processing',
+        code: 'BCS602',
+        credits: 4,
+        isPremium: true,
+        description: 'This course covers fundamentals of computer graphics including 2D/3D transformations, clipping, projection, visible surface detection, and basics of image processing as per VTU 2022 Scheme.',
+        modules: [
+          { num: 1, title: 'Introduction to Computer Graphics', hours: 8, topics: 'Display Systems, Scan Conversion: Line, Circle, Ellipse Algorithms, Filled Area Primitives, Anti-aliasing' },
+          { num: 2, title: '2D Geometric Transformations', hours: 8, topics: 'Translation, Rotation, Scaling, Reflection, Shearing, Composite Transformations, 2D Viewing Pipeline, Window to Viewport Transformation' },
+          { num: 3, title: 'Clipping and 3D Concepts', hours: 10, topics: 'Cohen-Sutherland Line Clipping, Liang-Barsky Line Clipping, Sutherland-Hodgman Polygon Clipping, 3D Geometric Transformations, 3D Viewing, Projections' },
+          { num: 4, title: 'Visible Surface Detection', hours: 8, topics: 'Back-Face Detection, Z-Buffer Method, A-Buffer Method, Scan-Line Method, BSP Tree, Area Subdivision Method, Octree Method' },
+          { num: 5, title: 'Fundamentals of Image Processing', hours: 8, topics: 'Image Acquisition, Sampling and Quantization, Image Enhancement, Spatial Domain Filtering, Frequency Domain Filtering, Image Segmentation' }
+        ],
+        objectives: [
+          'Understand the principles of computer graphics and display systems',
+          'Apply 2D and 3D geometric transformations',
+          'Implement clipping and windowing algorithms',
+          'Analyze visible surface detection methods',
+          'Learn fundamentals of digital image processing'
+        ],
+        outcomes: [
+          'CO1: Implement scan conversion algorithms for basic primitives',
+          'CO2: Apply 2D and 3D transformations for object manipulation',
+          'CO3: Implement clipping algorithms for 2D viewing',
+          'CO4: Compare and apply visible surface detection methods',
+          'CO5: Apply image processing techniques for enhancement and segmentation'
+        ],
+        textbooks: [
+          'Computer Graphics: Principles and Practice by John F Hughes, Andries van Dam, Morgan McGuire, et al., Addison-Wesley',
+          'Digital Image Processing by Rafael C Gonzalez and Richard E Woods, Pearson'
+        ],
+        references: [
+          'Computer Graphics with OpenGL by Donald Hearn and M Pauline Baker, Pearson',
+          'Interactive Computer Graphics by Edward Angel and Dave Shreiner, Pearson'
+        ],
+        fixQuestions: {
+          module1: [
+            'Explain Bresenham\'s line drawing algorithm with example.',
+            'Derive midpoint circle drawing algorithm.',
+            'Describe the various display systems used in computer graphics.',
+            'Explain scan conversion algorithms for ellipse generation.',
+            'What is anti-aliasing? Describe different anti-aliasing techniques.'
+          ],
+          module2: [
+            'Derive the 2D composite transformation matrix for rotation about an arbitrary point.',
+            'Explain window to viewport transformation with derivation.',
+            'Describe reflection and shearing transformations with matrix representations.',
+            'What is 2D viewing pipeline? Explain each stage.',
+            'Solve: Apply 2D transformations to translate, rotate and scale a triangle.'
+          ],
+          module3: [
+            'Explain Cohen-Sutherland line clipping algorithm with example.',
+            'Describe Liang-Barsky line clipping algorithm and compare with Cohen-Sutherland.',
+            'Explain Sutherland-Hodgman polygon clipping algorithm.',
+            'Derive 3D transformation matrices for translation, rotation and scaling.',
+            'Describe parallel and perspective projection with neat diagrams.'
+          ],
+          module4: [
+            'Explain Z-buffer method for visible surface detection.',
+            'Compare back-face detection and BSP tree methods.',
+            'Describe scan-line algorithm for visible surface detection.',
+            'What is A-buffer method? How does it handle transparency?',
+            'Explain area subdivision method (Warnock\'s algorithm) for hidden surface removal.'
+          ],
+          module5: [
+            'Explain image sampling and quantization with diagram.',
+            'Describe spatial domain image enhancement techniques.',
+            'What are frequency domain filtering methods? Explain with examples.',
+            'Explain edge detection methods used in image segmentation.',
+            'Describe histogram equalization for image enhancement with example.'
+          ]
+        }
+      },
       'BCS603': {
         name: 'Machine Learning',
         modules: [
