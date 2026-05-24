@@ -375,13 +375,7 @@ const NotesExtended = {
     },
     'BCS501': {
         name: 'Software Engineering & Project Management',
-        modules: [
-            { num: 1, title: 'SE Introduction - Software Process, Agile, Requirements', file: 'BCS501/BCS501 MODULE 1 - MODULE 5.pdf', size: '3.4 MB', pages: 'All', status: 'available' },
-            { num: 2, title: 'Design - System Design, UML, Design Patterns', file: 'BCS501/BCS501 MODULE 1 - MODULE 5.pdf', size: '3.4 MB', pages: 'All', status: 'available' },
-            { num: 3, title: 'Testing - Testing Strategies, Test Case Design', file: 'BCS501/BCS501 MODULE 1 - MODULE 5.pdf', size: '3.4 MB', pages: 'All', status: 'available' },
-            { num: 4, title: 'Project Management - Planning, Scheduling, Risk', file: 'BCS501/BCS501 MODULE 1 - MODULE 5.pdf', size: '3.4 MB', pages: 'All', status: 'available' },
-            { num: 5, title: 'Quality & Metrics - Software Quality, SCM', file: 'BCS501/BCS501 MODULE 1 - MODULE 5.pdf', size: '3.4 MB', pages: 'All', status: 'available' }
-        ],
+        modules: [],
         complete: { file: 'BCS501/BCS501 MODULE 1 - MODULE 5.pdf', size: '3.4 MB', pages: 'All Modules' }
     },
     'BCS515A': {
